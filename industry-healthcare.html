@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Preload critical resources -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<title>Healthcare IT Solutions — HIPAA-Compliant Managed IT | Racom Business</title>
+<meta name="description" content="HIPAA-compliant managed IT, EHR connectivity, clinical networking, and cybersecurity for hospitals, medical groups, and healthcare organizations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ff:'Barlow',sans-serif;
+  --ffc:'Barlow Condensed',sans-serif;
+  --navy:#060E1C;
+  --navy2:#0D1A2E;
+  --navy3:#132238;
+  --navy4:#1A2D42;
+  --blue:#4A90D9;
+  --blue2:#3578C4;
+  --blue3:#6AAEE8;
+  --teal:#00BCD4;
+  --teal2:#00A8BE;
+  --sky:#5BAEF5;
+  --white:#fff;
+  --muted:rgba(255,255,255,0.55);
+  --muted2:rgba(255,255,255,0.35);
+  --muted3:rgba(255,255,255,0.15);
+  --bdd:rgba(255,255,255,0.08);
+  --bdd2:rgba(255,255,255,0.12);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;background:var(--navy);color:#fff;line-height:1.55;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--navy)}
+::-webkit-scrollbar-thumb{background:var(--blue2);border-radius:3px}
+a{text-decoration:none;color:inherit}
+
+/* ── TOPBAR ── */
+.topbar{
+  background:var(--navy2);
+  border-bottom:1px solid var(--bdd);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:7px 2.5rem;font-size:12px;font-weight:500;
+}
+.topbar-left{display:flex;gap:1.75rem;align-items:center;color:var(--muted2)}
+.topbar-left a{color:var(--muted2);transition:color .15s}
+.topbar-left a:hover{color:#fff}
+.topbar-right{display:flex;gap:12px;align-items:center}
+.topbar-link{font-size:12px;color:var(--muted2);transition:color .15s}
+.topbar-link:hover{color:#fff}
+.topbar-sep{color:var(--muted3);font-size:10px}
+.topbar-cta{
+  font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--blue3);border:1px solid rgba(74,144,217,0.35);
+  padding:4px 12px;border-radius:3px;transition:all .2s;
+}
+.topbar-cta:hover{background:rgba(74,144,217,.12);color:#fff}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(6,14,28,0.97);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--bdd);
+  height:68px;display:flex;align-items:stretch;padding:0 2.5rem;
+}
+.nav-logo{display:flex;align-items:center;margin-right:2rem;flex-shrink:0}
+.nav-logo svg{height:42px;width:auto}
+.nav-menu{display:flex;align-items:stretch;flex:1;justify-content:flex-start}
+.nav-item{position:relative;display:flex;align-items:center}
+.nav-link,.nav-trigger{
+  font-size:13px;font-weight:600;
+  color:rgba(255,255,255,0.6);
+  padding:0 13px;height:68px;
+  display:flex;align-items:center;gap:5px;
+  transition:all .2s;white-space:nowrap;
+  cursor:pointer;border:none;background:transparent;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;
+}
+.nav-link:hover,.nav-trigger:hover,.nav-link.active{color:#fff;background:rgba(255,255,255,.04)}
+.nav-link.active{border-bottom:2px solid var(--blue)}
+.nav-arr{
+  border-left:4px solid transparent;border-right:4px solid transparent;
+  border-top:4px solid rgba(255,255,255,0.38);
+  transition:transform .2s;margin-top:1px;flex-shrink:0;
+}
+.nav-item:hover .nav-arr{transform:rotate(180deg)}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;padding-left:1rem}
+.nav-phone{font-size:12.5px;color:rgba(255,255,255,0.38);font-weight:600;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;border-radius:4px;font-size:13px;font-weight:700;
+  background:var(--blue);color:#fff;border:none;cursor:pointer;
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;letter-spacing:.04em;
+}
+.btn-nav:hover{background:var(--blue2);transform:translateY(-1px)}
+
+/* ── MEGA MENUS ── */
+.mega{
+  display:none;
+  position:absolute;top:68px;left:0;
+  background:var(--navy2);
+  border:1px solid var(--bdd2);
+  border-top:2px solid var(--blue);
+  border-radius:0 0 8px 8px;
+  padding:1.75rem 2rem;
+  box-shadow:0 24px 60px rgba(0,0,0,0.6);
+  z-index:300;
+  min-width:700px;
+}
+.nav-item:hover .mega{display:flex;gap:2rem}
+.mega-section{min-width:160px}
+.mega-section h5{
+  font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--blue3);margin-bottom:.75rem;padding-bottom:.5rem;
+  border-bottom:1px solid var(--bdd);
+}
+.mega-section ul{list-style:none;display:flex;flex-direction:column;gap:1px}
+.mega-section a{
+  font-size:13px;font-weight:500;color:rgba(255,255,255,0.55);
+  padding:6px 10px;border-radius:4px;display:flex;align-items:center;gap:8px;
+  transition:all .15s;
+}
+.mega-section a:hover{color:#fff;background:rgba(74,144,217,.12);padding-left:14px}
+.mega-section a .ma{color:var(--blue3);font-size:12px;flex-shrink:0}
+.mega-divider{width:1px;background:var(--bdd);margin:0 .25rem;flex-shrink:0}
+.mega-featured{
+  background:var(--navy3);border:1px solid var(--bdd);
+  border-radius:6px;padding:1.25rem;min-width:200px;
+}
+.mega-featured h5{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin-bottom:.75rem}
+.mega-featured p{font-size:12px;color:var(--muted2);line-height:1.6;margin-bottom:1rem}
+.mega-featured a.mf-link{
+  font-size:12px;font-weight:700;color:var(--blue3);
+  display:flex;align-items:center;gap:5px;transition:color .15s;
+}
+.mega-featured a.mf-link:hover{color:#fff}
+
+/* ── BUTTONS ── */
+.btn-blue{
+  padding:13px 26px;border-radius:4px;font-size:14px;font-weight:700;
+  background:var(--blue);color:#fff;border:none;cursor:pointer;
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;
+  letter-spacing:.04em;display:inline-block;
+}
+.btn-blue:hover{background:var(--blue2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(74,144,217,.35)}
+.btn-ghost{
+  padding:13px 22px;border-radius:4px;font-size:14px;font-weight:700;
+  background:transparent;color:rgba(255,255,255,.75);
+  border:1px solid rgba(255,255,255,.2);cursor:pointer;
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;
+  letter-spacing:.04em;display:inline-block;
+}
+.btn-ghost:hover{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-outline{
+  padding:10px 20px;border-radius:4px;font-size:13px;font-weight:700;
+  background:transparent;color:var(--blue3);
+  border:1.5px solid rgba(74,144,217,.4);cursor:pointer;
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;
+  letter-spacing:.04em;display:inline-block;
+}
+.btn-outline:hover{background:rgba(74,144,217,.12);border-color:var(--blue3);color:#fff}
+
+/* ── HERO ── */
+.hero{
+  position:relative;min-height:620px;display:flex;align-items:center;
+  overflow:hidden;background:var(--navy);
+}
+.hero-photo{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=80') center/cover no-repeat;
+  opacity:.14;
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(110deg,rgba(6,14,28,.98) 0%,rgba(6,14,28,.88) 55%,rgba(6,14,28,.5) 100%);
+}
+.hero-lines{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
+  background-size:65px 65px;
+}
+.hero-glow{
+  position:absolute;top:-80px;left:-80px;width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(74,144,217,.1) 0%,transparent 65%);
+}
+.hero-inner{
+  position:relative;z-index:2;max-width:1200px;margin:0 auto;
+  padding:7rem 2.5rem;width:100%;
+  display:grid;grid-template-columns:1fr 400px;gap:5rem;align-items:center;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--blue3);border:1px solid rgba(74,144,217,.25);
+  padding:6px 14px;border-radius:100px;background:rgba(74,144,217,.07);
+  margin-bottom:1.5rem;
+}
+.hpulse{width:6px;height:6px;border-radius:50%;background:var(--blue3);animation:pp 2s infinite}
+@keyframes pp{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
+.hero h1{
+  font-family:var(--ffc);font-size:clamp(2.8rem,5.5vw,5rem);
+  font-weight:900;line-height:.95;letter-spacing:-.02em;
+  color:#fff;text-transform:uppercase;margin-bottom:1.5rem;
+}
+.hero h1 .c1{color:var(--blue3)}
+.hero h1 .c2{color:var(--teal)}
+.hero-desc{font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:2.25rem;max-width:520px}
+.hero-desc strong{color:rgba(255,255,255,.88)}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:2.75rem}
+.hero-proof{display:flex;gap:2.5rem;padding-top:2rem;border-top:1px solid var(--bdd)}
+.hstat strong{
+  display:block;font-family:var(--ffc);font-size:2.2rem;font-weight:900;
+  color:#fff;line-height:1;letter-spacing:-.03em;margin-bottom:3px;
+}
+.hstat span{font-size:11px;font-weight:600;color:var(--muted2);text-transform:uppercase;letter-spacing:.07em}
+
+/* Hero right panel */
+.hero-panel{
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--bdd2);border-top:2px solid var(--blue);
+  border-radius:6px;overflow:hidden;
+}
+.panel-hdr{
+  background:rgba(0,0,0,.25);padding:12px 18px;
+  display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--bdd);
+}
+.panel-hdr-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-left:4px}
+.prow{
+  display:flex;align-items:center;gap:12px;padding:11px 18px;
+  border-bottom:1px solid rgba(255,255,255,.04);transition:background .15s;
+}
+.prow:last-child{border-bottom:none}
+.prow:hover{background:rgba(255,255,255,.03)}
+.pdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.pname{font-size:13px;font-weight:700;color:#fff;flex:1}
+.psub{font-size:10.5px;color:rgba(255,255,255,.3);text-align:right;line-height:1.35}
+
+/* ── PRACTICE BAR ── */
+.practice-bar{background:var(--navy2);border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd)}
+.pb-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(7,1fr)}
+.pa{
+  display:flex;flex-direction:column;align-items:center;
+  padding:1.35rem .75rem;border-right:1px solid var(--bdd);
+  gap:9px;text-decoration:none;transition:background .2s;cursor:pointer;
+}
+.pa:last-child{border-right:none}
+.pa:hover{background:rgba(74,144,217,.07)}
+.pa:hover .pa-circle{border-color:var(--blue);background:rgba(74,144,217,.12)}
+.pa-circle{
+  width:42px;height:42px;border-radius:50%;
+  background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.1);
+  display:flex;align-items:center;justify-content:center;transition:all .2s;
+}
+.pa-circle svg{width:19px;height:19px;stroke:#fff;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.pa-label{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.5);text-align:center;line-height:1.3}
+
+/* ── STATS BAR ── */
+.stats-bar{background:var(--navy2);padding:3.5rem 2.5rem;border-bottom:1px solid var(--bdd)}
+.stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.stat-item{display:flex;align-items:center;gap:1.25rem}
+.stat-icon{
+  width:52px;height:52px;border-radius:50%;flex-shrink:0;
+  border:1.5px solid rgba(74,144,217,.4);
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(74,144,217,.08);
+}
+.stat-icon svg{width:22px;height:22px;stroke:var(--blue3);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.stat-num{font-family:var(--ffc);font-size:2.4rem;font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1}
+.stat-lbl{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2);margin-top:3px}
+
+/* ── STATEMENT BAND ── */
+.stmt{background:var(--navy3);padding:5.5rem 2.5rem;text-align:center;position:relative;overflow:hidden;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd)}
+.stmt::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(74,144,217,.08) 0%,transparent 65%);pointer-events:none}
+.stmt-inner{max-width:800px;margin:0 auto;position:relative}
+.stmt-rule{width:48px;height:3px;background:var(--blue);margin:0 auto 2rem;border-radius:2px}
+.stmt h2{font-family:var(--ffc);font-size:clamp(2rem,5vw,3.8rem);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;color:#fff;line-height:1;margin-bottom:1.25rem}
+.stmt h2 em{font-style:normal;color:var(--blue3)}
+.stmt p{font-size:16px;color:var(--muted);line-height:1.75;max-width:620px;margin:0 auto 2.5rem}
+
+/* ── SOLUTIONS ── */
+.solutions{background:var(--navy2);padding:6rem 2.5rem;border-bottom:1px solid var(--bdd)}
+.sol-inner{max-width:1200px;margin:0 auto}
+.eyebrow{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);display:flex;align-items:center;gap:10px;margin-bottom:.75rem}
+.eyebrow::before{content:'';width:18px;height:2px;background:var(--blue3);border-radius:2px}
+.h2{font-family:var(--ffc);font-size:clamp(1.9rem,3.5vw,3rem);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;color:#fff;line-height:1.05;margin-bottom:.75rem}
+.h2 .acc{color:var(--blue3)}
+.section-desc{font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:3rem;max-width:640px}
+.sol-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;border:1px solid var(--bdd2);border-radius:8px;overflow:hidden;
+}
+.sol-card{
+  background:var(--navy3);padding:1.75rem 1.5rem;
+  border-right:1px solid var(--bdd);border-bottom:1px solid var(--bdd);
+  position:relative;transition:background .2s;cursor:default;
+}
+.sol-card:hover{background:var(--navy4)}
+.sol-card::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .3s;
+}
+.sol-card:hover::after{transform:scaleX(1)}
+.sol-icon{
+  width:46px;height:46px;border-radius:8px;
+  background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1.1rem;transition:all .2s;
+}
+.sol-card:hover .sol-icon{background:rgba(74,144,217,.2);border-color:rgba(74,144,217,.4)}
+.sol-icon svg{width:21px;height:21px;stroke:var(--blue3);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.sol-card h3{font-size:14px;font-weight:700;color:#fff;margin-bottom:.4rem;letter-spacing:-.01em}
+.sol-card p{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:.85rem}
+.sol-tags{display:flex;flex-wrap:wrap;gap:4px}
+.sol-tag{font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--blue3);background:rgba(74,144,217,.08);border:1px solid rgba(74,144,217,.2);padding:3px 8px;border-radius:3px}
+.sol-cta{
+  background:var(--navy4);padding:1.75rem 1.5rem;
+  display:flex;flex-direction:column;justify-content:center;gap:.9rem;
+  border-top:2px solid var(--blue);
+}
+.sol-cta h3{font-family:var(--ffc);font-size:1.5rem;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:-.01em;line-height:1.1}
+.sol-cta p{font-size:12.5px;color:var(--muted);line-height:1.6}
+
+/* ── PROCESS ── */
+.process{background:var(--navy3);padding:6rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd)}
+.proc-inner{max-width:1200px;margin:0 auto}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:3rem}
+.proc-card{background:var(--navy2);border:1px solid var(--bdd);border-radius:8px;overflow:hidden;transition:all .2s}
+.proc-card:hover{border-color:rgba(74,144,217,.35);transform:translateY(-4px)}
+.proc-img{height:150px;background:var(--navy4);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--bdd)}
+.proc-icon{
+  width:60px;height:60px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  border:1.5px solid var(--bdd2);background:rgba(255,255,255,.04);
+}
+.proc-icon svg{width:26px;height:26px;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.proc-body{padding:1.4rem}
+.proc-step{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem;display:flex;align-items:center;gap:5px}
+.proc-step-n{color:var(--blue3)}
+.proc-step-l{color:rgba(255,255,255,.3)}
+.proc-card h3{font-size:14.5px;font-weight:700;color:var(--blue3);margin-bottom:.5rem;letter-spacing:-.01em}
+.proc-card p{font-size:12.5px;color:var(--muted);line-height:1.65}
+
+/* ── INDUSTRIES ── */
+.industries{background:var(--navy2);padding:6rem 2.5rem;border-bottom:1px solid var(--bdd)}
+.ind-inner{max-width:1200px;margin:0 auto}
+.ind-layout{display:grid;grid-template-columns:240px 1fr;gap:2.5rem;align-items:start;margin-top:3rem}
+.ind-tabs{display:flex;flex-direction:column;gap:3px}
+.ind-tab{
+  padding:12px 16px;font-size:13.5px;font-weight:600;color:var(--muted2);
+  cursor:pointer;border-radius:5px;transition:all .2s;
+  display:flex;align-items:center;gap:10px;
+  border:none;background:transparent;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;width:100%;text-align:left;
+  border-left:2px solid transparent;
+}
+.ind-tab:hover{background:var(--navy3);color:rgba(255,255,255,.75);border-left-color:var(--bdd2)}
+.ind-tab.active{background:var(--navy3);color:#fff;border-left-color:var(--blue)}
+.ind-tab svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.ind-tab .iarr{margin-left:auto;color:var(--blue3);font-size:16px;opacity:0}
+.ind-tab.active .iarr{opacity:1}
+.ind-panel-wrap{background:var(--navy3);border:1px solid var(--bdd2);border-radius:8px;overflow:hidden;min-height:260px}
+.ind-panel{display:none;padding:2.5rem;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+.ind-panel.active{display:grid}
+.ind-panel h3{font-family:var(--ffc);font-size:1.75rem;font-weight:900;text-transform:uppercase;letter-spacing:-.02em;color:#fff;margin-bottom:.75rem;line-height:1.05}
+.ind-panel h3 .acc{color:var(--blue3)}
+.ind-panel p{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:1.25rem}
+.ind-visual{border-radius:8px;background:var(--navy4);border:1px solid var(--bdd);height:200px;display:flex;align-items:center;justify-content:center}
+.ind-vis-icon{width:72px;height:72px;border-radius:50%;background:rgba(74,144,217,.1);border:1.5px solid rgba(74,144,217,.25);display:flex;align-items:center;justify-content:center}
+.ind-vis-icon svg{width:32px;height:32px;stroke:var(--blue3);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* ── AI BAND ── */
+.ai-band{background:var(--navy4);padding:6rem 2.5rem;position:relative;overflow:hidden;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd)}
+.ai-band::before{content:'';position:absolute;bottom:-150px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(74,144,217,.08) 0%,transparent 70%);pointer-events:none}
+.ai-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.ai-chips{display:flex;flex-wrap:wrap;gap:7px;margin:1.25rem 0 2rem}
+.ai-chip{padding:7px 14px;border-radius:4px;font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);color:var(--blue3)}
+.console{background:var(--navy2);border:1px solid var(--bdd2);border-top:2px solid var(--blue);border-radius:6px;overflow:hidden}
+.con-hdr{background:rgba(0,0,0,.3);padding:11px 16px;display:flex;align-items:center;gap:7px;border-bottom:1px solid var(--bdd)}
+.cdot{width:10px;height:10px;border-radius:50%}
+.ctitle{font-family:'Courier New',monospace;font-size:11px;color:rgba(255,255,255,.28);margin-left:6px}
+.con-row{display:flex;align-items:center;justify-content:space-between;padding:11px 18px;border-bottom:1px solid rgba(255,255,255,.04)}
+.con-row:last-child{border-bottom:none}
+.con-label{font-size:13px;color:rgba(255,255,255,.6);font-weight:500}
+.cbadge{font-family:'Courier New',monospace;font-size:10px;padding:3px 10px;border-radius:3px;font-weight:700;letter-spacing:.05em}
+.bl{background:rgba(0,200,100,.1);color:#00c870;border:1px solid rgba(0,200,100,.22)}
+.ba{background:rgba(74,144,217,.12);color:var(--blue3);border:1px solid rgba(74,144,217,.25)}
+.bau{background:rgba(0,188,212,.1);color:var(--teal);border:1px solid rgba(0,188,212,.25)}
+
+/* ── WHY + FORM ── */
+.why-section{background:var(--navy2);padding:6rem 2.5rem;border-bottom:1px solid var(--bdd)}
+.why-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:start}
+.why-diffs{display:flex;flex-direction:column;gap:12px;margin-top:2.5rem}
+.diff{display:flex;gap:15px;padding:1.25rem 1.4rem;background:var(--navy3);border:1px solid var(--bdd);border-left:3px solid var(--blue);border-radius:0 6px 6px 0;transition:all .2s}
+.diff:hover{border-left-color:var(--teal);background:var(--navy4)}
+.diff-n{font-family:var(--ffc);font-size:1.5rem;font-weight:900;color:rgba(74,144,217,.25);min-width:30px;line-height:1;margin-top:2px}
+.diff h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:3px;letter-spacing:-.01em}
+.diff p{font-size:12.5px;color:var(--muted);line-height:1.6}
+.cform{background:var(--navy3);border:1px solid var(--bdd2);border-top:2px solid var(--blue);border-radius:6px;padding:2.25rem}
+.cform h3{font-family:var(--ffc);font-size:1.55rem;font-weight:900;text-transform:uppercase;color:#fff;margin-bottom:4px;letter-spacing:-.01em}
+.cform-sub{font-size:13px;color:var(--muted2);margin-bottom:1.75rem}
+.cfi{
+  padding:11px 13px;border-radius:4px;font-size:13.5px;
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.05);
+  color:#fff;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;outline:none;
+  transition:border-color .2s;width:100%;display:block;
+}
+.cfi::placeholder{color:rgba(255,255,255,.25)}
+.cfi:focus{border-color:var(--blue)}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:9px}
+.cf-fw{margin-bottom:9px}
+.cf-ta{resize:none;height:85px}
+.cf-submit{
+  width:100%;padding:13px;border-radius:4px;font-size:14.5px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.05em;
+  background:var(--blue);color:#fff;border:none;cursor:pointer;
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;margin-top:3px;
+}
+.cf-submit:hover{background:var(--blue2)}
+
+/* ── PARTNERS ── */
+.partners-bar{background:var(--navy);padding:3.5rem 2.5rem;border-bottom:1px solid var(--bdd)}
+.p-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:1.5rem}
+.p-row{display:flex;flex-wrap:wrap;gap:9px}
+.p-pill{padding:8px 20px;border-radius:4px;font-size:12.5px;font-weight:700;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);color:rgba(255,255,255,.4);transition:all .2s;cursor:default}
+.p-pill:hover{background:rgba(74,144,217,.1);border-color:rgba(74,144,217,.3);color:var(--blue3)}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);border-top:2px solid var(--blue2);padding:5rem 2.5rem 2.5rem}
+.foot-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:4rem;margin-bottom:4rem}
+.foot-tagline{font-size:13px;color:rgba(255,255,255,.3);line-height:1.7;margin:.75rem 0 1.25rem;max-width:270px}
+.foot-contact a{display:block;font-size:13.5px;color:var(--blue3);font-weight:700;margin-bottom:4px;transition:color .2s}
+.foot-contact a:hover{color:#fff}
+.foot-contact span{font-size:12px;color:rgba(255,255,255,.25)}
+footer h4{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:1rem;padding-bottom:8px;border-bottom:1px solid var(--bdd)}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+footer li a{font-size:13px;color:rgba(255,255,255,.4);font-weight:500;transition:all .2s;display:flex;align-items:center;gap:7px}
+footer li a::before{content:'›';color:var(--blue3);font-size:15px;line-height:1}
+footer li a:hover{color:#fff;padding-left:4px}
+.foot-bottom{max-width:1200px;margin:0 auto;border-top:1px solid var(--bdd);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.foot-bottom p{font-size:12px;color:rgba(255,255,255,.2)}
+.foot-links{display:flex;gap:20px}
+.foot-links a{font-size:12px;color:rgba(255,255,255,.2);transition:color .2s}
+.foot-links a:hover{color:rgba(255,255,255,.6)}
+
+/* ── REVEAL ANIMATIONS ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem}.hero-panel{display:none}
+  .sol-grid{grid-template-columns:repeat(2,1fr)}
+  .proc-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .ai-inner,.why-inner{grid-template-columns:1fr;gap:3rem}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .ind-layout{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .topbar{display:none}nav{padding:0 1.25rem}
+  .nav-menu{display:none}
+  .pb-inner{grid-template-columns:repeat(4,1fr)}
+  .sol-grid,.proc-grid{grid-template-columns:1fr}
+  .stats-inner{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .hero-inner{padding:4.5rem 1.5rem}
+  .ind-panel.active{grid-template-columns:1fr}
+}
+
+/* ── PARTNER MARQUEE ── */
+/* ── PARTNER MARQUEE v2 ── */
+/* ── PARTNER MARQUEE v2 ── */
+/* ── PARTNER MARQUEE v2 ── */
+.partner-marquee-section {
+  background: var(--navy);
+  padding: 3.5rem 0 4rem;
+  border-top: 1px solid var(--bdd);
+  border-bottom: 1px solid var(--bdd);
+  overflow: hidden;
+  position: relative;
+}
+.marquee-header {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.marquee-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.marquee-header-rule {
+  width: 3px;
+  height: 28px;
+  background: linear-gradient(180deg, var(--blue), var(--teal));
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.marquee-header-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+}
+.marquee-header-count {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--blue3);
+  background: rgba(74,144,217,.1);
+  border: 1px solid rgba(74,144,217,.2);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.marquee-header-link {
+  font-size: 12px;
+  color: var(--blue3);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color .2s;
+}
+.marquee-header-link:hover { color: #fff; }
+.mwrap {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.mwrap:last-child { margin-bottom: 0; }
+/* Fade edges */
+.mwrap::before, .mwrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 140px;
+  z-index: 2;
+  pointer-events: none;
+}
+.mwrap::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--navy) 0%, transparent 100%);
+}
+.mwrap::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--navy) 0%, transparent 100%);
+}
+.mtrack {
+  display: flex;
+  gap: 8px;
+  width: max-content;
+  padding: 4px 0;
+}
+.mfwd { animation: mfwd 40s linear infinite; }
+.mrev { animation: mrev 45s linear infinite; }
+@keyframes mfwd {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes mrev {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.mwrap:hover .mfwd,
+.mwrap:hover .mrev { animation-play-state: paused; }
+/* Brand pill — polished professional style */
+.bi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  height: 40px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all .25s;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+.bi::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(74,144,217,.05) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity .25s;
+}
+.bi:hover {
+  background: rgba(74,144,217,.1);
+  border-color: rgba(74,144,217,.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(74,144,217,.15);
+}
+.bi:hover::before { opacity: 1; }
+.bi span {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,.38);
+  letter-spacing: .03em;
+  font-family: 'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;
+  position: relative;
+  z-index: 1;
+  transition: color .25s;
+}
+.bi:hover span { color: var(--blue3); }
+
+
+
+/* ========================================
+   MOBILE-FIRST APP-LIKE ENHANCEMENTS
+   Add this CSS to make the site feel like a native app
+   ======================================== */
+
+/* Mobile Navigation Enhancements */
+@media (max-width: 768px) {
+  
+  /* Hide desktop navigation on mobile */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 85%;
+    max-width: 320px;
+    height: 100vh;
+    background: linear-gradient(135deg, #060E1C 0%, #0D1E35 100%);
+    z-index: 9999;
+    transition: left 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    overflow-y: auto;
+    box-shadow: 2px 0 20px rgba(0,0,0,0.5);
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  /* Mobile Menu Button */
+  .mobile-menu-btn {
+    display: block !important;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    background: linear-gradient(135deg, #4A90D9, #2B5F8A);
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(74, 144, 217, 0.4);
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-menu-btn:active {
+    transform: scale(0.95);
+  }
+  
+  .mobile-menu-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    margin: 5px auto;
+    transition: 0.3s;
+    border-radius: 2px;
+  }
+  
+  /* Bottom Navigation Bar (Like Mobile Apps) */
+  .mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(6, 14, 28, 0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .mobile-bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 12px;
+  }
+  
+  .mobile-bottom-nav a.active,
+  .mobile-bottom-nav a:active {
+    color: #4A90D9;
+    background: rgba(74, 144, 217, 0.1);
+  }
+  
+  .mobile-bottom-nav svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Card-based Layout for Mobile */
+  .service-card,
+  .feature-card,
+  .content-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    margin-bottom: 16px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+  }
+  
+  .service-card:active,
+  .feature-card:active {
+    transform: scale(0.98) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  /* Mobile Typography */
+  h1 {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+  }
+  
+  h2 {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+  }
+  
+  h3 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+  
+  p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Touch-Optimized Buttons */
+  button,
+  .btn,
+  .cta-button,
+  a[href^="tel"],
+  a[href^="mailto"] {
+    min-height: 48px !important;
+    padding: 12px 24px !important;
+    border-radius: 12px !important;
+    font-size: 16px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+  }
+  
+  button:active,
+  .btn:active,
+  .cta-button:active {
+    transform: scale(0.96) !important;
+  }
+  
+  /* Mobile Spacing */
+  section {
+    padding: 24px 20px !important;
+  }
+  
+  /* Pull-to-Refresh Indicator */
+  .pull-to-refresh {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-60px);
+    background: rgba(74, 144, 217, 0.95);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(74, 144, 217, 0.4);
+    transition: transform 0.3s ease;
+    z-index: 10000;
+  }
+  
+  .pull-to-refresh.active {
+    transform: translateX(-50%) translateY(20px);
+  }
+  
+  /* Smooth Scrolling */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Hide Scrollbar but keep functionality */
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* App-like Header */
+  header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 999 !important;
+    background: rgba(6, 14, 28, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  /* Safe Area Insets for iPhone */
+  @supports(padding: max(0px)) {
+    body {
+      padding-left: max(0px, env(safe-area-inset-left));
+      padding-right: max(0px, env(safe-area-inset-right));
+    }
+    
+    .mobile-bottom-nav {
+      padding-bottom: max(8px, env(safe-area-inset-bottom));
+    }
+  }
+  
+  /* Footer padding for bottom nav */
+  footer {
+    padding-bottom: 80px !important;
+  }
+}
+
+/* Tablet Optimization (iPad) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+  
+  .service-card {
+    padding: 24px !important;
+  }
+  
+  h1 {
+    font-size: 48px !important;
+  }
+  
+  h2 {
+    font-size: 36px !important;
+  }
+}
+
+/* Loading Animation */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #4A90D9;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Haptic Feedback Simulation */
+@keyframes tap-feedback {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.96); }
+  100% { transform: scale(1); }
+}
+
+.tap-feedback:active {
+  animation: tap-feedback 0.2s ease;
+}
+
+</style>
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#4A90D9">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Racom Business">
+  
+</head>
+<body>
+  <!-- Mobile Menu Button -->
+  <button class="mobile-menu-btn" onclick="document.querySelector('.nav-menu').classList.toggle('active')" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+<!-- Netlify Forms handler -->
+<form name="contact" netlify netlify-honeypot="bot-field" action="/contact-success" hidden>
+  <input name="first-name" type="text">
+  <input name="last-name" type="text">
+  <input name="company" type="text">
+  <input name="email" type="email">
+  <input name="phone" type="tel">
+  <select name="interest"></select>
+  <select name="company-size"></select>
+  <textarea name="message"></textarea>
+</form>
+<div class="topbar">
+  <div class="tb-left">
+    <a href="tel:8662201422">(866) 220-1422</a>
+    <span class="tb-sep">|</span>
+    <a href="mailto:salessupport@racombusiness.com">salessupport@racombusiness.com</a>
+    <span class="tb-sep">|</span>
+    <span>Serving Businesses Nationwide &amp; Internationally</span>
+  </div>
+  <div class="tb-right">
+    <a href="careers.html" class="tb-link">Careers</a>
+    <span class="tb-sep">|</span>
+    <a href="blog.html" class="tb-link">Resources</a>
+    <span class="tb-sep">|</span>
+    <a href="store.html" class="tb-link" style="color:var(--blue3);font-weight:700">&#9673; Store</a>
+    <span class="tb-sep">|</span>
+    <a href="contact.html" class="tb-cta">Free Assessment</a>
+  </div>
+</div>
+<nav>
+  <a href="index.html" class="nav-logo-wrap">
+  <img loading="lazy" src="logo-racom.svg" alt="Racom Business" height="52" width="auto" style="height:52px; width:auto;">
+  </a>
+  <div class="nav-menu">
+    <div class="nav-item">
+      <div class="nav-trigger">Services <div class="nav-arr"></div></div>
+      <div class="mega" style="min-width:580px">
+        <div class="mega-col">
+          <h5>Connect &amp; Communicate</h5>
+          <ul>
+            <li><a href="svc-fiber-internet.html">Business Fiber &amp; Internet</a></li>
+            <li><a href="svc-fiber-internet.html">Dedicated Circuits</a></li>
+            <li><a href="svc-sdwan.html">SD-WAN &amp; SASE</a></li>
+            <li><a href="svc-ucaas.html">Cloud VoIP &amp; UCaaS</a></li>
+            <li><a href="communications.html">Contact Center (CCaaS)</a></li>
+            <li><a href="svc-pots.html">POTS Line Replacement</a></li>
+          </ul>
+        </div>
+        <div class="mega-col">
+          <h5>Manage &amp; Secure</h5>
+          <ul>
+            <li><a href="svc-rmm.html">24/7 Remote Monitoring</a></li>
+            <li><a href="svc-helpdesk.html">Helpdesk &amp; Service Desk</a></li>
+            <li><a href="it-security.html">Co-Managed IT</a></li>
+            <li><a href="svc-edr.html">Endpoint Detection (EDR)</a></li>
+            <li><a href="svc-mdr.html">MDR &amp; 24×7 SOC</a></li>
+            <li><a href="it-security.html">Zero Trust &amp; MFA</a></li>
+          </ul>
+        </div>
+        <div class="mega-col">
+          <h5>Cloud &amp; Equip</h5>
+          <ul>
+            <li><a href="svc-m365.html">Microsoft 365 &amp; Azure</a></li>
+            <li><a href="cloud-ai.html">AWS Managed Services</a></li>
+            <li><a href="svc-backup.html">Backup &amp; Disaster Recovery</a></li>
+            <li><a href="cloud-ai.html">AI &amp; Workflow Automation</a></li>
+            <li><a href="hardware.html">Servers &amp; Storage</a></li>
+            <li><a href="store.html">Browse 2,400+ Products &rarr;</a></li>
+          </ul>
+        </div>
+        <div class="mega-divider"></div>
+        <div class="mega-featured">
+          <h5>Not sure where to start?</h5>
+          <p>Free technology assessment — we audit your environment and build a roadmap at no cost.</p>
+          <a href="contact.html" class="mfeat-link">Book free assessment &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <div class="nav-trigger">Industries <div class="nav-arr"></div></div>
+      <div class="mega" style="min-width:540px">
+        <div class="mega-col">
+          <h5>Industries We Serve</h5>
+          <ul>
+            <li><a href="industry-healthcare.html">Healthcare &amp; Medical Groups</a></li>
+            <li><a href="industry-financial.html">Financial Services &amp; Fintech</a></li>
+            <li><a href="industry-manufacturing.html">Manufacturing &amp; Industrial</a></li>
+            <li><a href="industry-professional.html">Professional Services</a></li>
+            <li><a href="industry-government.html">Government &amp; Public Sector</a></li>
+            <li><a href="industry-education.html">Education &amp; K-12</a></li>
+          </ul>
+        </div>
+        <div class="mega-divider"></div>
+        <div class="mega-featured">
+          <h5>Your Industry</h5>
+          <p>We serve businesses across every vertical. Talk to a specialist who knows your compliance requirements.</p>
+          <a href="contact.html" class="mfeat-link">Talk to a specialist &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <div class="nav-trigger">Why Racom <div class="nav-arr"></div></div>
+      <div class="mega" style="min-width:520px">
+        <div class="mega-col">
+          <h5>What Makes Us Different</h5>
+          <ul>
+            <li><a href="about.html">One Partner, One Invoice</a></li>
+            <li><a href="about.html">No Offshore Ticket Queues</a></li>
+            <li><a href="about.html">Dedicated Account Manager</a></li>
+            <li><a href="about.html">3,000+ Businesses Served</a></li>
+            <li><a href="about.html">200+ Carrier Partnerships</a></li>
+          </ul>
+        </div>
+        <div class="mega-col">
+          <h5>Proven Results</h5>
+          <ul>
+            <li><a href="case-studies.html">40% Telecom Cost Reduction</a></li>
+            <li><a href="case-studies.html">Zero Security Incidents 18mo</a></li>
+            <li><a href="case-studies.html">30% Lower Phone Costs</a></li>
+            <li><a href="case-studies.html">All Case Studies &rarr;</a></li>
+          </ul>
+        </div>
+        <div class="mega-divider"></div>
+        <div class="mega-featured">
+          <h5>See It For Yourself</h5>
+          <p>Free 30-minute technology review — no sales pitch, just real recommendations.</p>
+          <a href="contact.html" class="mfeat-link">Request free review &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <div class="nav-trigger">Resources <div class="nav-arr"></div></div>
+      <div class="mega" style="min-width:440px">
+        <div class="mega-col">
+          <h5>Learn</h5>
+          <ul>
+            <li><a href="blog.html">Blog &amp; Articles</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="white-papers.html">White Papers &amp; Guides</a></li>
+            <li><a href="technology-guides.html">Technology Comparisons</a></li>
+          </ul>
+        </div>
+        <div class="mega-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Racom</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="mega-divider"></div>
+        <div class="mega-featured">
+          <h5>Free MSP Guide</h5>
+          <p>12 questions to ask any IT provider before signing. No email required.</p>
+          <a href="white-papers.html" class="mfeat-link">Download free &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+    <div class="nav-item"><a href="store.html" class="nav-link">Store</a></div>
+  </div>
+  <div class="nav-right">
+    <span class="nav-phone">(866) 220-1422</span>
+    <a href="contact.html" class="btn-nav">Get a Quote</a>
+  </div>
+</nav>
+
+<section style="background:var(--navy);padding:5rem 2.5rem 4rem;border-bottom:1px solid var(--bdd);position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 60% 0%,rgba(74,144,217,.08) 0%,transparent 60%);pointer-events:none"></div>
+  <div style="max-width:1100px;margin:0 auto;position:relative;z-index:1">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:1rem">
+      <a href="index.html" style="font-size:12px;color:var(--muted2)">Home</a>
+      <span style="color:var(--muted2)">›</span>
+      <a href="index.html" style="font-size:12px;color:var(--muted2)">Industries</a><span style="color:var(--muted2)"> › </span><span style="font-size:12px;color:var(--blue3)">Healthcare</span>
+    </div>
+    <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin-bottom:.75rem">— Healthcare Technology —</div>
+    <h1 style="font-family:var(--ffc);font-size:clamp(2.5rem,5vw,4rem);font-weight:900;text-transform:uppercase;letter-spacing:-.03em;color:#fff;line-height:.95;margin-bottom:1.25rem">HIPAA-Compliant IT<br><span style="color:var(--blue3)">Built for Healthcare.</span></h1>
+    <p style="font-size:16px;color:var(--muted);max-width:620px;line-height:1.8;margin-bottom:2rem">Healthcare organizations face unique IT demands — patient data security, EHR uptime, multi-site connectivity, and strict HIPAA compliance. Racom delivers managed IT and telecom solutions purpose-built for clinical environments, so your team can focus on patient care.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a href="contact.html" style="display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:5px;background:var(--blue);color:#fff;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif">Get a Free Assessment</a>
+      <a href="tel:8662201422" style="display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:5px;background:transparent;color:rgba(255,255,255,.65);font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,.15);font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif">(866) 220-1422</a>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--navy2);padding:5rem 2.5rem;border-bottom:1px solid var(--bdd)">
+  <div style="max-width:1100px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+      <div style="background:var(--navy3);border:1px solid var(--bdd);border-top:2px solid var(--blue3);border-radius:8px;padding:1.75rem">
+        <div style="width:44px;height:44px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue3)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">HIPAA-Compliant Infrastructure</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.75">End-to-end encryption, secure email, MFA enforcement, and audit-ready documentation to keep your organization compliant and audit-ready year-round.</p>
+      </div>
+<div style="background:var(--navy3);border:1px solid var(--bdd);border-top:2px solid #34D399;border-radius:8px;padding:1.75rem">
+        <div style="width:44px;height:44px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">EHR & Clinical Connectivity</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.75">High-availability dedicated circuits and SD-WAN designed for EHR systems (Epic, Cerner, Meditech). Zero-downtime failover ensures patient records are always accessible.</p>
+      </div>
+<div style="background:var(--navy3);border:1px solid var(--bdd);border-top:2px solid var(--teal);border-radius:8px;padding:1.75rem">
+        <div style="width:44px;height:44px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Multi-Site Clinic Networks</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.75">Unified networking across hospitals, clinics, labs, and satellite offices. One management console, consistent security policies, single billing relationship.</p>
+      </div>
+<div style="background:var(--navy3);border:1px solid var(--bdd);border-top:2px solid #A78BFA;border-radius:8px;padding:1.75rem">
+        <div style="width:44px;height:44px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Medical Device & IoT Security</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.75">Network segmentation for medical devices, IoT endpoints, and BYOD. Keep clinical systems isolated from administrative networks to prevent lateral threat movement.</p>
+      </div>
+<div style="background:var(--navy3);border:1px solid var(--bdd);border-top:2px solid #F59E0B;border-radius:8px;padding:1.75rem">
+        <div style="width:44px;height:44px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Telehealth & UCaaS</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.75">Crystal-clear video conferencing and VoIP for telehealth visits. HIPAA-compliant communication platforms with call recording, secure messaging, and patient portal integration.</p>
+      </div>
+<div style="background:var(--navy3);border:1px solid var(--bdd);border-top:2px solid #34D399;border-radius:8px;padding:1.75rem">
+        <div style="width:44px;height:44px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">24/7 NOC & SOC Monitoring</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.75">Round-the-clock network operations and security operations center. We detect and respond to threats before they impact patient care or trigger a reportable breach.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--navy3);padding:4rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd)">
+  <div style="max-width:1100px;margin:0 auto">
+    <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin-bottom:.75rem;text-align:center">— Compliance & Standards —</div>
+    <h2 style="font-family:var(--ffc);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;text-transform:uppercase;color:#fff;text-align:center;margin-bottom:2rem">We Know Your Regulatory Landscape</h2>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:800px;margin:0 auto">
+      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:12px">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--blue3);flex-shrink:0;margin-top:4px"></div>
+          <div>
+            <div style="font-size:12.5px;font-weight:700;color:#fff;margin-bottom:2px">HIPAA</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.6">Full HIPAA compliance framework including BAA agreements, technical safeguards, and documentation</div>
+          </div>
+        </div>
+<div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:12px">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--blue3);flex-shrink:0;margin-top:4px"></div>
+          <div>
+            <div style="font-size:12.5px;font-weight:700;color:#fff;margin-bottom:2px">HITECH</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.6">HITECH Act compliance covering electronic PHI protection and breach notification requirements</div>
+          </div>
+        </div>
+<div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:12px">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--blue3);flex-shrink:0;margin-top:4px"></div>
+          <div>
+            <div style="font-size:12.5px;font-weight:700;color:#fff;margin-bottom:2px">SOC 2</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.6">SOC 2 Type II certified infrastructure for data security and availability</div>
+          </div>
+        </div>
+<div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:12px">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--blue3);flex-shrink:0;margin-top:4px"></div>
+          <div>
+            <div style="font-size:12.5px;font-weight:700;color:#fff;margin-bottom:2px">NIST CSF</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.6">NIST Cybersecurity Framework implementation for healthcare risk management</div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</section>
+
+<section style="background:linear-gradient(135deg,var(--navy3),var(--navy4));padding:4rem 2.5rem;border-top:1px solid var(--bdd)">
+  <div style="max-width:700px;margin:0 auto;text-align:center">
+    <h2 style="font-family:var(--ffc);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:900;text-transform:uppercase;color:#fff;margin-bottom:.75rem">Ready to Modernize Your Healthcare IT?</h2>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:1.75rem;line-height:1.75">Start with a free technology assessment. We'll review your current environment and build a plan around your specific compliance requirements and operational needs.</p>
+    <a href="contact.html" style="display:inline-flex;align-items:center;gap:8px;padding:13px 32px;border-radius:5px;background:var(--blue);color:#fff;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif">Get a Free Assessment</a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <a href="index.html" style="display:inline-block">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="44" width="185" aria-label="Racom Business">
+  <defs>
+    <radialGradient id="rcOrbSm" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#7dd8f0"/>
+      <stop offset="45%" stop-color="#29b6d8"/>
+      <stop offset="100%" stop-color="#0a6a8a"/>
+    </radialGradient>
+  </defs>
+  <circle cx="26" cy="26" r="23" fill="none" stroke="rgba(74,144,217,0.25)" stroke-width="1"/>
+  <path d="M 18 30 A 8 8 0 0 1 34 30" fill="none" stroke="#29c8e8" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 14 25.5 A 12 12 0 0 1 38 25.5" fill="none" stroke="#29c8e8" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+  <path d="M 10 21 A 16 16 0 0 1 42 21" fill="none" stroke="#4ab8d8" stroke-width="1.75" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 7 17 A 19 19 0 0 1 45 17" fill="none" stroke="#2a8ab0" stroke-width="1.25" stroke-linecap="round" opacity="0.35"/>
+  <circle cx="26" cy="33" r="4.5" fill="url(#rcOrbSm)"/>
+  <circle cx="26" cy="33" r="7" fill="none" stroke="#29c8e8" stroke-width="0.75" opacity="0.25"/>
+  <text x="58" y="26" font-family="'Arial Black','Arial',sans-serif" font-size="22" font-weight="900" fill="#ffffff" letter-spacing="2">RACOM</text>
+  <line x1="58" y1="31" x2="218" y2="31" stroke="rgba(30,74,120,0.8)" stroke-width="0.75"/>
+  <text x="60" y="43" font-family="'Arial','Helvetica',sans-serif" font-size="9.5" font-weight="600" fill="#29c8e8" letter-spacing="5.5">BUSINESS</text>
+</svg>
+    </a>
+      <p class="foot-tagline">Integrated Technology &amp; Communications Partner. Serving businesses across the US and internationally.</p>
+      <div class="foot-contact">
+        <a href="tel:8662201422">(866) 220-1422</a>
+        <a href="mailto:salessupport@racombusiness.com">salessupport@racombusiness.com</a>
+        <span>Serving Businesses Nationwide &amp; Internationally</span>
+      </div>
+    </div>
+    <div>
+      <h4>Solutions</h4>
+      <ul>
+        <li><a href="connectivity.html">Connectivity</a></li>
+        <li><a href="communications.html">Communications</a></li>
+        <li><a href="it-security.html">IT Support</a></li>
+        <li><a href="it-security.html">Security / MDR</a></li>
+        <li><a href="cloud-ai.html">Cloud</a></li>
+        <li><a href="cloud-ai.html">AI Automation</a></li>
+        <li><a href="hardware.html">Hardware</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html#partners">Partner Program</a></li>
+        <li><a href="contact.html">Careers</a></li>
+        <li><a href="contact.html">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Hardware store</h4>
+      <ul>
+        <li><a href="hardware.html">Laptops</a></li>
+        <li><a href="hardware.html">Desktops</a></li>
+        <li><a href="hardware.html">Networking</a></li>
+        <li><a href="hardware.html">Monitors</a></li>
+        <li><a href="hardware.html">Printers</a></li>
+        <li><a href="hardware.html">Servers</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p>&copy; 2025 Racom Business &middot; All Rights Reserved &middot; Available Nationwide</p>
+    <div class="foot-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+<script>
+const obs = new IntersectionObserver(e=>{
+  e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')});
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+document.querySelectorAll('.ind-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.ind-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.ind-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    const id = tab.dataset.panel;
+    if(id) document.getElementById(id)?.classList.add('active');
+  });
+});
+</script>
+
+<script>
+// Netlify Forms submission
+document.querySelectorAll('.cf-submit').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const form = btn.closest('.cform, .why-inner, [class*="form"]');
+    if (!form) { window.location = '/contact.html'; return; }
+    
+    const data = new FormData();
+    data.append('form-name', 'contact');
+    form.querySelectorAll('input, select, textarea').forEach(el => {
+      if (el.placeholder) data.append(el.type || el.tagName.toLowerCase(), el.value);
+    });
+    
+    fetch('/', { method: 'POST', body: data })
+      .then(() => {
+        btn.textContent = '✓ Message Sent! We'll be in touch within 1 business day.';
+        btn.style.background = '#16a34a';
+        btn.disabled = true;
+      })
+      .catch(() => { window.location = '/contact.html'; });
+  });
+});
+</script>
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .catch(() => {/* Silent fail */});
+      });
+    }
+  </script>
+
+  <!-- Mobile Bottom Navigation -->
+  <nav class="mobile-bottom-nav">
+    <a href="index.html" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+      </svg>
+      <span>Home</span>
+    </a>
+    <a href="#services" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V9.03l7-3.89v7.85z"/>
+      </svg>
+      <span>Services</span>
+    </a>
+    <a href="about.html" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+      </svg>
+      <span>About</span>
+    </a>
+    <a href="contact.html" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+      <span>Contact</span>
+    </a>
+  </nav>
+
+  <!-- Close mobile menu on overlay click -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(e) {
+        const navMenu = document.querySelector('.nav-menu');
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        if (navMenu && navMenu.classList.contains('active') && 
+            !navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+          navMenu.classList.remove('active');
+        }
+      });
+      
+      // Highlight active page in bottom nav
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('.mobile-bottom-nav a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

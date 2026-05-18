@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Preload critical resources -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<title>AWS Managed Services — Cloud Migration & Optimization | Racom Business</title>
+<meta name="description" content="Expert AWS management without hiring AWS engineers. Cloud migration, cost optimization, Well-Architected reviews, and 24/7 support for EC2, RDS, S3, Lambda, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ff:'Barlow',sans-serif;
+  --ffc:'Barlow Condensed',sans-serif;
+  --navy:#060E1C;
+  --navy2:#0D1A2E;
+  --navy3:#132238;
+  --navy4:#1A2D42;
+  --blue:#4A90D9;
+  --aws:#FF9900;
+  --aws2:#EC7211;
+  --aws3:#FFAC31;
+  --white:#fff;
+  --muted:rgba(255,255,255,0.55);
+  --muted2:rgba(255,255,255,0.35);
+  --muted3:rgba(255,255,255,0.15);
+  --bdd:rgba(255,255,255,0.08);
+  --bdd2:rgba(255,255,255,0.12);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;background:var(--navy);color:#fff;line-height:1.55;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--navy)}
+::-webkit-scrollbar-thumb{background:var(--aws2);border-radius:3px}
+a{text-decoration:none;color:inherit}
+
+/* ── TOPBAR ── */
+.topbar{
+  background:var(--navy2);border-bottom:1px solid var(--bdd);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:7px 2.5rem;font-size:12px;font-weight:500;
+}
+.topbar-left{display:flex;gap:1.75rem;align-items:center;color:var(--muted2)}
+.topbar-left a{color:var(--muted2);transition:color .15s}
+.topbar-left a:hover{color:#fff}
+.topbar-right{display:flex;gap:12px;align-items:center}
+.topbar-link{font-size:12px;color:var(--muted2);transition:color .15s}
+.topbar-link:hover{color:#fff}
+.topbar-sep{color:var(--muted3);font-size:10px}
+.topbar-cta{
+  font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--blue);border:1px solid rgba(74,144,217,0.35);
+  padding:4px 12px;border-radius:3px;transition:all .2s;
+}
+.topbar-cta:hover{background:rgba(74,144,217,.12);color:#fff}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(6,14,28,0.97);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--bdd);
+  height:68px;display:flex;align-items:stretch;padding:0 2.5rem;
+}
+.nav-logo{display:flex;align-items:center;margin-right:2rem;flex-shrink:0}
+.nav-logo svg{height:42px;width:auto}
+.nav-menu{display:flex;align-items:stretch;flex:1;justify-content:flex-start}
+.ni{position:relative;display:flex;align-items:center}
+.nav-link,.nt{
+  font-size:13px;font-weight:600;color:rgba(255,255,255,0.6);
+  padding:0 13px;height:68px;display:flex;align-items:center;gap:5px;
+  transition:all .2s;white-space:nowrap;cursor:pointer;
+  border:none;background:transparent;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;
+}
+.nav-link:hover,.nt:hover,.nav-link.active{color:#fff;background:rgba(255,255,255,.04)}
+.nav-link.active{border-bottom:2px solid var(--aws)}
+.nav-arr{
+  border-left:4px solid transparent;border-right:4px solid transparent;
+  border-top:4px solid rgba(255,255,255,0.38);
+  transition:transform .2s;margin-top:1px;flex-shrink:0;
+}
+.ni:hover .nav-arr{transform:rotate(180deg)}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;padding-left:1rem}
+.nav-phone{font-size:12.5px;color:rgba(255,255,255,0.38);font-weight:600;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;border-radius:4px;font-size:13px;font-weight:700;
+  background:var(--aws);color:#fff;border:none;cursor:pointer;
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;letter-spacing:.04em;
+}
+.btn-nav:hover{background:var(--aws2);transform:translateY(-1px)}
+
+/* ── BUTTONS ── */
+.btn-aws{
+  padding:13px 26px;border-radius:4px;font-size:14px;font-weight:700;
+  background:var(--aws);color:#fff;border:none;cursor:pointer;
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;
+  letter-spacing:.04em;display:inline-block;
+}
+.btn-aws:hover{background:var(--aws2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,153,0,.35)}
+.btn-ghost{
+  padding:13px 22px;border-radius:4px;font-size:14px;font-weight:700;
+  background:transparent;color:rgba(255,255,255,.75);
+  border:1px solid rgba(255,255,255,.2);cursor:pointer;
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;
+  letter-spacing:.04em;display:inline-block;
+}
+.btn-ghost:hover{border-color:rgba(255,255,255,.55);color:#fff}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);
+  border-bottom:1px solid var(--bdd);padding:6rem 2.5rem;
+  position:relative;overflow:hidden;
+}
+.hero-cloud{
+  position:absolute;top:10%;right:5%;
+  width:500px;height:300px;opacity:.04;
+  background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FF9900"><path d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>') center/contain no-repeat;
+}
+.hero-inner{
+  position:relative;z-index:2;max-width:1200px;margin:0 auto;
+  text-align:center;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--aws);border:1px solid rgba(255,153,0,.3);
+  padding:6px 14px;border-radius:100px;background:rgba(255,153,0,.08);
+  margin-bottom:1.5rem;
+}
+.hero h1{
+  font-family:var(--ffc);font-size:4rem;font-weight:900;
+  line-height:1.05;letter-spacing:-.02em;color:#fff;
+  max-width:900px;margin:0 auto 1.5rem;
+}
+.hero h1 .acc{
+  background:linear-gradient(135deg,var(--aws),var(--aws3));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero p{
+  font-size:16px;color:var(--muted);line-height:1.75;
+  max-width:720px;margin:0 auto 2.5rem;
+}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
+.hero-logos{
+  display:flex;justify-content:center;align-items:center;
+  gap:2rem;flex-wrap:wrap;padding-top:2rem;
+  border-top:1px solid var(--bdd);
+}
+.hero-logo-label{
+  font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted3);
+}
+.hero-logo{
+  padding:8px 20px;border-radius:6px;
+  background:rgba(255,255,255,.03);border:1px solid var(--bdd);
+  font-size:12px;font-weight:700;color:var(--muted2);
+  transition:all .2s;
+}
+.hero-logo:hover{
+  background:rgba(255,153,0,.1);border-color:rgba(255,153,0,.3);color:var(--aws);
+}
+
+/* ── SEC HEAD ── */
+.sec-head{text-align:center;max-width:700px;margin:0 auto 3.5rem}
+.sec-over{
+  font-size:10.5px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--aws);margin-bottom:.75rem;
+}
+.sec-head h2{
+  font-family:var(--ffc);font-size:2.6rem;font-weight:900;
+  line-height:1.1;color:#fff;margin-bottom:1rem;
+  text-transform:uppercase;letter-spacing:-.01em;
+}
+.sec-head p{font-size:14.5px;color:var(--muted);line-height:1.7}
+
+/* ── SERVICES GRID ── */
+.services{
+  padding:6rem 2.5rem;background:var(--navy2);
+  border-bottom:1px solid var(--bdd);
+}
+.serv-inner{max-width:1200px;margin:0 auto}
+.serv-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;
+  margin-top:3rem;
+}
+.serv-card{
+  background:var(--navy3);border:1px solid var(--bdd);
+  border-radius:10px;padding:2rem;transition:all .25s;
+  position:relative;overflow:hidden;
+}
+.serv-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--aws),var(--aws3));
+  opacity:0;transition:opacity .25s;
+}
+.serv-card:hover{
+  border-color:rgba(255,153,0,.4);transform:translateY(-4px);
+}
+.serv-card:hover::before{opacity:1}
+.serv-icon{
+  width:52px;height:52px;border-radius:10px;
+  background:rgba(255,153,0,.1);border:1px solid rgba(255,153,0,.25);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1.25rem;
+}
+.serv-icon svg{width:26px;height:26px;fill:var(--aws)}
+.serv-card h3{
+  font-size:16px;font-weight:700;color:#fff;
+  margin-bottom:.75rem;letter-spacing:-.01em;
+}
+.serv-card p{
+  font-size:13px;color:var(--muted);line-height:1.7;
+}
+
+/* ── MIGRATION PATH ── */
+.migration{
+  padding:6rem 2.5rem;background:var(--navy);
+  border-bottom:1px solid var(--bdd);
+}
+.mig-inner{max-width:1200px;margin:0 auto}
+.mig-path{
+  display:flex;align-items:center;gap:2rem;
+  margin-top:3rem;
+}
+.mig-step{
+  flex:1;background:var(--navy2);border:1px solid var(--bdd2);
+  border-radius:10px;padding:2rem;position:relative;
+}
+.mig-step::after{
+  content:"→";position:absolute;right:-1.5rem;top:50%;
+  transform:translateY(-50%);font-size:2rem;color:var(--aws);
+}
+.mig-step:last-child::after{display:none}
+.mig-num{
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(255,153,0,.15);border:2px solid var(--aws);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:900;color:var(--aws);
+  font-family:var(--ffc);margin-bottom:1rem;
+}
+.mig-step h3{
+  font-size:15px;font-weight:700;color:#fff;
+  margin-bottom:.75rem;letter-spacing:-.01em;
+}
+.mig-step p{
+  font-size:12.5px;color:var(--muted);line-height:1.7;
+  margin-bottom:1rem;
+}
+.mig-tag{
+  font-size:10px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--aws);
+  background:rgba(255,153,0,.1);border:1px solid rgba(255,153,0,.2);
+  padding:4px 10px;border-radius:4px;display:inline-block;
+}
+
+/* ── COST SAVINGS ── */
+.cost-savings{
+  padding:6rem 2.5rem;background:var(--navy3);
+  border-bottom:1px solid var(--bdd);
+}
+.cost-inner{max-width:1100px;margin:0 auto}
+.cost-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;
+  margin-top:3rem;align-items:start;
+}
+.cost-chart{
+  background:var(--navy2);border:1px solid var(--bdd2);
+  border-radius:10px;padding:2.5rem;
+}
+.cost-chart h3{
+  font-size:18px;font-weight:700;color:#fff;
+  margin-bottom:1.5rem;letter-spacing:-.01em;
+}
+.cost-bar{
+  margin-bottom:1.5rem;
+}
+.cost-bar-label{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:.5rem;
+}
+.cost-bar-name{font-size:12px;font-weight:600;color:rgba(255,255,255,.8)}
+.cost-bar-value{font-size:12px;font-weight:700;color:var(--aws)}
+.cost-bar-track{
+  height:24px;background:var(--navy4);border-radius:4px;
+  overflow:hidden;position:relative;
+}
+.cost-bar-fill{
+  height:100%;background:linear-gradient(90deg,var(--aws),var(--aws3));
+  border-radius:4px;display:flex;align-items:center;padding:0 10px;
+  font-size:11px;font-weight:700;color:#fff;
+}
+.cost-list{
+  display:flex;flex-direction:column;gap:1.25rem;
+}
+.cost-item{
+  background:var(--navy2);border:1px solid var(--bdd);
+  border-radius:8px;padding:1.5rem;
+  border-left:3px solid var(--aws);
+}
+.cost-item h4{
+  font-size:14px;font-weight:700;color:#fff;
+  margin-bottom:.5rem;letter-spacing:-.01em;
+}
+.cost-item p{
+  font-size:12.5px;color:var(--muted);line-height:1.7;
+}
+
+/* ── WELL-ARCHITECTED ── */
+.well-arch{
+  padding:6rem 2.5rem;background:var(--navy2);
+  border-bottom:1px solid var(--bdd);
+}
+.wa-inner{max-width:1200px;margin:0 auto}
+.wa-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;
+  margin-top:3rem;
+}
+.wa-pillar{
+  background:var(--navy3);border:1px solid var(--bdd);
+  border-radius:8px;padding:1.75rem;text-align:center;
+  transition:all .25s;
+}
+.wa-pillar:hover{
+  border-color:rgba(255,153,0,.4);transform:translateY(-4px);
+}
+.wa-icon{
+  width:48px;height:48px;border-radius:50%;
+  background:rgba(255,153,0,.12);border:1px solid rgba(255,153,0,.25);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1rem;
+}
+.wa-icon svg{width:24px;height:24px;fill:var(--aws)}
+.wa-pillar h3{
+  font-size:13px;font-weight:700;color:#fff;
+  margin-bottom:.5rem;letter-spacing:-.01em;
+}
+.wa-pillar p{
+  font-size:11px;color:var(--muted2);line-height:1.6;
+}
+
+/* ── CTA ── */
+.cta-sec{
+  padding:5rem 2.5rem;background:var(--navy);
+  border-bottom:1px solid var(--bdd);
+}
+.cta-inner{
+  max-width:900px;margin:0 auto;text-align:center;
+}
+.cta-inner h2{
+  font-family:var(--ffc);font-size:2.8rem;font-weight:900;
+  line-height:1.1;color:#fff;margin-bottom:1.25rem;
+  text-transform:uppercase;letter-spacing:-.02em;
+}
+.cta-inner p{
+  font-size:15px;color:var(--muted);line-height:1.7;
+  margin-bottom:2.5rem;
+}
+.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--navy);border-top:2px solid var(--aws);
+  padding:4rem 2.5rem 2rem;
+}
+.footer-grid{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;
+  margin-bottom:3rem;
+}
+footer h4{
+  font-size:10px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:rgba(255,255,255,.35);
+  margin-bottom:1rem;border-bottom:1px solid var(--bdd);
+  padding-bottom:.75rem;
+}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+footer li a{
+  font-size:13px;color:rgba(255,255,255,.4);font-weight:500;
+  transition:all .2s;display:flex;align-items:center;gap:6px;
+}
+footer li a::before{content:"›";color:var(--aws);font-size:13px}
+footer li a:hover{color:#fff;padding-left:4px}
+.footer-brand p{
+  font-size:13px;color:rgba(255,255,255,.3);
+  line-height:1.7;margin:.75rem 0 1.25rem;max-width:280px;
+}
+.footer-contact a{
+  display:block;font-size:13.5px;color:var(--aws);
+  font-weight:700;margin-bottom:4px;transition:color .2s;
+}
+.footer-contact a:hover{color:#fff}
+.footer-bottom{
+  max-width:1200px;margin:0 auto;border-top:1px solid var(--bdd);
+  padding-top:2rem;display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:1rem;
+}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,.2)}
+.footer-links{display:flex;gap:20px}
+.footer-links a{
+  font-size:12px;color:rgba(255,255,255,.2);transition:color .2s;
+}
+.footer-links a:hover{color:rgba(255,255,255,.6)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .hero h1{font-size:3rem}
+  .serv-grid{grid-template-columns:repeat(2,1fr)}
+  .mig-path{flex-direction:column;gap:2rem}
+  .mig-step::after{display:none}
+  .cost-grid{grid-template-columns:1fr}
+  .wa-grid{grid-template-columns:repeat(3,1fr)}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .topbar{display:none}
+  nav{padding:0 1.25rem}.nav-menu{display:none}
+  .hero h1{font-size:2.4rem}
+  .serv-grid,.wa-grid{grid-template-columns:1fr}
+}
+
+/* ── NAVIGATION ── */
+nav{position:sticky;top:0;z-index:200;background:rgba(6,14,28,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdd);height:68px;display:flex;align-items:center;padding:0 2.5rem;gap:0}
+.nav-logo{display:flex;align-items:center;margin-right:2rem;flex-shrink:0}
+.nav-logo svg{height:42px;width:auto}
+.nav-menu{display:flex;align-items:stretch;flex:1;justify-content:flex-start}
+.ni{position:relative;display:flex;align-items:center}
+.nl,.nt{font-size:13px;font-weight:600;color:rgba(255,255,255,0.6);padding:0 13px;height:68px;display:flex;align-items:center;gap:5px;transition:all .2s;white-space:nowrap;cursor:pointer;border:none;background:transparent;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;background:rgba(255,255,255,.04)}
+.nl.active{border-bottom:2px solid var(--blue)}
+.narr{border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid rgba(255,255,255,0.35);transition:transform .2s;margin-top:1px;flex-shrink:0}
+.ni:hover .narr{transform:rotate(180deg)}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;padding-left:1rem}
+.nav-phone{font-size:12.5px;color:rgba(255,255,255,0.38);font-weight:600;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;border-radius:4px;font-size:13px;font-weight:700;background:var(--blue);color:#fff;border:none;cursor:pointer;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;letter-spacing:.04em}
+.btn-nav:hover{background:var(--blue2);transform:translateY(-1px)}
+
+/* ── MEGA MENU ── */
+.mega{display:none;position:absolute;top:68px;left:0;background:var(--navy3);border:1px solid var(--bdd2);border-top:2px solid var(--blue);border-radius:0 0 8px 8px;padding:2rem;box-shadow:0 24px 60px rgba(0,0,0,0.65);z-index:300;min-width:680px;gap:2rem}
+.ni:hover .mega{display:flex}
+.mc{min-width:150px}
+.mc h5{font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin:0 0 .55rem;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif}
+.mc ul{list-style:none;display:flex;flex-direction:column;gap:1px}
+.mc a{font-size:12.5px;font-weight:500;color:rgba(255,255,255,.5);padding:6px 10px;border-radius:4px;display:flex;align-items:center;gap:7px;transition:all .15s}
+.mc a:hover{color:#fff;background:rgba(74,144,217,.1);padding-left:14px}
+.mc a::before{content:"›";color:var(--blue3);font-size:13px}
+.mdiv{width:1px;background:var(--bdd);flex-shrink:0}
+.mfeat{background:var(--navy4);border:1px solid var(--bdd);border-radius:6px;padding:1.25rem;min-width:190px}
+.mfeat h5{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin-bottom:.6rem}
+.mfeat p{font-size:12px;color:var(--muted2);line-height:1.6;margin-bottom:.85rem}
+.mfeat-link{font-size:12px;font-weight:700;color:var(--blue3);display:inline-flex;align-items:center;gap:5px;transition:color .15s}
+.mfeat-link:hover{color:#fff}
+
+
+
+/* ========================================
+   MOBILE-FIRST APP-LIKE ENHANCEMENTS
+   Add this CSS to make the site feel like a native app
+   ======================================== */
+
+/* Mobile Navigation Enhancements */
+@media (max-width: 768px) {
+  
+  /* Hide desktop navigation on mobile */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 85%;
+    max-width: 320px;
+    height: 100vh;
+    background: linear-gradient(135deg, #060E1C 0%, #0D1E35 100%);
+    z-index: 9999;
+    transition: left 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    overflow-y: auto;
+    box-shadow: 2px 0 20px rgba(0,0,0,0.5);
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  /* Mobile Menu Button */
+  .mobile-menu-btn {
+    display: block !important;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    background: linear-gradient(135deg, #4A90D9, #2B5F8A);
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(74, 144, 217, 0.4);
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-menu-btn:active {
+    transform: scale(0.95);
+  }
+  
+  .mobile-menu-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    margin: 5px auto;
+    transition: 0.3s;
+    border-radius: 2px;
+  }
+  
+  /* Bottom Navigation Bar (Like Mobile Apps) */
+  .mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(6, 14, 28, 0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .mobile-bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 12px;
+  }
+  
+  .mobile-bottom-nav a.active,
+  .mobile-bottom-nav a:active {
+    color: #4A90D9;
+    background: rgba(74, 144, 217, 0.1);
+  }
+  
+  .mobile-bottom-nav svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Card-based Layout for Mobile */
+  .service-card,
+  .feature-card,
+  .content-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    margin-bottom: 16px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+  }
+  
+  .service-card:active,
+  .feature-card:active {
+    transform: scale(0.98) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  /* Mobile Typography */
+  h1 {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+  }
+  
+  h2 {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+  }
+  
+  h3 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+  
+  p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Touch-Optimized Buttons */
+  button,
+  .btn,
+  .cta-button,
+  a[href^="tel"],
+  a[href^="mailto"] {
+    min-height: 48px !important;
+    padding: 12px 24px !important;
+    border-radius: 12px !important;
+    font-size: 16px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+  }
+  
+  button:active,
+  .btn:active,
+  .cta-button:active {
+    transform: scale(0.96) !important;
+  }
+  
+  /* Mobile Spacing */
+  section {
+    padding: 24px 20px !important;
+  }
+  
+  /* Pull-to-Refresh Indicator */
+  .pull-to-refresh {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-60px);
+    background: rgba(74, 144, 217, 0.95);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(74, 144, 217, 0.4);
+    transition: transform 0.3s ease;
+    z-index: 10000;
+  }
+  
+  .pull-to-refresh.active {
+    transform: translateX(-50%) translateY(20px);
+  }
+  
+  /* Smooth Scrolling */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Hide Scrollbar but keep functionality */
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* App-like Header */
+  header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 999 !important;
+    background: rgba(6, 14, 28, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  /* Safe Area Insets for iPhone */
+  @supports(padding: max(0px)) {
+    body {
+      padding-left: max(0px, env(safe-area-inset-left));
+      padding-right: max(0px, env(safe-area-inset-right));
+    }
+    
+    .mobile-bottom-nav {
+      padding-bottom: max(8px, env(safe-area-inset-bottom));
+    }
+  }
+  
+  /* Footer padding for bottom nav */
+  footer {
+    padding-bottom: 80px !important;
+  }
+}
+
+/* Tablet Optimization (iPad) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+  
+  .service-card {
+    padding: 24px !important;
+  }
+  
+  h1 {
+    font-size: 48px !important;
+  }
+  
+  h2 {
+    font-size: 36px !important;
+  }
+}
+
+/* Loading Animation */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #4A90D9;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Haptic Feedback Simulation */
+@keyframes tap-feedback {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.96); }
+  100% { transform: scale(1); }
+}
+
+.tap-feedback:active {
+  animation: tap-feedback 0.2s ease;
+}
+
+</style>
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#4A90D9">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Racom Business">
+  
+</head>
+<body>
+  <!-- Mobile Menu Button -->
+  <button class="mobile-menu-btn" onclick="document.querySelector('.nav-menu').classList.toggle('active')" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <a href="tel:8662201422">(866) 220-1422</a>
+    <span class="topbar-sep">|</span>
+    <a href="mailto:salessupport@racombusiness.com">salessupport@racombusiness.com</a>
+    <span class="topbar-sep">|</span>
+    <span>Serving Businesses Nationwide &amp; Internationally</span>
+  </div>
+  <div class="topbar-right">
+    <a href="contact.html" class="topbar-link">Careers</a>
+    <span class="topbar-sep">|</span>
+    <a href="blog.html" class="topbar-link">Resources</a>
+    <span class="topbar-sep">|</span>
+    <a href="store.html" class="topbar-link" style="color:var(--blue);font-weight:700">&#9673; Store</a>
+    <span class="topbar-sep">|</span>
+    <a href="contact.html" class="topbar-cta">Free Assessment</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo-wrap">
+  <img loading="lazy" src="logo-racom.svg" alt="Racom Business" height="52" width="auto" style="height:52px; width:auto;">
+  </a>
+  <div class="nav-menu">
+    <div class="ni">
+      <div class="nt">Services <div class="narr"></div></div>
+      <div class="mega" style="min-width:580px">
+        <div class="mc">
+          <h5>Connect &amp; Communicate</h5>
+          <ul>
+            <li><a href="svc-fiber-internet.html">Business Fiber &amp; Internet</a></li>
+            <li><a href="svc-fiber-internet.html">Dedicated Circuits</a></li>
+            <li><a href="svc-sdwan.html">SD-WAN &amp; SASE</a></li>
+            <li><a href="svc-ucaas.html">Cloud VoIP &amp; UCaaS</a></li>
+            <li><a href="communications.html">Contact Center (CCaaS)</a></li>
+            <li><a href="svc-pots.html">POTS Line Replacement</a></li>
+          </ul>
+        </div>
+        <div class="mc">
+          <h5>Manage &amp; Secure</h5>
+          <ul>
+            <li><a href="svc-rmm.html">24/7 Remote Monitoring</a></li>
+            <li><a href="svc-helpdesk.html">Helpdesk &amp; Service Desk</a></li>
+            <li><a href="it-security.html">Co-Managed IT</a></li>
+            <li><a href="svc-edr.html">Endpoint Detection (EDR)</a></li>
+            <li><a href="svc-mdr.html">MDR &amp; 24×7 SOC</a></li>
+            <li><a href="it-security.html">Zero Trust &amp; MFA</a></li>
+          </ul>
+        </div>
+        <div class="mc">
+          <h5>Cloud &amp; Equip</h5>
+          <ul>
+            <li><a href="svc-m365.html">Microsoft 365 &amp; Azure</a></li>
+            <li><a href="cloud-ai.html">AWS Managed Services</a></li>
+            <li><a href="svc-backup.html">Backup &amp; Disaster Recovery</a></li>
+            <li><a href="cloud-ai.html">AI &amp; Workflow Automation</a></li>
+            <li><a href="hardware.html">Servers &amp; Storage</a></li>
+            <li><a href="store.html">Browse 2,400+ Products &rarr;</a></li>
+          </ul>
+        </div>
+        <div class="mdiv"></div>
+        <div class="mfeat">
+          <h5>Not sure where to start?</h5>
+          <p>Free technology assessment — we audit your environment and build a roadmap at no cost.</p>
+          <a href="contact.html" class="mfeat-link">Book free assessment &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="ni">
+      <div class="nt">Industries <div class="narr"></div></div>
+      <div class="mega" style="min-width:540px">
+        <div class="mc">
+          <h5>Industries We Serve</h5>
+          <ul>
+            <li><a href="industry-healthcare.html">Healthcare &amp; Medical Groups</a></li>
+            <li><a href="industry-financial.html">Financial Services &amp; Fintech</a></li>
+            <li><a href="industry-manufacturing.html">Manufacturing &amp; Industrial</a></li>
+            <li><a href="industry-professional.html">Professional Services</a></li>
+            <li><a href="industry-government.html">Government &amp; Public Sector</a></li>
+            <li><a href="industry-education.html">Education &amp; K-12</a></li>
+          </ul>
+        </div>
+        <div class="mdiv"></div>
+        <div class="mfeat">
+          <h5>Your Industry</h5>
+          <p>We serve businesses across every vertical. Talk to a specialist who knows your compliance and connectivity requirements.</p>
+          <a href="contact.html" class="mfeat-link">Talk to a specialist &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="ni">
+      <div class="nt">Why Racom <div class="narr"></div></div>
+      <div class="mega" style="min-width:520px">
+        <div class="mc">
+          <h5>What Makes Us Different</h5>
+          <ul>
+            <li><a href="about.html">One Partner, One Invoice</a></li>
+            <li><a href="about.html">No Offshore Ticket Queues</a></li>
+            <li><a href="about.html">Dedicated Account Manager</a></li>
+            <li><a href="about.html">3,000+ Businesses Served</a></li>
+            <li><a href="about.html">200+ Carrier Partnerships</a></li>
+          </ul>
+        </div>
+        <div class="mc">
+          <h5>Proven Results</h5>
+          <ul>
+            <li><a href="case-studies.html">40% Telecom Cost Reduction</a></li>
+            <li><a href="case-studies.html">Zero Security Incidents 18mo</a></li>
+            <li><a href="case-studies.html">30% Lower Phone Costs</a></li>
+            <li><a href="case-studies.html">All Case Studies &rarr;</a></li>
+          </ul>
+        </div>
+        <div class="mdiv"></div>
+        <div class="mfeat">
+          <h5>See It For Yourself</h5>
+          <p>Free 30-minute technology review with a certified engineer — no sales pitch, just real recommendations.</p>
+          <a href="contact.html" class="mfeat-link">Request free review &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="ni">
+      <div class="nt">Resources <div class="narr"></div></div>
+      <div class="mega" style="min-width:440px">
+        <div class="mc">
+          <h5>Learn</h5>
+          <ul>
+            <li><a href="blog.html">Blog &amp; Articles</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="white-papers.html">White Papers &amp; Guides</a></li>
+            <li><a href="technology-guides.html">Technology Comparisons</a></li>
+          </ul>
+        </div>
+        <div class="mc">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Racom</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="mdiv"></div>
+        <div class="mfeat">
+          <h5>Free MSP Guide</h5>
+          <p>12 questions to ask any IT provider before signing. No email required.</p>
+          <a href="white-papers.html" class="mfeat-link">Download free &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="ni"><a href="about.html" class="nl">About</a></div>
+    <div class="ni"><a href="store.html" class="nl">Store</a></div>
+  </div>
+  <div class="nav-right">
+    <span class="nav-phone">(866) 220-1422</span>
+    <a href="contact.html" class="btn-nav">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-cloud"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">AWS Advanced Tier Partner</div>
+    <h1>AWS Expertise <span class="acc">Without Hiring AWS Experts</span></h1>
+    <p>
+      Managed AWS services with certified solutions architects, 24/7 support, and cost optimization. 
+      Migrate from on-premise, optimize existing workloads, or build new cloud-native apps. Pay for expertise, not headcount.
+    </p>
+    <div class="hero-ctas">
+      <a href="contact.html" class="btn-aws">Free AWS Assessment</a>
+      <a href="#services" class="btn-ghost">View Services</a>
+    </div>
+    <div class="hero-logos">
+      <span class="hero-logo-label">We Manage:</span>
+      <span class="hero-logo">EC2</span>
+      <span class="hero-logo">RDS</span>
+      <span class="hero-logo">S3</span>
+      <span class="hero-logo">Lambda</span>
+      <span class="hero-logo">ECS</span>
+      <span class="hero-logo">CloudFront</span>
+      <span class="hero-logo">VPC</span>
+      <span class="hero-logo">Route 53</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="serv-inner">
+    <div class="sec-head">
+      <div class="sec-over">What We Manage</div>
+      <h2>Full-Stack AWS Operations</h2>
+      <p>From infrastructure to application layer, we handle the AWS complexity so your team can focus on building products.</p>
+    </div>
+    <div class="serv-grid">
+      <div class="serv-card">
+        <div class="serv-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>Compute (EC2, ECS, EKS, Lambda)</h3>
+        <p>Right-size instances, auto-scaling, container orchestration, serverless functions. We monitor performance and optimize for cost.</p>
+      </div>
+      
+      <div class="serv-card">
+        <div class="serv-icon">
+          <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
+        <h3>Databases (RDS, Aurora, DynamoDB)</h3>
+        <p>Multi-AZ failover, automated backups, read replicas, query optimization. Support for MySQL, PostgreSQL, Oracle, SQL Server, NoSQL.</p>
+      </div>
+      
+      <div class="serv-card">
+        <div class="serv-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>Storage (S3, EBS, EFS, Glacier)</h3>
+        <p>Object storage, block volumes, file systems, archival. Lifecycle policies, encryption at rest, cross-region replication.</p>
+      </div>
+      
+      <div class="serv-card">
+        <div class="serv-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3>Networking (VPC, Direct Connect, Route 53)</h3>
+        <p>Private subnets, security groups, NACLs, transit gateways. Hybrid connectivity to on-premise datacenters. DNS management.</p>
+      </div>
+      
+      <div class="serv-card">
+        <div class="serv-icon">
+          <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </div>
+        <h3>Security (IAM, KMS, WAF, Shield)</h3>
+        <p>Least-privilege access, encryption key management, DDoS protection, web application firewall. Compliance audits (SOC 2, HIPAA).</p>
+      </div>
+      
+      <div class="serv-card">
+        <div class="serv-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Monitoring (CloudWatch, CloudTrail)</h3>
+        <p>Metrics dashboards, log aggregation, alerting, anomaly detection. 24/7 NOC watches your infrastructure and escalates issues.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MIGRATION PATH -->
+<section class="migration">
+  <div class="mig-inner">
+    <div class="sec-head">
+      <div class="sec-over">Cloud Journey</div>
+      <h2>3 Migration Strategies</h2>
+      <p>Choose your path based on timeline, budget, and technical debt. We've done all three hundreds of times.</p>
+    </div>
+    <div class="mig-path">
+      <div class="mig-step">
+        <div class="mig-num">1</div>
+        <h3>Lift & Shift (Rehost)</h3>
+        <p>
+          Move VMs to EC2 as-is using AWS Migration Hub or CloudEndure. Fastest path to cloud 
+          (2-4 weeks typical). No code changes. Good for legacy apps or urgent datacenter exits.
+        </p>
+        <span class="mig-tag">Fastest</span>
+      </div>
+      
+      <div class="mig-step">
+        <div class="mig-num">2</div>
+        <h3>Re-Platform (Lift-Tinker-Shift)</h3>
+        <p>
+          Migrate with minor optimizations — replace SQL Server with RDS, use ELB instead of hardware 
+          load balancers. Balance speed (8-12 weeks) with cloud-native benefits.
+        </p>
+        <span class="mig-tag">Balanced</span>
+      </div>
+      
+      <div class="mig-step">
+        <div class="mig-num">3</div>
+        <h3>Re-Architect (Refactor)</h3>
+        <p>
+          Rebuild apps as microservices, serverless, or containers. Maximum cost savings and scalability. 
+          Longer timeline (3-6 months) but future-proof architecture.
+        </p>
+        <span class="mig-tag">Best ROI</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COST SAVINGS -->
+<section class="cost-savings">
+  <div class="cost-inner">
+    <div class="sec-head">
+      <div class="sec-over">Proven Results</div>
+      <h2>Average 40% Cost Reduction</h2>
+      <p>Real savings from our AWS optimization engagements. Most clients see ROI within 6 months.</p>
+    </div>
+    <div class="cost-grid">
+      <div class="cost-chart">
+        <h3>Before vs. After Optimization</h3>
+        <div class="cost-bar">
+          <div class="cost-bar-label">
+            <span class="cost-bar-name">Before Optimization</span>
+            <span class="cost-bar-value">$24,800/mo</span>
+          </div>
+          <div class="cost-bar-track">
+            <div class="cost-bar-fill" style="width:100%">100%</div>
+          </div>
+        </div>
+        <div class="cost-bar">
+          <div class="cost-bar-label">
+            <span class="cost-bar-name">After Optimization</span>
+            <span class="cost-bar-value">$14,900/mo</span>
+          </div>
+          <div class="cost-bar-track">
+            <div class="cost-bar-fill" style="width:60%">40% Savings</div>
+          </div>
+        </div>
+        <div class="cost-bar">
+          <div class="cost-bar-label">
+            <span class="cost-bar-name">Annual Savings</span>
+            <span class="cost-bar-value">$118,800/yr</span>
+          </div>
+          <div class="cost-bar-track">
+            <div class="cost-bar-fill" style="width:80%">$118.8K</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="cost-list">
+        <div class="cost-item">
+          <h4>Right-Sizing Instances</h4>
+          <p>Downgrade over-provisioned EC2 from m5.2xlarge to m5.xlarge. Use Reserved Instances for steady workloads, Spot for batch jobs.</p>
+        </div>
+        <div class="cost-item">
+          <h4>S3 Lifecycle Policies</h4>
+          <p>Move infrequently accessed objects to S3 Glacier after 90 days. Delete log files older than 1 year. Typical 70% storage cost reduction.</p>
+        </div>
+        <div class="cost-item">
+          <h4>Auto-Scaling Tuning</h4>
+          <p>Scale down non-prod environments nights & weekends. Schedule Lambda functions instead of running 24/7. Shut down unused resources.</p>
+        </div>
+        <div class="cost-item">
+          <h4>Database Optimization</h4>
+          <p>Convert Aurora to Aurora Serverless v2 for variable traffic. Use read replicas instead of running duplicate production RDS instances.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WELL-ARCHITECTED -->
+<section class="well-arch">
+  <div class="wa-inner">
+    <div class="sec-head">
+      <div class="sec-over">AWS Best Practices</div>
+      <h2>Well-Architected Framework Review</h2>
+      <p>We audit your AWS environment against Amazon's 5 pillars and provide a detailed remediation roadmap.</p>
+    </div>
+    <div class="wa-grid">
+      <div class="wa-pillar">
+        <div class="wa-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Operational Excellence</h3>
+        <p>IaC, CI/CD pipelines, monitoring, incident response, documentation</p>
+      </div>
+      
+      <div class="wa-pillar">
+        <div class="wa-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3>Security</h3>
+        <p>IAM policies, encryption, network isolation, logging, compliance</p>
+      </div>
+      
+      <div class="wa-pillar">
+        <div class="wa-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <h3>Reliability</h3>
+        <p>Multi-AZ, auto-scaling, backups, disaster recovery, fault tolerance</p>
+      </div>
+      
+      <div class="wa-pillar">
+        <div class="wa-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Performance</h3>
+        <p>Right-sizing, caching, CDN, database optimization, serverless</p>
+      </div>
+      
+      <div class="wa-pillar">
+        <div class="wa-icon">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>Cost Optimization</h3>
+        <p>Reserved capacity, Spot instances, S3 lifecycle, unused resources</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="cta-inner">
+    <h2>Ready to Optimize Your AWS Environment?</h2>
+    <p>
+      Free Well-Architected review — we'll audit your setup, identify cost savings opportunities, 
+      and recommend security improvements. No obligation, just actionable insights.
+    </p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn-aws">Schedule AWS Review</a>
+      <a href="tel:8662201422" class="btn-ghost">Call (866) 220-1422</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h4>Racom Business</h4>
+      <p>Integrated technology and communications partner. Managed IT, UCaaS, SD-WAN, cybersecurity, cloud, and hardware reseller.</p>
+      <div class="footer-contact">
+        <a href="tel:8662201422">(866) 220-1422</a>
+        <a href="mailto:salessupport@racombusiness.com">salessupport@racombusiness.com</a>
+      </div>
+    </div>
+    <div>
+      <h4>Solutions</h4>
+      <ul>
+        <li><a href="svc-fiber-internet.html">Connectivity</a></li>
+        <li><a href="svc-ucaas.html">Communications</a></li>
+        <li><a href="it-security.html">Security / MDR</a></li>
+        <li><a href="cloud-ai.html">Cloud &amp; AI</a></li>
+        <li><a href="hardware.html">Hardware</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="white-papers.html">White Papers</a></li>
+        <li><a href="technology-guides.html">Tech Guides</a></li>
+        <li><a href="store.html">Store</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Racom Business &middot; All Rights Reserved</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .catch(() => {/* Silent fail */});
+      });
+    }
+  </script>
+
+  <!-- Mobile Bottom Navigation -->
+  <nav class="mobile-bottom-nav">
+    <a href="index.html" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+      </svg>
+      <span>Home</span>
+    </a>
+    <a href="#services" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V9.03l7-3.89v7.85z"/>
+      </svg>
+      <span>Services</span>
+    </a>
+    <a href="about.html" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+      </svg>
+      <span>About</span>
+    </a>
+    <a href="contact.html" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+      <span>Contact</span>
+    </a>
+  </nav>
+
+  <!-- Close mobile menu on overlay click -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(e) {
+        const navMenu = document.querySelector('.nav-menu');
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        if (navMenu && navMenu.classList.contains('active') && 
+            !navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+          navMenu.classList.remove('active');
+        }
+      });
+      
+      // Highlight active page in bottom nav
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('.mobile-bottom-nav a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

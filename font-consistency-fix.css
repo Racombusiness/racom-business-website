@@ -1,0 +1,74 @@
+/* COMPREHENSIVE FONT CONSISTENCY FIX */
+/* Apply Inter font family to ALL navigation and menu elements */
+
+/* Main navigation */
+.nav-menu,
+.nav-link,
+.nav-trigger,
+.nl,
+.nt,
+nav button,
+nav a {
+  font-family: 'Inter', 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* Mega menu dropdowns */
+.mega,
+.mc,
+.mc h5,
+.mc a,
+.mega-col h5,
+.mfeat,
+.mfeat h5,
+.mfeat p,
+.mfeat-link {
+  font-family: 'Inter', 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* Top bar */
+.topbar,
+.topbar-left,
+.topbar-right,
+.topbar a,
+.topbar-link,
+.topbar-cta {
+  font-family: 'Inter', 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* Practice bar */
+.pbar,
+.pa,
+.pa-l {
+  font-family: 'Inter', 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* Industries tabs */
+.ind-tabs,
+.ind-tab {
+  font-family: 'Inter', 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* All buttons */
+button,
+.btn,
+.btn-blue,
+.btn-ghost,
+.btn-outline,
+.btn-nav {
+  font-family: 'Inter', 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* Mobile menu */
+.mobile-bottom-nav,
+.mobile-bottom-nav a {
+  font-family: 'Inter', 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* Footer */
+footer,
+footer a,
+footer h4,
+footer li,
+.flinks a {
+  font-family: 'Inter', 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+}

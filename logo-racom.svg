@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" height="64" width="260" aria-label="Racom Business">
+  <defs>
+    <!-- Sophisticated blue gradient -->
+    <linearGradient id="corporateBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A90D9"/>
+      <stop offset="100%" stop-color="#2B5F8A"/>
+    </linearGradient>
+    
+    <!-- Accent gradient -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6AAEE8"/>
+      <stop offset="100%" stop-color="#4A90D9"/>
+    </linearGradient>
+    
+    <!-- Premium white gradient for text -->
+    <linearGradient id="whiteGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="80%" stop-color="#F0F8FF"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Minimalist outer frame - very subtle -->
+  <circle cx="32" cy="32" r="28" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  
+  <!-- Clean, modern signal design - more architectural -->
+  <g opacity="0.95">
+    <path d="M 22 36 Q 32 28, 42 36" fill="none" stroke="url(#accentGrad)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 18 32 Q 32 22, 46 32" fill="none" stroke="url(#accentGrad)" stroke-width="2.5" stroke-linecap="round" opacity="0.75"/>
+    <path d="M 14 28 Q 32 16, 50 28" fill="none" stroke="url(#accentGrad)" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <path d="M 10 24 Q 32 10, 54 24" fill="none" stroke="url(#accentGrad)" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+  </g>
+  
+  <!-- Refined center point -->
+  <circle cx="32" cy="38" r="4.5" fill="url(#corporateBlue)"/>
+  <circle cx="32" cy="38" r="3" fill="#6AAEE8" opacity="0.8"/>
+  <circle cx="31" cy="37" r="1.5" fill="#FFFFFF" opacity="0.6"/>
+  
+  <!-- Minimal professional ring -->
+  <circle cx="32" cy="38" r="8" fill="none" stroke="#6AAEE8" stroke-width="0.4" opacity="0.15"/>
+  
+  <!-- RACOM - Premium typography -->
+  <text x="74" y="34" font-family="'SF Pro Display','Segoe UI','Helvetica Neue',sans-serif" font-size="26" font-weight="600" fill="url(#whiteGrad)" letter-spacing="0.5">RACOM</text>
+  
+  <!-- Ultra-thin professional divider -->
+  <line x1="74" y1="40" x2="256" y2="40" stroke="rgba(106,174,232,0.2)" stroke-width="0.75"/>
+  
+  <!-- BUSINESS - clean, spaced -->
+  <text x="76" y="54" font-family="'SF Pro Display','Segoe UI','Helvetica Neue',sans-serif" font-size="9.5" font-weight="500" fill="#6AAEE8" letter-spacing="7" opacity="0.9">BUSINESS</text>
+  
+  <!-- Optional: Subtle corner accent for premium feel -->
+  <circle cx="32" cy="32" r="30" fill="none" stroke="url(#accentGrad)" stroke-width="0.25" opacity="0.1"/>
+</svg>

@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud Migration Checklist | Racom Business</title>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#4A90D9">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ff:'Barlow',sans-serif;
+  --ffc:'Barlow Condensed',sans-serif;
+  --navy:#060E1C;
+  --navy2:#0A1628;
+  --navy3:#0D1E35;
+  --navy4:#112444;
+  --navy5:#162D50;
+  --blue:#4A90D9;
+  --blue2:#3578C4;
+  --blue3:#6AAEE8;
+  --blue4:#A8D4F7;
+  --teal:#00BCD4;
+  --teal2:#00A8BE;
+  --sky:#5BAEF5;
+  --muted:rgba(255,255,255,0.55);
+  --muted2:rgba(255,255,255,0.35);
+  --muted3:rgba(255,255,255,0.15);
+  --bdd:rgba(255,255,255,0.07);
+  --bdd2:rgba(255,255,255,0.12);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;background:var(--navy);color:#fff;line-height:1.55;overflow-x:hidden}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--navy)}
+::-webkit-scrollbar-thumb{background:var(--blue2);border-radius:2px}
+a{text-decoration:none;color:inherit}
+
+/* ─── TOPBAR ─── */
+.topbar{background:var(--navy3);border-bottom:1px solid var(--bdd);display:flex;align-items:center;justify-content:space-between;padding:7px 2.5rem;font-size:11.5px}
+.tb-left{display:flex;gap:1.5rem;align-items:center;color:var(--muted2)}
+.tb-left a{color:var(--muted2);transition:color .15s}.tb-left a:hover{color:#fff}
+.tb-sep{color:var(--muted3);font-size:9px}
+.tb-right{display:flex;gap:10px;align-items:center}
+.tb-link{font-size:11.5px;color:var(--muted2);font-weight:500;transition:color .15s}.tb-link:hover{color:#fff}
+.tb-cta{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue3);border:1px solid rgba(74,144,217,.3);padding:4px 12px;border-radius:3px;transition:all .2s}.tb-cta:hover{background:rgba(74,144,217,.12);border-color:var(--blue3)}
+
+/* ─── NAV ─── */
+nav{position:sticky;top:0;z-index:200;background:rgba(6,14,28,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdd);height:68px;display:flex;align-items:center;padding:0 2.5rem;gap:0}
+.nav-logo-wrap{display:flex;align-items:center;margin-right:2rem;flex-shrink:0}
+.nav-logo-wrap svg{height:40px;width:auto}
+.nav-menu{display:flex;align-items:stretch;flex:1;justify-content:flex-start}
+.ni{position:relative;display:flex;align-items:center}
+.nl,.nt{font-size:13px;font-weight:600;color:rgba(255,255,255,0.6);padding:0 13px;height:68px;display:flex;align-items:center;gap:5px;transition:all .2s;white-space:nowrap;cursor:pointer;border:none;background:transparent;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;background:rgba(255,255,255,.04)}
+.nl.active{border-bottom:2px solid var(--blue)}
+.narr{border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid rgba(255,255,255,0.35);transition:transform .2s;margin-top:1px;flex-shrink:0}
+.ni:hover .narr{transform:rotate(180deg)}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;padding-left:1rem}
+.nav-phone{font-size:12px;color:rgba(255,255,255,.35);font-weight:600;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;border-radius:4px;font-size:13px;font-weight:700;background:var(--blue);color:#fff;border:none;cursor:pointer;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;letter-spacing:.04em}
+.btn-nav:hover{background:var(--blue2);transform:translateY(-1px)}
+
+/* ─── MEGA ─── */
+.mega{display:none;position:absolute;top:68px;left:0;background:var(--navy3);border:1px solid var(--bdd2);border-top:2px solid var(--blue);border-radius:0 0 8px 8px;padding:2rem;box-shadow:0 24px 60px rgba(0,0,0,0.65);z-index:300;min-width:680px;gap:2rem}
+.ni:hover .mega{display:flex}
+.mc{min-width:150px}
+.mc h5,.mega-col h5{font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin:0 0 .55rem;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif}
+.mc ul{list-style:none;display:flex;flex-direction:column;gap:1px}
+.mc a{font-size:12.5px;font-weight:500;color:rgba(255,255,255,.5);padding:6px 10px;border-radius:4px;display:flex;align-items:center;gap:7px;transition:all .15s}
+.mc a:hover{color:#fff;background:rgba(74,144,217,.1);padding-left:14px}
+.mc a::before{content:"›";color:var(--blue3);font-size:13px}
+.mdiv{width:1px;background:var(--bdd);flex-shrink:0}
+.mfeat{background:var(--navy4);border:1px solid var(--bdd);border-radius:6px;padding:1.25rem;min-width:190px}
+.mfeat h5{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin-bottom:.6rem}
+.mfeat p{font-size:12px;color:var(--muted2);line-height:1.6;margin-bottom:.85rem}
+.mfeat-link{font-size:12px;font-weight:700;color:var(--blue3);display:inline-flex;align-items:center;gap:5px;transition:color .15s}
+.mfeat-link:hover{color:#fff}
+
+/* ─── BUTTONS ─── */
+.btn-blue{padding:13px 28px;border-radius:4px;font-size:14px;font-weight:700;background:var(--blue);color:#fff;border:none;cursor:pointer;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;letter-spacing:.04em;display:inline-block}
+.btn-blue:hover{background:var(--blue2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(74,144,217,.4)}
+.btn-ghost{padding:13px 22px;border-radius:4px;font-size:14px;font-weight:700;background:transparent;color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.2);cursor:pointer;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;letter-spacing:.04em;display:inline-block}
+.btn-ghost:hover{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-outline{padding:10px 20px;border-radius:4px;font-size:13px;font-weight:700;background:transparent;color:var(--blue3);border:1.5px solid rgba(74,144,217,.35);cursor:pointer;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;letter-spacing:.04em;display:inline-block}
+.btn-outline:hover{background:rgba(74,144,217,.1);border-color:var(--blue3);color:#fff}
+
+/* ─── HERO ─── */
+.hero{position:relative;min-height:660px;display:flex;align-items:center;overflow:hidden;background:var(--navy)}
+/* Animated SVG network background */
+.hero-svg-bg{position:absolute;inset:0;width:100%;height:100%;opacity:0.35}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(110deg,rgba(6,14,28,1) 0%,rgba(6,14,28,.9) 45%,rgba(6,14,28,.4) 100%)}
+.hero-glow{position:absolute;top:-100px;left:-100px;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(74,144,217,.12) 0%,transparent 60%);pointer-events:none}
+.hero-glow2{position:absolute;bottom:-200px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,188,212,.08) 0%,transparent 60%);pointer-events:none}
+.hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:7rem 2.5rem;width:100%;display:grid;grid-template-columns:1fr 420px;gap:5rem;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);border:1px solid rgba(74,144,217,.25);padding:6px 14px;border-radius:100px;background:rgba(74,144,217,.07);margin-bottom:1.5rem}
+.hpulse{width:6px;height:6px;border-radius:50%;background:var(--blue3);animation:pp 2s infinite}
+@keyframes pp{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
+.hero h1{font-family:var(--ffc);font-size:clamp(2.8rem,5.5vw,5.2rem);font-weight:900;line-height:.93;letter-spacing:-.025em;color:#fff;text-transform:uppercase;margin-bottom:1.5rem}
+.hero h1 .c1{color:var(--blue3)}
+.hero h1 .c2{
+  color:transparent;
+  -webkit-text-stroke:1.5px var(--teal);
+}
+.hero-desc{font-size:15.5px;color:var(--muted);line-height:1.8;margin-bottom:2.25rem;max-width:520px}
+.hero-desc strong{color:rgba(255,255,255,.9)}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:2.75rem}
+.hero-proof{display:flex;gap:2.5rem;padding-top:2rem;border-top:1px solid var(--bdd)}
+.hstat strong{display:block;font-family:var(--ffc);font-size:2.2rem;font-weight:900;color:#fff;line-height:1;letter-spacing:-.03em;margin-bottom:3px}
+.hstat span{font-size:10.5px;font-weight:600;color:var(--muted2);text-transform:uppercase;letter-spacing:.08em}
+
+/* Hero panel */
+.hero-panel{background:rgba(10,22,40,.85);border:1px solid rgba(74,144,217,.2);border-top:2px solid var(--blue);border-radius:8px;overflow:hidden;backdrop-filter:blur(12px)}
+.panel-hdr{background:rgba(0,0,0,.3);padding:12px 18px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--bdd)}
+.phdr-dot{width:7px;height:7px;border-radius:50%;background:var(--blue3);animation:pp 2s infinite}
+.phdr-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-left:4px}
+.prow{display:flex;align-items:center;gap:12px;padding:11px 18px;border-bottom:1px solid rgba(255,255,255,.04);transition:background .15s}
+.prow:last-child{border-bottom:none}
+.prow:hover{background:rgba(74,144,217,.06)}
+.pdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.pname{font-size:13px;font-weight:700;color:#fff;flex:1}
+.psub{font-size:10.5px;color:rgba(255,255,255,.3);text-align:right;line-height:1.35}
+
+/* ─── PRACTICE BAR ─── */
+.pbar{background:var(--navy3);border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd)}
+.pbar-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(7,1fr)}
+.pa{display:flex;flex-direction:column;align-items:center;padding:1.35rem .6rem;border-right:1px solid var(--bdd);gap:9px;text-decoration:none;transition:background .2s;cursor:pointer}
+.pa:last-child{border-right:none}
+.pa:hover{background:rgba(74,144,217,.08)}
+.pa:hover .pa-c{border-color:var(--blue);background:rgba(74,144,217,.12)}
+.pa-c{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;transition:all .2s}
+.pa-c svg{width:19px;height:19px;stroke:#fff;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.pa-l{font-size:9.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.5);text-align:center;line-height:1.3}
+
+/* ─── STATS BAR ─── */
+.stats{background:var(--navy3);padding:3.5rem 2.5rem;border-bottom:1px solid var(--bdd)}
+.stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.stat{display:flex;align-items:center;gap:1.25rem;padding:0 2rem;border-right:1px solid var(--bdd)}
+.stat:first-child{padding-left:0}
+.stat:last-child{border-right:none}
+.stat-icon{width:52px;height:52px;border-radius:10px;flex-shrink:0;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center}
+.stat-icon svg{width:22px;height:22px;stroke:var(--blue3);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.stat-num{font-family:var(--ffc);font-size:2.6rem;font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1}
+.stat-lbl{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2);margin-top:3px}
+
+/* ─── STATEMENT ─── */
+.stmt{background:var(--navy2);padding:6rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+.stmt-mesh{position:absolute;inset:0;opacity:1;pointer-events:none}
+.stmt-inner{max-width:820px;margin:0 auto;position:relative;z-index:1}
+.stmt-rule{width:48px;height:3px;background:var(--blue);margin:0 auto 2rem;border-radius:2px}
+.stmt h2{font-family:var(--ffc);font-size:clamp(2rem,5vw,4rem);font-weight:900;text-transform:uppercase;letter-spacing:-.025em;color:#fff;line-height:.97;margin-bottom:1.25rem}
+.stmt h2 em{font-style:normal;color:var(--blue3)}
+.stmt p{font-size:16px;color:var(--muted);line-height:1.8;max-width:640px;margin:0 auto 2.5rem}
+
+/* ─── SOLUTIONS ─── */
+.solutions{background:var(--navy2);padding:6rem 2.5rem;border-top:1px solid var(--bdd)}
+.sol-inner{max-width:1200px;margin:0 auto}
+.eyebrow{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);display:flex;align-items:center;gap:10px;margin-bottom:.75rem}
+.eyebrow::before{content:"";width:18px;height:2px;background:var(--blue3);border-radius:2px}
+.h2{font-family:var(--ffc);font-size:clamp(1.9rem,3.5vw,3rem);font-weight:900;text-transform:uppercase;letter-spacing:-.025em;color:#fff;line-height:1.03;margin-bottom:.75rem}
+.h2 .acc{color:var(--blue3)}
+.sec-desc{font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:3rem;max-width:640px}
+.sol-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--bdd2);border-radius:10px;overflow:hidden}
+.sc{background:var(--navy3);padding:2rem 1.6rem;border-right:1px solid var(--bdd);border-bottom:1px solid var(--bdd);position:relative;transition:all .25s;cursor:default;overflow:hidden}
+.sc::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--teal));transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.sc:hover{background:var(--navy4)}
+.sc:hover::before{transform:scaleX(1)}
+/* Decorative circle in corner */
+.sc::after{content:"";position:absolute;bottom:-40px;right:-40px;width:100px;height:100px;border-radius:50%;background:rgba(74,144,217,.05);transition:all .3s}
+.sc:hover::after{background:rgba(74,144,217,.1);transform:scale(1.3)}
+.si{width:48px;height:48px;border-radius:10px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;transition:all .25s;position:relative;z-index:1}
+.sc:hover .si{background:rgba(74,144,217,.2);border-color:rgba(74,144,217,.4)}
+.si svg{width:22px;height:22px;stroke:var(--blue3);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.sc h3{font-size:14.5px;font-weight:700;color:#fff;margin-bottom:.5rem;letter-spacing:-.01em;position:relative;z-index:1}
+.sc p{font-size:12.5px;color:var(--muted);line-height:1.65;margin-bottom:.9rem;position:relative;z-index:1}
+.sc-tags{display:flex;flex-wrap:wrap;gap:4px;position:relative;z-index:1}
+.st{font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--blue3);background:rgba(74,144,217,.08);border:1px solid rgba(74,144,217,.2);padding:3px 8px;border-radius:3px}
+.sc-cta{background:linear-gradient(135deg,var(--navy4),var(--navy5));padding:2rem 1.6rem;display:flex;flex-direction:column;justify-content:center;gap:1rem;border-top:2px solid var(--blue);position:relative;overflow:hidden}
+.sc-cta::after{content:"";position:absolute;top:-60px;right:-60px;width:160px;height:160px;border-radius:50%;background:rgba(74,144,217,.08)}
+.sc-cta h3{font-family:var(--ffc);font-size:1.6rem;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:-.01em;line-height:1.1;position:relative;z-index:1}
+.sc-cta p{font-size:12.5px;color:var(--muted);line-height:1.6;position:relative;z-index:1}
+
+/* ─── PROCESS ─── */
+.process{background:var(--navy3);padding:6rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd);position:relative;overflow:hidden}
+/* Circuit board background */
+.proc-bg{position:absolute;inset:0;opacity:0.6;pointer-events:none}
+.proc-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:3rem}
+.pc{background:var(--navy2);border:1px solid var(--bdd);border-radius:10px;overflow:hidden;transition:all .25s;position:relative}
+.pc:hover{border-color:rgba(74,144,217,.4);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.4)}
+/* Step number watermark */
+.pc-num{position:absolute;top:-10px;right:16px;font-family:var(--ffc);font-size:6rem;font-weight:900;color:rgba(74,144,217,.06);line-height:1;pointer-events:none;user-select:none}
+.pc-img{height:160px;background:var(--navy4);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--bdd);position:relative;overflow:hidden}
+/* Animated rings in process card imgs */
+.pc-rings{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.ring{border-radius:50%;border:1px solid rgba(74,144,217,.15);position:absolute;animation:ringpulse 3s ease-in-out infinite}
+.ring1{width:60px;height:60px;animation-delay:0s}
+.ring2{width:90px;height:90px;animation-delay:.5s}
+.ring3{width:120px;height:120px;animation-delay:1s}
+.ring4{width:150px;height:150px;animation-delay:1.5s}
+@keyframes ringpulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:.15;transform:scale(1.05)}}
+.pc-icon{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.pc-icon svg{width:26px;height:26px;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.pc-body{padding:1.5rem 1.5rem 1.75rem}
+.pc-step{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.4rem;display:flex;align-items:center;gap:6px}
+.pc-step-n{color:var(--blue3)}
+.pc-step-l{color:rgba(255,255,255,.3)}
+.pc h3{font-size:15px;font-weight:700;color:var(--blue3);margin-bottom:.6rem;letter-spacing:-.01em}
+.pc p{font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* ─── GRAPHIC SPLIT SECTIONS ─── */
+.gsplit{padding:6rem 2.5rem;border-bottom:1px solid var(--bdd)}
+.gsplit-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.gsplit.flip .gsplit-inner{grid-template-areas:"b a"}
+.gsplit.flip .gsplit-content{grid-area:a}
+.gsplit.flip .gsplit-graphic{grid-area:b}
+.gsplit-graphic{border-radius:12px;overflow:hidden;position:relative}
+
+/* ─── INDUSTRIES ─── */
+.industries{background:var(--navy2);padding:6rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd)}
+.ind-inner{max-width:1200px;margin:0 auto}
+.ind-layout{display:grid;grid-template-columns:220px 1fr;gap:2.5rem;align-items:start;margin-top:3rem}
+.ind-tabs{display:flex;flex-direction:column;gap:3px}
+.ind-tab{padding:11px 15px;font-size:13px;font-weight:600;color:var(--muted2);cursor:pointer;border-radius:5px;transition:all .2s;display:flex;align-items:center;gap:9px;border:none;border-left:2px solid transparent;background:transparent;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;width:100%;text-align:left}
+.ind-tab svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;flex-shrink:0}
+.ind-tab:hover{background:var(--navy3);color:rgba(255,255,255,.75)}
+.ind-tab.active{background:var(--navy3);color:#fff;border-left-color:var(--blue)}
+.ind-tab .ia{margin-left:auto;color:var(--blue3);opacity:0}
+.ind-tab.active .ia{opacity:1}
+.ind-panel-wrap{background:var(--navy3);border:1px solid var(--bdd2);border-radius:10px;overflow:hidden;min-height:280px}
+.ind-panel{display:none;padding:2.5rem;grid-template-columns:1fr 280px;gap:2.5rem;align-items:center}
+.ind-panel.active{display:grid}
+.ind-panel h3{font-family:var(--ffc);font-size:1.8rem;font-weight:900;text-transform:uppercase;letter-spacing:-.02em;color:#fff;margin-bottom:.75rem;line-height:1.03}
+.ind-panel h3 .acc{color:var(--blue3)}
+.ind-panel p{font-size:13.5px;color:var(--muted);line-height:1.8;margin-bottom:1.25rem}
+.ind-vis{border-radius:8px;background:var(--navy4);border:1px solid var(--bdd);height:220px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+
+/* ─── AI SECTION ─── */
+.ai-section{background:var(--navy4);padding:6rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd);position:relative;overflow:hidden}
+.ai-bg{position:absolute;inset:0;pointer-events:none}
+.ai-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;z-index:1}
+.ai-chips{display:flex;flex-wrap:wrap;gap:7px;margin:1.25rem 0 2rem}
+.ai-chip{padding:7px 14px;border-radius:4px;font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);color:var(--blue3)}
+/* Console */
+.console{background:var(--navy2);border:1px solid var(--bdd2);border-top:2px solid var(--blue);border-radius:8px;overflow:hidden}
+.con-hdr{background:rgba(0,0,0,.35);padding:11px 16px;display:flex;align-items:center;gap:7px;border-bottom:1px solid var(--bdd)}
+.cdot{width:10px;height:10px;border-radius:50%}
+.ctitle{font-family:"Courier New",monospace;font-size:11px;color:rgba(255,255,255,.25);margin-left:6px}
+.crow{display:flex;align-items:center;justify-content:space-between;padding:11px 18px;border-bottom:1px solid rgba(255,255,255,.04)}
+.crow:last-child{border-bottom:none}
+.crow-label{font-size:13px;color:rgba(255,255,255,.6);font-weight:500}
+.cbadge{font-family:"Courier New",monospace;font-size:10px;padding:3px 10px;border-radius:3px;font-weight:700;letter-spacing:.05em}
+.bl{background:rgba(0,210,100,.1);color:#00d264;border:1px solid rgba(0,210,100,.22)}
+.ba{background:rgba(74,144,217,.12);color:var(--blue3);border:1px solid rgba(74,144,217,.25)}
+.bau{background:rgba(0,188,212,.1);color:var(--teal);border:1px solid rgba(0,188,212,.25)}
+
+/* ─── WHY ─── */
+.why{background:var(--navy2);padding:6rem 2.5rem;border-top:1px solid var(--bdd)}
+.why-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:start}
+.why-diffs{display:flex;flex-direction:column;gap:12px;margin-top:2.5rem}
+.diff{display:flex;gap:16px;padding:1.35rem 1.5rem;background:var(--navy3);border:1px solid var(--bdd);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;transition:all .2s;position:relative;overflow:hidden}
+.diff::after{content:"";position:absolute;top:0;right:0;width:60px;height:100%;background:linear-gradient(90deg,transparent,rgba(74,144,217,.04));pointer-events:none}
+.diff:hover{background:var(--navy4);border-left-color:var(--teal)}
+.diff-n{font-family:var(--ffc);font-size:1.6rem;font-weight:900;color:rgba(74,144,217,.22);min-width:30px;line-height:1;margin-top:2px}
+.diff h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:3px;letter-spacing:-.01em}
+.diff p{font-size:12.5px;color:var(--muted);line-height:1.65}
+/* Contact form */
+.cform{background:var(--navy3);border:1px solid var(--bdd2);border-top:2px solid var(--blue);border-radius:10px;padding:2.25rem;position:relative;overflow:hidden}
+.cform::after{content:"";position:absolute;bottom:-80px;right:-80px;width:200px;height:200px;border-radius:50%;background:rgba(74,144,217,.05);pointer-events:none}
+.cform h3{font-family:var(--ffc);font-size:1.55rem;font-weight:900;text-transform:uppercase;color:#fff;margin-bottom:4px;letter-spacing:-.01em}
+.cform-sub{font-size:13px;color:var(--muted2);margin-bottom:1.75rem}
+.cfi{padding:11px 13px;border-radius:5px;font-size:13.5px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.04);color:#fff;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;outline:none;transition:border-color .2s;width:100%;display:block}
+.cfi::placeholder{color:rgba(255,255,255,.22)}
+.cfi:focus{border-color:var(--blue);background:rgba(74,144,217,.06)}
+.cfr{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:9px}
+.cfw{margin-bottom:9px}
+.cfta{resize:none;height:80px}
+.cf-submit{width:100%;padding:13px;border-radius:5px;font-size:14.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;background:var(--blue);color:#fff;border:none;cursor:pointer;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;position:relative;z-index:1}
+.cf-submit:hover{background:var(--blue2)}
+
+/* ─── PARTNERS ─── */
+.pbar-section{background:var(--navy);padding:3.5rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd)}
+.p-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:1.5rem}
+.p-row{display:flex;flex-wrap:wrap;gap:9px}
+.ppill{padding:8px 20px;border-radius:4px;font-size:12px;font-weight:700;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.38);transition:all .2s;cursor:default}
+.ppill:hover{background:rgba(74,144,217,.1);border-color:rgba(74,144,217,.3);color:var(--blue3)}
+
+/* ─── FOOTER ─── */
+footer{background:var(--navy);border-top:2px solid var(--blue2);padding:5rem 2.5rem 2.5rem;position:relative}
+footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(74,144,217,.5),rgba(0,188,212,.3),transparent)}
+.fg{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:4rem;margin-bottom:4rem}
+.ft{font-size:13px;color:rgba(255,255,255,.28);line-height:1.7;margin:.85rem 0 1.25rem;max-width:270px}
+.fc a{display:block;font-size:13.5px;color:var(--blue3);font-weight:700;margin-bottom:4px;transition:color .2s}
+.fc a:hover{color:#fff}
+.fc span{font-size:12px;color:rgba(255,255,255,.22)}
+footer h4{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1rem;padding-bottom:8px;border-bottom:1px solid var(--bdd)}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+footer li a{font-size:13px;color:rgba(255,255,255,.38);font-weight:500;transition:all .2s;display:flex;align-items:center;gap:7px}
+footer li a::before{content:"›";color:var(--blue3);font-size:14px;line-height:1}
+footer li a:hover{color:#fff;padding-left:4px}
+.fbot{max-width:1200px;margin:0 auto;border-top:1px solid var(--bdd);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.fbot p{font-size:12px;color:rgba(255,255,255,.18)}
+.flinks{display:flex;gap:20px}
+.flinks a{font-size:12px;color:rgba(255,255,255,.18);transition:color .2s}
+.flinks a:hover{color:rgba(255,255,255,.55)}
+
+/* ─── REVEAL ─── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:none}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1100px){
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem}.hero-panel{display:none}
+  .sol-grid{grid-template-columns:repeat(2,1fr)}
+  .proc-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-inner{grid-template-columns:repeat(2,1fr);gap:2rem}
+  .stat{border-right:none;padding:1rem 0;border-bottom:1px solid var(--bdd)}
+  .stat:last-child{border-bottom:none}
+  .ai-inner,.why-inner,.gsplit-inner,.ind-layout{grid-template-columns:1fr;gap:3rem}
+  .fg{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .topbar{display:none}nav{padding:0 1.25rem}.nav-menu{display:none}
+  .pbar-inner{grid-template-columns:repeat(4,1fr)}
+  .sol-grid,.proc-grid{grid-template-columns:1fr}
+  .fg{grid-template-columns:1fr}
+  .hero-inner{padding:5rem 1.5rem}
+  .ind-panel.active{grid-template-columns:1fr}
+}
+
+/* ── COOKIE CONSENT ── */
+.cookie-banner{
+  position:fixed;bottom:0;left:0;right:0;z-index:9999;
+  background:rgba(7,17,31,0.97);backdrop-filter:blur(16px);
+  border-top:1px solid rgba(74,144,217,.3);
+  padding:1.25rem 2.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:2rem;flex-wrap:wrap;
+  transform:translateY(0);transition:transform .4s ease;
+}
+.cookie-banner.hidden{transform:translateY(100%)}
+.cookie-text{font-size:13px;color:rgba(255,255,255,.6);line-height:1.6;max-width:700px}
+.cookie-text a{color:var(--blue3);text-decoration:underline}
+.cookie-btns{display:flex;gap:10px;flex-shrink:0}
+.cookie-accept{padding:9px 22px;border-radius:4px;font-size:13px;font-weight:700;background:var(--blue);color:#fff;border:none;cursor:pointer;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;text-transform:uppercase;letter-spacing:.04em;transition:all .2s}
+.cookie-accept:hover{background:var(--blue2)}
+.cookie-decline{padding:9px 18px;border-radius:4px;font-size:13px;font-weight:700;background:transparent;color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.15);cursor:pointer;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s}
+.cookie-decline:hover{color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.3)}
+
+/* ── PARTNER MARQUEE v2 ── */
+.partner-marquee-section {
+  background: var(--navy);
+  padding: 3.5rem 0 4rem;
+  border-top: 1px solid var(--bdd);
+  border-bottom: 1px solid var(--bdd);
+  overflow: hidden;
+  position: relative;
+}
+.marquee-header {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.marquee-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.marquee-header-rule {
+  width: 3px;
+  height: 28px;
+  background: linear-gradient(180deg, var(--blue), var(--teal));
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.marquee-header-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+}
+.marquee-header-count {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--blue3);
+  background: rgba(74,144,217,.1);
+  border: 1px solid rgba(74,144,217,.2);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.marquee-header-link {
+  font-size: 12px;
+  color: var(--blue3);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color .2s;
+}
+.marquee-header-link:hover { color: #fff; }
+.mwrap {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.mwrap:last-child { margin-bottom: 0; }
+/* Fade edges */
+.mwrap::before, .mwrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 140px;
+  z-index: 2;
+  pointer-events: none;
+}
+.mwrap::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--navy) 0%, transparent 100%);
+}
+.mwrap::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--navy) 0%, transparent 100%);
+}
+.mtrack {
+  display: flex;
+  gap: 8px;
+  width: max-content;
+  padding: 4px 0;
+}
+.mfwd { animation: mfwd 40s linear infinite; }
+.mrev { animation: mrev 45s linear infinite; }
+@keyframes mfwd {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes mrev {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.mwrap:hover .mfwd,
+.mwrap:hover .mrev { animation-play-state: paused; }
+/* Brand pill — polished professional style */
+.bi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  height: 40px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all .25s;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+.bi::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(74,144,217,.05) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity .25s;
+}
+.bi:hover {
+  background: rgba(74,144,217,.1);
+  border-color: rgba(74,144,217,.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(74,144,217,.15);
+}
+.bi:hover::before { opacity: 1; }
+.bi span {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,.38);
+  letter-spacing: .03em;
+  font-family: 'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;
+  position: relative;
+  z-index: 1;
+  transition: color .25s;
+}
+.bi:hover span { color: var(--blue3); }
+
+
+/* ========================================
+   MOBILE-FIRST APP-LIKE ENHANCEMENTS
+   Add this CSS to make the site feel like a native app
+   ======================================== */
+
+/* Mobile Navigation Enhancements */
+@media (max-width: 768px) {
+  
+  /* Hide desktop navigation on mobile */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 85%;
+    max-width: 320px;
+    height: 100vh;
+    background: linear-gradient(135deg, #060E1C 0%, #0D1E35 100%);
+    z-index: 9999;
+    transition: left 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    overflow-y: auto;
+    box-shadow: 2px 0 20px rgba(0,0,0,0.5);
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  /* Mobile Menu Button */
+  .mobile-menu-btn {
+    display: block !important;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    background: linear-gradient(135deg, #4A90D9, #2B5F8A);
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(74, 144, 217, 0.4);
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-menu-btn:active {
+    transform: scale(0.95);
+  }
+  
+  .mobile-menu-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    margin: 5px auto;
+    transition: 0.3s;
+    border-radius: 2px;
+  }
+  
+  /* Bottom Navigation Bar (Like Mobile Apps) */
+  .mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(6, 14, 28, 0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .mobile-bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 12px;
+  }
+  
+  .mobile-bottom-nav a.active,
+  .mobile-bottom-nav a:active {
+    color: #4A90D9;
+    background: rgba(74, 144, 217, 0.1);
+  }
+  
+  .mobile-bottom-nav svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Card-based Layout for Mobile */
+  .service-card,
+  .feature-card,
+  .content-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    margin-bottom: 16px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+  }
+  
+  .service-card:active,
+  .feature-card:active {
+    transform: scale(0.98) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  /* Mobile Typography */
+  h1 {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+  }
+  
+  h2 {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+  }
+  
+  h3 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+  
+  p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Touch-Optimized Buttons */
+  button,
+  .btn,
+  .cta-button,
+  a[href^="tel"],
+  a[href^="mailto"] {
+    min-height: 48px !important;
+    padding: 12px 24px !important;
+    border-radius: 12px !important;
+    font-size: 16px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+  }
+  
+  button:active,
+  .btn:active,
+  .cta-button:active {
+    transform: scale(0.96) !important;
+  }
+  
+  /* Mobile Spacing */
+  section {
+    padding: 24px 20px !important;
+  }
+  
+  /* Pull-to-Refresh Indicator */
+  .pull-to-refresh {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-60px);
+    background: rgba(74, 144, 217, 0.95);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(74, 144, 217, 0.4);
+    transition: transform 0.3s ease;
+    z-index: 10000;
+  }
+  
+  .pull-to-refresh.active {
+    transform: translateX(-50%) translateY(20px);
+  }
+  
+  /* Smooth Scrolling */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Hide Scrollbar but keep functionality */
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* App-like Header */
+  header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 999 !important;
+    background: rgba(6, 14, 28, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  /* Safe Area Insets for iPhone */
+  @supports(padding: max(0px)) {
+    body {
+      padding-left: max(0px, env(safe-area-inset-left));
+      padding-right: max(0px, env(safe-area-inset-right));
+    }
+    
+    .mobile-bottom-nav {
+      padding-bottom: max(8px, env(safe-area-inset-bottom));
+    }
+  }
+  
+  /* Footer padding for bottom nav */
+  footer {
+    padding-bottom: 80px !important;
+  }
+}
+
+/* Tablet Optimization (iPad) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+  
+  .service-card {
+    padding: 24px !important;
+  }
+  
+  h1 {
+    font-size: 48px !important;
+  }
+  
+  h2 {
+    font-size: 36px !important;
+  }
+}
+
+/* Loading Animation */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #4A90D9;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Haptic Feedback Simulation */
+@keyframes tap-feedback {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.96); }
+  100% { transform: scale(1); }
+}
+
+.tap-feedback:active {
+  animation: tap-feedback 0.2s ease;
+}
+
+</style>
+<style>
+.container{max-width:1000px;margin:2rem auto 4rem;padding:0 2rem}
+.page-header{padding-top:2rem;margin-bottom:3rem;text-align:center}
+.page-title{font-size:42px;font-weight:800;margin-bottom:2rem;color:#fff}
+.page-content{font-size:16px;line-height:1.8;color:rgba(255,255,255,0.85)}
+.page-content h2{font-size:28px;font-weight:700;margin:3rem 0 1.5rem;color:#fff}
+.page-content p{margin-bottom:1.5rem}
+.page-content ul{margin:1.5rem 0 1.5rem 2rem}
+.page-content li{margin-bottom:0.75rem}
+.cta-box{background:linear-gradient(135deg,var(--navy4),var(--navy5));border:1px solid var(--blue);padding:2rem;margin:3rem 0;border-radius:12px;text-align:center}
+.cta-button{display:inline-block;background:var(--blue);color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:600;margin-top:1rem}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="tb-left">
+    <a href="tel:8662201422">(866) 220-1422</a>
+    <span class="tb-sep">|</span>
+    <a href="mailto:salessupport@racombusiness.com">salessupport@racombusiness.com</a>
+    <span class="tb-sep">|</span>
+    <span>Serving Businesses Nationwide &amp; Internationally</span>
+  </div>
+<nav>
+  <a href="index.html" class="nav-logo-wrap">
+  <img loading="lazy" src="logo-racom.svg" alt="Racom Business" height="52" width="auto" style="height:52px; width:auto;">
+  </a>
+  <div class="nav-menu">
+    <div class="ni">
+      <div class="nt">Services <div class="narr"></div></div>
+      <div class="mega" style="min-width:580px">
+        <div class="mc">
+          <h5>Connect &amp; Communicate</h5>
+          <ul>
+            <li><a href="svc-fiber-internet.html">Business Fiber &amp; Internet</a></li>
+            <li><a href="svc-fiber-internet.html">Dedicated Circuits</a></li>
+            <li><a href="svc-sdwan.html">SD-WAN &amp; SASE</a></li>
+            <li><a href="svc-ucaas.html">Cloud VoIP &amp; UCaaS</a></li>
+            <li><a href="communications.html">Contact Center (CCaaS)</a></li>
+            <li><a href="svc-pots.html">POTS Line Replacement</a></li>
+          </ul>
+        </div>
+        <div class="mc">
+          <h5>Manage &amp; Secure</h5>
+          <ul>
+            <li><a href="svc-rmm.html">24/7 Remote Monitoring</a></li>
+            <li><a href="svc-helpdesk.html">Helpdesk &amp; Service Desk</a></li>
+            <li><a href="it-security.html">Co-Managed IT</a></li>
+            <li><a href="svc-edr.html">Endpoint Detection (EDR)</a></li>
+            <li><a href="svc-mdr.html">MDR &amp; 24×7 SOC</a></li>
+            <li><a href="it-security.html">Zero Trust &amp; MFA</a></li>
+          </ul>
+        </div>
+        <div class="mc">
+          <h5>Cloud &amp; Equip</h5>
+          <ul>
+            <li><a href="svc-m365.html">Microsoft 365 &amp; Azure</a></li>
+            <li><a href="cloud-ai.html">AWS Managed Services</a></li>
+            <li><a href="svc-backup.html">Backup &amp; Disaster Recovery</a></li>
+            <li><a href="cloud-ai.html">AI &amp; Workflow Automation</a></li>
+            <li><a href="hardware.html">Servers &amp; Storage</a></li>
+            <li><a href="store.html">Browse 2,400+ Products &rarr;</a></li>
+          </ul>
+        </div>
+        <div class="mdiv"></div>
+        <div class="mfeat">
+          <h5>Not sure where to start?</h5>
+          <p>Free technology assessment — we audit your environment and build a roadmap at no cost.</p>
+          <a href="contact.html" class="mfeat-link">Book free assessment &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="ni">
+      <div class="nt">Industries <div class="narr"></div></div>
+      <div class="mega" style="min-width:540px">
+        <div class="mc">
+          <h5>Industries We Serve</h5>
+          <ul>
+            <li><a href="industry-healthcare.html">Healthcare &amp; Medical Groups</a></li>
+            <li><a href="industry-financial.html">Financial Services &amp; Fintech</a></li>
+            <li><a href="industry-manufacturing.html">Manufacturing &amp; Industrial</a></li>
+            <li><a href="industry-professional.html">Professional Services</a></li>
+            <li><a href="industry-government.html">Government &amp; Public Sector</a></li>
+            <li><a href="industry-education.html">Education &amp; K-12</a></li>
+          </ul>
+        </div>
+        <div class="mdiv"></div>
+        <div class="mfeat">
+          <h5>Your Industry</h5>
+          <p>We serve businesses across every vertical. Talk to a specialist who knows your compliance and connectivity requirements.</p>
+          <a href="contact.html" class="mfeat-link">Talk to a specialist &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="ni">
+      <div class="nt">Why Racom <div class="narr"></div></div>
+      <div class="mega" style="min-width:520px">
+        <div class="mc">
+          <h5>What Makes Us Different</h5>
+          <ul>
+            <li><a href="about.html">One Partner, One Invoice</a></li>
+            <li><a href="about.html">No Offshore Ticket Queues</a></li>
+            <li><a href="about.html">Dedicated Account Manager</a></li>
+            <li><a href="about.html">3,000+ Businesses Served</a></li>
+            <li><a href="about.html">200+ Carrier Partnerships</a></li>
+          </ul>
+        </div>
+        <div class="mc">
+          <h5>Proven Results</h5>
+          <ul>
+            <li><a href="case-studies.html">40% Telecom Cost Reduction</a></li>
+            <li><a href="case-studies.html">Zero Security Incidents 18mo</a></li>
+            <li><a href="case-studies.html">30% Lower Phone Costs</a></li>
+            <li><a href="case-studies.html">All Case Studies &rarr;</a></li>
+          </ul>
+        </div>
+        <div class="mdiv"></div>
+        <div class="mfeat">
+          <h5>See It For Yourself</h5>
+          <p>Free 30-minute technology review with a certified engineer — no sales pitch, just real recommendations.</p>
+          <a href="contact.html" class="mfeat-link">Request free review &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="ni">
+      <div class="nt">Resources <div class="narr"></div></div>
+      <div class="mega" style="min-width:440px">
+        <div class="mc">
+          <h5>Learn</h5>
+          <ul>
+            <li><a href="blog.html">Blog &amp; Articles</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="white-papers.html">White Papers &amp; Guides</a></li>
+            <li><a href="technology-guides.html">Technology Comparisons</a></li>
+          </ul>
+        </div>
+        <div class="mc">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Racom</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="mdiv"></div>
+        <div class="mfeat">
+          <h5>Free MSP Guide</h5>
+          <p>12 questions to ask any IT provider before signing. No email required.</p>
+          <a href="white-papers.html" class="mfeat-link">Download free &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="ni"><a href="about.html" class="nl">About</a></div>
+    <div class="ni"><a href="store.html" class="nl">Store</a></div>
+  </div>
+  <div class="nav-right">
+    <span class="nav-phone">(866) 220-1422</span>
+    <a href="contact.html" class="btn-nav">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <!-- Animated network SVG background -->
+  <svg class="hero-svg-bg" viewBox="0 0 1440 660" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <radialGradient id="nodeglow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#4A90D9" stop-opacity="0.8"/>
+        <stop offset="100%" stop-color="#4A90D9" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <!-- Network connection lines -->
+    <g stroke="#4A90D9" stroke-opacity="0.18" stroke-width="1">
+      <line x1="900" y1="80" x2="1100" y2="200"/>
+      <line x1="1100" y1="200" x2="1300" y2="150"/>
+      <line x1="1100" y1="200" x2="1050" y2="380"/>
+      <line x1="1300" y1="150" x2="1400" y2="320"/>
+      <line x1="1050" y1="380" x2="1300" y2="150"/>
+      <line x1="1050" y1="380" x2="1200" y2="480"/>
+      <line x1="1200" y1="480" x2="1380" y2="520"/>
+      <line x1="1380" y1="520" x2="1400" y2="320"/>
+      <line x1="900" y1="80" x2="1050" y2="380"/>
+      <line x1="1050" y1="380" x2="850" y2="500"/>
+      <line x1="850" y1="500" x2="750" y2="600"/>
+      <line x1="1050" y1="380" x2="1300" y2="500"/>
+      <line x1="1300" y1="500" x2="1380" y2="520"/>
+      <line x1="1100" y1="200" x2="1300" y2="500"/>
+    </g>
+    <!-- Data flow animated lines -->
+    <g stroke="#00BCD4" stroke-opacity="0.25" stroke-width="1" stroke-dasharray="4,8">
+      <line x1="900" y1="80" x2="1100" y2="200">
+        <animate attributeName="stroke-dashoffset" from="0" to="-24" dur="1.5s" repeatCount="indefinite"/>
+      </line>
+      <line x1="1100" y1="200" x2="1050" y2="380">
+        <animate attributeName="stroke-dashoffset" from="0" to="-24" dur="2s" repeatCount="indefinite"/>
+      </line>
+      <line x1="1050" y1="380" x2="1200" y2="480">
+        <animate attributeName="stroke-dashoffset" from="0" to="-24" dur="1.8s" repeatCount="indefinite"/>
+      </line>
+    </g>
+    <!-- Network nodes -->
+    <g>
+      <circle cx="900" cy="80" r="5" fill="#4A90D9" opacity="0.7"/>
+      <circle cx="900" cy="80" r="12" fill="none" stroke="#4A90D9" stroke-width="1" opacity="0.3"/>
+      <circle cx="1100" cy="200" r="7" fill="#4A90D9" opacity="0.8"/>
+      <circle cx="1100" cy="200" r="16" fill="none" stroke="#4A90D9" stroke-width="1" opacity="0.25">
+        <animate attributeName="r" values="16;22;16" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.25;0.05;0.25" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="1300" cy="150" r="4" fill="#00BCD4" opacity="0.7"/>
+      <circle cx="1050" cy="380" r="9" fill="#4A90D9" opacity="0.9"/>
+      <circle cx="1050" cy="380" r="20" fill="none" stroke="#4A90D9" stroke-width="1" opacity="0.2">
+        <animate attributeName="r" values="20;28;20" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.2;0.04;0.2" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="1200" cy="480" r="5" fill="#00BCD4" opacity="0.6"/>
+      <circle cx="1380" cy="520" r="4" fill="#4A90D9" opacity="0.5"/>
+      <circle cx="1400" cy="320" r="3" fill="#4A90D9" opacity="0.4"/>
+      <circle cx="850" cy="500" r="4" fill="#4A90D9" opacity="0.35"/>
+      <circle cx="1300" cy="500" r="5" fill="#00BCD4" opacity="0.5"/>
+    </g>
+    <!-- Hexagon grid (subtle) -->
+    <g stroke="#4A90D9" stroke-opacity="0.04" stroke-width="1" fill="none">
+      <polygon points="1150,50 1200,78 1200,136 1150,164 1100,136 1100,78"/>
+      <polygon points="1250,50 1300,78 1300,136 1250,164 1200,136 1200,78"/>
+      <polygon points="1350,50 1400,78 1400,136 1350,164 1300,136 1300,78"/>
+      <polygon points="1150,164 1200,192 1200,250 1150,278 1100,250 1100,192"/>
+      <polygon points="1350,164 1400,192 1400,250 1350,278 1300,250 1300,192"/>
+    </g>
+  </svg>
+  <div class="hero-overlay"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><div class="hpulse"></div>Your Integrated Technology Partner</div>
+      <h1><span class="c1">First Choice</span><br>For Integrated<br><span class="c2">IT.</span></h1>
+      <p class="hero-desc">
+        <strong>Managed IT &middot; UCaaS &middot; SD-WAN &middot; MDR &middot; Cloud &middot; AI Automation</strong><br>
+        One partner. One invoice. Zero technology gaps. Racom is your IT force multiplier &mdash; unifying your entire tech stack so you can focus on growth, not vendor management.
+      </p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn-blue">Get a Free Assessment</a>
+        <a href="index.html" class="btn-ghost">Explore Solutions</a>
+      </div>
+      <div class="hero-proof">
+        <div class="hstat"><strong>3,000+</strong><span>Clients served</span></div>
+        <div class="hstat"><strong>200+</strong><span>Carrier partners</span></div>
+        <div class="hstat"><strong>24/7</strong><span>Monitoring</span></div>
+        <div class="hstat"><strong>Global</strong><span>National &amp; International</span></div>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <div class="panel-hdr">
+        <div class="phdr-dot"></div>
+        <span class="phdr-title">Your complete tech stack</span>
+      </div>
+      <div class="prow"><div class="pdot" style="background:#3B9EE8"></div><span class="pname">Connectivity</span><span class="psub">Internet &middot; Circuits &middot; SD-WAN</span></div>
+      <div class="prow"><div class="pdot" style="background:#00BCD4"></div><span class="pname">Communications</span><span class="psub">UCaaS &middot; VoIP &middot; CCaaS</span></div>
+      <div class="prow"><div class="pdot" style="background:#A78BFA"></div><span class="pname">IT Support</span><span class="psub">Remote &middot; Onsite &middot; 24/7</span></div>
+      <div class="prow"><div class="pdot" style="background:#60A5FA"></div><span class="pname">Security</span><span class="psub">EDR &middot; MFA &middot; MDR</span></div>
+      <div class="prow"><div class="pdot" style="background:#34D399"></div><span class="pname">Cloud</span><span class="psub">O365 &middot; Azure &middot; AWS</span></div>
+      <div class="prow"><div class="pdot" style="background:#4A90D9"></div><span class="pname">AI Automation</span><span class="psub">Triage &middot; Voice AI</span></div>
+      <div class="prow"><div class="pdot" style="background:#94A3B8"></div><span class="pname">Hardware</span><span class="psub">Sourcing &middot; Deploy</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE BAR -->
+<div class="pbar">
+  <div class="pbar-inner">
+    <a href="connectivity.html" class="pa"><div class="pa-c"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg></div><span class="pa-l">Connectivity</span></a>
+    <a href="communications.html" class="pa"><div class="pa-c"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07"/></svg></div><span class="pa-l">Communications</span></a>
+    <a href="it-security.html" class="pa"><div class="pa-c"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><span class="pa-l">IT Support</span></a>
+    <a href="it-security.html" class="pa"><div class="pa-c"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span class="pa-l">Security</span></a>
+    <a href="cloud-ai.html" class="pa"><div class="pa-c"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div><span class="pa-l">Cloud</span></a>
+    <a href="cloud-ai.html" class="pa"><div class="pa-c"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div><span class="pa-l">AI Automation</span></a>
+    <a href="hardware.html" class="pa"><div class="pa-c"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div><span class="pa-l">Hardware</span></a>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat reveal">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <div><div class="stat-num">3,000+</div><div class="stat-lbl">Clients Served</div></div>
+    </div>
+    <div class="stat reveal rd1">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg></div>
+      <div><div class="stat-num">200+</div><div class="stat-lbl">Carrier Partners</div></div>
+    </div>
+    <div class="stat reveal rd2">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div><div class="stat-num">7</div><div class="stat-lbl">Practice Areas</div></div>
+    </div>
+    <div class="stat reveal rd3">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div><div class="stat-num">24/7</div><div class="stat-lbl">Always-On Support</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- STATEMENT with mesh graphic -->
+<div class="stmt">
+  <!-- Decorative mesh SVG -->
+  <svg class="stmt-mesh" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="meshgrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#4A90D9" stop-opacity="0.05"/>
+        <stop offset="50%" stop-color="#00BCD4" stop-opacity="0.08"/>
+        <stop offset="100%" stop-color="#4A90D9" stop-opacity="0.05"/>
+      </linearGradient>
+    </defs>
+    <rect width="1440" height="400" fill="url(#meshgrad)"/>
+    <!-- Horizontal lines -->
+    <g stroke="#4A90D9" stroke-opacity="0.06" stroke-width="1">
+      <line x1="0" y1="80" x2="1440" y2="80"/>
+      <line x1="0" y1="160" x2="1440" y2="160"/>
+      <line x1="0" y1="240" x2="1440" y2="240"/>
+      <line x1="0" y1="320" x2="1440" y2="320"/>
+    </g>
+    <!-- Vertical lines -->
+    <g stroke="#4A90D9" stroke-opacity="0.04" stroke-width="1">
+      <line x1="144" y1="0" x2="144" y2="400"/>
+      <line x1="288" y1="0" x2="288" y2="400"/>
+      <line x1="432" y1="0" x2="432" y2="400"/>
+      <line x1="576" y1="0" x2="576" y2="400"/>
+      <line x1="720" y1="0" x2="720" y2="400"/>
+      <line x1="864" y1="0" x2="864" y2="400"/>
+      <line x1="1008" y1="0" x2="1008" y2="400"/>
+      <line x1="1152" y1="0" x2="1152" y2="400"/>
+      <line x1="1296" y1="0" x2="1296" y2="400"/>
+    </g>
+    <!-- Center glow -->
+    <ellipse cx="720" cy="200" rx="400" ry="150" fill="none" stroke="#4A90D9" stroke-opacity="0.06" stroke-width="1"/>
+    <ellipse cx="720" cy="200" rx="250" ry="90" fill="none" stroke="#00BCD4" stroke-opacity="0.06" stroke-width="1"/>
+  </svg>
+  <div class="stmt-inner">
+    <div class="stmt-rule"></div>
+    <h2>One Partner to Help You<br><em>Reduce Complexity</em><br>and Drive Growth</h2>
+    <p>Most businesses juggle 5&ndash;10 different technology vendors. Racom replaces them all &mdash; connectivity to cloud to AI, managed through a single account team that actually picks up the phone.</p>
+    <a href="contact.html" class="btn-blue">Start With a Free Assessment</a>
+  </div>
+</div>
+
+<!-- PAIN POINTS (Xtium-inspired: Today's IT Reality) -->
+<section style="background:var(--navy3);padding:6rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd);position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 100%,rgba(74,144,217,.06) 0%,transparent 60%);pointer-events:none"></div>
+  <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1">
+    <div style="text-align:center;margin-bottom:3.5rem">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:.75rem">Today&rsquo;s IT Reality</div>
+      <h2 class="h2" style="text-align:center">What You&rsquo;re Up Against</h2>
+      <p style="font-size:15px;color:var(--muted);max-width:620px;margin:1rem auto 0;line-height:1.8">Rising threats. Expanding complexity. AI-led initiatives. Stretched teams. IT is expected to do more with less &mdash; yet again. Sound familiar?</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:4rem">
+      <!-- Pain 1: Complexity -->
+      <div style="background:var(--navy2);border:1px solid var(--bdd);border-top:2px solid var(--blue);border-radius:8px;padding:2rem;position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(74,144,217,.06)"></div>
+        <div style="width:48px;height:48px;border-radius:10px;background:rgba(74,144,217,.12);border:1px solid rgba(74,144,217,.25);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue3)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </div>
+        <h3 style="font-size:16px;font-weight:700;color:#fff;margin-bottom:.6rem">Complexity Overload</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.75">Disjointed platforms, cloud sprawl, and multiple vendors create inefficiencies that slow your team down and create budget waste.</p>
+      </div>
+      <!-- Pain 2: Security -->
+      <div style="background:var(--navy2);border:1px solid var(--bdd);border-top:2px solid rgba(167,139,250,.6);border-radius:8px;padding:2rem;position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(167,139,250,.05)"></div>
+        <div style="width:48px;height:48px;border-radius:10px;background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 style="font-size:16px;font-weight:700;color:#fff;margin-bottom:.6rem">Escalating Cyber Threats</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.75">Ransomware, phishing, and compliance mandates are tightening every quarter. Your data, reputation, and operations are at stake 24/7.</p>
+      </div>
+      <!-- Pain 3: Resources -->
+      <div style="background:var(--navy2);border:1px solid var(--bdd);border-top:2px solid rgba(52,211,153,.5);border-radius:8px;padding:2rem;position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(52,211,153,.05)"></div>
+        <div style="width:48px;height:48px;border-radius:10px;background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 style="font-size:16px;font-weight:700;color:#fff;margin-bottom:.6rem">Stretched IT Teams</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.75">Limited staff, shrinking budgets, and rising AI initiatives leave little room for innovation. 77% of organizations struggle to hire and retain skilled IT talent.</p>
+      </div>
+    </div>
+
+    <!-- FORCE MULTIPLIER CTA BAND -->
+    <div style="background:linear-gradient(135deg,var(--navy4) 0%,var(--navy5) 100%);border:1px solid var(--bdd2);border-left:3px solid var(--blue);border-radius:8px;padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap">
+      <div>
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin-bottom:.75rem">The Racom Difference</div>
+        <h3 style="font-family:var(--ffc);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;color:#fff;line-height:1.05;margin-bottom:.65rem">Your IT &amp; Telecom<br>Force Multiplier</h3>
+        <p style="font-size:14px;color:var(--muted);line-height:1.75;max-width:580px">We&rsquo;re not just another MSP or reseller. We take full ownership of your technology challenges &mdash; from the network edge to the cloud &mdash; and solve them with urgency. No band-aid fixes. No endless ticket queues. <strong style="color:#fff">Full-stack support. High-touch service. Deep expertise.</strong></p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;flex-shrink:0">
+        <a href="contact.html" class="btn-blue" style="white-space:nowrap;text-align:center">Get a Free Assessment</a>
+        <a href="tel:8662201422" style="font-size:13px;color:var(--blue3);font-weight:700;text-align:center;letter-spacing:.02em">(866) 220-1422</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section id="solutions" class="solutions">
+  <div class="sol-inner">
+    <div class="eyebrow reveal">Practice Areas</div>
+    <h2 class="h2 reveal">Everything Your Business <span class="acc">Runs On</span></h2>
+    <p class="sec-desc reveal">Seven technology disciplines. One account team. One invoice. Racom is the technology partner that finally makes your stack simple.</p>
+    <div class="sol-grid reveal">
+      <div class="sc"><div class="si"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg></div><h3>Connectivity</h3><p>Carrier-agnostic internet, circuits, and SD-WAN from 200+ providers &mdash; best price and best uptime, guaranteed.</p><div class="sc-tags"><span class="st">Internet</span><span class="st">SD-WAN</span><span class="st">Circuits</span></div></div>
+      <div class="sc"><div class="si"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07"/></svg></div><h3>Communications</h3><p>UCaaS, VoIP, and CCaaS replacing your legacy phone system with modern cloud communications.</p><div class="sc-tags"><span class="st">UCaaS</span><span class="st">VoIP</span><span class="st">CCaaS</span></div></div>
+      <div class="sc"><div class="si"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>IT Support</h3><p>24/7 remote monitoring, helpdesk, and onsite support keeping your team productive.</p><div class="sc-tags"><span class="st">RMM</span><span class="st">Helpdesk</span><span class="st">Onsite</span></div></div>
+      <div class="sc"><div class="si"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Security</h3><p>Layered defense &mdash; endpoint, email, MFA, MDR, and compliance all managed by Racom.</p><div class="sc-tags"><span class="st">EDR</span><span class="st">MFA</span><span class="st">MDR</span></div></div>
+      <div class="sc"><div class="si"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div><h3>Cloud</h3><p>Microsoft 365, Azure, AWS, backups, and disaster recovery &mdash; deployed and managed end-to-end.</p><div class="sc-tags"><span class="st">M365</span><span class="st">Azure</span><span class="st">AWS</span></div></div>
+      <div class="sc"><div class="si"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div><h3>AI Automation</h3><p>Ticket triage AI, Voice AI routing, and automated monitoring that eliminates manual overhead.</p><div class="sc-tags"><span class="st">Voice AI</span><span class="st">Triage</span><span class="st">Auto-monitor</span></div></div>
+      <div class="sc"><div class="si"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div><h3>Hardware</h3><p>Laptops, servers, networking gear &mdash; sourced from every major vendor, configured and deployed.</p><div class="sc-tags"><span class="st">Laptops</span><span class="st">Networking</span><span class="st">Servers</span></div></div>
+      <div class="sc-cta"><h3>Not Sure<br>Where to Start?</h3><p>Get a free technology assessment &mdash; our experts map out exactly what your business needs.</p><a href="contact.html" class="btn-outline" style="font-size:12.5px;padding:10px 18px;margin-top:4px">Get Free Assessment &rarr;</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS PROOF SECTION -->
+<section style="background:var(--navy2);padding:5rem 2.5rem;border-bottom:1px solid var(--bdd)">
+  <div style="max-width:1200px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:3.5rem">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:.75rem">By The Numbers</div>
+      <h2 class="h2" style="text-align:center">Results That <span class="acc">Speak For Themselves</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--bdd2);border-radius:10px;overflow:hidden">
+      <div style="padding:2.5rem 2rem;text-align:center;border-right:1px solid var(--bdd)">
+        <div style="font-family:var(--ffc);font-size:3.5rem;font-weight:900;color:var(--blue3);line-height:1;letter-spacing:-.03em">3,000<span style="font-size:2rem">+</span></div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-top:.6rem;line-height:1.5">Businesses Served<br>Nationwide</div>
+      </div>
+      <div style="padding:2.5rem 2rem;text-align:center;border-right:1px solid var(--bdd);background:rgba(74,144,217,.04)">
+        <div style="font-family:var(--ffc);font-size:3.5rem;font-weight:900;color:var(--blue3);line-height:1;letter-spacing:-.03em">200<span style="font-size:2rem">+</span></div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-top:.6rem;line-height:1.5">Carrier &amp; Vendor<br>Partnerships</div>
+      </div>
+      <div style="padding:2.5rem 2rem;text-align:center;border-right:1px solid var(--bdd)">
+        <div style="font-family:var(--ffc);font-size:3.5rem;font-weight:900;color:var(--blue3);line-height:1;letter-spacing:-.03em">24<span style="font-size:2rem">/7</span></div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-top:.6rem;line-height:1.5">Always-On Monitoring<br>&amp; SOC Coverage</div>
+      </div>
+      <div style="padding:2.5rem 2rem;text-align:center;background:rgba(74,144,217,.04)">
+        <div style="font-family:var(--ffc);font-size:3.5rem;font-weight:900;color:var(--blue3);line-height:1;letter-spacing:-.03em">1</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-top:.6rem;line-height:1.5">Partner. One Invoice.<br>Zero Gaps.</div>
+      </div>
+    </div>
+    <!-- Industry stats from research -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px">
+      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.5rem;display:flex;align-items:flex-start;gap:1rem">
+        <div style="font-family:var(--ffc);font-size:2.5rem;font-weight:900;color:rgba(74,144,217,.4);line-height:1;flex-shrink:0">77%</div>
+        <div>
+          <div style="font-size:12.5px;font-weight:700;color:#fff;margin-bottom:3px">of organizations struggle to hire skilled IT talent</div>
+          <div style="font-size:11px;color:var(--muted2)">Racom extends your team without the hiring headache. &mdash; Global Newswire</div>
+        </div>
+      </div>
+      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.5rem;display:flex;align-items:flex-start;gap:1rem">
+        <div style="font-family:var(--ffc);font-size:2.5rem;font-weight:900;color:rgba(74,144,217,.4);line-height:1;flex-shrink:0">64%</div>
+        <div>
+          <div style="font-size:12.5px;font-weight:700;color:#fff;margin-bottom:3px">consider IT service desk efficiency a critical priority</div>
+          <div style="font-size:11px;color:var(--muted2)">Our AI-powered helpdesk resolves issues faster. &mdash; Investopedia</div>
+        </div>
+      </div>
+      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.5rem;display:flex;align-items:flex-start;gap:1rem">
+        <div style="font-family:var(--ffc);font-size:2.5rem;font-weight:900;color:rgba(74,144,217,.4);line-height:1;flex-shrink:0">$1.8T</div>
+        <div>
+          <div style="font-size:12.5px;font-weight:700;color:#fff;margin-bottom:3px">global telecom services market, growing 6.2% annually</div>
+          <div style="font-size:11px;color:var(--muted2)">Your business needs a telecom partner who keeps up. &mdash; Market Research</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS — with circuit board background and animated ring cards -->
+<section class="process">
+  <!-- Circuit board SVG -->
+  <svg class="proc-bg" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <g stroke="#4A90D9" stroke-opacity="0.06" stroke-width="1" fill="none">
+      <!-- Horizontal traces -->
+      <path d="M0,150 L200,150 L200,100 L400,100 L400,150 L600,150"/>
+      <path d="M0,300 L100,300 L100,250 L300,250 L300,350 L500,350 L500,300 L700,300"/>
+      <path d="M800,200 L1000,200 L1000,150 L1200,150 L1200,250 L1440,250"/>
+      <path d="M700,400 L900,400 L900,450 L1100,450 L1100,400 L1300,400 L1300,350 L1440,350"/>
+      <!-- Vias (circuit dots) -->
+      <circle cx="200" cy="150" r="4" fill="#4A90D9" fill-opacity="0.15"/>
+      <circle cx="400" cy="100" r="4" fill="#4A90D9" fill-opacity="0.15"/>
+      <circle cx="1000" cy="200" r="4" fill="#4A90D9" fill-opacity="0.15"/>
+      <circle cx="1100" cy="450" r="4" fill="#4A90D9" fill-opacity="0.15"/>
+      <circle cx="300" cy="250" r="3" fill="#00BCD4" fill-opacity="0.12"/>
+      <circle cx="900" cy="400" r="3" fill="#00BCD4" fill-opacity="0.12"/>
+    </g>
+  </svg>
+  <div class="proc-inner">
+    <div class="eyebrow reveal">How We Work</div>
+    <h2 class="h2 reveal">One Partner to <span class="acc">Assess, Design,<br>Deploy &amp; Manage</span></h2>
+    <p class="sec-desc reveal" style="margin-bottom:0">A proven process from assessment to fully managed technology &mdash; Racom at every step of the way.</p>
+    <div class="proc-grid reveal">
+      <div class="pc">
+        <div class="pc-num">1</div>
+        <div class="pc-img">
+          <div class="pc-rings">
+            <div class="ring ring1"></div><div class="ring ring2"></div>
+            <div class="ring ring3"></div><div class="ring ring4"></div>
+          </div>
+          <div class="pc-icon" style="border:1.5px solid rgba(74,144,217,.4);background:rgba(74,144,217,.12)">
+            <svg viewBox="0 0 24 24" style="stroke:#6AAEE8"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          </div>
+        </div>
+        <div class="pc-body">
+          <div class="pc-step"><span class="pc-step-n">1</span><span class="pc-step-l">| Assess</span></div>
+          <h3>Free Technology Assessment</h3>
+          <p>We review your current environment &mdash; connectivity, security gaps, IT stack &mdash; and deliver a clear, prioritized roadmap at no cost.</p>
+        </div>
+      </div>
+      <div class="pc">
+        <div class="pc-num">2</div>
+        <div class="pc-img">
+          <div class="pc-rings">
+            <div class="ring ring1" style="border-color:rgba(0,188,212,.15)"></div>
+            <div class="ring ring2" style="border-color:rgba(0,188,212,.12)"></div>
+            <div class="ring ring3" style="border-color:rgba(0,188,212,.08)"></div>
+            <div class="ring ring4" style="border-color:rgba(0,188,212,.05)"></div>
+          </div>
+          <div class="pc-icon" style="border:1.5px solid rgba(0,188,212,.4);background:rgba(0,188,212,.1)">
+            <svg viewBox="0 0 24 24" style="stroke:#00BCD4"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+        </div>
+        <div class="pc-body">
+          <div class="pc-step"><span class="pc-step-n">2</span><span class="pc-step-l">| Design</span></div>
+          <h3>Strategic Solution Design</h3>
+          <p>We design a tailored technology stack using best-fit vendors aligned to your performance requirements, budget, and timeline.</p>
+        </div>
+      </div>
+      <div class="pc">
+        <div class="pc-num">3</div>
+        <div class="pc-img">
+          <div class="pc-rings">
+            <div class="ring ring1" style="border-color:rgba(91,174,245,.15)"></div>
+            <div class="ring ring2" style="border-color:rgba(91,174,245,.12)"></div>
+            <div class="ring ring3" style="border-color:rgba(91,174,245,.08)"></div>
+            <div class="ring ring4" style="border-color:rgba(91,174,245,.05)"></div>
+          </div>
+          <div class="pc-icon" style="border:1.5px solid rgba(91,174,245,.4);background:rgba(91,174,245,.1)">
+            <svg viewBox="0 0 24 24" style="stroke:#5BAEF5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+        </div>
+        <div class="pc-body">
+          <div class="pc-step"><span class="pc-step-n">3</span><span class="pc-step-l">| Deploy</span></div>
+          <h3>Expert Implementation</h3>
+          <p>Our certified engineers handle every aspect of deployment &mdash; provisioning circuits, installing hardware, migrating your cloud, and training your team.</p>
+        </div>
+      </div>
+      <div class="pc">
+        <div class="pc-num">4</div>
+        <div class="pc-img">
+          <div class="pc-rings">
+            <div class="ring ring1" style="border-color:rgba(52,211,153,.15)"></div>
+            <div class="ring ring2" style="border-color:rgba(52,211,153,.12)"></div>
+            <div class="ring ring3" style="border-color:rgba(52,211,153,.08)"></div>
+            <div class="ring ring4" style="border-color:rgba(52,211,153,.05)"></div>
+          </div>
+          <div class="pc-icon" style="border:1.5px solid rgba(52,211,153,.4);background:rgba(52,211,153,.08)">
+            <svg viewBox="0 0 24 24" style="stroke:#34D399"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+        </div>
+        <div class="pc-body">
+          <div class="pc-step"><span class="pc-step-n">4</span><span class="pc-step-l">| Manage</span></div>
+          <h3>Always-On Management</h3>
+          <p>24/7 monitoring, AI-powered automation, and a dedicated account team &mdash; so you never have to worry about your technology again.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY GRAPHIC SPLIT -->
+<section class="gsplit" style="background:var(--navy2)">
+  <div class="gsplit-inner" style="max-width:1200px;margin:0 auto">
+    <div class="gsplit-content reveal">
+      <div class="eyebrow">Security &amp; Compliance</div>
+      <h2 class="h2">Layered Defense<br><span class="acc">Built for Today&rsquo;s Threats</span></h2>
+      <p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:1.5rem">A single antivirus isn&rsquo;t enough. Racom deploys a multi-layered security stack &mdash; endpoint protection, email security, MFA, MDR with 24/7 SOC, and compliance management &mdash; so your business stays protected at every layer.</p>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:2rem">
+        <div style="display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--muted)">
+          <div style="width:7px;height:7px;border-radius:50%;background:var(--blue3);flex-shrink:0"></div>
+          <span><strong style="color:#fff">EDR</strong> &mdash; Real-time endpoint detection &amp; response</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--muted)">
+          <div style="width:7px;height:7px;border-radius:50%;background:var(--teal);flex-shrink:0"></div>
+          <span><strong style="color:#fff">Email security</strong> &mdash; Anti-phishing, BEC protection, spam filtering</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--muted)">
+          <div style="width:7px;height:7px;border-radius:50%;background:#A78BFA;flex-shrink:0"></div>
+          <span><strong style="color:#fff">MFA &amp; Zero Trust</strong> &mdash; Stops 99% of account compromises</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--muted)">
+          <div style="width:7px;height:7px;border-radius:50%;background:#34D399;flex-shrink:0"></div>
+          <span><strong style="color:#fff">MDR / 24×7 SOC</strong> &mdash; Our analysts respond to threats for you</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--muted)">
+          <div style="width:7px;height:7px;border-radius:50%;background:#F5A623;flex-shrink:0"></div>
+          <span><strong style="color:#fff">Compliance</strong> &mdash; HIPAA, PCI-DSS, SOC 2, CMMC</span>
+        </div>
+      </div>
+      <a href="it-security.html" class="btn-blue">Learn about security &rarr;</a>
+    </div>
+    <div class="gsplit-graphic reveal">
+      <!-- Security shield SVG illustration -->
+      <div style="background:var(--navy3);border:1px solid var(--bdd2);border-radius:12px;padding:3rem;display:flex;align-items:center;justify-content:center;min-height:380px;position:relative;overflow:hidden">
+        <!-- Background circles -->
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+          <div style="width:320px;height:320px;border-radius:50%;border:1px solid rgba(74,144,217,.1);position:absolute"></div>
+          <div style="width:240px;height:240px;border-radius:50%;border:1px solid rgba(74,144,217,.12);position:absolute"></div>
+          <div style="width:160px;height:160px;border-radius:50%;border:1px solid rgba(74,144,217,.15);position:absolute"></div>
+        </div>
+        <svg viewBox="0 0 300 320" width="240" xmlns="http://www.w3.org/2000/svg" style="position:relative;z-index:1">
+          <defs>
+            <linearGradient id="shieldgrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4A90D9" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#00BCD4" stop-opacity="0.15"/>
+            </linearGradient>
+          </defs>
+          <!-- Shield body -->
+          <path d="M150,20 L40,65 L40,160 C40,230 150,290 150,290 C150,290 260,230 260,160 L260,65 Z" fill="url(#shieldgrad)" stroke="rgba(74,144,217,0.6)" stroke-width="2"/>
+          <!-- Shield inner -->
+          <path d="M150,45 L65,83 L65,160 C65,215 150,265 150,265 C150,265 235,215 235,160 L235,83 Z" fill="rgba(74,144,217,0.06)" stroke="rgba(74,144,217,0.25)" stroke-width="1"/>
+          <!-- Checkmark -->
+          <polyline points="100,155 135,190 200,125" fill="none" stroke="#4A90D9" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Orbit dots -->
+          <circle cx="150" cy="20" r="6" fill="#4A90D9" opacity="0.8"/>
+          <circle cx="40" cy="65" r="5" fill="#00BCD4" opacity="0.7"/>
+          <circle cx="260" cy="65" r="5" fill="#00BCD4" opacity="0.7"/>
+          <circle cx="40" cy="160" r="4" fill="#4A90D9" opacity="0.6"/>
+          <circle cx="260" cy="160" r="4" fill="#4A90D9" opacity="0.6"/>
+          <!-- Labels -->
+          <text x="270" y="100" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.4)">EDR</text>
+          <text x="270" y="140" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.4)">MFA</text>
+          <text x="270" y="180" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.4)">MDR</text>
+          <text x="10" y="100" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.4)">Email</text>
+          <text x="10" y="140" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.4)">Compl.</text>
+        </svg>
+        <!-- Live badge -->
+        <div style="position:absolute;top:16px;right:16px;background:rgba(0,210,100,.1);border:1px solid rgba(0,210,100,.25);border-radius:4px;padding:5px 12px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#00d264;display:flex;align-items:center;gap:6px">
+          <span style="width:6px;height:6px;border-radius:50%;background:#00d264;animation:pp 1.5s infinite"></span>
+          24/7 Protection Active
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOUD GRAPHIC SPLIT (flipped) -->
+<section class="gsplit flip" style="background:var(--navy3)">
+  <div class="gsplit-inner" style="max-width:1200px;margin:0 auto">
+    <div class="gsplit-content reveal">
+      <div class="eyebrow">Cloud &amp; AI</div>
+      <h2 class="h2">Your Full Cloud Stack,<br><span class="acc">Managed End-to-End</span></h2>
+      <p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:1.5rem">Microsoft 365, Azure, AWS, cloud backups, disaster recovery, and AI-powered automation &mdash; deployed, managed, and optimized by Racom so you get the full value of the cloud without the complexity.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:2rem">
+        <div style="background:var(--navy4);border:1px solid var(--bdd);border-radius:7px;padding:1rem">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue3);margin-bottom:4px">Microsoft 365</div>
+          <div style="font-size:12px;color:var(--muted)">Teams, Exchange, SharePoint, OneDrive</div>
+        </div>
+        <div style="background:var(--navy4);border:1px solid var(--bdd);border-radius:7px;padding:1rem">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue3);margin-bottom:4px">Azure &amp; AWS</div>
+          <div style="font-size:12px;color:var(--muted)">IaaS, PaaS, hybrid cloud, migration</div>
+        </div>
+        <div style="background:var(--navy4);border:1px solid var(--bdd);border-radius:7px;padding:1rem">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:4px">Backup &amp; DR</div>
+          <div style="font-size:12px;color:var(--muted)">Automated, encrypted, tested recovery</div>
+        </div>
+        <div style="background:var(--navy4);border:1px solid var(--bdd);border-radius:7px;padding:1rem">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:4px">AI Automation</div>
+          <div style="font-size:12px;color:var(--muted)">Triage AI, Voice AI, auto-monitoring</div>
+        </div>
+      </div>
+      <a href="cloud-ai.html" class="btn-blue">Explore cloud &amp; AI &rarr;</a>
+    </div>
+    <div class="gsplit-graphic reveal">
+      <div style="background:var(--navy2);border:1px solid var(--bdd2);border-radius:12px;padding:2.5rem;min-height:380px;position:relative;overflow:hidden">
+        <!-- Cloud architecture SVG -->
+        <svg viewBox="0 0 340 300" width="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="cloudgrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4A90D9" stop-opacity="0.2"/>
+              <stop offset="100%" stop-color="#00BCD4" stop-opacity="0.1"/>
+            </linearGradient>
+          </defs>
+          <!-- Central cloud -->
+          <ellipse cx="170" cy="100" rx="80" ry="45" fill="url(#cloudgrad)" stroke="rgba(74,144,217,0.5)" stroke-width="1.5"/>
+          <text x="170" y="96" font-family="Arial Black" font-size="11" fill="#6AAEE8" text-anchor="middle">CLOUD</text>
+          <text x="170" y="112" font-family="Arial" font-size="9" fill="rgba(255,255,255,0.4)" text-anchor="middle">Racom Managed</text>
+          <!-- Satellite boxes -->
+          <!-- M365 -->
+          <rect x="10" y="20" width="80" height="40" rx="6" fill="rgba(74,144,217,0.1)" stroke="rgba(74,144,217,0.3)" stroke-width="1"/>
+          <text x="50" y="37" font-family="Arial" font-size="9" fill="#6AAEE8" text-anchor="middle">Microsoft 365</text>
+          <text x="50" y="50" font-family="Arial" font-size="8" fill="rgba(255,255,255,0.35)" text-anchor="middle">Teams · Exchange</text>
+          <line x1="90" y1="40" x2="90" y2="100" stroke="rgba(74,144,217,0.25)" stroke-width="1" stroke-dasharray="3,4"/>
+          <!-- Azure -->
+          <rect x="250" y="20" width="80" height="40" rx="6" fill="rgba(0,188,212,0.1)" stroke="rgba(0,188,212,0.3)" stroke-width="1"/>
+          <text x="290" y="37" font-family="Arial" font-size="9" fill="#00BCD4" text-anchor="middle">Azure / AWS</text>
+          <text x="290" y="50" font-family="Arial" font-size="8" fill="rgba(255,255,255,0.35)" text-anchor="middle">IaaS · PaaS</text>
+          <line x1="250" y1="40" x2="250" y2="100" stroke="rgba(0,188,212,0.25)" stroke-width="1" stroke-dasharray="3,4"/>
+          <!-- Backup -->
+          <rect x="10" y="180" width="80" height="40" rx="6" fill="rgba(52,211,153,0.08)" stroke="rgba(52,211,153,0.25)" stroke-width="1"/>
+          <text x="50" y="197" font-family="Arial" font-size="9" fill="#34D399" text-anchor="middle">Backup &amp; DR</text>
+          <text x="50" y="210" font-family="Arial" font-size="8" fill="rgba(255,255,255,0.35)" text-anchor="middle">Encrypted · Tested</text>
+          <line x1="90" y1="200" x2="90" y2="145" stroke="rgba(52,211,153,0.2)" stroke-width="1" stroke-dasharray="3,4"/>
+          <!-- AI -->
+          <rect x="250" y="180" width="80" height="40" rx="6" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.25)" stroke-width="1"/>
+          <text x="290" y="197" font-family="Arial" font-size="9" fill="#A78BFA" text-anchor="middle">AI Automation</text>
+          <text x="290" y="210" font-family="Arial" font-size="8" fill="rgba(255,255,255,0.35)" text-anchor="middle">Triage · Voice AI</text>
+          <line x1="250" y1="200" x2="250" y2="145" stroke="rgba(167,139,250,0.2)" stroke-width="1" stroke-dasharray="3,4"/>
+          <!-- Devices at bottom -->
+          <rect x="105" y="235" width="130" height="45" rx="6" fill="rgba(74,144,217,0.08)" stroke="rgba(74,144,217,0.2)" stroke-width="1"/>
+          <text x="170" y="255" font-family="Arial" font-size="9" fill="rgba(255,255,255,0.5)" text-anchor="middle">Your Business</text>
+          <text x="170" y="270" font-family="Arial" font-size="8" fill="rgba(255,255,255,0.3)" text-anchor="middle">Endpoints · Users · Sites</text>
+          <line x1="170" y1="235" x2="170" y2="145" stroke="rgba(74,144,217,0.3)" stroke-width="1.5" stroke-dasharray="4,4">
+            <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.5s" repeatCount="indefinite"/>
+          </line>
+          <!-- Status dots on lines -->
+          <circle cx="90" cy="70" r="3" fill="#4A90D9" opacity="0.7">
+            <animate attributeName="cy" values="70;100;70" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="250" cy="70" r="3" fill="#00BCD4" opacity="0.7">
+            <animate attributeName="cy" values="70;100;70" dur="2.5s" repeatCount="indefinite"/>
+          </circle>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industries" class="industries">
+  <div class="ind-inner">
+    <div class="eyebrow reveal">Who We Serve</div>
+    <h2 class="h2 reveal">Trusted Across <span class="acc">Every Industry</span></h2>
+    <p class="sec-desc reveal" style="margin-bottom:0">Tailored technology solutions built for how your specific sector works &mdash; with the compliance, security, and connectivity requirements that matter to you.</p>
+    <div class="ind-layout reveal">
+      <div class="ind-tabs">
+        <button class="ind-tab active" data-panel="hc"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Healthcare<span class="ia">›</span></button>
+        <button class="ind-tab" data-panel="fin"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Financial Services<span class="ia">›</span></button>
+        <button class="ind-tab" data-panel="mfg"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>Manufacturing<span class="ia">›</span></button>
+        <button class="ind-tab" data-panel="pro"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Professional Services<span class="ia">›</span></button>
+        <button class="ind-tab" data-panel="gov"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Government<span class="ia">›</span></button>
+        <button class="ind-tab" data-panel="edu"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/></svg>Education<span class="ia">›</span></button>
+      </div>
+      <div class="ind-panel-wrap">
+        <div class="ind-panel active" id="hc"><div><h3>Healthcare <span class="acc">IT Solutions</span></h3><p>HIPAA-compliant managed IT, endpoint security, and reliable connectivity for hospitals, clinics, and healthcare networks. We protect patient data and keep critical systems running 24/7.</p><a href="contact.html" class="btn-outline">Talk to a specialist</a></div><div class="ind-vis"><svg viewBox="0 0 200 180" width="160" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="90" r="70" fill="rgba(74,144,217,0.06)" stroke="rgba(74,144,217,0.2)" stroke-width="1"/><path d="M100,55 L100,125M70,90 L130,90" stroke="#4A90D9" stroke-width="8" stroke-linecap="round"/><circle cx="100" cy="90" r="35" fill="none" stroke="rgba(74,144,217,0.15)" stroke-width="1" stroke-dasharray="4,4"/><text x="100" y="155" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">HIPAA Compliant</text></svg></div></div>
+        <div class="ind-panel" id="fin"><div><h3>Financial Services <span class="acc">Technology</span></h3><p>SOC 2 and PCI-DSS compliant infrastructure, MDR, and secure cloud for banks, credit unions, and financial firms. Your data stays protected and your operations stay compliant.</p><a href="contact.html" class="btn-outline">Talk to a specialist</a></div><div class="ind-vis"><svg viewBox="0 0 200 180" width="160" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="50" width="120" height="80" rx="8" fill="rgba(74,144,217,0.08)" stroke="rgba(74,144,217,0.3)" stroke-width="1"/><path d="M40,70 L160,70" stroke="rgba(74,144,217,0.3)" stroke-width="1"/><path d="M100,35 L100,50M40,50 L40,30 L160,30 L160,50" fill="none" stroke="rgba(74,144,217,0.25)" stroke-width="1"/><circle cx="100" cy="30" r="8" fill="rgba(74,144,217,0.15)" stroke="rgba(74,144,217,0.4)" stroke-width="1"/><text x="100" y="100" font-family="Arial Black" font-size="18" fill="#4A90D9" text-anchor="middle">$</text><text x="100" y="155" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">PCI-DSS · SOC 2</text></svg></div></div>
+        <div class="ind-panel" id="mfg"><div><h3>Manufacturing <span class="acc">IT &amp; Connectivity</span></h3><p>Ruggedized networking, reliable connectivity across plant floors, and IoT infrastructure management for manufacturers that can&rsquo;t afford downtime on the production line.</p><a href="contact.html" class="btn-outline">Talk to a specialist</a></div><div class="ind-vis"><svg viewBox="0 0 200 180" width="160" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="80" width="140" height="60" rx="4" fill="rgba(74,144,217,0.06)" stroke="rgba(74,144,217,0.2)" stroke-width="1"/><rect x="50" y="60" width="30" height="20" fill="rgba(74,144,217,0.1)" stroke="rgba(74,144,217,0.3)" stroke-width="1"/><rect x="120" y="60" width="30" height="20" fill="rgba(74,144,217,0.1)" stroke="rgba(74,144,217,0.3)" stroke-width="1"/><circle cx="70" cy="110" r="15" fill="rgba(0,188,212,0.1)" stroke="rgba(0,188,212,0.3)" stroke-width="1"/><circle cx="130" cy="110" r="15" fill="rgba(0,188,212,0.1)" stroke="rgba(0,188,212,0.3)" stroke-width="1"/><text x="100" y="155" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">IoT &amp; OT Networks</text></svg></div></div>
+        <div class="ind-panel" id="pro"><div><h3>Professional Services <span class="acc">Technology</span></h3><p>Secure cloud-first IT for law firms, accounting firms, and consulting businesses &mdash; Microsoft 365, UCaaS, and MDR so your team works from anywhere, securely.</p><a href="contact.html" class="btn-outline">Talk to a specialist</a></div><div class="ind-vis"><svg viewBox="0 0 200 180" width="160" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="75" r="30" fill="rgba(74,144,217,0.08)" stroke="rgba(74,144,217,0.25)" stroke-width="1.5"/><circle cx="55" cy="120" r="20" fill="rgba(0,188,212,0.08)" stroke="rgba(0,188,212,0.2)" stroke-width="1"/><circle cx="145" cy="120" r="20" fill="rgba(0,188,212,0.08)" stroke="rgba(0,188,212,0.2)" stroke-width="1"/><line x1="100" y1="105" x2="65" y2="115" stroke="rgba(74,144,217,0.2)" stroke-width="1"/><line x1="100" y1="105" x2="135" y2="115" stroke="rgba(74,144,217,0.2)" stroke-width="1"/><text x="100" y="155" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">Secure Remote Work</text></svg></div></div>
+        <div class="ind-panel" id="gov"><div><h3>Government <span class="acc">IT Solutions</span></h3><p>CMMC-ready managed IT, secure connectivity, and compliance management for state and local government agencies &mdash; protecting constituent data and ensuring operational continuity.</p><a href="contact.html" class="btn-outline">Talk to a specialist</a></div><div class="ind-vis"><svg viewBox="0 0 200 180" width="160" xmlns="http://www.w3.org/2000/svg"><path d="M100,30 L40,65 L40,140 L160,140 L160,65 Z" fill="rgba(74,144,217,0.07)" stroke="rgba(74,144,217,0.25)" stroke-width="1.5"/><rect x="80" y="100" width="40" height="40" fill="rgba(74,144,217,0.1)" stroke="rgba(74,144,217,0.3)" stroke-width="1"/><line x1="40" y1="65" x2="160" y2="65" stroke="rgba(74,144,217,0.2)" stroke-width="1"/><text x="100" y="155" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">CMMC Compliant</text></svg></div></div>
+        <div class="ind-panel" id="edu"><div><h3>Education <span class="acc">Technology</span></h3><p>Reliable campus networking, cloud learning tools, cybersecurity, and device management for K&ndash;12 schools, universities, and EdTech organizations.</p><a href="contact.html" class="btn-outline">Talk to a specialist</a></div><div class="ind-vis"><svg viewBox="0 0 200 180" width="160" xmlns="http://www.w3.org/2000/svg"><path d="M100,35 L30,70 L30,85 L100,50 L170,85 L170,70 Z" fill="rgba(74,144,217,0.1)" stroke="rgba(74,144,217,0.3)" stroke-width="1.5"/><path d="M55,85 L55,135 L145,135 L145,85" fill="rgba(74,144,217,0.05)" stroke="rgba(74,144,217,0.2)" stroke-width="1"/><text x="100" y="155" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">Campus Networks</text></svg></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI SECTION -->
+<section class="ai-section">
+  <!-- Animated AI background -->
+  <svg class="ai-bg" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <g>
+      <!-- Neural network nodes -->
+      <circle cx="100" cy="150" r="4" fill="#4A90D9" opacity="0.3"/>
+      <circle cx="100" cy="300" r="4" fill="#4A90D9" opacity="0.3"/>
+      <circle cx="100" cy="450" r="4" fill="#4A90D9" opacity="0.3"/>
+      <circle cx="250" cy="200" r="5" fill="#4A90D9" opacity="0.35"/>
+      <circle cx="250" cy="350" r="5" fill="#4A90D9" opacity="0.35"/>
+      <circle cx="400" cy="150" r="4" fill="#00BCD4" opacity="0.3"/>
+      <circle cx="400" cy="300" r="6" fill="#00BCD4" opacity="0.4"/>
+      <circle cx="400" cy="450" r="4" fill="#00BCD4" opacity="0.3"/>
+      <!-- Connections -->
+      <g stroke="#4A90D9" stroke-opacity="0.1" stroke-width="1">
+        <line x1="100" y1="150" x2="250" y2="200"/>
+        <line x1="100" y1="150" x2="250" y2="350"/>
+        <line x1="100" y1="300" x2="250" y2="200"/>
+        <line x1="100" y1="300" x2="250" y2="350"/>
+        <line x1="100" y1="450" x2="250" y2="350"/>
+        <line x1="250" y1="200" x2="400" y2="150"/>
+        <line x1="250" y1="200" x2="400" y2="300"/>
+        <line x1="250" y1="350" x2="400" y2="300"/>
+        <line x1="250" y1="350" x2="400" y2="450"/>
+      </g>
+    </g>
+  </svg>
+  <div class="ai-inner">
+    <div>
+      <div class="eyebrow">AI-Powered Operations</div>
+      <h2 class="h2 reveal">Intelligence Built Into<br><span class="acc">Every Layer</span></h2>
+      <p style="font-size:15px;color:var(--muted);line-height:1.8" class="reveal">Racom embeds AI automation across your IT operations &mdash; not as a buzzword, but as a practical force multiplier that cuts ticket volume, speeds resolution, and eliminates manual overhead from your day-to-day.</p>
+      <div class="ai-chips reveal">
+        <span class="ai-chip">Ticket Triage AI</span>
+        <span class="ai-chip">Voice AI Routing</span>
+        <span class="ai-chip">Auto Monitoring</span>
+        <span class="ai-chip">Anomaly Detection</span>
+        <span class="ai-chip">Self-Healing Workflows</span>
+        <span class="ai-chip">Predictive Alerting</span>
+      </div>
+      <a href="cloud-ai.html" class="btn-blue reveal">Explore AI Capabilities</a>
+    </div>
+    <div class="reveal">
+      <div class="console">
+        <div class="con-hdr">
+          <div class="cdot" style="background:#ff5f57"></div>
+          <div class="cdot" style="background:#febc2e"></div>
+          <div class="cdot" style="background:#28c840"></div>
+          <span class="ctitle">racom-ai-ops &mdash; live dashboard</span>
+        </div>
+        <div class="crow"><span class="crow-label">Ticket triage engine</span><span class="cbadge bl">&#9679; LIVE</span></div>
+        <div class="crow"><span class="crow-label">Voice AI call routing</span><span class="cbadge ba">ACTIVE</span></div>
+        <div class="crow"><span class="crow-label">Endpoint monitoring</span><span class="cbadge bl">24/7</span></div>
+        <div class="crow"><span class="crow-label">Anomaly detection</span><span class="cbadge bau">AUTO</span></div>
+        <div class="crow"><span class="crow-label">MDR threat response</span><span class="cbadge bl">&#9679; LIVE</span></div>
+        <div class="crow"><span class="crow-label">Cloud backup verification</span><span class="cbadge bau">AUTO</span></div>
+        <div class="crow"><span class="crow-label">SD-WAN performance</span><span class="cbadge bl">&#9679; LIVE</span></div>
+        <div class="crow"><span class="crow-label">Security patch compliance</span><span class="cbadge bl">98.4%</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CASE STUDIES / RESULTS -->
+<section style="background:var(--navy2);padding:6rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd)">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="eyebrow reveal" style="justify-content:center;margin-bottom:.75rem">Case Studies</div>
+    <h2 class="h2 reveal" style="text-align:center;margin-bottom:.75rem">Real Results for <span class="acc">Real Businesses</span></h2>
+    <p style="font-size:15px;color:var(--muted);text-align:center;max-width:580px;margin:0 auto 3rem;line-height:1.75" class="reveal">Here&rsquo;s what happens when businesses stop managing vendors and start working with one integrated partner.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px" class="reveal">
+      
+      <!-- Case 1 -->
+      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;overflow:hidden;transition:all .25s" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(255,255,255,.07)';this.style.transform='none'">
+        <div style="background:linear-gradient(135deg,var(--navy4),var(--navy5));padding:1.75rem;border-bottom:1px solid var(--bdd)">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue3);margin-bottom:.75rem">Healthcare &bull; Multi-Site Network</div>
+          <div style="font-family:var(--ffc);font-size:3rem;font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1">40%</div>
+          <div style="font-size:12px;color:var(--muted2);margin-top:4px">Reduction in telecom costs</div>
+        </div>
+        <div style="padding:1.5rem">
+          <h4 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.6rem">Healthcare Group — 8 Locations</h4>
+          <p style="font-size:12.5px;color:var(--muted);line-height:1.7;margin-bottom:1rem">Consolidated 4 carriers into one SD-WAN solution with failover, reducing monthly telecom spend by 40% while improving uptime to 99.9%.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:5px">
+            <span style="font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--blue3);background:rgba(74,144,217,.08);border:1px solid rgba(74,144,217,.2);padding:3px 8px;border-radius:3px">SD-WAN</span>
+            <span style="font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--blue3);background:rgba(74,144,217,.08);border:1px solid rgba(74,144,217,.2);padding:3px 8px;border-radius:3px">Connectivity</span>
+            <span style="font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--blue3);background:rgba(74,144,217,.08);border:1px solid rgba(74,144,217,.2);padding:3px 8px;border-radius:3px">HIPAA</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 2 -->
+      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;overflow:hidden;transition:all .25s;transform:translateY(-8px)" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-12px)'" onmouseout="this.style.borderColor='rgba(255,255,255,.07)';this.style.transform='translateY(-8px)'">
+        <div style="background:linear-gradient(135deg,var(--navy4),var(--navy5));padding:1.75rem;border-bottom:1px solid var(--bdd)">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:.75rem">Manufacturing &bull; UCaaS Migration</div>
+          <div style="font-family:var(--ffc);font-size:3rem;font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1">30%</div>
+          <div style="font-size:12px;color:var(--muted2);margin-top:4px">Lower phone system costs</div>
+        </div>
+        <div style="padding:1.5rem">
+          <h4 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.6rem">Manufacturing Co — 350 Employees</h4>
+          <p style="font-size:12.5px;color:var(--muted);line-height:1.7;margin-bottom:1rem">Replaced aging PBX with cloud UCaaS. Voice AI handles 60% of inbound calls automatically. Team productivity up, support costs down.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:5px">
+            <span style="font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--teal);background:rgba(0,188,212,.08);border:1px solid rgba(0,188,212,.2);padding:3px 8px;border-radius:3px">UCaaS</span>
+            <span style="font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--teal);background:rgba(0,188,212,.08);border:1px solid rgba(0,188,212,.2);padding:3px 8px;border-radius:3px">Voice AI</span>
+            <span style="font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--teal);background:rgba(0,188,212,.08);border:1px solid rgba(0,188,212,.2);padding:3px 8px;border-radius:3px">POTS Replace</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 3 -->
+      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;overflow:hidden;transition:all .25s" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(255,255,255,.07)';this.style.transform='none'">
+        <div style="background:linear-gradient(135deg,var(--navy4),var(--navy5));padding:1.75rem;border-bottom:1px solid var(--bdd)">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#34D399;margin-bottom:.75rem">Financial Services &bull; Full Stack</div>
+          <div style="font-family:var(--ffc);font-size:3rem;font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1">Zero</div>
+          <div style="font-size:12px;color:var(--muted2);margin-top:4px">Security incidents in 18 months</div>
+        </div>
+        <div style="padding:1.5rem">
+          <h4 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.6rem">Financial Advisory Firm — 120 Users</h4>
+          <p style="font-size:12.5px;color:var(--muted);line-height:1.7;margin-bottom:1rem">Deployed full MDR stack, MFA, email security, and compliance management. Passed SOC 2 audit first try. Zero breaches in 18 months of monitoring.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:5px">
+            <span style="font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#34D399;background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.2);padding:3px 8px;border-radius:3px">MDR</span>
+            <span style="font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#34D399;background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.2);padding:3px 8px;border-radius:3px">SOC 2</span>
+            <span style="font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#34D399;background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.2);padding:3px 8px;border-radius:3px">MFA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="contact.html" class="btn-outline" style="display:inline-flex;align-items:center;gap:8px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        See How We Can Help Your Business
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background:var(--navy3);padding:6rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd);position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 40% 60% at 20% 50%,rgba(74,144,217,.06) 0%,transparent 60%);pointer-events:none"></div>
+  <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1">
+    <div class="eyebrow reveal" style="justify-content:center;margin-bottom:.75rem">Client Success</div>
+    <h2 class="h2 reveal" style="text-align:center;margin-bottom:3rem">Trusted By Businesses <span class="acc">Across Every Industry</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px" class="reveal">
+      <!-- Testimonial 1 -->
+      <div style="background:var(--navy2);border:1px solid var(--bdd2);border-radius:10px;padding:2rem;position:relative">
+        <div style="font-size:2.5rem;color:rgba(74,144,217,.3);font-family:Georgia,serif;line-height:1;margin-bottom:.75rem">&ldquo;</div>
+        <p style="font-size:13.5px;color:var(--muted);line-height:1.8;margin-bottom:1.5rem;font-style:italic">Racom replaced 4 different vendors for us. We now have one number to call for everything &mdash; internet, phones, IT support, and security. Our monthly costs dropped and our uptime went up.</p>
+        <div style="display:flex;align-items:center;gap:12px;padding-top:1.25rem;border-top:1px solid var(--bdd)">
+          <div style="width:40px;height:40px;border-radius:50%;background:rgba(74,144,217,.15);border:1px solid rgba(74,144,217,.3);display:flex;align-items:center;justify-content:center;font-family:var(--ffc);font-size:1rem;font-weight:900;color:var(--blue3)">JM</div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:#fff">James M.</div>
+            <div style="font-size:11px;color:var(--muted2)">VP of Operations, Healthcare Group</div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 2 -->
+      <div style="background:var(--navy2);border:1px solid var(--bdd2);border-radius:10px;padding:2rem;position:relative;transform:translateY(-8px)">
+        <div style="font-size:2.5rem;color:rgba(74,144,217,.3);font-family:Georgia,serif;line-height:1;margin-bottom:.75rem">&ldquo;</div>
+        <p style="font-size:13.5px;color:var(--muted);line-height:1.8;margin-bottom:1.5rem;font-style:italic">The SD-WAN deployment Racom did across our 8 locations was seamless. We went from constant connectivity issues to zero outages. Their team actually picks up the phone.</p>
+        <div style="display:flex;align-items:center;gap:12px;padding-top:1.25rem;border-top:1px solid var(--bdd)">
+          <div style="width:40px;height:40px;border-radius:50%;background:rgba(0,188,212,.15);border:1px solid rgba(0,188,212,.3);display:flex;align-items:center;justify-content:center;font-family:var(--ffc);font-size:1rem;font-weight:900;color:var(--teal)">SR</div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:#fff">Sarah R.</div>
+            <div style="font-size:11px;color:var(--muted2)">Director of IT, Manufacturing Company</div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 3 -->
+      <div style="background:var(--navy2);border:1px solid var(--bdd2);border-radius:10px;padding:2rem;position:relative">
+        <div style="font-size:2.5rem;color:rgba(74,144,217,.3);font-family:Georgia,serif;line-height:1;margin-bottom:.75rem">&ldquo;</div>
+        <p style="font-size:13.5px;color:var(--muted);line-height:1.8;margin-bottom:1.5rem;font-style:italic">We moved our entire phone system to UCaaS through Racom. The migration was smooth, costs went down 30%, and the Voice AI features have transformed how we handle inbound calls.</p>
+        <div style="display:flex;align-items:center;gap:12px;padding-top:1.25rem;border-top:1px solid var(--bdd)">
+          <div style="width:40px;height:40px;border-radius:50%;background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.25);display:flex;align-items:center;justify-content:center;font-family:var(--ffc);font-size:1rem;font-weight:900;color:#34D399">DK</div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:#fff">David K.</div>
+            <div style="font-size:11px;color:var(--muted2)">CEO, Professional Services Firm</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY + FORM -->
+<section class="why">
+  <div class="why-inner">
+    <div>
+      <div class="eyebrow reveal">Why Racom</div>
+      <h2 class="h2 reveal">A True One-Stop Provider &mdash;<br><span class="acc">Not Just a Reseller</span></h2>
+      <p class="sec-desc reveal" style="margin-bottom:0">Most IT vendors specialize in one thing and hand you off when it gets complicated. Racom owns the entire technology relationship from connectivity to AI automation.</p>
+      <div class="why-diffs reveal">
+        <div class="diff"><div class="diff-n">01</div><div><h4>One partner, complete stack</h4><p>Every service managed through a single account team. No more vendor finger-pointing when something breaks.</p></div></div>
+        <div class="diff"><div class="diff-n">02</div><div><h4>Performance-based processes</h4><p>SLA-driven delivery with measurable outcomes &mdash; not best-effort support that goes nowhere.</p></div></div>
+        <div class="diff"><div class="diff-n">03</div><div><h4>Carrier-agnostic sourcing</h4><p>We recommend what&rsquo;s genuinely best for you &mdash; not what earns us the highest commission.</p></div></div>
+        <div class="diff"><div class="diff-n">04</div><div><h4>National rollout capability</h4><p>From single-site deployments to complex multi-location enterprise rollouts worldwide.</p></div></div>
+      </div>
+    </div>
+    <div class="cform reveal">
+      <h3>Get a Free Assessment</h3>
+      <p class="cform-sub">Talk to a Racom expert &mdash; no pressure, no jargon, no commitment.</p>
+      <div class="cfr">
+        <input class="cfi" type="text" placeholder="First name">
+        <input class="cfi" type="text" placeholder="Last name">
+      </div>
+      <input class="cfi cfw" type="text" placeholder="Company name">
+      <input class="cfi cfw" type="email" placeholder="Work email">
+      <input class="cfi cfw" type="tel" placeholder="Phone number">
+      <select class="cfi cfw">
+        <option>Primary interest...</option>
+        <option>Connectivity / Telecom</option>
+        <option>Communications (UCaaS / VoIP)</option>
+        <option>IT Support &amp; Monitoring</option>
+        <option>Security / MDR / Compliance</option>
+        <option>Cloud (M365 / Azure / AWS)</option>
+        <option>AI-Powered Automation</option>
+        <option>Hardware Procurement</option>
+        <option>Full Stack Assessment</option>
+      </select>
+      <select class="cfi cfw">
+        <option>Company size...</option>
+        <option>1&ndash;10 employees</option>
+        <option>11&ndash;50 employees</option>
+        <option>51&ndash;200 employees</option>
+        <option>201&ndash;500 employees</option>
+        <option>500+ employees</option>
+      </select>
+      <textarea class="cfi cfw cfta" placeholder="Tell us about your current setup and biggest challenges..."></textarea>
+      <button class="cf-submit">Request Free Assessment</button>
+      <p style="font-size:12px;color:rgba(255,255,255,.2);text-align:center;margin-top:10px">Response within 1 business day &middot; (866) 220-1422</p>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<footer>
+  <div class="fg">
+    <div>
+      <a href="index.html" style="display:inline-block;margin-bottom:0.85rem">
+  <img loading="lazy" src="logo-racom.svg" alt="Racom Business" height="52" width="auto" style="height:52px; width:auto;">
+</a>
+      <p class="ft">Integrated Technology &amp; Communications Partner.<br>Serving businesses across the US and internationally.</p>
+      <div class="fc">
+        <a href="tel:8662201422">(866) 220-1422</a>
+        <a href="mailto:salessupport@racombusiness.com">salessupport@racombusiness.com</a>
+        <span>Serving Businesses Nationwide &amp; Internationally</span>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:1.25rem">
+        <a href="https://www.linkedin.com/company/racom-business" target="_blank" rel="noopener" title="LinkedIn" style="width:34px;height:34px;border-radius:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5)"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://twitter.com/racombusiness" target="_blank" rel="noopener" title="X" style="width:34px;height:34px;border-radius:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5)"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.facebook.com/racombusiness" target="_blank" rel="noopener" title="Facebook" style="width:34px;height:34px;border-radius:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5)"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Solutions</h4>
+      <ul>
+        <li><a href="connectivity.html">Connectivity</a></li>
+        <li><a href="communications.html">Communications</a></li>
+        <li><a href="it-security.html">IT Support</a></li>
+        <li><a href="it-security.html">Security / MDR</a></li>
+        <li><a href="cloud-ai.html">Cloud</a></li>
+        <li><a href="cloud-ai.html">AI Automation</a></li>
+        <li><a href="hardware.html">Hardware</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html#partners">Partner Program</a></li>
+        <li><a href="contact.html">Careers</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Hardware Store</h4>
+      <ul>
+        <li><a href="hardware.html">Laptops</a></li>
+        <li><a href="hardware.html">Desktops</a></li>
+        <li><a href="hardware.html">Networking</a></li>
+        <li><a href="hardware.html">Monitors</a></li>
+        <li><a href="hardware.html">Printers &amp; MFPs</a></li>
+        <li><a href="hardware.html">Servers</a></li>
+      </ul>
+    </div>
+  </div>
+  
+    <!-- Newsletter -->
+    <div style="background:rgba(74,144,217,.08);border:1px solid rgba(74,144,217,.2);border-radius:8px;padding:1.5rem;margin-top:2rem;grid-column:span 4">
+      <div style="max-width:600px;margin:0 auto;display:flex;align-items:center;gap:2rem;flex-wrap:wrap">
+        <div style="flex:1;min-width:200px">
+          <div style="font-size:13.5px;font-weight:700;color:#fff;margin-bottom:3px">Stay Ahead of the Technology Curve</div>
+          <div style="font-size:12px;color:var(--muted2)">Monthly insights on IT, security, cloud, and telecom — no spam, ever.</div>
+        </div>
+        <div style="display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap">
+          <input type="email" placeholder="Your work email" 
+            style="padding:9px 14px;border-radius:4px;font-size:13px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;outline:none;width:220px"
+            onfocus="this.style.borderColor='var(--blue)'" onblur="this.style.borderColor='rgba(255,255,255,.12)'">
+          <button onclick="handleNewsletter(this)" 
+            style="padding:9px 20px;border-radius:4px;font-size:13px;font-weight:700;background:var(--blue);color:#fff;border:none;cursor:pointer;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;transition:all .2s"
+            onmouseover="this.style.background='var(--blue2)'" onmouseout="this.style.background='var(--blue)'">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </div>
+  <div class="fbot">
+    <p>&copy; 2025 Racom Business &middot; All Rights Reserved</p>
+    <div class="flinks"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+  </div>
+</footer>
+
+<script>
+// Reveal on scroll
+const obs = new IntersectionObserver(e=>{
+  e.forEach(el=>{if(el.isIntersecting)el.target.classList.add("visible")});
+},{threshold:.1});
+document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+
+// Industry tabs
+document.querySelectorAll(".ind-tab").forEach(tab=>{
+  tab.addEventListener("click",()=>{
+    document.querySelectorAll(".ind-tab").forEach(t=>t.classList.remove("active"));
+    document.querySelectorAll(".ind-panel").forEach(p=>p.classList.remove("active"));
+    tab.classList.add("active");
+    const id=tab.dataset.panel;
+    if(id)document.getElementById(id)?.classList.add("active");
+  });
+});
+</script>
+
+<script>
+// Netlify Forms submission
+document.querySelectorAll('.cf-submit').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const form = btn.closest('.cform, .why-inner, [class*="form"]');
+    if (!form) { window.location = '/contact.html'; return; }
+    
+    const data = new FormData();
+    data.append('form-name', 'contact');
+    form.querySelectorAll('input, select, textarea').forEach(el => {
+      if (el.placeholder) data.append(el.type || el.tagName.toLowerCase(), el.value);
+    });
+    
+    fetch('/', { method: 'POST', body: data })
+      .then(() => {
+        btn.textContent = '✓ Message Sent! We'll be in touch within 1 business day.';
+        btn.style.background = '#16a34a';
+        btn.disabled = true;
+      })
+      .catch(() => { window.location = '/contact.html'; });
+  });
+});
+
+
+function handleNewsletter(btn){
+  const input = btn.previousElementSibling;
+  if(!input.value || !input.value.includes('@')){
+    input.style.borderColor='#f87171';
+    input.placeholder='Please enter a valid email';
+    return;
+  }
+  btn.textContent = '✓ Subscribed!';
+  btn.style.background = '#16a34a';
+  btn.disabled = true;
+  input.disabled = true;
+  // TODO: Wire to your email platform (Mailchimp, Klaviyo, etc.)
+  // fetch('/api/subscribe', {method:'POST', body: JSON.stringify({email: input.value})})
+}
+
+// Cookie consent
+function acceptCookie(){
+  localStorage.setItem('cookieConsent','accepted');
+  document.getElementById('cookieBanner').classList.add('hidden');
+}
+function dismissCookie(){
+  localStorage.setItem('cookieConsent','declined');
+  document.getElementById('cookieBanner').classList.add('hidden');
+}
+(function(){
+  if(localStorage.getItem('cookieConsent'))
+    document.getElementById('cookieBanner').classList.add('hidden');
+})();
+</script>
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .catch(() => {/* Silent fail */});
+      });
+    }
+  </script>
+
+  <!-- Mobile Bottom Navigation -->
+  <nav class="mobile-bottom-nav">
+    <a href="index.html" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+      </svg>
+      <span>Home</span>
+    </a>
+    <a href="#services" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V9.03l7-3.89v7.85z"/>
+      </svg>
+      <span>Services</span>
+    </a>
+    <a href="about.html" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+      </svg>
+      <span>About</span>
+    </a>
+    <a href="contact.html" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+      <span>Contact</span>
+    </a>
+  </nav>
+<button class="mobile-menu-btn" onclick="document.querySelector('.nav-menu').classList.toggle('active')" aria-label="Menu"><span></span><span></span><span></span></button>
+<div class="container">
+  <header class="page-header">
+    <h1 class="page-title">Cloud Migration Checklist</h1>
+  </header>
+  <div class="page-content">
+<h2>Cloud Migration Checklist</h2><p>Comprehensive comparison of leading solutions.</p><p>Contact us for a personalized recommendation based on your business needs.</p>
+    <div class="cta-box">
+      <h3>Want to Learn More?</h3>
+      <p>Contact us to discuss how we can help your business.</p>
+      <a href="contact.html" class="cta-button">Get a Free Assessment</a>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="fg">
+    <div>
+      <a href="index.html" style="display:inline-block;margin-bottom:0.85rem">
+  <img loading="lazy" src="logo-racom.svg" alt="Racom Business" height="52" width="auto" style="height:52px; width:auto;">
+</a>
+      <p class="ft">Integrated Technology &amp; Communications Partner.<br>Serving businesses across the US and internationally.</p>
+      <div class="fc">
+        <a href="tel:8662201422">(866) 220-1422</a>
+        <a href="mailto:salessupport@racombusiness.com">salessupport@racombusiness.com</a>
+        <span>Serving Businesses Nationwide &amp; Internationally</span>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:1.25rem">
+        <a href="https://www.linkedin.com/company/racom-business" target="_blank" rel="noopener" title="LinkedIn" style="width:34px;height:34px;border-radius:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5)"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://twitter.com/racombusiness" target="_blank" rel="noopener" title="X" style="width:34px;height:34px;border-radius:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5)"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.facebook.com/racombusiness" target="_blank" rel="noopener" title="Facebook" style="width:34px;height:34px;border-radius:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5)"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Solutions</h4>
+      <ul>
+        <li><a href="connectivity.html">Connectivity</a></li>
+        <li><a href="communications.html">Communications</a></li>
+        <li><a href="it-security.html">IT Support</a></li>
+        <li><a href="it-security.html">Security / MDR</a></li>
+        <li><a href="cloud-ai.html">Cloud</a></li>
+        <li><a href="cloud-ai.html">AI Automation</a></li>
+        <li><a href="hardware.html">Hardware</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html#partners">Partner Program</a></li>
+        <li><a href="contact.html">Careers</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Hardware Store</h4>
+      <ul>
+        <li><a href="hardware.html">Laptops</a></li>
+        <li><a href="hardware.html">Desktops</a></li>
+        <li><a href="hardware.html">Networking</a></li>
+        <li><a href="hardware.html">Monitors</a></li>
+        <li><a href="hardware.html">Printers &amp; MFPs</a></li>
+        <li><a href="hardware.html">Servers</a></li>
+      </ul>
+    </div>
+  </div>
+  
+    <!-- Newsletter -->
+    <div style="background:rgba(74,144,217,.08);border:1px solid rgba(74,144,217,.2);border-radius:8px;padding:1.5rem;margin-top:2rem;grid-column:span 4">
+      <div style="max-width:600px;margin:0 auto;display:flex;align-items:center;gap:2rem;flex-wrap:wrap">
+        <div style="flex:1;min-width:200px">
+          <div style="font-size:13.5px;font-weight:700;color:#fff;margin-bottom:3px">Stay Ahead of the Technology Curve</div>
+          <div style="font-size:12px;color:var(--muted2)">Monthly insights on IT, security, cloud, and telecom — no spam, ever.</div>
+        </div>
+        <div style="display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap">
+          <input type="email" placeholder="Your work email" 
+            style="padding:9px 14px;border-radius:4px;font-size:13px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;outline:none;width:220px"
+            onfocus="this.style.borderColor='var(--blue)'" onblur="this.style.borderColor='rgba(255,255,255,.12)'">
+          <button onclick="handleNewsletter(this)" 
+            style="padding:9px 20px;border-radius:4px;font-size:13px;font-weight:700;background:var(--blue);color:#fff;border:none;cursor:pointer;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;transition:all .2s"
+            onmouseover="this.style.background='var(--blue2)'" onmouseout="this.style.background='var(--blue)'">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </div>
+  <div class="fbot">
+    <p>&copy; 2025 Racom Business &middot; All Rights Reserved</p>
+    <div class="flinks"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+  </div>
+</footer>
+<nav class="mobile-bottom-nav">
+    <a href="index.html" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+      </svg>
+      <span>Home</span>
+    </a>
+    <a href="#services" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V9.03l7-3.89v7.85z"/>
+      </svg>
+      <span>Services</span>
+    </a>
+    <a href="about.html" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+      </svg>
+      <span>About</span>
+    </a>
+    <a href="contact.html" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+      <span>Contact</span>
+    </a>
+  </nav>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js").catch(()=>{})})}</script>
+</body>
+</html>
