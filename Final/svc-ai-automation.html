@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Preload critical resources -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<title>AI & Workflow Automation — RPA & Process Optimization | Racom Business</title>
+<meta name="description" content="Automate repetitive tasks with AI and RPA. Eliminate data entry, automate invoice processing, deploy chatbots, and free your team for strategic work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ff:'Barlow',sans-serif;
+  --ffc:'Barlow Condensed',sans-serif;
+  --navy:#060E1C;
+  --navy2:#0D1A2E;
+  --navy3:#132238;
+  --navy4:#1A2D42;
+  --blue:#4A90D9;
+  --purple:#A855F7;
+  --purple2:#9333EA;
+  --pink:#EC4899;
+  --white:#fff;
+  --muted:rgba(255,255,255,0.55);
+  --muted2:rgba(255,255,255,0.35);
+  --muted3:rgba(255,255,255,0.15);
+  --bdd:rgba(255,255,255,0.08);
+  --bdd2:rgba(255,255,255,0.12);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;background:var(--navy);color:#fff;line-height:1.55;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--navy)}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--purple),var(--pink));border-radius:3px}
+a{text-decoration:none;color:inherit}
+
+/* ── TOPBAR ── */
+.topbar{
+  background:var(--navy2);border-bottom:1px solid var(--bdd);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:7px 2.5rem;font-size:12px;font-weight:500;
+}
+.topbar-left{display:flex;gap:1.75rem;align-items:center;color:var(--muted2)}
+.topbar-left a{color:var(--muted2);transition:color .15s}
+.topbar-left a:hover{color:#fff}
+.topbar-right{display:flex;gap:12px;align-items:center}
+.topbar-link{font-size:12px;color:var(--muted2);transition:color .15s}
+.topbar-link:hover{color:#fff}
+.topbar-sep{color:var(--muted3);font-size:10px}
+.topbar-cta{
+  font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--blue);border:1px solid rgba(74,144,217,0.35);
+  padding:4px 12px;border-radius:3px;transition:all .2s;
+}
+.topbar-cta:hover{background:rgba(74,144,217,.12);color:#fff}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(6,14,28,0.97);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--bdd);
+  height:68px;display:flex;align-items:stretch;padding:0 2.5rem;
+}
+.nav-logo{display:flex;align-items:center;margin-right:2rem;flex-shrink:0}
+.nav-logo svg{height:42px;width:auto}
+.nav-menu{display:flex;align-items:stretch;flex:1;justify-content:flex-start}
+.ni{position:relative;display:flex;align-items:center}
+.nav-link,.nt{
+  font-size:13px;font-weight:600;color:rgba(255,255,255,0.6);
+  padding:0 13px;height:68px;display:flex;align-items:center;gap:5px;
+  transition:all .2s;white-space:nowrap;cursor:pointer;
+  border:none;background:transparent;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;
+}
+.nav-link:hover,.nt:hover,.nav-link.active{color:#fff;background:rgba(255,255,255,.04)}
+.nav-link.active{border-bottom:2px solid var(--purple)}
+.nav-arr{
+  border-left:4px solid transparent;border-right:4px solid transparent;
+  border-top:4px solid rgba(255,255,255,0.38);
+  transition:transform .2s;margin-top:1px;flex-shrink:0;
+}
+.ni:hover .nav-arr{transform:rotate(180deg)}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;padding-left:1rem}
+.nav-phone{font-size:12.5px;color:rgba(255,255,255,0.38);font-weight:600;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;border-radius:4px;font-size:13px;font-weight:700;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  color:#fff;border:none;cursor:pointer;
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;letter-spacing:.04em;
+}
+.btn-nav:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(168,85,247,.4)}
+
+/* ── BUTTONS ── */
+.btn-gradient{
+  padding:13px 26px;border-radius:4px;font-size:14px;font-weight:700;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  color:#fff;border:none;cursor:pointer;
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;
+  letter-spacing:.04em;display:inline-block;
+}
+.btn-gradient:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(168,85,247,.35)}
+.btn-ghost{
+  padding:13px 22px;border-radius:4px;font-size:14px;font-weight:700;
+  background:transparent;color:rgba(255,255,255,.75);
+  border:1px solid rgba(255,255,255,.2);cursor:pointer;
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;
+  letter-spacing:.04em;display:inline-block;
+}
+.btn-ghost:hover{border-color:rgba(255,255,255,.55);color:#fff}
+
+/* ── HERO ── */
+.hero{
+  background:var(--navy);border-bottom:1px solid var(--bdd);
+  padding:6rem 2.5rem;position:relative;overflow:hidden;
+}
+.hero-gradient{
+  position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 40%, rgba(168,85,247,.12) 0%, transparent 50%),
+             radial-gradient(circle at 70% 60%, rgba(236,72,153,.08) 0%, transparent 50%);
+}
+.hero-grid{
+  position:absolute;inset:0;opacity:.15;
+  background-image:
+    linear-gradient(rgba(168,85,247,.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168,85,247,.15) 1px, transparent 1px);
+  background-size:40px 40px;
+}
+.hero-inner{
+  position:relative;z-index:2;max-width:1200px;margin:0 auto;
+  text-align:center;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--purple);border:1px solid rgba(168,85,247,.3);
+  padding:6px 14px;border-radius:100px;
+  background:linear-gradient(135deg,rgba(168,85,247,.08),rgba(236,72,153,.08));
+  margin-bottom:1.5rem;
+}
+.hero-badge svg{width:14px;height:14px;fill:var(--purple)}
+.hero h1{
+  font-family:var(--ffc);font-size:4.2rem;font-weight:900;
+  line-height:1.05;letter-spacing:-.02em;color:#fff;
+  max-width:950px;margin:0 auto 1.5rem;
+}
+.hero h1 .acc{
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero p{
+  font-size:16px;color:var(--muted);line-height:1.75;
+  max-width:740px;margin:0 auto 2.5rem;
+}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ── SEC HEAD ── */
+.sec-head{text-align:center;max-width:700px;margin:0 auto 3.5rem}
+.sec-over{
+  font-size:10.5px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--purple);margin-bottom:.75rem;
+}
+.sec-head h2{
+  font-family:var(--ffc);font-size:2.6rem;font-weight:900;
+  line-height:1.1;color:#fff;margin-bottom:1rem;
+  text-transform:uppercase;letter-spacing:-.01em;
+}
+.sec-head p{font-size:14.5px;color:var(--muted);line-height:1.7}
+
+/* ── USE CASES ── */
+.use-cases{
+  padding:6rem 2.5rem;background:var(--navy2);
+  border-bottom:1px solid var(--bdd);
+}
+.uc-inner{max-width:1200px;margin:0 auto}
+.uc-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;
+  margin-top:3rem;
+}
+.uc-card{
+  background:var(--navy3);border:1px solid var(--bdd);
+  border-radius:10px;padding:2rem;text-align:center;
+  transition:all .25s;position:relative;overflow:hidden;
+}
+.uc-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--purple),var(--pink));
+  opacity:0;transition:opacity .25s;
+}
+.uc-card:hover{
+  border-color:rgba(168,85,247,.4);transform:translateY(-4px);
+}
+.uc-card:hover::before{opacity:1}
+.uc-emoji{font-size:2.8rem;display:block;margin-bottom:1rem}
+.uc-card h3{
+  font-size:14px;font-weight:700;color:#fff;
+  margin-bottom:.75rem;letter-spacing:-.01em;
+}
+.uc-card p{
+  font-size:12px;color:var(--muted2);line-height:1.7;
+  margin-bottom:1rem;
+}
+.uc-stat{
+  font-size:18px;font-weight:900;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;font-family:var(--ffc);
+}
+
+/* ── BEFORE/AFTER ── */
+.before-after{
+  padding:6rem 2.5rem;background:var(--navy);
+  border-bottom:1px solid var(--bdd);
+}
+.ba-inner{max-width:1200px;margin:0 auto}
+.ba-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;
+  margin-top:3rem;
+}
+.ba-col{
+  background:var(--navy2);border:1px solid var(--bdd2);
+  border-radius:10px;overflow:hidden;
+}
+.ba-header{
+  padding:1.25rem 1.75rem;
+  background:var(--navy3);border-bottom:1px solid var(--bdd);
+  display:flex;align-items:center;gap:10px;
+}
+.ba-icon{
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;
+}
+.ba-col.before .ba-icon{background:rgba(239,68,68,.15);border:1.5px solid #ef4444}
+.ba-col.after .ba-icon{background:rgba(16,185,129,.15);border:1.5px solid #10b981}
+.ba-header h3{
+  font-size:16px;font-weight:700;color:#fff;
+  letter-spacing:-.01em;
+}
+.ba-body{padding:2rem 1.75rem}
+.ba-steps{
+  display:flex;flex-direction:column;gap:12px;
+}
+.ba-step{
+  display:flex;gap:12px;align-items:flex-start;
+}
+.ba-num{
+  width:24px;height:24px;border-radius:50%;
+  background:var(--navy4);border:1.5px solid var(--bdd);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:900;color:var(--muted2);
+  flex-shrink:0;
+}
+.ba-text{
+  font-size:13px;color:var(--muted);line-height:1.7;
+  flex:1;
+}
+.ba-highlight{
+  margin-top:1.5rem;padding:1.25rem;
+  border-radius:6px;
+  background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.2);
+}
+.ba-highlight-value{
+  font-size:24px;font-weight:900;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;font-family:var(--ffc);margin-bottom:4px;
+}
+.ba-highlight-label{
+  font-size:11px;font-weight:600;color:var(--muted2);
+  text-transform:uppercase;letter-spacing:.08em;
+}
+
+/* ── ROI CALCULATOR ── */
+.roi-calc{
+  padding:6rem 2.5rem;background:var(--navy3);
+  border-bottom:1px solid var(--bdd);
+}
+.roi-inner{max-width:900px;margin:0 auto}
+.calc-widget{
+  background:var(--navy2);border:1px solid var(--bdd2);
+  border-radius:12px;padding:2.5rem;margin-top:3rem;
+  border-top:3px solid;
+  border-image:linear-gradient(90deg,var(--purple),var(--pink)) 1;
+}
+.calc-inputs{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;
+  margin-bottom:2rem;
+}
+.calc-field{
+  display:flex;flex-direction:column;gap:8px;
+}
+.calc-label{
+  font-size:12px;font-weight:600;color:rgba(255,255,255,.7);
+  text-transform:uppercase;letter-spacing:.06em;
+}
+.calc-input{
+  padding:12px 14px;border-radius:6px;
+  font-size:16px;font-weight:700;
+  background:var(--navy3);border:1px solid var(--bdd);
+  color:#fff;font-family:var(--ffc);outline:none;
+  transition:border-color .2s;
+}
+.calc-input:focus{border-color:var(--purple)}
+.calc-result{
+  background:var(--navy4);border:1px solid var(--bdd);
+  border-radius:8px;padding:2rem;text-align:center;
+}
+.calc-result-value{
+  font-size:3.5rem;font-weight:900;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;font-family:var(--ffc);line-height:1;
+  margin-bottom:.75rem;
+}
+.calc-result-label{
+  font-size:13px;font-weight:600;color:var(--muted2);
+  text-transform:uppercase;letter-spacing:.08em;
+}
+
+/* ── CTA ── */
+.cta-sec{
+  padding:5rem 2.5rem;background:var(--navy2);
+  border-bottom:1px solid var(--bdd);
+}
+.cta-inner{
+  max-width:900px;margin:0 auto;text-align:center;
+}
+.cta-inner h2{
+  font-family:var(--ffc);font-size:2.8rem;font-weight:900;
+  line-height:1.1;color:#fff;margin-bottom:1.25rem;
+  text-transform:uppercase;letter-spacing:-.02em;
+}
+.cta-inner p{
+  font-size:15px;color:var(--muted);line-height:1.7;
+  margin-bottom:2.5rem;
+}
+.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--navy);
+  border-top:3px solid;
+  border-image:linear-gradient(90deg,var(--purple),var(--pink)) 1;
+  padding:4rem 2.5rem 2rem;
+}
+.footer-grid{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;
+  margin-bottom:3rem;
+}
+footer h4{
+  font-size:10px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:rgba(255,255,255,.35);
+  margin-bottom:1rem;border-bottom:1px solid var(--bdd);
+  padding-bottom:.75rem;
+}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+footer li a{
+  font-size:13px;color:rgba(255,255,255,.4);font-weight:500;
+  transition:all .2s;display:flex;align-items:center;gap:6px;
+}
+footer li a::before{content:"›";color:var(--purple);font-size:13px}
+footer li a:hover{color:#fff;padding-left:4px}
+.footer-brand p{
+  font-size:13px;color:rgba(255,255,255,.3);
+  line-height:1.7;margin:.75rem 0 1.25rem;max-width:280px;
+}
+.footer-contact a{
+  display:block;font-size:13.5px;color:var(--purple);
+  font-weight:700;margin-bottom:4px;transition:color .2s;
+}
+.footer-contact a:hover{color:#fff}
+.footer-bottom{
+  max-width:1200px;margin:0 auto;border-top:1px solid var(--bdd);
+  padding-top:2rem;display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:1rem;
+}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,.2)}
+.footer-links{display:flex;gap:20px}
+.footer-links a{
+  font-size:12px;color:rgba(255,255,255,.2);transition:color .2s;
+}
+.footer-links a:hover{color:rgba(255,255,255,.6)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .hero h1{font-size:3rem}
+  .uc-grid{grid-template-columns:repeat(2,1fr)}
+  .ba-grid{grid-template-columns:1fr;gap:2rem}
+  .calc-inputs{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .topbar{display:none}
+  nav{padding:0 1.25rem}.nav-menu{display:none}
+  .hero h1{font-size:2.4rem}
+  .uc-grid{grid-template-columns:1fr}
+}
+
+/* ── NAVIGATION ── */
+nav{position:sticky;top:0;z-index:200;background:rgba(6,14,28,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdd);height:68px;display:flex;align-items:center;padding:0 2.5rem;gap:0}
+.nav-logo{display:flex;align-items:center;margin-right:2rem;flex-shrink:0}
+.nav-logo svg{height:42px;width:auto}
+.nav-menu{display:flex;align-items:stretch;flex:1;justify-content:flex-start}
+.ni{position:relative;display:flex;align-items:center}
+.nl,.nt{font-size:13px;font-weight:600;color:rgba(255,255,255,0.6);padding:0 13px;height:68px;display:flex;align-items:center;gap:5px;transition:all .2s;white-space:nowrap;cursor:pointer;border:none;background:transparent;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;background:rgba(255,255,255,.04)}
+.nl.active{border-bottom:2px solid var(--blue)}
+.narr{border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid rgba(255,255,255,0.35);transition:transform .2s;margin-top:1px;flex-shrink:0}
+.ni:hover .narr{transform:rotate(180deg)}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;padding-left:1rem}
+.nav-phone{font-size:12.5px;color:rgba(255,255,255,0.38);font-weight:600;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;border-radius:4px;font-size:13px;font-weight:700;background:var(--blue);color:#fff;border:none;cursor:pointer;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;letter-spacing:.04em}
+.btn-nav:hover{background:var(--blue2);transform:translateY(-1px)}
+
+/* ── MEGA MENU ── */
+.mega{display:none;position:absolute;top:68px;left:0;background:var(--navy3);border:1px solid var(--bdd2);border-top:2px solid var(--blue);border-radius:0 0 8px 8px;padding:2rem;box-shadow:0 24px 60px rgba(0,0,0,0.65);z-index:300;min-width:680px;gap:2rem}
+.ni:hover .mega{display:flex}
+.mc{min-width:150px}
+.mc h5{font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin:0 0 .55rem;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif}
+.mc ul{list-style:none;display:flex;flex-direction:column;gap:1px}
+.mc a{font-size:12.5px;font-weight:500;color:rgba(255,255,255,.5);padding:6px 10px;border-radius:4px;display:flex;align-items:center;gap:7px;transition:all .15s}
+.mc a:hover{color:#fff;background:rgba(74,144,217,.1);padding-left:14px}
+.mc a::before{content:"›";color:var(--blue3);font-size:13px}
+.mdiv{width:1px;background:var(--bdd);flex-shrink:0}
+.mfeat{background:var(--navy4);border:1px solid var(--bdd);border-radius:6px;padding:1.25rem;min-width:190px}
+.mfeat h5{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin-bottom:.6rem}
+.mfeat p{font-size:12px;color:var(--muted2);line-height:1.6;margin-bottom:.85rem}
+.mfeat-link{font-size:12px;font-weight:700;color:var(--blue3);display:inline-flex;align-items:center;gap:5px;transition:color .15s}
+.mfeat-link:hover{color:#fff}
+
+
+
+/* ========================================
+   MOBILE-FIRST APP-LIKE ENHANCEMENTS
+   Add this CSS to make the site feel like a native app
+   ======================================== */
+
+/* Mobile Navigation Enhancements */
+@media (max-width: 768px) {
+  
+  /* Hide desktop navigation on mobile */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 85%;
+    max-width: 320px;
+    height: 100vh;
+    background: linear-gradient(135deg, #060E1C 0%, #0D1E35 100%);
+    z-index: 9999;
+    transition: left 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    overflow-y: auto;
+    box-shadow: 2px 0 20px rgba(0,0,0,0.5);
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  /* Mobile Menu Button */
+  .mobile-menu-btn {
+    display: block !important;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    background: linear-gradient(135deg, #4A90D9, #2B5F8A);
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(74, 144, 217, 0.4);
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-menu-btn:active {
+    transform: scale(0.95);
+  }
+  
+  .mobile-menu-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    margin: 5px auto;
+    transition: 0.3s;
+    border-radius: 2px;
+  }
+  
+  /* Bottom Navigation Bar (Like Mobile Apps) */
+  .mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(6, 14, 28, 0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .mobile-bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 12px;
+  }
+  
+  .mobile-bottom-nav a.active,
+  .mobile-bottom-nav a:active {
+    color: #4A90D9;
+    background: rgba(74, 144, 217, 0.1);
+  }
+  
+  .mobile-bottom-nav svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Card-based Layout for Mobile */
+  .service-card,
+  .feature-card,
+  .content-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    margin-bottom: 16px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+  }
+  
+  .service-card:active,
+  .feature-card:active {
+    transform: scale(0.98) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  /* Mobile Typography */
+  h1 {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+  }
+  
+  h2 {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+  }
+  
+  h3 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+  
+  p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Touch-Optimized Buttons */
+  button,
+  .btn,
+  .cta-button,
+  a[href^="tel"],
+  a[href^="mailto"] {
+    min-height: 48px !important;
+    padding: 12px 24px !important;
+    border-radius: 12px !important;
+    font-size: 16px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+  }
+  
+  button:active,
+  .btn:active,
+  .cta-button:active {
+    transform: scale(0.96) !important;
+  }
+  
+  /* Mobile Spacing */
+  section {
+    padding: 24px 20px !important;
+  }
+  
+  /* Pull-to-Refresh Indicator */
+  .pull-to-refresh {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-60px);
+    background: rgba(74, 144, 217, 0.95);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(74, 144, 217, 0.4);
+    transition: transform 0.3s ease;
+    z-index: 10000;
+  }
+  
+  .pull-to-refresh.active {
+    transform: translateX(-50%) translateY(20px);
+  }
+  
+  /* Smooth Scrolling */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Hide Scrollbar but keep functionality */
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* App-like Header */
+  header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 999 !important;
+    background: rgba(6, 14, 28, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  /* Safe Area Insets for iPhone */
+  @supports(padding: max(0px)) {
+    body {
+      padding-left: max(0px, env(safe-area-inset-left));
+      padding-right: max(0px, env(safe-area-inset-right));
+    }
+    
+    .mobile-bottom-nav {
+      padding-bottom: max(8px, env(safe-area-inset-bottom));
+    }
+  }
+  
+  /* Footer padding for bottom nav */
+  footer {
+    padding-bottom: 80px !important;
+  }
+}
+
+/* Tablet Optimization (iPad) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+  
+  .service-card {
+    padding: 24px !important;
+  }
+  
+  h1 {
+    font-size: 48px !important;
+  }
+  
+  h2 {
+    font-size: 36px !important;
+  }
+}
+
+/* Loading Animation */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #4A90D9;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Haptic Feedback Simulation */
+@keyframes tap-feedback {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.96); }
+  100% { transform: scale(1); }
+}
+
+.tap-feedback:active {
+  animation: tap-feedback 0.2s ease;
+}
+
+</style>
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#4A90D9">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Racom Business">
+  
+</head>
+<body>
+  <!-- Mobile Menu Button -->
+  <button class="mobile-menu-btn" onclick="document.querySelector('.nav-menu').classList.toggle('active')" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <a href="tel:8662201422">(866) 220-1422</a>
+    <span class="topbar-sep">|</span>
+    <a href="mailto:salessupport@racombusiness.com">salessupport@racombusiness.com</a>
+    <span class="topbar-sep">|</span>
+    <span>Serving Businesses Nationwide &amp; Internationally</span>
+  </div>
+  <div class="topbar-right">
+    <a href="contact.html" class="topbar-link">Careers</a>
+    <span class="topbar-sep">|</span>
+    <a href="blog.html" class="topbar-link">Resources</a>
+    <span class="topbar-sep">|</span>
+    <a href="store.html" class="topbar-link" style="color:var(--blue);font-weight:700">&#9673; Store</a>
+    <span class="topbar-sep">|</span>
+    <a href="contact.html" class="topbar-cta">Free Assessment</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo-wrap">
+  <img loading="lazy" src="logo-racom.svg" alt="Racom Business" height="52" width="auto" style="height:52px; width:auto;">
+  </a>
+  <div class="nav-menu">
+    <div class="ni">
+      <div class="nt">Services <div class="narr"></div></div>
+      <div class="mega" style="min-width:580px">
+        <div class="mc">
+          <h5>Connect &amp; Communicate</h5>
+          <ul>
+            <li><a href="svc-fiber-internet.html">Business Fiber &amp; Internet</a></li>
+            <li><a href="svc-fiber-internet.html">Dedicated Circuits</a></li>
+            <li><a href="svc-sdwan.html">SD-WAN &amp; SASE</a></li>
+            <li><a href="svc-ucaas.html">Cloud VoIP &amp; UCaaS</a></li>
+            <li><a href="communications.html">Contact Center (CCaaS)</a></li>
+            <li><a href="svc-pots.html">POTS Line Replacement</a></li>
+          </ul>
+        </div>
+        <div class="mc">
+          <h5>Manage &amp; Secure</h5>
+          <ul>
+            <li><a href="svc-rmm.html">24/7 Remote Monitoring</a></li>
+            <li><a href="svc-helpdesk.html">Helpdesk &amp; Service Desk</a></li>
+            <li><a href="it-security.html">Co-Managed IT</a></li>
+            <li><a href="svc-edr.html">Endpoint Detection (EDR)</a></li>
+            <li><a href="svc-mdr.html">MDR &amp; 24×7 SOC</a></li>
+            <li><a href="it-security.html">Zero Trust &amp; MFA</a></li>
+          </ul>
+        </div>
+        <div class="mc">
+          <h5>Cloud &amp; Equip</h5>
+          <ul>
+            <li><a href="svc-m365.html">Microsoft 365 &amp; Azure</a></li>
+            <li><a href="cloud-ai.html">AWS Managed Services</a></li>
+            <li><a href="svc-backup.html">Backup &amp; Disaster Recovery</a></li>
+            <li><a href="cloud-ai.html">AI &amp; Workflow Automation</a></li>
+            <li><a href="hardware.html">Servers &amp; Storage</a></li>
+            <li><a href="store.html">Browse 2,400+ Products &rarr;</a></li>
+          </ul>
+        </div>
+        <div class="mdiv"></div>
+        <div class="mfeat">
+          <h5>Not sure where to start?</h5>
+          <p>Free technology assessment — we audit your environment and build a roadmap at no cost.</p>
+          <a href="contact.html" class="mfeat-link">Book free assessment &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="ni">
+      <div class="nt">Industries <div class="narr"></div></div>
+      <div class="mega" style="min-width:540px">
+        <div class="mc">
+          <h5>Industries We Serve</h5>
+          <ul>
+            <li><a href="industry-healthcare.html">Healthcare &amp; Medical Groups</a></li>
+            <li><a href="industry-financial.html">Financial Services &amp; Fintech</a></li>
+            <li><a href="industry-manufacturing.html">Manufacturing &amp; Industrial</a></li>
+            <li><a href="industry-professional.html">Professional Services</a></li>
+            <li><a href="industry-government.html">Government &amp; Public Sector</a></li>
+            <li><a href="industry-education.html">Education &amp; K-12</a></li>
+          </ul>
+        </div>
+        <div class="mdiv"></div>
+        <div class="mfeat">
+          <h5>Your Industry</h5>
+          <p>We serve businesses across every vertical. Talk to a specialist who knows your compliance and connectivity requirements.</p>
+          <a href="contact.html" class="mfeat-link">Talk to a specialist &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="ni">
+      <div class="nt">Why Racom <div class="narr"></div></div>
+      <div class="mega" style="min-width:520px">
+        <div class="mc">
+          <h5>What Makes Us Different</h5>
+          <ul>
+            <li><a href="about.html">One Partner, One Invoice</a></li>
+            <li><a href="about.html">No Offshore Ticket Queues</a></li>
+            <li><a href="about.html">Dedicated Account Manager</a></li>
+            <li><a href="about.html">3,000+ Businesses Served</a></li>
+            <li><a href="about.html">200+ Carrier Partnerships</a></li>
+          </ul>
+        </div>
+        <div class="mc">
+          <h5>Proven Results</h5>
+          <ul>
+            <li><a href="case-studies.html">40% Telecom Cost Reduction</a></li>
+            <li><a href="case-studies.html">Zero Security Incidents 18mo</a></li>
+            <li><a href="case-studies.html">30% Lower Phone Costs</a></li>
+            <li><a href="case-studies.html">All Case Studies &rarr;</a></li>
+          </ul>
+        </div>
+        <div class="mdiv"></div>
+        <div class="mfeat">
+          <h5>See It For Yourself</h5>
+          <p>Free 30-minute technology review with a certified engineer — no sales pitch, just real recommendations.</p>
+          <a href="contact.html" class="mfeat-link">Request free review &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="ni">
+      <div class="nt">Resources <div class="narr"></div></div>
+      <div class="mega" style="min-width:440px">
+        <div class="mc">
+          <h5>Learn</h5>
+          <ul>
+            <li><a href="blog.html">Blog &amp; Articles</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="white-papers.html">White Papers &amp; Guides</a></li>
+            <li><a href="technology-guides.html">Technology Comparisons</a></li>
+          </ul>
+        </div>
+        <div class="mc">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Racom</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="mdiv"></div>
+        <div class="mfeat">
+          <h5>Free MSP Guide</h5>
+          <p>12 questions to ask any IT provider before signing. No email required.</p>
+          <a href="white-papers.html" class="mfeat-link">Download free &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="ni"><a href="about.html" class="nl">About</a></div>
+    <div class="ni"><a href="store.html" class="nl">Store</a></div>
+  </div>
+  <div class="nav-right">
+    <span class="nav-phone">(866) 220-1422</span>
+    <a href="contact.html" class="btn-nav">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-gradient"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      AI-Powered Automation
+    </div>
+    <h1>Automate the Mundane. <span class="acc">Focus on the Mission.</span></h1>
+    <p>
+      Deploy AI and robotic process automation (RPA) to eliminate data entry, automate invoice processing, 
+      route customer inquiries, and free your team for strategic work. No coding required.
+    </p>
+    <div class="hero-ctas">
+      <a href="contact.html" class="btn-gradient">Schedule Automation Workshop</a>
+      <a href="#roi" class="btn-ghost">Calculate ROI</a>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="use-cases">
+  <div class="uc-inner">
+    <div class="sec-head">
+      <div class="sec-over">Common Applications</div>
+      <h2>What Can Be Automated?</h2>
+      <p>Real-world examples from businesses that deployed AI automation to reclaim thousands of hours annually.</p>
+    </div>
+    <div class="uc-grid">
+      <div class="uc-card">
+        <span class="uc-emoji">📄</span>
+        <h3>Invoice Processing</h3>
+        <p>OCR extracts vendor, amount, date from PDFs. AI matches to POs, flags discrepancies, auto-approves under threshold.</p>
+        <div class="uc-stat">95% Touchless</div>
+      </div>
+      
+      <div class="uc-card">
+        <span class="uc-emoji">💬</span>
+        <h3>Customer Support</h3>
+        <p>Chatbot handles password resets, order status, FAQs. Escalates to human only for complex issues. 24/7 availability.</p>
+        <div class="uc-stat">60% Deflection</div>
+      </div>
+      
+      <div class="uc-card">
+        <span class="uc-emoji">📊</span>
+        <h3>Report Generation</h3>
+        <p>Pull sales data from CRM, format into branded slides, email to execs every Monday at 7am. Zero manual work.</p>
+        <div class="uc-stat">12 hrs/week saved</div>
+      </div>
+      
+      <div class="uc-card">
+        <span class="uc-emoji">🔄</span>
+        <h3>Data Entry</h3>
+        <p>Import CSV from legacy system, validate, transform, and push to ERP. Runs nightly. Error rate near zero.</p>
+        <div class="uc-stat">80% Faster</div>
+      </div>
+      
+      <div class="uc-card">
+        <span class="uc-emoji">👤</span>
+        <h3>Onboarding/Offboarding</h3>
+        <p>Webhook from HR system triggers AD account, email, Slack, app provisioning. Off-board reverses it. No IT ticket needed.</p>
+        <div class="uc-stat">30 min → 2 min</div>
+      </div>
+      
+      <div class="uc-card">
+        <span class="uc-emoji">📧</span>
+        <h3>Email Routing</h3>
+        <p>NLP reads inbound emails, categorizes, assigns to correct queue. Urgent keywords trigger alerts.</p>
+        <div class="uc-stat">40% SLA Improvement</div>
+      </div>
+      
+      <div class="uc-card">
+        <span class="uc-emoji">📋</span>
+        <h3>Compliance Checks</h3>
+        <p>Scan contracts for missing clauses, auto-populate templates, flag deviations from standard terms.</p>
+        <div class="uc-stat">100% Coverage</div>
+      </div>
+      
+      <div class="uc-card">
+        <span class="uc-emoji">🔍</span>
+        <h3>Lead Qualification</h3>
+        <p>Score leads based on website behavior, enrich with LinkedIn data, route hot leads to sales instantly.</p>
+        <div class="uc-stat">3x Conversion</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE/AFTER -->
+<section class="before-after">
+  <div class="ba-inner">
+    <div class="sec-head">
+      <div class="sec-over">Process Transformation</div>
+      <h2>Invoice Processing — Before &amp; After</h2>
+      <p>Real example from a 200-employee manufacturing company processing 500 invoices/month.</p>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-col before">
+        <div class="ba-header">
+          <div class="ba-icon">✗</div>
+          <h3>Manual Process</h3>
+        </div>
+        <div class="ba-body">
+          <div class="ba-steps">
+            <div class="ba-step">
+              <div class="ba-num">1</div>
+              <div class="ba-text">AP clerk opens email, downloads PDF invoice attachment</div>
+            </div>
+            <div class="ba-step">
+              <div class="ba-num">2</div>
+              <div class="ba-text">Manually keys vendor name, invoice number, amount, date into ERP</div>
+            </div>
+            <div class="ba-step">
+              <div class="ba-num">3</div>
+              <div class="ba-text">Searches for matching PO, cross-checks line items by hand</div>
+            </div>
+            <div class="ba-step">
+              <div class="ba-num">4</div>
+              <div class="ba-text">If discrepancy, emails purchasing for approval via Outlook</div>
+            </div>
+            <div class="ba-step">
+              <div class="ba-num">5</div>
+              <div class="ba-text">Waits for reply (1-3 days typical), re-opens ticket</div>
+            </div>
+            <div class="ba-step">
+              <div class="ba-num">6</div>
+              <div class="ba-text">Manually routes to CFO for final approval if over $5K</div>
+            </div>
+            <div class="ba-step">
+              <div class="ba-num">7</div>
+              <div class="ba-text">Files PDF to network drive, marks invoice paid in ERP</div>
+            </div>
+          </div>
+          <div class="ba-highlight">
+            <div class="ba-highlight-value">8-12 min</div>
+            <div class="ba-highlight-label">Per Invoice</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ba-col after">
+        <div class="ba-header">
+          <div class="ba-icon">✓</div>
+          <h3>Automated Process</h3>
+        </div>
+        <div class="ba-body">
+          <div class="ba-steps">
+            <div class="ba-step">
+              <div class="ba-num">1</div>
+              <div class="ba-text">Invoice email arrives, bot extracts PDF via API</div>
+            </div>
+            <div class="ba-step">
+              <div class="ba-num">2</div>
+              <div class="ba-text">OCR reads vendor, amount, invoice #, line items (2 seconds)</div>
+            </div>
+            <div class="ba-step">
+              <div class="ba-num">3</div>
+              <div class="ba-text">AI matches to PO, compares totals, validates tax rates</div>
+            </div>
+            <div class="ba-step">
+              <div class="ba-num">4</div>
+              <div class="ba-text">If match + under $5K → auto-approve, post to ERP</div>
+            </div>
+            <div class="ba-step">
+              <div class="ba-num">5</div>
+              <div class="ba-text">If discrepancy or over $5K → Slack alert to purchasing</div>
+            </div>
+            <div class="ba-step">
+              <div class="ba-num">6</div>
+              <div class="ba-text">Approved via Slack emoji reaction, bot completes workflow</div>
+            </div>
+            <div class="ba-step">
+              <div class="ba-num">7</div>
+              <div class="ba-text">PDF filed to S3 with metadata, audit trail logged</div>
+            </div>
+          </div>
+          <div class="ba-highlight">
+            <div class="ba-highlight-value">30 sec</div>
+            <div class="ba-highlight-label">Per Invoice (95% Touchless)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI CALCULATOR -->
+<section class="roi-calc" id="roi">
+  <div class="roi-inner">
+    <div class="sec-head">
+      <div class="sec-over">ROI Calculator</div>
+      <h2>What's Your Automation Worth?</h2>
+      <p>Calculate annual savings from eliminating repetitive tasks. Real numbers, not hype.</p>
+    </div>
+    <div class="calc-widget">
+      <div class="calc-inputs">
+        <div class="calc-field">
+          <label class="calc-label">Hours per Week Spent</label>
+          <input type="number" class="calc-input" id="hours" value="20" min="1" max="168">
+        </div>
+        <div class="calc-field">
+          <label class="calc-label">Average Hourly Rate ($)</label>
+          <input type="number" class="calc-input" id="rate" value="35" min="10" max="200">
+        </div>
+      </div>
+      <div class="calc-result">
+        <div class="calc-result-value" id="result">$36,400</div>
+        <div class="calc-result-label">Annual Labor Savings</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="cta-inner">
+    <h2>Ready to Automate?</h2>
+    <p>
+      Free 90-minute automation workshop — we'll analyze your workflows, identify automation candidates, 
+      and build a phased implementation roadmap. No sales pitch, just ROI math.
+    </p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn-gradient">Book Workshop</a>
+      <a href="tel:8662201422" class="btn-ghost">Call (866) 220-1422</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h4>Racom Business</h4>
+      <p>Integrated technology and communications partner. Managed IT, UCaaS, SD-WAN, cybersecurity, cloud, and hardware reseller.</p>
+      <div class="footer-contact">
+        <a href="tel:8662201422">(866) 220-1422</a>
+        <a href="mailto:salessupport@racombusiness.com">salessupport@racombusiness.com</a>
+      </div>
+    </div>
+    <div>
+      <h4>Solutions</h4>
+      <ul>
+        <li><a href="svc-fiber-internet.html">Connectivity</a></li>
+        <li><a href="svc-ucaas.html">Communications</a></li>
+        <li><a href="it-security.html">Security / MDR</a></li>
+        <li><a href="cloud-ai.html">Cloud &amp; AI</a></li>
+        <li><a href="hardware.html">Hardware</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="white-papers.html">White Papers</a></li>
+        <li><a href="technology-guides.html">Tech Guides</a></li>
+        <li><a href="store.html">Store</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Racom Business &middot; All Rights Reserved</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ROI Calculator
+const hoursInput = document.getElementById('hours');
+const rateInput = document.getElementById('rate');
+const resultEl = document.getElementById('result');
+
+function calculateROI() {
+  const hours = parseFloat(hoursInput.value) || 0;
+  const rate = parseFloat(rateInput.value) || 0;
+  const annual = hours * 52 * rate;
+  resultEl.textContent = '$' + annual.toLocaleString('en-US', {maximumFractionDigits: 0});
+}
+
+hoursInput.addEventListener('input', calculateROI);
+rateInput.addEventListener('input', calculateROI);
+calculateROI();
+</script>
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .catch(() => {/* Silent fail */});
+      });
+    }
+  </script>
+
+  <!-- Mobile Bottom Navigation -->
+  <nav class="mobile-bottom-nav">
+    <a href="index.html" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+      </svg>
+      <span>Home</span>
+    </a>
+    <a href="#services" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V9.03l7-3.89v7.85z"/>
+      </svg>
+      <span>Services</span>
+    </a>
+    <a href="about.html" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+      </svg>
+      <span>About</span>
+    </a>
+    <a href="contact.html" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+      <span>Contact</span>
+    </a>
+  </nav>
+
+  <!-- Close mobile menu on overlay click -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(e) {
+        const navMenu = document.querySelector('.nav-menu');
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        if (navMenu && navMenu.classList.contains('active') && 
+            !navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+          navMenu.classList.remove('active');
+        }
+      });
+      
+      // Highlight active page in bottom nav
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('.mobile-bottom-nav a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

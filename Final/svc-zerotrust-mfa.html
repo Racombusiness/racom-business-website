@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Preload critical resources -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<title>Zero Trust Security & Multi-Factor Authentication | Racom Business</title>
+<meta name="description" content="Implement Zero Trust architecture and MFA across your organization. Never trust, always verify — protect against credential theft, phishing, and insider threats.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ff:'Barlow',sans-serif;
+  --ffc:'Barlow Condensed',sans-serif;
+  --navy:#060E1C;
+  --navy2:#0D1A2E;
+  --navy3:#132238;
+  --navy4:#1A2D42;
+  --blue:#4A90D9;
+  --cyan:#06B6D4;
+  --cyan2:#0891B2;
+  --cyan3:#22D3EE;
+  --red:#EF4444;
+  --green:#10B981;
+  --white:#fff;
+  --muted:rgba(255,255,255,0.55);
+  --muted2:rgba(255,255,255,0.35);
+  --muted3:rgba(255,255,255,0.15);
+  --bdd:rgba(255,255,255,0.08);
+  --bdd2:rgba(255,255,255,0.12);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;background:var(--navy);color:#fff;line-height:1.55;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--navy)}
+::-webkit-scrollbar-thumb{background:var(--cyan2);border-radius:3px}
+a{text-decoration:none;color:inherit}
+
+/* ── TOPBAR ── */
+.topbar{
+  background:var(--navy2);border-bottom:1px solid var(--bdd);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:7px 2.5rem;font-size:12px;font-weight:500;
+}
+.topbar-left{display:flex;gap:1.75rem;align-items:center;color:var(--muted2)}
+.topbar-left a{color:var(--muted2);transition:color .15s}
+.topbar-left a:hover{color:#fff}
+.topbar-right{display:flex;gap:12px;align-items:center}
+.topbar-link{font-size:12px;color:var(--muted2);transition:color .15s}
+.topbar-link:hover{color:#fff}
+.topbar-sep{color:var(--muted3);font-size:10px}
+.topbar-cta{
+  font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--blue);border:1px solid rgba(74,144,217,0.35);
+  padding:4px 12px;border-radius:3px;transition:all .2s;
+}
+.topbar-cta:hover{background:rgba(74,144,217,.12);color:#fff}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(6,14,28,0.97);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--bdd);
+  height:68px;display:flex;align-items:stretch;padding:0 2.5rem;
+}
+.nav-logo{display:flex;align-items:center;margin-right:2rem;flex-shrink:0}
+.nav-logo svg{height:42px;width:auto}
+.nav-menu{display:flex;align-items:stretch;flex:1;justify-content:flex-start}
+.ni{position:relative;display:flex;align-items:center}
+.nav-link,.nt{
+  font-size:13px;font-weight:600;color:rgba(255,255,255,0.6);
+  padding:0 13px;height:68px;display:flex;align-items:center;gap:5px;
+  transition:all .2s;white-space:nowrap;cursor:pointer;
+  border:none;background:transparent;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;
+}
+.nav-link:hover,.nt:hover,.nav-link.active{color:#fff;background:rgba(255,255,255,.04)}
+.nav-link.active{border-bottom:2px solid var(--cyan)}
+.nav-arr{
+  border-left:4px solid transparent;border-right:4px solid transparent;
+  border-top:4px solid rgba(255,255,255,0.38);
+  transition:transform .2s;margin-top:1px;flex-shrink:0;
+}
+.ni:hover .nav-arr{transform:rotate(180deg)}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;padding-left:1rem}
+.nav-phone{font-size:12.5px;color:rgba(255,255,255,0.38);font-weight:600;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;border-radius:4px;font-size:13px;font-weight:700;
+  background:var(--cyan);color:#fff;border:none;cursor:pointer;
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;letter-spacing:.04em;
+}
+.btn-nav:hover{background:var(--cyan2);transform:translateY(-1px)}
+
+/* ── BUTTONS ── */
+.btn-cyan{
+  padding:13px 26px;border-radius:4px;font-size:14px;font-weight:700;
+  background:var(--cyan);color:#fff;border:none;cursor:pointer;
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;
+  letter-spacing:.04em;display:inline-block;
+}
+.btn-cyan:hover{background:var(--cyan2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(6,182,212,.35)}
+.btn-ghost{
+  padding:13px 22px;border-radius:4px;font-size:14px;font-weight:700;
+  background:transparent;color:rgba(255,255,255,.75);
+  border:1px solid rgba(255,255,255,.2);cursor:pointer;
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;
+  letter-spacing:.04em;display:inline-block;
+}
+.btn-ghost:hover{border-color:rgba(255,255,255,.55);color:#fff}
+
+/* ── HERO ── */
+.hero{
+  background:var(--navy);border-bottom:1px solid var(--bdd);
+  padding:6rem 2.5rem;position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 50%, rgba(6,182,212,.08) 0%, transparent 50%);
+}
+.hero-shield{
+  position:absolute;top:50%;right:10%;transform:translateY(-50%);
+  width:400px;height:400px;opacity:.06;
+  background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%2306B6D4" stroke-width="1"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>') center/contain no-repeat;
+}
+.hero-inner{
+  position:relative;z-index:2;max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:center;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--cyan);border:1px solid rgba(6,182,212,.3);
+  padding:6px 14px;border-radius:100px;background:rgba(6,182,212,.08);
+  margin-bottom:1.5rem;
+}
+.hero-badge svg{width:14px;height:14px;stroke:var(--cyan);fill:none;stroke-width:2.5}
+.hero h1{
+  font-family:var(--ffc);font-size:3.8rem;font-weight:900;
+  line-height:1.05;letter-spacing:-.02em;color:#fff;margin-bottom:1.5rem;
+}
+.hero h1 .acc{
+  background:linear-gradient(135deg,var(--cyan),var(--cyan3));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero p{
+  font-size:15.5px;color:var(--muted);line-height:1.75;margin-bottom:2.5rem;
+}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero-visual{
+  background:var(--navy2);border:1px solid rgba(6,182,212,.2);
+  border-radius:12px;padding:2rem;position:relative;
+}
+.hero-visual::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--cyan),var(--cyan3));
+}
+
+/* ── PRINCIPLE DIAGRAM ── */
+.principle{
+  background:var(--navy3);border-radius:8px;padding:2rem;
+  border:1px solid rgba(6,182,212,.15);
+}
+.prin-title{
+  font-size:13px;font-weight:700;color:rgba(255,255,255,.8);
+  margin-bottom:1.25rem;text-align:center;letter-spacing:-.01em;
+}
+.prin-flow{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:1.5rem;
+}
+.prin-step{
+  flex:1;text-align:center;
+}
+.prin-icon{
+  width:56px;height:56px;border-radius:50%;
+  background:rgba(6,182,212,.12);border:2px solid var(--cyan);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto .75rem;
+}
+.prin-icon svg{width:26px;height:26px;stroke:var(--cyan);fill:none;stroke-width:2}
+.prin-label{
+  font-size:11px;font-weight:700;color:var(--cyan);
+  text-transform:uppercase;letter-spacing:.08em;
+}
+.prin-arrow{
+  font-size:24px;color:var(--cyan);margin:0 1rem;margin-top:-40px;
+}
+.prin-tagline{
+  text-align:center;font-size:14px;color:var(--muted);
+  font-style:italic;padding-top:1rem;border-top:1px solid var(--bdd);
+}
+
+/* ── SEC HEAD ── */
+.sec-head{text-align:center;max-width:700px;margin:0 auto 3.5rem}
+.sec-over{
+  font-size:10.5px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--cyan);margin-bottom:.75rem;
+}
+.sec-head h2{
+  font-family:var(--ffc);font-size:2.6rem;font-weight:900;
+  line-height:1.1;color:#fff;margin-bottom:1rem;
+  text-transform:uppercase;letter-spacing:-.01em;
+}
+.sec-head p{font-size:14.5px;color:var(--muted);line-height:1.7}
+
+/* ── THREATS PREVENTED ── */
+.threats{
+  padding:6rem 2.5rem;background:var(--navy2);
+  border-bottom:1px solid var(--bdd);
+}
+.threat-inner{max-width:1200px;margin:0 auto}
+.threat-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;
+  margin-top:3rem;
+}
+.threat-card{
+  background:var(--navy3);border:1px solid var(--bdd);
+  border-left:3px solid var(--red);border-radius:8px;
+  padding:2rem;transition:all .25s;
+}
+.threat-card:hover{
+  border-left-color:var(--cyan);transform:translateY(-4px);
+}
+.threat-icon{
+  width:48px;height:48px;border-radius:8px;
+  background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1.25rem;transition:all .25s;
+}
+.threat-card:hover .threat-icon{
+  background:rgba(6,182,212,.12);border-color:var(--cyan);
+}
+.threat-icon svg{width:24px;height:24px;stroke:var(--red);fill:none;stroke-width:2;transition:stroke .25s}
+.threat-card:hover .threat-icon svg{stroke:var(--cyan)}
+.threat-card h3{
+  font-size:16px;font-weight:700;color:#fff;
+  margin-bottom:.75rem;letter-spacing:-.01em;
+}
+.threat-card p{
+  font-size:13px;color:var(--muted);line-height:1.7;
+  margin-bottom:1rem;
+}
+.threat-tag{
+  font-size:10px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--red);
+  background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);
+  padding:4px 10px;border-radius:4px;display:inline-block;
+}
+
+/* ── MFA METHODS ── */
+.mfa-methods{
+  padding:6rem 2.5rem;background:var(--navy);
+  border-bottom:1px solid var(--bdd);
+}
+.mfa-inner{max-width:1200px;margin:0 auto}
+.mfa-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;
+  margin-top:3rem;
+}
+.mfa-card{
+  background:var(--navy2);border:1px solid var(--bdd2);
+  border-radius:10px;overflow:hidden;text-align:center;
+  transition:all .25s;
+}
+.mfa-card:hover{
+  border-color:rgba(6,182,212,.4);transform:translateY(-4px);
+}
+.mfa-header{
+  padding:1.5rem 1.25rem;
+  background:var(--navy3);border-bottom:1px solid var(--bdd);
+}
+.mfa-emoji{font-size:2.8rem;display:block;margin-bottom:.75rem}
+.mfa-header h3{
+  font-size:14px;font-weight:700;color:#fff;
+  letter-spacing:-.01em;
+}
+.mfa-body{padding:1.5rem 1.25rem}
+.mfa-rating{
+  display:flex;align-items:center;justify-content:center;
+  gap:6px;margin-bottom:1rem;
+}
+.mfa-rating-label{
+  font-size:10px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted2);
+}
+.mfa-stars{display:flex;gap:2px}
+.star{
+  width:14px;height:14px;
+  background:var(--navy4);clip-path:polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.star.filled{background:var(--cyan)}
+.mfa-body p{
+  font-size:11.5px;color:var(--muted2);line-height:1.6;
+  margin-bottom:1rem;
+}
+.mfa-pros{
+  display:flex;flex-direction:column;gap:6px;
+}
+.mfa-pro{
+  font-size:11px;color:var(--muted);
+  display:flex;align-items:flex-start;gap:6px;text-align:left;
+}
+.mfa-pro::before{
+  content:"✓";color:var(--green);font-weight:700;
+  font-size:12px;flex-shrink:0;margin-top:-1px;
+}
+
+/* ── COMPLIANCE ── */
+.compliance{
+  padding:6rem 2.5rem;background:var(--navy3);
+  border-bottom:1px solid var(--bdd);
+}
+.comp-inner{max-width:1200px;margin:0 auto}
+.comp-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1.75rem;
+  margin-top:3rem;
+}
+.comp-card{
+  background:var(--navy2);border:1px solid var(--bdd);
+  border-radius:8px;padding:2rem;text-align:center;
+  position:relative;overflow:hidden;transition:all .25s;
+}
+.comp-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--cyan),var(--cyan3));
+  opacity:0;transition:opacity .25s;
+}
+.comp-card:hover{
+  border-color:rgba(6,182,212,.4);transform:translateY(-4px);
+}
+.comp-card:hover::before{opacity:1}
+.comp-badge{
+  width:64px;height:64px;border-radius:50%;
+  background:rgba(6,182,212,.1);border:2px solid var(--cyan);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1.25rem;
+}
+.comp-badge span{
+  font-size:20px;font-weight:900;color:var(--cyan);
+  font-family:var(--ffc);
+}
+.comp-card h3{
+  font-size:15px;font-weight:700;color:#fff;
+  margin-bottom:.5rem;letter-spacing:-.01em;
+}
+.comp-card p{
+  font-size:11.5px;color:var(--muted2);line-height:1.6;
+}
+
+/* ── IMPLEMENTATION ── */
+.implementation{
+  padding:6rem 2.5rem;background:var(--navy2);
+  border-bottom:1px solid var(--bdd);
+}
+.impl-inner{max-width:900px;margin:0 auto}
+.impl-timeline{
+  margin-top:3rem;position:relative;
+}
+.impl-timeline::before{
+  content:"";position:absolute;left:28px;top:0;bottom:0;
+  width:2px;background:var(--bdd);
+}
+.impl-step{
+  position:relative;padding-left:5rem;margin-bottom:2.5rem;
+}
+.impl-step:last-child{margin-bottom:0}
+.impl-num{
+  position:absolute;left:0;top:0;
+  width:56px;height:56px;border-radius:50%;
+  background:var(--navy3);border:2px solid var(--cyan);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;font-weight:900;color:var(--cyan);
+  font-family:var(--ffc);z-index:2;
+}
+.impl-content{
+  background:var(--navy3);border:1px solid var(--bdd);
+  border-radius:8px;padding:1.75rem;
+}
+.impl-content h3{
+  font-size:17px;font-weight:700;color:#fff;
+  margin-bottom:.75rem;letter-spacing:-.01em;
+}
+.impl-content p{
+  font-size:13.5px;color:var(--muted);line-height:1.7;
+}
+
+/* ── CTA ── */
+.cta-sec{
+  padding:5rem 2.5rem;background:var(--navy);
+  border-bottom:1px solid var(--bdd);
+}
+.cta-inner{
+  max-width:900px;margin:0 auto;text-align:center;
+}
+.cta-inner h2{
+  font-family:var(--ffc);font-size:2.8rem;font-weight:900;
+  line-height:1.1;color:#fff;margin-bottom:1.25rem;
+  text-transform:uppercase;letter-spacing:-.02em;
+}
+.cta-inner p{
+  font-size:15px;color:var(--muted);line-height:1.7;
+  margin-bottom:2.5rem;
+}
+.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--navy);border-top:2px solid var(--cyan);
+  padding:4rem 2.5rem 2rem;
+}
+.footer-grid{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;
+  margin-bottom:3rem;
+}
+footer h4{
+  font-size:10px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:rgba(255,255,255,.35);
+  margin-bottom:1rem;border-bottom:1px solid var(--bdd);
+  padding-bottom:.75rem;
+}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+footer li a{
+  font-size:13px;color:rgba(255,255,255,.4);font-weight:500;
+  transition:all .2s;display:flex;align-items:center;gap:6px;
+}
+footer li a::before{content:"›";color:var(--cyan);font-size:13px}
+footer li a:hover{color:#fff;padding-left:4px}
+.footer-brand p{
+  font-size:13px;color:rgba(255,255,255,.3);
+  line-height:1.7;margin:.75rem 0 1.25rem;max-width:280px;
+}
+.footer-contact a{
+  display:block;font-size:13.5px;color:var(--cyan);
+  font-weight:700;margin-bottom:4px;transition:color .2s;
+}
+.footer-contact a:hover{color:#fff}
+.footer-bottom{
+  max-width:1200px;margin:0 auto;border-top:1px solid var(--bdd);
+  padding-top:2rem;display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:1rem;
+}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,.2)}
+.footer-links{display:flex;gap:20px}
+.footer-links a{
+  font-size:12px;color:rgba(255,255,255,.2);transition:color .2s;
+}
+.footer-links a:hover{color:rgba(255,255,255,.6)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:3rem}
+  .threat-grid{grid-template-columns:repeat(2,1fr)}
+  .mfa-grid{grid-template-columns:repeat(2,1fr)}
+  .comp-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .topbar{display:none}
+  nav{padding:0 1.25rem}.nav-menu{display:none}
+  .hero h1{font-size:2.6rem}
+  .threat-grid,.mfa-grid,.comp-grid{grid-template-columns:1fr}
+}
+
+/* ── NAVIGATION ── */
+nav{position:sticky;top:0;z-index:200;background:rgba(6,14,28,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdd);height:68px;display:flex;align-items:center;padding:0 2.5rem;gap:0}
+.nav-logo{display:flex;align-items:center;margin-right:2rem;flex-shrink:0}
+.nav-logo svg{height:42px;width:auto}
+.nav-menu{display:flex;align-items:stretch;flex:1;justify-content:flex-start}
+.ni{position:relative;display:flex;align-items:center}
+.nl,.nt{font-size:13px;font-weight:600;color:rgba(255,255,255,0.6);padding:0 13px;height:68px;display:flex;align-items:center;gap:5px;transition:all .2s;white-space:nowrap;cursor:pointer;border:none;background:transparent;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;background:rgba(255,255,255,.04)}
+.nl.active{border-bottom:2px solid var(--blue)}
+.narr{border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid rgba(255,255,255,0.35);transition:transform .2s;margin-top:1px;flex-shrink:0}
+.ni:hover .narr{transform:rotate(180deg)}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;padding-left:1rem}
+.nav-phone{font-size:12.5px;color:rgba(255,255,255,0.38);font-weight:600;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;border-radius:4px;font-size:13px;font-weight:700;background:var(--blue);color:#fff;border:none;cursor:pointer;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;letter-spacing:.04em}
+.btn-nav:hover{background:var(--blue2);transform:translateY(-1px)}
+
+/* ── MEGA MENU ── */
+.mega{display:none;position:absolute;top:68px;left:0;background:var(--navy3);border:1px solid var(--bdd2);border-top:2px solid var(--blue);border-radius:0 0 8px 8px;padding:2rem;box-shadow:0 24px 60px rgba(0,0,0,0.65);z-index:300;min-width:680px;gap:2rem}
+.ni:hover .mega{display:flex}
+.mc{min-width:150px}
+.mc h5{font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin:0 0 .55rem;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif}
+.mc ul{list-style:none;display:flex;flex-direction:column;gap:1px}
+.mc a{font-size:12.5px;font-weight:500;color:rgba(255,255,255,.5);padding:6px 10px;border-radius:4px;display:flex;align-items:center;gap:7px;transition:all .15s}
+.mc a:hover{color:#fff;background:rgba(74,144,217,.1);padding-left:14px}
+.mc a::before{content:"›";color:var(--blue3);font-size:13px}
+.mdiv{width:1px;background:var(--bdd);flex-shrink:0}
+.mfeat{background:var(--navy4);border:1px solid var(--bdd);border-radius:6px;padding:1.25rem;min-width:190px}
+.mfeat h5{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin-bottom:.6rem}
+.mfeat p{font-size:12px;color:var(--muted2);line-height:1.6;margin-bottom:.85rem}
+.mfeat-link{font-size:12px;font-weight:700;color:var(--blue3);display:inline-flex;align-items:center;gap:5px;transition:color .15s}
+.mfeat-link:hover{color:#fff}
+
+
+
+/* ========================================
+   MOBILE-FIRST APP-LIKE ENHANCEMENTS
+   Add this CSS to make the site feel like a native app
+   ======================================== */
+
+/* Mobile Navigation Enhancements */
+@media (max-width: 768px) {
+  
+  /* Hide desktop navigation on mobile */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 85%;
+    max-width: 320px;
+    height: 100vh;
+    background: linear-gradient(135deg, #060E1C 0%, #0D1E35 100%);
+    z-index: 9999;
+    transition: left 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    overflow-y: auto;
+    box-shadow: 2px 0 20px rgba(0,0,0,0.5);
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  /* Mobile Menu Button */
+  .mobile-menu-btn {
+    display: block !important;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    background: linear-gradient(135deg, #4A90D9, #2B5F8A);
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(74, 144, 217, 0.4);
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-menu-btn:active {
+    transform: scale(0.95);
+  }
+  
+  .mobile-menu-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    margin: 5px auto;
+    transition: 0.3s;
+    border-radius: 2px;
+  }
+  
+  /* Bottom Navigation Bar (Like Mobile Apps) */
+  .mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(6, 14, 28, 0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .mobile-bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 12px;
+  }
+  
+  .mobile-bottom-nav a.active,
+  .mobile-bottom-nav a:active {
+    color: #4A90D9;
+    background: rgba(74, 144, 217, 0.1);
+  }
+  
+  .mobile-bottom-nav svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Card-based Layout for Mobile */
+  .service-card,
+  .feature-card,
+  .content-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    margin-bottom: 16px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+  }
+  
+  .service-card:active,
+  .feature-card:active {
+    transform: scale(0.98) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  /* Mobile Typography */
+  h1 {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+  }
+  
+  h2 {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+  }
+  
+  h3 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+  
+  p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Touch-Optimized Buttons */
+  button,
+  .btn,
+  .cta-button,
+  a[href^="tel"],
+  a[href^="mailto"] {
+    min-height: 48px !important;
+    padding: 12px 24px !important;
+    border-radius: 12px !important;
+    font-size: 16px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+  }
+  
+  button:active,
+  .btn:active,
+  .cta-button:active {
+    transform: scale(0.96) !important;
+  }
+  
+  /* Mobile Spacing */
+  section {
+    padding: 24px 20px !important;
+  }
+  
+  /* Pull-to-Refresh Indicator */
+  .pull-to-refresh {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-60px);
+    background: rgba(74, 144, 217, 0.95);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(74, 144, 217, 0.4);
+    transition: transform 0.3s ease;
+    z-index: 10000;
+  }
+  
+  .pull-to-refresh.active {
+    transform: translateX(-50%) translateY(20px);
+  }
+  
+  /* Smooth Scrolling */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Hide Scrollbar but keep functionality */
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* App-like Header */
+  header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 999 !important;
+    background: rgba(6, 14, 28, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  /* Safe Area Insets for iPhone */
+  @supports(padding: max(0px)) {
+    body {
+      padding-left: max(0px, env(safe-area-inset-left));
+      padding-right: max(0px, env(safe-area-inset-right));
+    }
+    
+    .mobile-bottom-nav {
+      padding-bottom: max(8px, env(safe-area-inset-bottom));
+    }
+  }
+  
+  /* Footer padding for bottom nav */
+  footer {
+    padding-bottom: 80px !important;
+  }
+}
+
+/* Tablet Optimization (iPad) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+  
+  .service-card {
+    padding: 24px !important;
+  }
+  
+  h1 {
+    font-size: 48px !important;
+  }
+  
+  h2 {
+    font-size: 36px !important;
+  }
+}
+
+/* Loading Animation */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #4A90D9;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Haptic Feedback Simulation */
+@keyframes tap-feedback {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.96); }
+  100% { transform: scale(1); }
+}
+
+.tap-feedback:active {
+  animation: tap-feedback 0.2s ease;
+}
+
+</style>
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#4A90D9">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Racom Business">
+  
+</head>
+<body>
+  <!-- Mobile Menu Button -->
+  <button class="mobile-menu-btn" onclick="document.querySelector('.nav-menu').classList.toggle('active')" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <a href="tel:8662201422">(866) 220-1422</a>
+    <span class="topbar-sep">|</span>
+    <a href="mailto:salessupport@racombusiness.com">salessupport@racombusiness.com</a>
+    <span class="topbar-sep">|</span>
+    <span>Serving Businesses Nationwide &amp; Internationally</span>
+  </div>
+  <div class="topbar-right">
+    <a href="contact.html" class="topbar-link">Careers</a>
+    <span class="topbar-sep">|</span>
+    <a href="blog.html" class="topbar-link">Resources</a>
+    <span class="topbar-sep">|</span>
+    <a href="store.html" class="topbar-link" style="color:var(--blue);font-weight:700">&#9673; Store</a>
+    <span class="topbar-sep">|</span>
+    <a href="contact.html" class="topbar-cta">Free Assessment</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo-wrap">
+  <img loading="lazy" src="logo-racom.svg" alt="Racom Business" height="52" width="auto" style="height:52px; width:auto;">
+  </a>
+  <div class="nav-menu">
+    <div class="ni">
+      <div class="nt">Services <div class="narr"></div></div>
+      <div class="mega" style="min-width:580px">
+        <div class="mc">
+          <h5>Connect &amp; Communicate</h5>
+          <ul>
+            <li><a href="svc-fiber-internet.html">Business Fiber &amp; Internet</a></li>
+            <li><a href="svc-fiber-internet.html">Dedicated Circuits</a></li>
+            <li><a href="svc-sdwan.html">SD-WAN &amp; SASE</a></li>
+            <li><a href="svc-ucaas.html">Cloud VoIP &amp; UCaaS</a></li>
+            <li><a href="communications.html">Contact Center (CCaaS)</a></li>
+            <li><a href="svc-pots.html">POTS Line Replacement</a></li>
+          </ul>
+        </div>
+        <div class="mc">
+          <h5>Manage &amp; Secure</h5>
+          <ul>
+            <li><a href="svc-rmm.html">24/7 Remote Monitoring</a></li>
+            <li><a href="svc-helpdesk.html">Helpdesk &amp; Service Desk</a></li>
+            <li><a href="it-security.html">Co-Managed IT</a></li>
+            <li><a href="svc-edr.html">Endpoint Detection (EDR)</a></li>
+            <li><a href="svc-mdr.html">MDR &amp; 24×7 SOC</a></li>
+            <li><a href="it-security.html">Zero Trust &amp; MFA</a></li>
+          </ul>
+        </div>
+        <div class="mc">
+          <h5>Cloud &amp; Equip</h5>
+          <ul>
+            <li><a href="svc-m365.html">Microsoft 365 &amp; Azure</a></li>
+            <li><a href="cloud-ai.html">AWS Managed Services</a></li>
+            <li><a href="svc-backup.html">Backup &amp; Disaster Recovery</a></li>
+            <li><a href="cloud-ai.html">AI &amp; Workflow Automation</a></li>
+            <li><a href="hardware.html">Servers &amp; Storage</a></li>
+            <li><a href="store.html">Browse 2,400+ Products &rarr;</a></li>
+          </ul>
+        </div>
+        <div class="mdiv"></div>
+        <div class="mfeat">
+          <h5>Not sure where to start?</h5>
+          <p>Free technology assessment — we audit your environment and build a roadmap at no cost.</p>
+          <a href="contact.html" class="mfeat-link">Book free assessment &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="ni">
+      <div class="nt">Industries <div class="narr"></div></div>
+      <div class="mega" style="min-width:540px">
+        <div class="mc">
+          <h5>Industries We Serve</h5>
+          <ul>
+            <li><a href="industry-healthcare.html">Healthcare &amp; Medical Groups</a></li>
+            <li><a href="industry-financial.html">Financial Services &amp; Fintech</a></li>
+            <li><a href="industry-manufacturing.html">Manufacturing &amp; Industrial</a></li>
+            <li><a href="industry-professional.html">Professional Services</a></li>
+            <li><a href="industry-government.html">Government &amp; Public Sector</a></li>
+            <li><a href="industry-education.html">Education &amp; K-12</a></li>
+          </ul>
+        </div>
+        <div class="mdiv"></div>
+        <div class="mfeat">
+          <h5>Your Industry</h5>
+          <p>We serve businesses across every vertical. Talk to a specialist who knows your compliance and connectivity requirements.</p>
+          <a href="contact.html" class="mfeat-link">Talk to a specialist &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="ni">
+      <div class="nt">Why Racom <div class="narr"></div></div>
+      <div class="mega" style="min-width:520px">
+        <div class="mc">
+          <h5>What Makes Us Different</h5>
+          <ul>
+            <li><a href="about.html">One Partner, One Invoice</a></li>
+            <li><a href="about.html">No Offshore Ticket Queues</a></li>
+            <li><a href="about.html">Dedicated Account Manager</a></li>
+            <li><a href="about.html">3,000+ Businesses Served</a></li>
+            <li><a href="about.html">200+ Carrier Partnerships</a></li>
+          </ul>
+        </div>
+        <div class="mc">
+          <h5>Proven Results</h5>
+          <ul>
+            <li><a href="case-studies.html">40% Telecom Cost Reduction</a></li>
+            <li><a href="case-studies.html">Zero Security Incidents 18mo</a></li>
+            <li><a href="case-studies.html">30% Lower Phone Costs</a></li>
+            <li><a href="case-studies.html">All Case Studies &rarr;</a></li>
+          </ul>
+        </div>
+        <div class="mdiv"></div>
+        <div class="mfeat">
+          <h5>See It For Yourself</h5>
+          <p>Free 30-minute technology review with a certified engineer — no sales pitch, just real recommendations.</p>
+          <a href="contact.html" class="mfeat-link">Request free review &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="ni">
+      <div class="nt">Resources <div class="narr"></div></div>
+      <div class="mega" style="min-width:440px">
+        <div class="mc">
+          <h5>Learn</h5>
+          <ul>
+            <li><a href="blog.html">Blog &amp; Articles</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="white-papers.html">White Papers &amp; Guides</a></li>
+            <li><a href="technology-guides.html">Technology Comparisons</a></li>
+          </ul>
+        </div>
+        <div class="mc">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Racom</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="mdiv"></div>
+        <div class="mfeat">
+          <h5>Free MSP Guide</h5>
+          <p>12 questions to ask any IT provider before signing. No email required.</p>
+          <a href="white-papers.html" class="mfeat-link">Download free &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="ni"><a href="about.html" class="nl">About</a></div>
+    <div class="ni"><a href="store.html" class="nl">Store</a></div>
+  </div>
+  <div class="nav-right">
+    <span class="nav-phone">(866) 220-1422</span>
+    <a href="contact.html" class="btn-nav">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-shield"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Zero Trust Security
+      </div>
+      <h1><span class="acc">Never Trust.</span> Always Verify.</h1>
+      <p>
+        Implement Zero Trust architecture with multi-factor authentication, identity verification, and 
+        least-privilege access. Assume breach, verify every user and device, and protect against credential 
+        theft, phishing, and insider threats.
+      </p>
+      <div class="hero-ctas">
+        <a href="contact.html" class="btn-cyan">Security Assessment</a>
+        <a href="#threats" class="btn-ghost">Threats Prevented</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="principle">
+        <div class="prin-title">Zero Trust Framework</div>
+        <div class="prin-flow">
+          <div class="prin-step">
+            <div class="prin-icon">
+              <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+            </div>
+            <div class="prin-label">Verify Identity</div>
+          </div>
+          <div class="prin-arrow">→</div>
+          <div class="prin-step">
+            <div class="prin-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div class="prin-label">Validate Device</div>
+          </div>
+          <div class="prin-arrow">→</div>
+          <div class="prin-step">
+            <div class="prin-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="prin-label">Grant Access</div>
+          </div>
+        </div>
+        <div class="prin-tagline">Every login. Every device. Every time.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THREATS PREVENTED -->
+<section class="threats" id="threats">
+  <div class="threat-inner">
+    <div class="sec-head">
+      <div class="sec-over">Protection Layer</div>
+      <h2>Attacks Stopped By Zero Trust + MFA</h2>
+      <p>Real threats that can't succeed when you verify every access request.</p>
+    </div>
+    <div class="threat-grid">
+      <div class="threat-card">
+        <div class="threat-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+        </div>
+        <h3>Credential Stuffing</h3>
+        <p>
+          Attackers buy 10 billion leaked passwords from the dark web and try them across your apps. 
+          MFA blocks them even with valid usernames and passwords.
+        </p>
+        <span class="threat-tag">81% of Breaches</span>
+      </div>
+      
+      <div class="threat-card">
+        <div class="threat-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h3>Phishing & Social Engineering</h3>
+        <p>
+          Employee clicks a fake Microsoft login page, enters password. Zero Trust requires device 
+          registration and biometric verification — phishing fails.
+        </p>
+        <span class="threat-tag">91% Click Rate</span>
+      </div>
+      
+      <div class="threat-card">
+        <div class="threat-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h3>Session Hijacking</h3>
+        <p>
+          Attacker steals session cookies from public WiFi or malware. Zero Trust continuously 
+          validates device posture and location — hijacked session is rejected.
+        </p>
+        <span class="threat-tag">Man-in-Middle</span>
+      </div>
+      
+      <div class="threat-card">
+        <div class="threat-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Insider Threats</h3>
+        <p>
+          Disgruntled employee with valid credentials tries to access HR files or financials. 
+          Least-privilege access and activity monitoring catch unauthorized behavior.
+        </p>
+        <span class="threat-tag">34% of Breaches</span>
+      </div>
+      
+      <div class="threat-card">
+        <div class="threat-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
+        </div>
+        <h3>Brute Force Attacks</h3>
+        <p>
+          Automated bots try millions of password combinations against VPN or admin portals. 
+          MFA + lockout policies stop them after 3 failed attempts.
+        </p>
+        <span class="threat-tag">5B Attacks/Day</span>
+      </div>
+      
+      <div class="threat-card">
+        <div class="threat-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+        </div>
+        <h3>Pass-the-Hash</h3>
+        <p>
+          Advanced attackers extract password hashes from memory and reuse them. Zero Trust 
+          enforces fresh authentication with MFA — stolen hashes are useless.
+        </p>
+        <span class="threat-tag">APT Technique</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MFA METHODS -->
+<section class="mfa-methods">
+  <div class="mfa-inner">
+    <div class="sec-head">
+      <div class="sec-over">Authentication Options</div>
+      <h2>Choose Your MFA Method</h2>
+      <p>Balance security, user experience, and cost with the right authentication approach for your organization.</p>
+    </div>
+    <div class="mfa-grid">
+      <div class="mfa-card">
+        <div class="mfa-header">
+          <span class="mfa-emoji">📱</span>
+          <h3>Authenticator App</h3>
+        </div>
+        <div class="mfa-body">
+          <div class="mfa-rating">
+            <span class="mfa-rating-label">Security:</span>
+            <div class="mfa-stars">
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+              <div class="star"></div>
+            </div>
+          </div>
+          <p>TOTP codes from Google Authenticator, Microsoft Authenticator, or Authy. Works offline.</p>
+          <div class="mfa-pros">
+            <div class="mfa-pro">No SMS vulnerabilities</div>
+            <div class="mfa-pro">Free for users</div>
+            <div class="mfa-pro">Industry standard</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mfa-card">
+        <div class="mfa-header">
+          <span class="mfa-emoji">🔑</span>
+          <h3>Hardware Token</h3>
+        </div>
+        <div class="mfa-body">
+          <div class="mfa-rating">
+            <span class="mfa-rating-label">Security:</span>
+            <div class="mfa-stars">
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+            </div>
+          </div>
+          <p>Physical YubiKey, Titan Key, or FIDO2 device. Phishing-resistant, tamper-proof.</p>
+          <div class="mfa-pros">
+            <div class="mfa-pro">Highest security</div>
+            <div class="mfa-pro">FIDO2 / WebAuthn</div>
+            <div class="mfa-pro">Lasts 5+ years</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mfa-card">
+        <div class="mfa-header">
+          <span class="mfa-emoji">👆</span>
+          <h3>Biometric</h3>
+        </div>
+        <div class="mfa-body">
+          <div class="mfa-rating">
+            <span class="mfa-rating-label">Security:</span>
+            <div class="mfa-stars">
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+              <div class="star"></div>
+            </div>
+          </div>
+          <p>Fingerprint, Face ID, or Windows Hello. Built into modern devices, zero friction.</p>
+          <div class="mfa-pros">
+            <div class="mfa-pro">Best user experience</div>
+            <div class="mfa-pro">Can't be stolen</div>
+            <div class="mfa-pro">Native OS support</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mfa-card">
+        <div class="mfa-header">
+          <span class="mfa-emoji">💬</span>
+          <h3>SMS / Voice</h3>
+        </div>
+        <div class="mfa-body">
+          <div class="mfa-rating">
+            <span class="mfa-rating-label">Security:</span>
+            <div class="mfa-stars">
+              <div class="star filled"></div>
+              <div class="star filled"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+            </div>
+          </div>
+          <p>6-digit code via text or automated call. Easy but vulnerable to SIM swap attacks.</p>
+          <div class="mfa-pros">
+            <div class="mfa-pro">No app required</div>
+            <div class="mfa-pro">Works on any phone</div>
+            <div class="mfa-pro">Familiar to users</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<section class="compliance">
+  <div class="comp-inner">
+    <div class="sec-head">
+      <div class="sec-over">Regulatory Requirements</div>
+      <h2>MFA Is Mandated By Compliance</h2>
+      <p>Zero Trust + MFA aren't optional — they're required for most industry regulations.</p>
+    </div>
+    <div class="comp-grid">
+      <div class="comp-card">
+        <div class="comp-badge"><span>HIPAA</span></div>
+        <h3>Healthcare</h3>
+        <p>HIPAA Security Rule § 164.312(a)(2)(i) requires MFA for accessing ePHI. Covered entities and business associates must verify user identity.</p>
+      </div>
+      
+      <div class="comp-card">
+        <div class="comp-badge"><span>PCI</span></div>
+        <h3>Payment Card</h3>
+        <p>PCI-DSS 4.0 Requirement 8.4.2 mandates MFA for all access to cardholder data environment. Applies to merchants and service providers.</p>
+      </div>
+      
+      <div class="comp-card">
+        <div class="comp-badge"><span>SOC 2</span></div>
+        <h3>SaaS / Cloud</h3>
+        <p>SOC 2 Type II controls require MFA for administrative access and sensitive data. Auditors verify implementation during attestation.</p>
+      </div>
+      
+      <div class="comp-card">
+        <div class="comp-badge"><span>CMMC</span></div>
+        <h3>Defense</h3>
+        <p>CMMC Level 2+ requires MFA (AC.2.016) for all users accessing CUI. DoD contractors must comply to bid on contracts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPLEMENTATION -->
+<section class="implementation">
+  <div class="impl-inner">
+    <div class="sec-head">
+      <div class="sec-over">Deployment Roadmap</div>
+      <h2>Zero Trust Implementation in 4 Phases</h2>
+      <p>We roll out Zero Trust incrementally to minimize disruption while building security layers.</p>
+    </div>
+    <div class="impl-timeline">
+      <div class="impl-step">
+        <div class="impl-num">1</div>
+        <div class="impl-content">
+          <h3>Identity & Access Foundation (Week 1-2)</h3>
+          <p>
+            Inventory all users, apps, and devices. Deploy SSO (Okta, Azure AD, or Google Workspace). 
+            Enforce MFA for admins first, then roll out to all users. Establish baseline policies.
+          </p>
+        </div>
+      </div>
+      
+      <div class="impl-step">
+        <div class="impl-num">2</div>
+        <div class="impl-content">
+          <h3>Device Trust & Posture (Week 3-4)</h3>
+          <p>
+            Enroll devices in MDM (Intune, Jamf, or Kandji). Validate device health before granting access — 
+            check for encryption, patches, antivirus. Block unmanaged BYOD devices or enforce compliance.
+          </p>
+        </div>
+      </div>
+      
+      <div class="impl-step">
+        <div class="impl-num">3</div>
+        <div class="impl-content">
+          <h3>Network & Application Segmentation (Week 5-8)</h3>
+          <p>
+            Replace VPN with Zero Trust Network Access (ZTNA). Implement microsegmentation — HR can't access 
+            finance, finance can't access engineering. Apply least-privilege to every app and resource.
+          </p>
+        </div>
+      </div>
+      
+      <div class="impl-step">
+        <div class="impl-num">4</div>
+        <div class="impl-content">
+          <h3>Continuous Monitoring & Response (Ongoing)</h3>
+          <p>
+            Deploy SIEM and UEBA to detect anomalies. Log every access decision. Alert on impossible travel, 
+            unusual data access, or privilege escalation. Automate response playbooks for high-risk events.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="cta-inner">
+    <h2>Ready to Implement Zero Trust?</h2>
+    <p>
+      Free security assessment — we'll audit your current authentication, identify gaps, and propose 
+      a phased Zero Trust roadmap that balances security, user experience, and budget.
+    </p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn-cyan">Book Security Assessment</a>
+      <a href="tel:8662201422" class="btn-ghost">Call (866) 220-1422</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h4>Racom Business</h4>
+      <p>Integrated technology and communications partner. Managed IT, UCaaS, SD-WAN, cybersecurity, cloud, and hardware reseller.</p>
+      <div class="footer-contact">
+        <a href="tel:8662201422">(866) 220-1422</a>
+        <a href="mailto:salessupport@racombusiness.com">salessupport@racombusiness.com</a>
+      </div>
+    </div>
+    <div>
+      <h4>Solutions</h4>
+      <ul>
+        <li><a href="svc-fiber-internet.html">Connectivity</a></li>
+        <li><a href="svc-ucaas.html">Communications</a></li>
+        <li><a href="it-security.html">Security / MDR</a></li>
+        <li><a href="cloud-ai.html">Cloud &amp; AI</a></li>
+        <li><a href="hardware.html">Hardware</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="white-papers.html">White Papers</a></li>
+        <li><a href="technology-guides.html">Tech Guides</a></li>
+        <li><a href="store.html">Store</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Racom Business &middot; All Rights Reserved</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .catch(() => {/* Silent fail */});
+      });
+    }
+  </script>
+
+  <!-- Mobile Bottom Navigation -->
+  <nav class="mobile-bottom-nav">
+    <a href="index.html" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+      </svg>
+      <span>Home</span>
+    </a>
+    <a href="#services" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V9.03l7-3.89v7.85z"/>
+      </svg>
+      <span>Services</span>
+    </a>
+    <a href="about.html" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+      </svg>
+      <span>About</span>
+    </a>
+    <a href="contact.html" class="tap-feedback">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+      <span>Contact</span>
+    </a>
+  </nav>
+
+  <!-- Close mobile menu on overlay click -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(e) {
+        const navMenu = document.querySelector('.nav-menu');
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        if (navMenu && navMenu.classList.contains('active') && 
+            !navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+          navMenu.classList.remove('active');
+        }
+      });
+      
+      // Highlight active page in bottom nav
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('.mobile-bottom-nav a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

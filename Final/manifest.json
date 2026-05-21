@@ -1,0 +1,22 @@
+{
+  "name": "Racom Business - Integrated Technology Partner",
+  "short_name": "Racom Business",
+  "description": "Enterprise IT Solutions, Managed Services, UCaaS, and Cybersecurity",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060E1C",
+  "theme_color": "#4A90D9",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo-racom-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "scope": "/"
+}
