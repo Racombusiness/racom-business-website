@@ -146,5 +146,134 @@ textarea{min-height:140px;resize:vertical;}
     </p>
   </form>
 </div>
+
+<!-- TECHNOLOGY PARTNER NETWORK - HORIZONTAL SCROLLING -->
+<section style="background: linear-gradient(135deg, rgba(6,14,28,0.8), rgba(13,30,53,0.9)); 
+  border-top: 1px solid rgba(74,144,217,0.2); padding: 3rem 2rem; margin-top: 4rem; position: relative;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <h3 style="text-align: center; color: rgba(106,174,232,0.9); font-size: 1.1rem; 
+      font-weight: 600; margin-bottom: 0.5rem; letter-spacing: 0.08em; text-transform: uppercase;">
+      Technology Partner Network
+    </h3>
+    <p style="text-align: center; color: rgba(255,255,255,0.45); font-size: 0.95rem; margin-bottom: 2rem;">
+      We partner with industry-leading providers to deliver comprehensive solutions
+    </p>
+    
+    <style>
+      .partner-scroll-container {
+        display: flex;
+        overflow-x: auto;
+        gap: 2rem;
+        padding: 1.5rem 0;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      .partner-scroll-container::-webkit-scrollbar {
+        height: 6px;
+      }
+      
+      .partner-scroll-container::-webkit-scrollbar-track {
+        background: rgba(255,255,255,0.05);
+        border-radius: 10px;
+      }
+      
+      .partner-scroll-container::-webkit-scrollbar-thumb {
+        background: rgba(74,144,217,0.3);
+        border-radius: 10px;
+      }
+      
+      .partner-scroll-container::-webkit-scrollbar-thumb:hover {
+        background: rgba(74,144,217,0.5);
+      }
+      
+      .partner-item {
+        flex: 0 0 auto;
+        width: 140px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(74,144,217,0.15);
+        border-radius: 8px;
+        padding: 1rem;
+        transition: all 0.3s ease;
+      }
+      
+      .partner-item:hover {
+        background: rgba(74,144,217,0.1);
+        border-color: rgba(74,144,217,0.3);
+        transform: translateY(-2px);
+      }
+      
+      .partner-name {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: rgba(255,255,255,0.7);
+        text-align: center;
+      }
+    </style>
+    
+    <div class="partner-scroll-container">
+      <div class="partner-item">
+        <div class="partner-name">Microsoft</div>
+      </div>
+      <div class="partner-item">
+        <div class="partner-name">HPE</div>
+      </div>
+      <div class="partner-item">
+        <div class="partner-name">Cisco</div>
+      </div>
+      <div class="partner-item">
+        <div class="partner-name">Meraki</div>
+      </div>
+      <div class="partner-item">
+        <div class="partner-name">Acronis</div>
+      </div>
+      <div class="partner-item">
+        <div class="partner-name">Veeam</div>
+      </div>
+      <div class="partner-item">
+        <div class="partner-name">Barracuda</div>
+      </div>
+      <div class="partner-item">
+        <div class="partner-name">AWS</div>
+      </div>
+      <div class="partner-item">
+        <div class="partner-name">Azure</div>
+      </div>
+      <div class="partner-item">
+        <div class="partner-name">Fortinet</div>
+      </div>
+      <div class="partner-item">
+        <div class="partner-name">SentinelOne</div>
+      </div>
+      <div class="partner-item">
+        <div class="partner-name">Dell</div>
+      </div>
+      <div class="partner-item">
+        <div class="partner-name">Okta</div>
+      </div>
+      <div class="partner-item">
+        <div class="partner-name">Zscaler</div>
+      </div>
+      <div class="partner-item">
+        <div class="partner-name">CrowdStrike</div>
+      </div>
+      <div class="partner-item">
+        <div class="partner-name">Palo Alto</div>
+      </div>
+      <div class="partner-item">
+        <div class="partner-name">Splunk</div>
+      </div>
+      <div class="partner-item">
+        <div class="partner-name">SolarWinds</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END TECHNOLOGY PARTNER NETWORK -->
+
 </body>
 </html>
