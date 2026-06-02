@@ -770,6 +770,37 @@ footer li a:hover{color:#fff;padding-left:4px}
   animation: tap-feedback 0.2s ease;
 }
 
+
+/* FONT CONSISTENCY - Dropdowns match homepage on ALL pages */
+.mega, .mc, .mc h5, .mc a, .mc li, .mc p, .mfeat, .mfeat h5, .mfeat p,
+.mega-col, .mega-col h5, .mega-col a, nav, nav a, nav *, .nav-menu, .topbar {
+  font-family: 'Inter', 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* Ensure dropdown text is SMALL and GRAY on ALL pages */
+.mega a, .mc a, .mfeat a, .mega-col a {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  text-transform: none !important;
+}
+
+/* Dropdown headers small and uppercase */
+.mc h5, .mfeat h5, .mega-col h5 {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: rgba(255, 255, 255, 0.4) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Make sure body navigation text matches */
+.topbar, .topbar a {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
 </style>
 <style>
 .container{max-width:800px;margin:2rem auto 4rem;padding:0 2rem}
@@ -779,6 +810,37 @@ label{display:block;font-weight:600;margin-bottom:0.5rem;font-size:14px;color:#f
 input,textarea,select{width:100%;padding:12px 16px;background:var(--navy2);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#fff;font-size:15px;font-family:inherit}
 textarea{min-height:120px}
 .submit-btn{background:var(--blue);color:#fff;padding:14px 32px;border:none;border-radius:8px;font-size:16px;font-weight:600;width:100%;cursor:pointer}
+
+/* FONT CONSISTENCY - Dropdowns match homepage on ALL pages */
+.mega, .mc, .mc h5, .mc a, .mc li, .mc p, .mfeat, .mfeat h5, .mfeat p,
+.mega-col, .mega-col h5, .mega-col a, nav, nav a, nav *, .nav-menu, .topbar {
+  font-family: 'Inter', 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* Ensure dropdown text is SMALL and GRAY on ALL pages */
+.mega a, .mc a, .mfeat a, .mega-col a {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  text-transform: none !important;
+}
+
+/* Dropdown headers small and uppercase */
+.mc h5, .mfeat h5, .mega-col h5 {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: rgba(255, 255, 255, 0.4) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Make sure body navigation text matches */
+.topbar, .topbar a {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
 </style>
 </head>
 <body>
@@ -877,9 +939,9 @@ textarea{min-height:120px}
         <div class="mc">
           <h5>Proven Results</h5>
           <ul>
-            <li><a href="case-studies.html">40% Telecom Cost Reduction</a></li>
-            <li><a href="case-studies.html">Zero Security Incidents 18mo</a></li>
-            <li><a href="case-studies.html">30% Lower Phone Costs</a></li>
+            <li><a href="case-study-telecom-reduction.html" Telecom Cost Reduction</a></li>
+            <li><a href="case-study-security-incidents.html" Incidents 18mo</a></li>
+            <li><a href="case-study-phone-costs.html" Lower Phone Costs</a></li>
             <li><a href="case-studies.html">All Case Studies &rarr;</a></li>
           </ul>
         </div>
