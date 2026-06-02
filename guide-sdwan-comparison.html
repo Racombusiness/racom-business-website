@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Preload critical resources -->
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
   
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-<title>Manufacturing IT Solutions — OT/IT Convergence & Industrial Networking | Racom Business</title>
-<meta name="description" content="IT and OT networking solutions for manufacturers. Plant floor connectivity, SD-WAN across facilities, ERP integration, and industrial cybersecurity.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <title>SD-WAN Buyer's Guide: Comparing the Top 8 Vendors | Racom Business</title>
+  <meta name="description" content="Side-by-side vendor comparison of the top SD-WAN platforms for businesses 50–500 employees.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
@@ -901,6 +899,53 @@ footer li a:hover{color:#fff;padding-left:4px}
 }
 
 
+.nav-menu,.nav-link,.nav-trigger,.nl,.nt,nav button,nav a,.mega,.mc,.mc h5,.mc a,.mega-col h5,.mfeat,.mfeat h5,.mfeat p,.mfeat-link,.topbar,.topbar-left,.topbar-right,.topbar a,.topbar-link,.topbar-cta,.pbar,.pa,.pa-l,.ind-tabs,.ind-tab,button,.btn,.btn-blue,.btn-ghost,.btn-outline,.btn-nav,.mobile-bottom-nav,.mobile-bottom-nav a,footer,footer a,footer h4,footer li,.flinks a{font-family:"Inter","SF Pro Display","Segoe UI","Helvetica Neue",Arial,sans-serif !important}
+
+
+nav,nav *,.nav-menu,.nav-link,.nav-trigger,.nl,.nt,nav button,nav a,.mega,.mc,.mc h5,.mc a,.mega-col h5,.mfeat,.mfeat h5,.mfeat p,.topbar,.topbar a,.pbar,.pa,.ind-tabs,.ind-tab,button,.btn,.btn-blue,footer,footer a{font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',Arial,sans-serif !important}
+
+
+
+.mega,.mc,.mc h5,.mc a,.mc li,.mc p,.mfeat,.mfeat h5,.mfeat p,
+.mega-col,.mega-col h5,.mega-col a{
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',Arial,sans-serif !important;
+  font-weight:400 !important;
+  font-size:14px !important;
+}
+.mc h5,.mfeat h5,.mega-col h5{
+  font-size:12px !important;
+  font-weight:600 !important;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+}
+
+
+
+nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc *,.mfeat,.mfeat *,.mega-col,.mega-col *{
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',Arial,sans-serif !important;
+}
+/* Navigation links - homepage style */
+.nl,.nt{
+  font-size:14px !important;
+  font-weight:400 !important;
+  color:rgba(255,255,255,0.8) !important;
+}
+/* Dropdown menus - match homepage */
+.mega,.mc a,.mfeat,.mega-col a{
+  font-size:14px !important;
+  font-weight:400 !important;
+  color:rgba(255,255,255,0.65) !important;
+}
+/* Dropdown headers - small, uppercase */
+.mc h5,.mfeat h5,.mega-col h5{
+  font-size:11px !important;
+  font-weight:600 !important;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  color:rgba(255,255,255,0.4) !important;
+}
+
+
 /* FONT CONSISTENCY - Dropdowns match homepage on ALL pages */
 .mega, .mc, .mc h5, .mc a, .mc li, .mc p, .mfeat, .mfeat h5, .mfeat p,
 .mega-col, .mega-col h5, .mega-col a, nav, nav a, nav *, .nav-menu, .topbar {
@@ -932,33 +977,14 @@ footer li a:hover{color:#fff;padding-left:4px}
 }
 
 </style>
-  <!-- PWA Manifest -->
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#4A90D9">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Racom Business">
-  
 </head>
 <body>
-  <!-- Mobile Menu Button -->
   <button class="mobile-menu-btn" onclick="document.querySelector('.nav-menu').classList.toggle('active')" aria-label="Menu">
     <span></span>
     <span></span>
     <span></span>
   </button>
 
-<!-- Netlify Forms handler -->
-<form name="contact" netlify netlify-honeypot="bot-field" action="/contact-success" hidden>
-  <input name="first-name" type="text">
-  <input name="last-name" type="text">
-  <input name="company" type="text">
-  <input name="email" type="email">
-  <input name="phone" type="tel">
-  <select name="interest"></select>
-  <select name="company-size"></select>
-  <textarea name="message"></textarea>
-</form>
 <div class="topbar">
   <div class="tb-left">
     <a href="tel:8662201422">(866) 220-1422</a>
@@ -1054,11 +1080,11 @@ footer li a:hover{color:#fff;padding-left:4px}
         <div class="mega-col">
           <h5>What Makes Us Different</h5>
           <ul>
-            <li><a href="about.html">One Partner, One Invoice</a></li>
-            <li><a href="about.html">No Offshore Ticket Queues</a></li>
-            <li><a href="about.html">Dedicated Account Manager</a></li>
-            <li><a href="about.html">3,000+ Businesses Served</a></li>
-            <li><a href="about.html">200+ Carrier Partnerships</a></li>
+            <li><a href="why-one-partner.html">One Partner, One Invoice</a></li>
+            <li><a href="why-no-offshore.html">No Offshore Ticket Queues</a></li>
+            <li><a href="why-dedicated-manager.html">Dedicated Account Manager</a></li>
+            <li><a href="why-results.html">3,000+ Businesses Served</a></li>
+            <li><a href="why-carrier-network.html">200+ Carrier Partnerships</a></li>
           </ul>
         </div>
         <div class="mega-col">
@@ -1114,314 +1140,23 @@ footer li a:hover{color:#fff;padding-left:4px}
     <a href="contact.html" class="btn-nav">Get a Quote</a>
   </div>
 </nav>
-
-<section style="background:var(--navy);padding:5rem 2.5rem 4rem;border-bottom:1px solid var(--bdd);position:relative;overflow:hidden">
-  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 60% 0%,rgba(74,144,217,.08) 0%,transparent 60%);pointer-events:none"></div>
-  <div style="max-width:1100px;margin:0 auto;position:relative;z-index:1">
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:1rem">
-      <a href="index.html" style="font-size:12px;color:var(--muted2)">Home</a>
-      <span style="color:var(--muted2)">›</span>
-      <a href="index.html" style="font-size:12px;color:var(--muted2)">Industries</a><span style="color:var(--muted2)"> › </span><span style="font-size:12px;color:var(--blue3)">Manufacturing</span>
+<section style="background:var(--navy);padding:5rem 2.5rem 4rem;border-bottom:1px solid var(--bdd)">
+  <div style="max-width:860px;margin:0 auto">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:1.25rem"><a href="index.html" style="font-size:12px;color:var(--muted2)">Home</a><span style="color:var(--muted2)">›</span><a href="technology-guides.html" style="font-size:12px;color:var(--muted2)">Technology Guides</a><span style="color:var(--muted2)">›</span><span style="font-size:12px;color:var(--blue3)">Connectivity</span></div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:1.25rem">
+      <span style="font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue3)">Connectivity</span>
+      <span style="color:var(--muted2)">·</span>
+      <span style="font-size:11px;color:var(--muted2)">15 min read</span>
     </div>
-    <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin-bottom:.75rem">— Manufacturing Technology —</div>
-    <h1 style="font-family:var(--ffc);font-size:clamp(2.5rem,5vw,4rem);font-weight:900;text-transform:uppercase;letter-spacing:-.03em;color:#fff;line-height:.95;margin-bottom:1.25rem">Industrial IT for<br><span style="color:var(--blue3)">Manufacturers.</span></h1>
-    <p style="font-size:16px;color:var(--muted);max-width:620px;line-height:1.8;margin-bottom:2rem">Modern manufacturers need seamless connectivity between the plant floor and the back office. Racom bridges OT and IT environments — reliable factory networking, multi-facility SD-WAN, ERP connectivity, and industrial cybersecurity that keeps production running.</p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap">
-      <a href="contact.html" style="display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:5px;background:var(--blue);color:#fff;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif">Get a Free Assessment</a>
-      <a href="tel:8662201422" style="display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:5px;background:transparent;color:rgba(255,255,255,.65);font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,.15);font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif">(866) 220-1422</a>
-    </div>
-  </div>
-</section>
-
-<section style="background:var(--navy2);padding:5rem 2.5rem;border-bottom:1px solid var(--bdd)">
-  <div style="max-width:1100px;margin:0 auto">
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
-      <div style="background:var(--navy3);border:1px solid var(--bdd);border-top:2px solid var(--blue3);border-radius:8px;padding:1.75rem">
-        <div style="width:44px;height:44px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue3)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-        </div>
-        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">OT / IT Convergence</h3>
-        <p style="font-size:13px;color:var(--muted);line-height:1.75">Securely bridge operational technology (PLCs, SCADA, HMI) with your enterprise IT network. Proper segmentation, monitoring, and access controls — production never gets compromised.</p>
-      </div>
-<div style="background:var(--navy3);border:1px solid var(--bdd);border-top:2px solid #34D399;border-radius:8px;padding:1.75rem">
-        <div style="width:44px;height:44px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Multi-Facility SD-WAN</h3>
-        <p style="font-size:13px;color:var(--muted);line-height:1.75">Connect plants, warehouses, distribution centers, and corporate HQ under a single managed SD-WAN. Intelligent traffic routing, automatic failover, and centralized visibility across every site.</p>
-      </div>
-<div style="background:var(--navy3);border:1px solid var(--bdd);border-top:2px solid var(--teal);border-radius:8px;padding:1.75rem">
-        <div style="width:44px;height:44px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-        </div>
-        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">ERP & MES Connectivity</h3>
-        <p style="font-size:13px;color:var(--muted);line-height:1.75">Dedicated, low-latency circuits for SAP, Oracle, and Microsoft Dynamics ERP systems. Guaranteed bandwidth for production scheduling, inventory, and supply chain applications.</p>
-      </div>
-<div style="background:var(--navy3);border:1px solid var(--bdd);border-top:2px solid #A78BFA;border-radius:8px;padding:1.75rem">
-        <div style="width:44px;height:44px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-        </div>
-        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Warehouse & Logistics WiFi</h3>
-        <p style="font-size:13px;color:var(--muted);line-height:1.75">Industrial-grade wireless networks for warehouse management systems, barcode scanners, and forklifts. High-density coverage, roaming, and uptime designed for 24/7 operations.</p>
-      </div>
-<div style="background:var(--navy3);border:1px solid var(--bdd);border-top:2px solid #F59E0B;border-radius:8px;padding:1.75rem">
-        <div style="width:44px;height:44px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Industrial Cybersecurity</h3>
-        <p style="font-size:13px;color:var(--muted);line-height:1.75">Purpose-built security for manufacturing environments — OT asset inventory, anomaly detection on SCADA networks, and incident response that understands production impact.</p>
-      </div>
-<div style="background:var(--navy3);border:1px solid var(--bdd);border-top:2px solid var(--blue3);border-radius:8px;padding:1.75rem">
-        <div style="width:44px;height:44px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue3)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 1.19h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8a16 16 0 0 0 6.29 6.29l1.18-1.18a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 15.19v3"/></svg>
-        </div>
-        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">UCaaS for Shift Workers</h3>
-        <p style="font-size:13px;color:var(--muted);line-height:1.75">Cloud communications that work for manufacturing — simple VoIP for plant managers, mobile apps for field technicians, and call center for customer service teams. Replace legacy PBX completely.</p>
-      </div>
-
+    <h1 style="font-family:var(--ffc);font-size:clamp(2rem,4vw,3rem);font-weight:900;text-transform:uppercase;color:#fff;line-height:1.1;margin-bottom:1.5rem">SD-WAN Buyer's Guide: Comparing the Top 8 Vendors</h1>
+    <p style="font-size:16px;color:rgba(255,255,255,.8);line-height:1.9;border-left:3px solid var(--blue);padding-left:1.25rem;margin-bottom:2.5rem">SD-WAN has become the standard for multi-site connectivity, replacing MPLS as the dominant WAN architecture for mid-market businesses. But the vendor landscape is fragmented, the marketing is confusing, and the feature differences matter enormously at deployment time. This guide cuts through the noise.</p>
+    <h2 style="font-family:var(--ffc);font-size:1.6rem;font-weight:900;text-transform:uppercase;color:#fff;margin:2.5rem 0 .75rem">The 5 Things That Actually Matter in an SD-WAN</h2><ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;margin-bottom:1.5rem"><li style="display:flex;gap:10px;align-items:flex-start;padding:10px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:6px"><span style="color:var(--blue3);flex-shrink:0;margin-top:2px">▸</span><span style="font-size:13.5px;color:var(--muted);line-height:1.7">Application-aware routing: can it automatically route voice traffic over the best path?</span></li><li style="display:flex;gap:10px;align-items:flex-start;padding:10px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:6px"><span style="color:var(--blue3);flex-shrink:0;margin-top:2px">▸</span><span style="font-size:13.5px;color:var(--muted);line-height:1.7">Failover speed: how quickly does it detect and fail over on a circuit failure? (Target: under 50ms)</span></li><li style="display:flex;gap:10px;align-items:flex-start;padding:10px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:6px"><span style="color:var(--blue3);flex-shrink:0;margin-top:2px">▸</span><span style="font-size:13.5px;color:var(--muted);line-height:1.7">Zero-touch provisioning: can you deploy new sites without sending an engineer?</span></li><li style="display:flex;gap:10px;align-items:flex-start;padding:10px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:6px"><span style="color:var(--blue3);flex-shrink:0;margin-top:2px">▸</span><span style="font-size:13.5px;color:var(--muted);line-height:1.7">SASE integration: does it natively integrate with Zscaler, Palo Alto Prisma, or similar SASE platforms?</span></li><li style="display:flex;gap:10px;align-items:flex-start;padding:10px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:6px"><span style="color:var(--blue3);flex-shrink:0;margin-top:2px">▸</span><span style="font-size:13.5px;color:var(--muted);line-height:1.7">Management UI: can your team understand what's happening without a vendor call?</span></li></ul><h2 style="font-family:var(--ffc);font-size:1.6rem;font-weight:900;text-transform:uppercase;color:#fff;margin:2.5rem 0 .75rem">Top 8 Vendors Compared</h2><p style="font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:1.5rem">Meraki (Cisco): Best all-around for businesses that value simplicity and already use Cisco hardware. Dashboard-driven management, excellent support. Premium pricing. Fortinet: Best value for security-conscious deployments — native NGFW integration in the same box. More complex to configure. Aryaka: Best for global deployments with its own private backbone. Managed-service model reduces operational overhead. Versa Networks: Best for complex, large-scale deployments requiring granular policy control. Requires experienced engineers. VMware VeloCloud (Broadcom): Strong enterprise pedigree, now owned by Broadcom — watch for pricing and support changes post-acquisition. Silver Peak (HPE Aruba): Good WAN optimization features, strong for bandwidth-sensitive applications. Palo Alto Prisma SD-WAN: Best native SASE integration — ideal if you're deploying Prisma Access simultaneously. Zscaler SD-WAN: Emerging option tightly integrated with Zscaler's SASE platform — best if you're already a Zscaler customer.</p><h2 style="font-family:var(--ffc);font-size:1.6rem;font-weight:900;text-transform:uppercase;color:#fff;margin:2.5rem 0 .75rem">What to Ask Every Vendor</h2><ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;margin-bottom:1.5rem"><li style="display:flex;gap:10px;align-items:flex-start;padding:10px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:6px"><span style="color:var(--blue3);flex-shrink:0;margin-top:2px">▸</span><span style="font-size:13.5px;color:var(--muted);line-height:1.7">What is your SLA for failover detection and recovery?</span></li><li style="display:flex;gap:10px;align-items:flex-start;padding:10px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:6px"><span style="color:var(--blue3);flex-shrink:0;margin-top:2px">▸</span><span style="font-size:13.5px;color:var(--muted);line-height:1.7">How are firmware updates deployed and tested?</span></li><li style="display:flex;gap:10px;align-items:flex-start;padding:10px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:6px"><span style="color:var(--blue3);flex-shrink:0;margin-top:2px">▸</span><span style="font-size:13.5px;color:var(--muted);line-height:1.7">What does your support model look like — TAC, dedicated team, or partner-managed?</span></li><li style="display:flex;gap:10px;align-items:flex-start;padding:10px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:6px"><span style="color:var(--blue3);flex-shrink:0;margin-top:2px">▸</span><span style="font-size:13.5px;color:var(--muted);line-height:1.7">What is the pricing model — perpetual, subscription, or managed service?</span></li><li style="display:flex;gap:10px;align-items:flex-start;padding:10px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:6px"><span style="color:var(--blue3);flex-shrink:0;margin-top:2px">▸</span><span style="font-size:13.5px;color:var(--muted);line-height:1.7">Can you provide references from businesses similar to mine in size and industry?</span></li></ul>
+    <div style="margin-top:3rem;padding:2rem;background:rgba(74,144,217,.06);border:1px solid rgba(74,144,217,.2);border-radius:10px">
+      <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue3);margin-bottom:.5rem">About Racom Business</div>
+      <p style="font-size:13px;color:var(--muted);line-height:1.7">Racom Business is an integrated technology and communications partner serving 3,000+ businesses nationwide. We deploy the solutions covered in this guide every day — and we're available for a free technology consultation.</p>
+      <a href="contact.html" style="display:inline-flex;align-items:center;gap:6px;margin-top:1rem;font-size:12px;font-weight:700;color:var(--blue3);text-transform:uppercase;letter-spacing:.05em">Request Free Technology Review →</a>
     </div>
   </div>
 </section>
-
-<section style="background:var(--navy3);padding:4rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd)">
-  <div style="max-width:1100px;margin:0 auto">
-    <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin-bottom:.75rem;text-align:center">— Compliance & Standards —</div>
-    <h2 style="font-family:var(--ffc);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;text-transform:uppercase;color:#fff;text-align:center;margin-bottom:2rem">We Know Your Regulatory Landscape</h2>
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:800px;margin:0 auto">
-      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:12px">
-          <div style="width:8px;height:8px;border-radius:50%;background:var(--blue3);flex-shrink:0;margin-top:4px"></div>
-          <div>
-            <div style="font-size:12.5px;font-weight:700;color:#fff;margin-bottom:2px">NIST 800-82</div>
-            <div style="font-size:12px;color:var(--muted);line-height:1.6">Guide to Industrial Control Systems security for manufacturing environments</div>
-          </div>
-        </div>
-<div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:12px">
-          <div style="width:8px;height:8px;border-radius:50%;background:var(--blue3);flex-shrink:0;margin-top:4px"></div>
-          <div>
-            <div style="font-size:12.5px;font-weight:700;color:#fff;margin-bottom:2px">IEC 62443</div>
-            <div style="font-size:12px;color:var(--muted);line-height:1.6">Industrial cybersecurity standard for operational technology networks</div>
-          </div>
-        </div>
-<div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:12px">
-          <div style="width:8px;height:8px;border-radius:50%;background:var(--blue3);flex-shrink:0;margin-top:4px"></div>
-          <div>
-            <div style="font-size:12.5px;font-weight:700;color:#fff;margin-bottom:2px">ISO 27001</div>
-            <div style="font-size:12px;color:var(--muted);line-height:1.6">Information security management for enterprise and plant floor data</div>
-          </div>
-        </div>
-<div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:12px">
-          <div style="width:8px;height:8px;border-radius:50%;background:var(--blue3);flex-shrink:0;margin-top:4px"></div>
-          <div>
-            <div style="font-size:12.5px;font-weight:700;color:#fff;margin-bottom:2px">CMMC</div>
-            <div style="font-size:12px;color:var(--muted);line-height:1.6">Cybersecurity Maturity Model Certification for defense manufacturing contractors</div>
-          </div>
-        </div>
-
-    </div>
-  </div>
-</section>
-
-<section style="background:linear-gradient(135deg,var(--navy3),var(--navy4));padding:4rem 2.5rem;border-top:1px solid var(--bdd)">
-  <div style="max-width:700px;margin:0 auto;text-align:center">
-    <h2 style="font-family:var(--ffc);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:900;text-transform:uppercase;color:#fff;margin-bottom:.75rem">Ready to Modernize Your Manufacturing IT?</h2>
-    <p style="font-size:14px;color:var(--muted);margin-bottom:1.75rem;line-height:1.75">Start with a free technology assessment. We'll review your current environment and build a plan around your specific compliance requirements and operational needs.</p>
-    <a href="contact.html" style="display:inline-flex;align-items:center;gap:8px;padding:13px 32px;border-radius:5px;background:var(--blue);color:#fff;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif">Get a Free Assessment</a>
-  </div>
-</section>
-
-<footer>
-  <div class="foot-grid">
-    <div>
-      <a href="index.html" style="display:inline-block">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" height="44" width="185" aria-label="Racom Business">
-  <defs>
-    <radialGradient id="rcOrbSm" cx="50%" cy="35%" r="65%">
-      <stop offset="0%" stop-color="#7dd8f0"/>
-      <stop offset="45%" stop-color="#29b6d8"/>
-      <stop offset="100%" stop-color="#0a6a8a"/>
-    </radialGradient>
-  </defs>
-  <circle cx="26" cy="26" r="23" fill="none" stroke="rgba(74,144,217,0.25)" stroke-width="1"/>
-  <path d="M 18 30 A 8 8 0 0 1 34 30" fill="none" stroke="#29c8e8" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
-  <path d="M 14 25.5 A 12 12 0 0 1 38 25.5" fill="none" stroke="#29c8e8" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
-  <path d="M 10 21 A 16 16 0 0 1 42 21" fill="none" stroke="#4ab8d8" stroke-width="1.75" stroke-linecap="round" opacity="0.55"/>
-  <path d="M 7 17 A 19 19 0 0 1 45 17" fill="none" stroke="#2a8ab0" stroke-width="1.25" stroke-linecap="round" opacity="0.35"/>
-  <circle cx="26" cy="33" r="4.5" fill="url(#rcOrbSm)"/>
-  <circle cx="26" cy="33" r="7" fill="none" stroke="#29c8e8" stroke-width="0.75" opacity="0.25"/>
-  <text x="58" y="26" font-family="'Arial Black','Arial',sans-serif" font-size="22" font-weight="900" fill="#ffffff" letter-spacing="2">RACOM</text>
-  <line x1="58" y1="31" x2="218" y2="31" stroke="rgba(30,74,120,0.8)" stroke-width="0.75"/>
-  <text x="60" y="43" font-family="'Arial','Helvetica',sans-serif" font-size="9.5" font-weight="600" fill="#29c8e8" letter-spacing="5.5">BUSINESS</text>
-</svg>
-    </a>
-      <p class="foot-tagline">Integrated Technology &amp; Communications Partner. Serving businesses across the US and internationally.</p>
-      <div class="foot-contact">
-        <a href="tel:8662201422">(866) 220-1422</a>
-        <a href="mailto:salessupport@racombusiness.com">salessupport@racombusiness.com</a>
-        <span>Serving Businesses Nationwide &amp; Internationally</span>
-      </div>
-    </div>
-    <div>
-      <h4>Solutions</h4>
-      <ul>
-        <li><a href="connectivity.html">Connectivity</a></li>
-        <li><a href="communications.html">Communications</a></li>
-        <li><a href="it-security.html">IT Support</a></li>
-        <li><a href="it-security.html">Security / MDR</a></li>
-        <li><a href="cloud-ai.html">Cloud</a></li>
-        <li><a href="cloud-ai.html">AI Automation</a></li>
-        <li><a href="hardware.html">Hardware</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Company</h4>
-      <ul>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="about.html#partners">Partner Program</a></li>
-        <li><a href="contact.html">Careers</a></li>
-        <li><a href="contact.html">Resources</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Hardware store</h4>
-      <ul>
-        <li><a href="hardware.html">Laptops</a></li>
-        <li><a href="hardware.html">Desktops</a></li>
-        <li><a href="hardware.html">Networking</a></li>
-        <li><a href="hardware.html">Monitors</a></li>
-        <li><a href="hardware.html">Printers</a></li>
-        <li><a href="hardware.html">Servers</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="foot-bottom">
-    <p>&copy; 2025 Racom Business &middot; All Rights Reserved &middot; Available Nationwide</p>
-    <div class="foot-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-    </div>
-  </div>
-</footer>
-<script>
-const obs = new IntersectionObserver(e=>{
-  e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')});
-},{threshold:.1});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-document.querySelectorAll('.ind-tab').forEach(tab=>{
-  tab.addEventListener('click',()=>{
-    document.querySelectorAll('.ind-tab').forEach(t=>t.classList.remove('active'));
-    document.querySelectorAll('.ind-panel').forEach(p=>p.classList.remove('active'));
-    tab.classList.add('active');
-    const id = tab.dataset.panel;
-    if(id) document.getElementById(id)?.classList.add('active');
-  });
-});
-</script>
-
-<script>
-// Netlify Forms submission
-document.querySelectorAll('.cf-submit').forEach(btn => {
-  btn.addEventListener('click', function(e) {
-    e.preventDefault();
-    const form = btn.closest('.cform, .why-inner, [class*="form"]');
-    if (!form) { window.location = '/contact.html'; return; }
-    
-    const data = new FormData();
-    data.append('form-name', 'contact');
-    form.querySelectorAll('input, select, textarea').forEach(el => {
-      if (el.placeholder) data.append(el.type || el.tagName.toLowerCase(), el.value);
-    });
-    
-    fetch('/', { method: 'POST', body: data })
-      .then(() => {
-        btn.textContent = '✓ Message Sent! We'll be in touch within 1 business day.';
-        btn.style.background = '#16a34a';
-        btn.disabled = true;
-      })
-      .catch(() => { window.location = '/contact.html'; });
-  });
-});
-</script>
-  <!-- Service Worker Registration -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-          .catch(() => {/* Silent fail */});
-      });
-    }
-  </script>
-
-  
-<!-- TECHNOLOGY PARTNER NETWORK -->
-<section style="background:var(--navy2);border-top:1px solid var(--bdd);padding:1.5rem 0;overflow:hidden">
-  <div style="max-width:1200px;margin:0 auto;padding:0 2.5rem">
-    <div style="font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);text-align:center;margin-bottom:.85rem">Technology Partner Network</div>
-  </div>
-  <div style="overflow:hidden">
-    <div class="pt-track" style="display:flex;gap:10px;width:max-content;animation:ptscroll 32s linear infinite">
-      <div class="pt-item">Microsoft</div><div class="pt-item">HPE</div><div class="pt-item">Cisco</div><div class="pt-item">Meraki</div><div class="pt-item">Acronis</div><div class="pt-item">Veeam</div><div class="pt-item">Barracuda</div><div class="pt-item">AWS</div><div class="pt-item">Azure</div><div class="pt-item">Fortinet</div><div class="pt-item">SentinelOne</div><div class="pt-item">Dell</div><div class="pt-item">Okta</div><div class="pt-item">Zscaler</div><div class="pt-item">CrowdStrike</div><div class="pt-item">Palo Alto</div><div class="pt-item">Splunk</div><div class="pt-item">SolarWinds</div><div class="pt-item">Sophos</div><div class="pt-item">Redstor</div><div class="pt-item">Wasabi</div><div class="pt-item">Egnyte</div><div class="pt-item">Bitdefender</div><div class="pt-item">RingCentral</div><div class="pt-item">Five9</div><div class="pt-item">Dialpad</div><div class="pt-item">Zoom</div><div class="pt-item">Genesys</div>
-      <div class="pt-item">Microsoft</div><div class="pt-item">HPE</div><div class="pt-item">Cisco</div><div class="pt-item">Meraki</div><div class="pt-item">Acronis</div><div class="pt-item">Veeam</div><div class="pt-item">Barracuda</div><div class="pt-item">AWS</div><div class="pt-item">Azure</div><div class="pt-item">Fortinet</div><div class="pt-item">SentinelOne</div><div class="pt-item">Dell</div><div class="pt-item">Okta</div><div class="pt-item">Zscaler</div><div class="pt-item">CrowdStrike</div><div class="pt-item">Palo Alto</div><div class="pt-item">Splunk</div><div class="pt-item">SolarWinds</div><div class="pt-item">Sophos</div><div class="pt-item">Redstor</div><div class="pt-item">Wasabi</div><div class="pt-item">Egnyte</div><div class="pt-item">Bitdefender</div><div class="pt-item">RingCentral</div><div class="pt-item">Five9</div><div class="pt-item">Dialpad</div><div class="pt-item">Zoom</div><div class="pt-item">Genesys</div>
-    </div>
-  </div>
-</section>
-<style>
-.pt-item{flex:0 0 auto;padding:6px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(74,144,217,0.15);border-radius:5px;font-size:11.5px;font-weight:600;color:rgba(255,255,255,0.6);white-space:nowrap;cursor:default;transition:all .2s}
-.pt-item:hover{background:rgba(74,144,217,.1);border-color:rgba(74,144,217,.3);color:#fff}
-@keyframes ptscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-</style>
-<!-- END PARTNER NETWORK -->
-
-<!-- Mobile Bottom Navigation -->
-  <nav class="mobile-bottom-nav">
-    <a href="index.html" class="tap-feedback">
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
-      </svg>
-      <span>Home</span>
-    </a>
-    <a href="#services" class="tap-feedback">
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V9.03l7-3.89v7.85z"/>
-      </svg>
-      <span>Services</span>
-    </a>
-    <a href="about.html" class="tap-feedback">
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-      </svg>
-      <span>About</span>
-    </a>
-    <a href="contact.html" class="tap-feedback">
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-      </svg>
-      <span>Contact</span>
-    </a>
-  </nav>
-
-  <!-- Close mobile menu on overlay click -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Close mobile menu when clicking outside
-      document.addEventListener('click', function(e) {
-        const navMenu = document.querySelector('.nav-menu');
-        const menuBtn = document.querySelector('.mobile-menu-btn');
-        if (navMenu && navMenu.classList.contains('active') && 
-            !navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-          navMenu.classList.remove('active');
-        }
-      });
-      
-      // Highlight active page in bottom nav
-      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-      document.querySelectorAll('.mobile-bottom-nav a').forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-          link.classList.add('active');
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+<section style="background:var(--navy3);border-top:1px solid var(--bdd);padding:5rem 2.5rem;text-align:center"><div style="max-width:700px;margin:0 auto"><h2 style="font-family:var(--ffc);font-size:2.5rem;font-weight:900;text-transform:uppercase;color:#fff;margin-bottom:1rem">Need Expert Guidance?</h2><p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:2rem">Our certified technology engineers are available for a free 30-minute consultation tailored to your business environment.</p><a href="contact.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--blue);color:#fff;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;border-radius:5px" onmouseover="this.style.background='var(--blue2)'" onmouseout="this.style.background='var(--blue)'">Request Free Consultation</a></div></section><section style="background:var(--navy2);border-top:1px solid var(--bdd);padding:1.5rem 0;overflow:hidden"><div style="max-width:1200px;margin:0 auto;padding:0 2.5rem"><div style="font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);text-align:center;margin-bottom:.85rem">Technology Partner Network</div></div><div style="overflow:hidden"><div class="pt-track" style="display:flex;gap:10px;width:max-content;animation:ptscroll 32s linear infinite"><div class="pt-item">Microsoft</div><div class="pt-item">HPE</div><div class="pt-item">Cisco</div><div class="pt-item">Meraki</div><div class="pt-item">Acronis</div><div class="pt-item">Veeam</div><div class="pt-item">Barracuda</div><div class="pt-item">AWS</div><div class="pt-item">Azure</div><div class="pt-item">Fortinet</div><div class="pt-item">SentinelOne</div><div class="pt-item">Dell</div><div class="pt-item">Okta</div><div class="pt-item">Zscaler</div><div class="pt-item">CrowdStrike</div><div class="pt-item">Palo Alto</div><div class="pt-item">Splunk</div><div class="pt-item">SolarWinds</div><div class="pt-item">Sophos</div><div class="pt-item">Redstor</div><div class="pt-item">Wasabi</div><div class="pt-item">Egnyte</div><div class="pt-item">Bitdefender</div><div class="pt-item">RingCentral</div><div class="pt-item">Five9</div><div class="pt-item">Dialpad</div><div class="pt-item">Zoom</div><div class="pt-item">Genesys</div><div class="pt-item">Microsoft</div><div class="pt-item">HPE</div><div class="pt-item">Cisco</div><div class="pt-item">Meraki</div><div class="pt-item">Acronis</div><div class="pt-item">Veeam</div><div class="pt-item">Barracuda</div><div class="pt-item">AWS</div><div class="pt-item">Azure</div><div class="pt-item">Fortinet</div><div class="pt-item">SentinelOne</div><div class="pt-item">Dell</div><div class="pt-item">Okta</div><div class="pt-item">Zscaler</div><div class="pt-item">CrowdStrike</div><div class="pt-item">Palo Alto</div><div class="pt-item">Splunk</div><div class="pt-item">SolarWinds</div><div class="pt-item">Sophos</div><div class="pt-item">Redstor</div><div class="pt-item">Wasabi</div><div class="pt-item">Egnyte</div><div class="pt-item">Bitdefender</div><div class="pt-item">RingCentral</div><div class="pt-item">Five9</div><div class="pt-item">Dialpad</div><div class="pt-item">Zoom</div><div class="pt-item">Genesys</div></div></div></section><style>.pt-item{flex:0 0 auto;padding:6px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(74,144,217,0.15);border-radius:5px;font-size:11.5px;font-weight:600;color:rgba(255,255,255,0.6);white-space:nowrap}.pt-item:hover{background:rgba(74,144,217,.1);border-color:rgba(74,144,217,.3);color:#fff}@keyframes ptscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}</style>
+</body></html>
