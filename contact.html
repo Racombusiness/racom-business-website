@@ -900,11 +900,83 @@ footer li a:hover{color:#fff;padding-left:4px}
   animation: tap-feedback 0.2s ease;
 }
 
-/* FONT CONSISTENCY FIX - All nav elements use Inter */
+
 .nav-menu,.nav-link,.nav-trigger,.nl,.nt,nav button,nav a,.mega,.mc,.mc h5,.mc a,.mega-col h5,.mfeat,.mfeat h5,.mfeat p,.mfeat-link,.topbar,.topbar-left,.topbar-right,.topbar a,.topbar-link,.topbar-cta,.pbar,.pa,.pa-l,.ind-tabs,.ind-tab,button,.btn,.btn-blue,.btn-ghost,.btn-outline,.btn-nav,.mobile-bottom-nav,.mobile-bottom-nav a,footer,footer a,footer h4,footer li,.flinks a{font-family:"Inter","SF Pro Display","Segoe UI","Helvetica Neue",Arial,sans-serif !important}
 
-/* FONT CONSISTENCY - All navigation uses Inter */
+
 nav,nav *,.nav-menu,.nav-link,.nav-trigger,.nl,.nt,nav button,nav a,.mega,.mc,.mc h5,.mc a,.mega-col h5,.mfeat,.mfeat h5,.mfeat p,.topbar,.topbar a,.pbar,.pa,.ind-tabs,.ind-tab,button,.btn,.btn-blue,footer,footer a{font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',Arial,sans-serif !important}
+
+
+
+.mega,.mc,.mc h5,.mc a,.mc li,.mc p,.mfeat,.mfeat h5,.mfeat p,
+.mega-col,.mega-col h5,.mega-col a{
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',Arial,sans-serif !important;
+  font-weight:400 !important;
+  font-size:14px !important;
+}
+.mc h5,.mfeat h5,.mega-col h5{
+  font-size:12px !important;
+  font-weight:600 !important;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+}
+
+
+
+nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc *,.mfeat,.mfeat *,.mega-col,.mega-col *{
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',Arial,sans-serif !important;
+}
+/* Navigation links - homepage style */
+.nl,.nt{
+  font-size:14px !important;
+  font-weight:400 !important;
+  color:rgba(255,255,255,0.8) !important;
+}
+/* Dropdown menus - match homepage */
+.mega,.mc a,.mfeat,.mega-col a{
+  font-size:14px !important;
+  font-weight:400 !important;
+  color:rgba(255,255,255,0.65) !important;
+}
+/* Dropdown headers - small, uppercase */
+.mc h5,.mfeat h5,.mega-col h5{
+  font-size:11px !important;
+  font-weight:600 !important;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  color:rgba(255,255,255,0.4) !important;
+}
+
+
+/* FONT CONSISTENCY - Dropdowns match homepage on ALL pages */
+.mega, .mc, .mc h5, .mc a, .mc li, .mc p, .mfeat, .mfeat h5, .mfeat p,
+.mega-col, .mega-col h5, .mega-col a, nav, nav a, nav *, .nav-menu, .topbar {
+  font-family: 'Inter', 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* Ensure dropdown text is SMALL and GRAY on ALL pages */
+.mega a, .mc a, .mfeat a, .mega-col a {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  text-transform: none !important;
+}
+
+/* Dropdown headers small and uppercase */
+.mc h5, .mfeat h5, .mega-col h5 {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: rgba(255, 255, 255, 0.4) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Make sure body navigation text matches */
+.topbar, .topbar a {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
 
 </style>
   <!-- PWA Manifest -->
@@ -1039,9 +1111,9 @@ nav,nav *,.nav-menu,.nav-link,.nav-trigger,.nl,.nt,nav button,nav a,.mega,.mc,.m
         <div class="mega-col">
           <h5>Proven Results</h5>
           <ul>
-            <li><a href="case-studies.html">40% Telecom Cost Reduction</a></li>
-            <li><a href="case-studies.html">Zero Security Incidents 18mo</a></li>
-            <li><a href="case-studies.html">30% Lower Phone Costs</a></li>
+            <li><a href="case-study-telecom-reduction.html" Telecom Cost Reduction</a></li>
+            <li><a href="case-study-security-incidents.html" Incidents 18mo</a></li>
+            <li><a href="case-study-phone-costs.html" Lower Phone Costs</a></li>
             <li><a href="case-studies.html">All Case Studies &rarr;</a></li>
           </ul>
         </div>
