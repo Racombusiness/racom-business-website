@@ -1,0 +1,13 @@
+OG IMAGE NEEDED
+===============
+Create a 1200x630px image named: og-image.jpg
+Place it in the root of the website folder.
+
+Suggested design:
+- Dark navy background (#060E1C)
+- Racom Business logo centered or top-left
+- Tagline: "One Partner. One Invoice. Zero Gaps."
+- Subtle network/connectivity graphic element
+- Brand colors: #4A90D9 (blue), #00BCD4 (teal)
+
+This image appears when your pages are shared on LinkedIn, Twitter, iMessage, etc.

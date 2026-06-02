@@ -1,12 +1,8 @@
-# Robots.txt for Racom Business
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /private/
 
-# Sitemaps
 Sitemap: https://www.racombusiness.com/sitemap.xml
-Sitemap: https://racombusiness.netlify.app/sitemap.xml
 
-# Crawl-delay for courtesy
-Crawl-delay: 1
+# Block common junk
+Disallow: /contact-success
+Disallow: /.git/
