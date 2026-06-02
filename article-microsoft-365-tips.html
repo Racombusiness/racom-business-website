@@ -25,6 +25,37 @@ h1{font-size:3rem;margin-bottom:1.5rem;color:var(--blue3)}
 h2{font-size:2rem;margin:2rem 0 1rem;color:#fff}
 p{margin-bottom:1rem;color:var(--muted);line-height:1.8}
 .btn-blue{background:var(--blue);color:#fff;padding:12px 28px;border-radius:4px;text-decoration:none;display:inline-block;font-weight:700}
+
+/* FONT CONSISTENCY - Dropdowns match homepage on ALL pages */
+.mega, .mc, .mc h5, .mc a, .mc li, .mc p, .mfeat, .mfeat h5, .mfeat p,
+.mega-col, .mega-col h5, .mega-col a, nav, nav a, nav *, .nav-menu, .topbar {
+  font-family: 'Inter', 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* Ensure dropdown text is SMALL and GRAY on ALL pages */
+.mega a, .mc a, .mfeat a, .mega-col a {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  text-transform: none !important;
+}
+
+/* Dropdown headers small and uppercase */
+.mc h5, .mfeat h5, .mega-col h5 {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: rgba(255, 255, 255, 0.4) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Make sure body navigation text matches */
+.topbar, .topbar a {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
 </style>
 
 </head>

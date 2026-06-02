@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apply Now - Join Our Team | Racom Business</title>
-<meta name="description" content="Apply for open positions at Racom Business. Upload your resume and tell us why you want to join our team.">
+<title>Apply Now - Join Racom | Careers</title>
+<meta name="description" content="Apply for opportunities at Racom Business. Submit your resume and tell us about yourself.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -22,113 +22,39 @@ body{
   color:#fff;
   line-height:1.6;
 }
-.container{
-  max-width:900px;
-  margin:0 auto;
-  padding:3rem 2rem;
-}
-h1{
-  font-size:2.5rem;
-  margin-bottom:1rem;
-  color:var(--blue3);
-  font-weight:700;
-}
-.subtitle{
-  font-size:1.1rem;
-  color:var(--muted);
-  margin-bottom:3rem;
-}
+.container{max-width:1000px;margin:0 auto;padding:3rem 2rem;}
+h1{font-size:2.5rem;margin-bottom:1rem;color:var(--blue3);font-weight:700;}
+h2{font-size:1.3rem;margin-bottom:1.5rem;color:#fff;}
+.subtitle{font-size:1.1rem;color:var(--muted);margin-bottom:2rem;}
 .form-section{
-  background:rgba(255,255,255,0.03);
-  border:1px solid var(--bdd);
-  border-radius:8px;
-  padding:2.5rem;
-  margin-bottom:2rem;
+  background:rgba(255,255,255,0.03);border:1px solid var(--bdd);border-radius:8px;
+  padding:2rem;margin-bottom:2rem;
 }
-.form-section h2{
-  font-size:1.3rem;
-  margin-bottom:1.5rem;
-  color:#fff;
+.form-group{margin-bottom:1.5rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+label{display:block;margin-bottom:0.5rem;font-weight:500;color:rgba(255,255,255,0.9);}
+input,select,textarea{
+  width:100%;padding:12px 16px;border-radius:6px;border:1px solid var(--bdd);
+  background:rgba(255,255,255,0.05);color:#fff;font-size:1rem;
+  font-family:'Inter',sans-serif;transition:all 0.2s;
 }
-.form-group{
-  margin-bottom:1.5rem;
-}
-.form-row{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:1.5rem;
-  margin-bottom:1.5rem;
-}
-label{
-  display:block;
-  margin-bottom:0.5rem;
-  font-weight:500;
-  color:rgba(255,255,255,0.9);
-  font-size:0.95rem;
-}
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="url"],
-input[type="file"],
-select,
-textarea{
-  width:100%;
-  padding:12px 16px;
-  border-radius:6px;
-  border:1px solid var(--bdd);
-  background:rgba(255,255,255,0.05);
-  color:#fff;
-  font-size:1rem;
-  font-family:'Inter',sans-serif;
-  transition:all 0.2s;
-}
-input:focus,select:focus,textarea:focus{
-  outline:none;
-  border-color:var(--blue);
-  background:rgba(255,255,255,0.08);
-}
-textarea{
-  min-height:120px;
-  resize:vertical;
-}
-.required{
-  color:var(--blue3);
-}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);background:rgba(255,255,255,0.08);}
+textarea{min-height:140px;resize:vertical;}
+.required{color:var(--blue3);}
 .submit-btn{
-  background:var(--blue);
-  color:#fff;
-  padding:14px 32px;
-  border-radius:6px;
-  border:none;
-  font-size:1.1rem;
-  font-weight:700;
-  cursor:pointer;
-  transition:all 0.2s;
-  font-family:'Inter',sans-serif;
-  width:100%;
-  margin-top:1rem;
+  background:var(--blue);color:#fff;padding:14px 32px;border-radius:6px;border:none;
+  font-size:1.1rem;font-weight:700;cursor:pointer;transition:all 0.2s;
+  font-family:'Inter',sans-serif;width:100%;margin-top:1rem;
 }
-.submit-btn:hover{
-  background:var(--blue2);
-  transform:translateY(-1px);
-}
-.privacy-note{
-  font-size:0.85rem;
-  color:rgba(255,255,255,0.4);
-  margin-top:2rem;
-  text-align:center;
-}
-@media (max-width:768px){
-  .form-row{grid-template-columns:1fr}
-  h1{font-size:2rem}
-}
+.submit-btn:hover{background:var(--blue2);transform:translateY(-1px);}
+.privacy-note{font-size:0.85rem;color:rgba(255,255,255,0.4);margin-top:2rem;text-align:center;}
+@media (max-width:768px){.form-row{grid-template-columns:1fr}h1{font-size:2rem}}
 </style>
 </head>
 <body>
 <div class="container">
   <h1>Apply Now</h1>
-  <p class="subtitle">Join the Racom team! Fill out the form below to apply for any open position. We'll review your application and get back to you within 3-5 business days.</p>
+  <p class="subtitle">Join the Racom team! Fill out the form below to apply for an open position. We review applications within 3-5 business days and will contact qualified candidates.</p>
   
   <form action="/submit-application" method="POST" enctype="multipart/form-data">
     
@@ -143,6 +69,8 @@ textarea{
           <option value="noc-technician">NOC Technician</option>
           <option value="project-manager">Project Manager</option>
           <option value="sales-representative">Sales Representative</option>
+          <option value="systems-admin">Systems Administrator</option>
+          <option value="network-engineer">Network Engineer</option>
           <option value="other">Other Position</option>
         </select>
       </div>
@@ -174,7 +102,26 @@ textarea{
       
       <div class="form-group">
         <label for="linkedin">LinkedIn Profile URL</label>
-        <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/your-profile">
+        <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+      </div>
+    </div>
+    
+    <div class="form-section">
+      <h2>Experience & Background</h2>
+      <div class="form-group">
+        <label for="experience">Years of Relevant Experience <span class="required">*</span></label>
+        <select id="experience" name="experience" required>
+          <option value="">Select experience level...</option>
+          <option value="0-2">0-2 years</option>
+          <option value="2-5">2-5 years</option>
+          <option value="5-10">5-10 years</option>
+          <option value="10+">10+ years</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="skills">Key Skills <span class="required">*</span></label>
+        <textarea id="skills" name="skills" placeholder="List your key technical skills and certifications..." required></textarea>
       </div>
     </div>
     
@@ -188,15 +135,14 @@ textarea{
       
       <div class="form-group">
         <label for="coverLetter">Cover Letter / Why Racom?</label>
-        <textarea id="coverLetter" name="coverLetter" placeholder="Tell us why you want to join Racom Business and what makes you a great fit for this role..."></textarea>
+        <textarea id="coverLetter" name="coverLetter" placeholder="Tell us why you're interested in Racom and what makes you a great fit for this role..."></textarea>
       </div>
     </div>
     
     <button type="submit" class="submit-btn">Submit Application</button>
     
     <p class="privacy-note">
-      By submitting this application, you agree to our privacy policy and consent to be contacted regarding your application. 
-      We respect your privacy and will never share your information with third parties.
+      By submitting this application, you agree to our privacy policy and consent to be contacted regarding your application. We respect your privacy and will never share your information with third parties.
     </p>
   </form>
 </div>
