@@ -49,7 +49,7 @@ a{text-decoration:none;color:inherit}
 /* ─── NAV ─── */
 nav{position:sticky;top:0;z-index:200;background:rgba(6,14,28,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdd);height:68px;display:flex;align-items:center;padding:0 2.5rem;gap:0}
 .nav-logo-wrap{display:flex;align-items:center;margin-right:2rem;flex-shrink:0}
-.nav-logo-wrap svg{height:40px;width:auto}
+.nav-logo-wrap svg{height:56px;width:auto}
 .nav-menu{display:flex;align-items:stretch;flex:1;justify-content:flex-start}
 .ni{position:relative;display:flex;align-items:center}
 .nl,.nt{font-size:13px;font-weight:600;color:rgba(255,255,255,0.6);padding:0 13px;height:68px;display:flex;align-items:center;gap:5px;transition:all .2s;white-space:nowrap;cursor:pointer;border:none;background:transparent;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;background:rgba(255,255,255,.04)}
@@ -321,7 +321,14 @@ footer li a:hover{color:#fff;padding-left:4px}
 }
 @media(max-width:768px){
   .topbar{display:none}nav{padding:0 1.25rem}.nav-menu{display:none}
-  .pbar-inner{grid-template-columns:repeat(4,1fr)}
+  .pbar-inner{
+    display:flex!important;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .pbar-inner::-webkit-scrollbar{display:none}
+  .pa{flex:0 0 auto;min-width:80px;width:calc(100vw / 4.5)}
   .sol-grid,.proc-grid{grid-template-columns:1fr}
   .fg{grid-template-columns:1fr}
   .hero-inner{padding:5rem 1.5rem}
@@ -858,8 +865,8 @@ footer li a:hover{color:#fff;padding-left:4px}
   .topbar,.tb-left,.tb-right{display:none!important}
 
   /* Nav */
-  nav{padding:0 1rem!important;height:58px!important}
-  .nav-logo svg{height:36px!important}
+  nav{padding:0 1rem!important;height:66px!important}
+  .nav-logo svg{height:48px!important}
   .nav-right .nav-phone{display:none!important}
   .btn-nav{font-size:11px!important;padding:7px 14px!important}
 
@@ -876,7 +883,25 @@ footer li a:hover{color:#fff;padding-left:4px}
   .hero-panel{display:none!important}
 
   /* Stats bar */
-  .pbar-inner,.pb-inner{grid-template-columns:repeat(4,1fr)!important;overflow-x:auto!important}
+  .pbar-inner,.pb-inner{
+    display:flex!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    -webkit-overflow-scrolling:touch!important;
+    scrollbar-width:none!important;
+    gap:0!important;
+    width:100%!important;
+  }
+  .pbar-inner::-webkit-scrollbar,.pb-inner::-webkit-scrollbar{display:none!important}
+  .pa{
+    flex:0 0 auto!important;
+    min-width:80px!important;
+    width:calc(100vw / 4.5)!important;
+    padding:.9rem .4rem!important;
+    border-right:1px solid var(--bdd)!important;
+  }
+  .pa-c{width:38px!important;height:38px!important}
+  .pa-l{font-size:8.5px!important}
   .pa{padding:1rem .4rem!important}
   .pa-l{font-size:8px!important}
   .pa-c{width:36px!important;height:36px!important}
@@ -1098,6 +1123,122 @@ footer li a:hover{color:#fff;padding-left:4px}
   .ni:has(.mega.mobile-open) .nav-arr{transform:rotate(180deg)!important}
 }
 
+
+/* ── MOBILE PBAR SCROLL FIX ── */
+@media(max-width:768px){
+  .pbar{overflow:hidden!important}
+  .pbar-inner{
+    display:flex!important;overflow-x:auto!important;overflow-y:hidden!important;
+    -webkit-overflow-scrolling:touch!important;scrollbar-width:none!important;
+    width:100%!important;padding:0!important;
+  }
+  .pbar-inner::-webkit-scrollbar{display:none!important}
+  .pa{
+    flex:0 0 auto!important;
+    width:calc(100vw / 4.5)!important;
+    min-width:72px!important;max-width:96px!important;
+    padding:.85rem .3rem!important;
+    border-right:1px solid rgba(255,255,255,.07)!important;
+  }
+  .pa-c{width:38px!important;height:38px!important}
+  .pa-l{font-size:8px!important;letter-spacing:.04em!important}
+
+  /* Logo sizing */
+  .nav-logo-wrap img,.nav-logo img{height:52px!important;width:auto!important}
+  nav{height:68px!important;display:flex!important;align-items:center!important}
+
+  /* Mobile hamburger position with larger logo */
+  .mobile-menu-btn{top:13px!important;right:14px!important}
+
+  /* Hero section tighter on mobile */
+  .hero-inner{padding:3.5rem 1.25rem 2.5rem!important}
+  .hero h1{font-size:clamp(1.9rem,7.5vw,2.6rem)!important}
+  .hero-desc{font-size:14px!important;line-height:1.65!important}
+  .hero-proof{display:flex!important;gap:1rem!important;flex-wrap:wrap!important}
+  .hero-proof .hstat{flex:1!important;min-width:80px!important}
+  .hstat strong{font-size:1.6rem!important}
+
+  /* Stats bar - 2 col grid on mobile */
+  .stats-inner{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:0!important;
+  }
+  .stat{
+    padding:1.25rem 1rem!important;
+    border-right:1px solid var(--bdd)!important;
+    border-bottom:1px solid var(--bdd)!important;
+  }
+  .stat:nth-child(2n){border-right:none!important}
+  .stat:nth-last-child(-n+2){border-bottom:none!important}
+
+  /* Solutions grid - single col with smaller cards */
+  .sol-grid{grid-template-columns:1fr!important;border-radius:8px!important}
+  .sol-card{padding:1.25rem!important}
+
+  /* Process/steps grid */
+  .proc-grid{grid-template-columns:1fr 1fr!important;gap:12px!important}
+  .proc-card{padding:1.25rem!important}
+
+  /* Industries section */
+  .ind-layout{grid-template-columns:1fr!important;gap:1.5rem!important}
+  .ind-tabs{
+    display:flex!important;overflow-x:auto!important;flex-wrap:nowrap!important;
+    gap:6px!important;padding-bottom:6px!important;padding:0 0 6px!important;
+    -webkit-overflow-scrolling:touch!important;scrollbar-width:none!important;
+  }
+  .ind-tabs::-webkit-scrollbar{display:none!important}
+  .ind-tab{flex-shrink:0!important;font-size:11px!important;padding:7px 12px!important;white-space:nowrap!important}
+  .ind-panel.active{grid-template-columns:1fr!important}
+
+  /* GSplit / AI / Why sections */
+  .gsplit-inner,.ai-inner,.why-inner{grid-template-columns:1fr!important;gap:2rem!important}
+
+  /* Why section cards */
+  .cfr{grid-template-columns:1fr!important;gap:8px!important}
+  .cf{padding:1rem!important}
+
+  /* Case studies / results cards */
+  [style*="grid-template-columns:repeat(3,1fr)"],
+  [style*="grid-template-columns:repeat(4,1fr)"]{
+    grid-template-columns:1fr!important;
+  }
+  [style*="grid-template-columns:1fr 1fr"]:not([style*="grid-template-columns:1fr 1fr;gap:0"]){
+    grid-template-columns:1fr!important;
+  }
+
+  /* Article / guide content pages */
+  [style*="max-width:760px;margin:0 auto"]{width:100%!important;padding:0!important}
+  [style*="max-width:860px;margin:0 auto"]{width:100%!important;padding:0!important}
+
+  /* Whitepaper sticky sidebar → static */
+  [style*="position:sticky;top:88px"]{position:static!important;margin-top:2rem!important}
+
+  /* Footer */
+  .fg{grid-template-columns:1fr!important;gap:2rem!important}
+  .foot-grid{grid-template-columns:1fr!important}
+  footer{padding:2.5rem 1.25rem 5rem!important}
+
+  /* CTA button groups */
+  [style*="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"]{
+    flex-direction:column!important;align-items:center!important;width:100%!important;
+  }
+  [style*="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"] a{
+    width:100%!important;max-width:320px!important;justify-content:center!important;
+  }
+
+  /* Remove horizontal scroll globally */
+  body,html{max-width:100vw!important;overflow-x:hidden!important}
+}
+
+/* ── VERY SMALL SCREENS ── */
+@media(max-width:380px){
+  .pa{width:calc(100vw / 3.8)!important;min-width:68px!important}
+  .hero h1{font-size:1.75rem!important}
+  .pa-l{font-size:7.5px!important}
+  section{padding:2rem 1rem!important}
+}
+
 </style>
   <meta property="og:image" content="https://www.racombusiness.com/og-image.jpg">
   <meta property="og:url" content="https://www.racombusiness.com/case-manufacturer-downtime.html">
@@ -1115,7 +1256,7 @@ footer li a:hover{color:#fff;padding-left:4px}
   </div>
 <nav>
   <a href="index.html" class="nav-logo-wrap">
-  <img loading="lazy" src="logo-racom.svg" alt="Racom Business" height="52" width="auto" style="height:52px; width:auto;">
+  <img loading="lazy" src="logo-racom.svg" alt="Racom Business" height="64" width="auto" style="height:64px; width:auto;">
   </a>
   <div class="nav-menu">
     <div class="ni">
@@ -1362,7 +1503,7 @@ footer li a:hover{color:#fff;padding-left:4px}
 <div class="pbar">
   <div class="pbar-inner">
     <a href="connectivity.html" class="pa"><div class="pa-c"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg></div><span class="pa-l">Connectivity</span></a>
-    <a href="communications.html" class="pa"><div class="pa-c"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07"/></svg></div><span class="pa-l">Communications</span></a>
+    <a href="communications.html" class="pa"><div class="pa-c"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><span class="pa-l">Communications</span></a>
     <a href="it-security.html" class="pa"><div class="pa-c"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><span class="pa-l">IT Support</span></a>
     <a href="it-security.html" class="pa"><div class="pa-c"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span class="pa-l">Security</span></a>
     <a href="cloud-ai.html" class="pa"><div class="pa-c"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div><span class="pa-l">Cloud</span></a>
@@ -1498,7 +1639,7 @@ footer li a:hover{color:#fff;padding-left:4px}
     <p class="sec-desc reveal">Seven technology disciplines. One account team. One invoice. Racom is the technology partner that finally makes your stack simple.</p>
     <div class="sol-grid reveal">
       <div class="sc"><div class="si"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg></div><h3>Connectivity</h3><p>Carrier-agnostic internet, circuits, and SD-WAN from 200+ providers &mdash; best price and best uptime, guaranteed.</p><div class="sc-tags"><span class="st">Internet</span><span class="st">SD-WAN</span><span class="st">Circuits</span></div></div>
-      <div class="sc"><div class="si"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07"/></svg></div><h3>Communications</h3><p>UCaaS, VoIP, and CCaaS replacing your legacy phone system with modern cloud communications.</p><div class="sc-tags"><span class="st">UCaaS</span><span class="st">VoIP</span><span class="st">CCaaS</span></div></div>
+      <div class="sc"><div class="si"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Communications</h3><p>UCaaS, VoIP, and CCaaS replacing your legacy phone system with modern cloud communications.</p><div class="sc-tags"><span class="st">UCaaS</span><span class="st">VoIP</span><span class="st">CCaaS</span></div></div>
       <div class="sc"><div class="si"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>IT Support</h3><p>24/7 remote monitoring, helpdesk, and onsite support keeping your team productive.</p><div class="sc-tags"><span class="st">RMM</span><span class="st">Helpdesk</span><span class="st">Onsite</span></div></div>
       <div class="sc"><div class="si"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Security</h3><p>Layered defense &mdash; endpoint, email, MFA, MDR, and compliance all managed by Racom.</p><div class="sc-tags"><span class="st">EDR</span><span class="st">MFA</span><span class="st">MDR</span></div></div>
       <div class="sc"><div class="si"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div><h3>Cloud</h3><p>Microsoft 365, Azure, AWS, backups, and disaster recovery &mdash; deployed and managed end-to-end.</p><div class="sc-tags"><span class="st">M365</span><span class="st">Azure</span><span class="st">AWS</span></div></div>
@@ -2087,7 +2228,7 @@ footer li a:hover{color:#fff;padding-left:4px}
   <div class="fg">
     <div>
       <a href="index.html" style="display:inline-block;margin-bottom:0.85rem">
-  <img loading="lazy" src="logo-racom.svg" alt="Racom Business" height="52" width="auto" style="height:52px; width:auto;">
+  <img loading="lazy" src="logo-racom.svg" alt="Racom Business" height="64" width="auto" style="height:64px; width:auto;">
 </a>
       <p class="ft">Integrated Technology &amp; Communications Partner.<br>Serving businesses across the US and internationally.</p>
       <div class="fc">
@@ -2282,7 +2423,7 @@ function dismissCookie(){
   <div class="fg">
     <div>
       <a href="index.html" style="display:inline-block;margin-bottom:0.85rem">
-  <img loading="lazy" src="logo-racom.svg" alt="Racom Business" height="52" width="auto" style="height:52px; width:auto;">
+  <img loading="lazy" src="logo-racom.svg" alt="Racom Business" height="64" width="auto" style="height:64px; width:auto;">
 </a>
       <p class="ft">Integrated Technology &amp; Communications Partner.<br>Serving businesses across the US and internationally.</p>
       <div class="fc">

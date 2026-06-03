@@ -990,8 +990,8 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
   .topbar,.tb-left,.tb-right{display:none!important}
 
   /* Nav */
-  nav{padding:0 1rem!important;height:58px!important}
-  .nav-logo svg{height:36px!important}
+  nav{padding:0 1rem!important;height:66px!important}
+  .nav-logo svg{height:48px!important}
   .nav-right .nav-phone{display:none!important}
   .btn-nav{font-size:11px!important;padding:7px 14px!important}
 
@@ -1008,7 +1008,25 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
   .hero-panel{display:none!important}
 
   /* Stats bar */
-  .pbar-inner,.pb-inner{grid-template-columns:repeat(4,1fr)!important;overflow-x:auto!important}
+  .pbar-inner,.pb-inner{
+    display:flex!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    -webkit-overflow-scrolling:touch!important;
+    scrollbar-width:none!important;
+    gap:0!important;
+    width:100%!important;
+  }
+  .pbar-inner::-webkit-scrollbar,.pb-inner::-webkit-scrollbar{display:none!important}
+  .pa{
+    flex:0 0 auto!important;
+    min-width:80px!important;
+    width:calc(100vw / 4.5)!important;
+    padding:.9rem .4rem!important;
+    border-right:1px solid var(--bdd)!important;
+  }
+  .pa-c{width:38px!important;height:38px!important}
+  .pa-l{font-size:8.5px!important}
   .pa{padding:1rem .4rem!important}
   .pa-l{font-size:8px!important}
   .pa-c{width:36px!important;height:36px!important}
@@ -1230,6 +1248,122 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
   .ni:has(.mega.mobile-open) .nav-arr{transform:rotate(180deg)!important}
 }
 
+
+/* ── MOBILE PBAR SCROLL FIX ── */
+@media(max-width:768px){
+  .pbar{overflow:hidden!important}
+  .pbar-inner{
+    display:flex!important;overflow-x:auto!important;overflow-y:hidden!important;
+    -webkit-overflow-scrolling:touch!important;scrollbar-width:none!important;
+    width:100%!important;padding:0!important;
+  }
+  .pbar-inner::-webkit-scrollbar{display:none!important}
+  .pa{
+    flex:0 0 auto!important;
+    width:calc(100vw / 4.5)!important;
+    min-width:72px!important;max-width:96px!important;
+    padding:.85rem .3rem!important;
+    border-right:1px solid rgba(255,255,255,.07)!important;
+  }
+  .pa-c{width:38px!important;height:38px!important}
+  .pa-l{font-size:8px!important;letter-spacing:.04em!important}
+
+  /* Logo sizing */
+  .nav-logo-wrap img,.nav-logo img{height:52px!important;width:auto!important}
+  nav{height:68px!important;display:flex!important;align-items:center!important}
+
+  /* Mobile hamburger position with larger logo */
+  .mobile-menu-btn{top:13px!important;right:14px!important}
+
+  /* Hero section tighter on mobile */
+  .hero-inner{padding:3.5rem 1.25rem 2.5rem!important}
+  .hero h1{font-size:clamp(1.9rem,7.5vw,2.6rem)!important}
+  .hero-desc{font-size:14px!important;line-height:1.65!important}
+  .hero-proof{display:flex!important;gap:1rem!important;flex-wrap:wrap!important}
+  .hero-proof .hstat{flex:1!important;min-width:80px!important}
+  .hstat strong{font-size:1.6rem!important}
+
+  /* Stats bar - 2 col grid on mobile */
+  .stats-inner{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:0!important;
+  }
+  .stat{
+    padding:1.25rem 1rem!important;
+    border-right:1px solid var(--bdd)!important;
+    border-bottom:1px solid var(--bdd)!important;
+  }
+  .stat:nth-child(2n){border-right:none!important}
+  .stat:nth-last-child(-n+2){border-bottom:none!important}
+
+  /* Solutions grid - single col with smaller cards */
+  .sol-grid{grid-template-columns:1fr!important;border-radius:8px!important}
+  .sol-card{padding:1.25rem!important}
+
+  /* Process/steps grid */
+  .proc-grid{grid-template-columns:1fr 1fr!important;gap:12px!important}
+  .proc-card{padding:1.25rem!important}
+
+  /* Industries section */
+  .ind-layout{grid-template-columns:1fr!important;gap:1.5rem!important}
+  .ind-tabs{
+    display:flex!important;overflow-x:auto!important;flex-wrap:nowrap!important;
+    gap:6px!important;padding-bottom:6px!important;padding:0 0 6px!important;
+    -webkit-overflow-scrolling:touch!important;scrollbar-width:none!important;
+  }
+  .ind-tabs::-webkit-scrollbar{display:none!important}
+  .ind-tab{flex-shrink:0!important;font-size:11px!important;padding:7px 12px!important;white-space:nowrap!important}
+  .ind-panel.active{grid-template-columns:1fr!important}
+
+  /* GSplit / AI / Why sections */
+  .gsplit-inner,.ai-inner,.why-inner{grid-template-columns:1fr!important;gap:2rem!important}
+
+  /* Why section cards */
+  .cfr{grid-template-columns:1fr!important;gap:8px!important}
+  .cf{padding:1rem!important}
+
+  /* Case studies / results cards */
+  [style*="grid-template-columns:repeat(3,1fr)"],
+  [style*="grid-template-columns:repeat(4,1fr)"]{
+    grid-template-columns:1fr!important;
+  }
+  [style*="grid-template-columns:1fr 1fr"]:not([style*="grid-template-columns:1fr 1fr;gap:0"]){
+    grid-template-columns:1fr!important;
+  }
+
+  /* Article / guide content pages */
+  [style*="max-width:760px;margin:0 auto"]{width:100%!important;padding:0!important}
+  [style*="max-width:860px;margin:0 auto"]{width:100%!important;padding:0!important}
+
+  /* Whitepaper sticky sidebar → static */
+  [style*="position:sticky;top:88px"]{position:static!important;margin-top:2rem!important}
+
+  /* Footer */
+  .fg{grid-template-columns:1fr!important;gap:2rem!important}
+  .foot-grid{grid-template-columns:1fr!important}
+  footer{padding:2.5rem 1.25rem 5rem!important}
+
+  /* CTA button groups */
+  [style*="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"]{
+    flex-direction:column!important;align-items:center!important;width:100%!important;
+  }
+  [style*="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"] a{
+    width:100%!important;max-width:320px!important;justify-content:center!important;
+  }
+
+  /* Remove horizontal scroll globally */
+  body,html{max-width:100vw!important;overflow-x:hidden!important}
+}
+
+/* ── VERY SMALL SCREENS ── */
+@media(max-width:380px){
+  .pa{width:calc(100vw / 3.8)!important;min-width:68px!important}
+  .hero h1{font-size:1.75rem!important}
+  .pa-l{font-size:7.5px!important}
+  section{padding:2rem 1rem!important}
+}
+
 </style>
   <!-- PWA Manifest -->
   <link rel="manifest" href="/manifest.json">
@@ -1275,7 +1409,7 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
 </div>
 <nav>
   <a href="index.html" class="nav-logo-wrap">
-  <img loading="lazy" src="logo-racom.svg" alt="Racom Business" height="52" width="auto" style="height:52px; width:auto;">
+  <img loading="lazy" src="logo-racom.svg" alt="Racom Business" height="64" width="auto" style="height:64px; width:auto;">
   </a>
   <div class="nav-menu">
     <div class="nav-item">
@@ -1432,7 +1566,7 @@ document.querySelectorAll('.nav-link').forEach(a=>{
     <div class="eyebrow reveal">Solutions</div>
     <h2 class="h2 reveal">Every Channel, <span class="acc">Unified</span></h2>
     <p class="section-desc reveal">From simple VoIP to a full omnichannel contact center &mdash; Racom designs, deploys, and manages the right platform.</p>
-    <div class="sol-grid reveal"><div class="sol-card"><div class="sol-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>UCaaS &mdash; Unified Communications</h3><p>Voice, video, messaging, and file sharing in a single cloud platform &mdash; replacing your phone system, conferencing, and team chat.</p><div class="sol-tags"><span class="sol-tag">Voice</span><span class="sol-tag">Video</span><span class="sol-tag">Messaging</span></div></div><div class="sol-card"><div class="sol-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07"/></svg></div><h3>VoIP Phone Systems</h3><p>Enterprise-grade business phone service over your internet connection &mdash; lower cost, more features, fully managed.</p><div class="sol-tags"><span class="sol-tag">VoIP</span><span class="sol-tag">SIP Trunking</span><span class="sol-tag">Auto-attendant</span></div></div><div class="sol-card"><div class="sol-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Contact Center (CCaaS)</h3><p>Cloud contact center with omnichannel routing &mdash; voice, email, chat, SMS &mdash; plus IVR and AI-powered agent assistance.</p><div class="sol-tags"><span class="sol-tag">Omnichannel</span><span class="sol-tag">IVR</span><span class="sol-tag">AI assist</span></div></div><div class="sol-card"><div class="sol-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div><h3>Voice AI &amp; Automation</h3><p>AI-powered virtual agents handle routine calls and route intelligently &mdash; freeing your team for high-value interactions.</p><div class="sol-tags"><span class="sol-tag">Voice AI</span><span class="sol-tag">Virtual agents</span></div></div><div class="sol-card"><div class="sol-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><h3>Mobile &amp; Softphone</h3><p>Extend your business phone to any device &mdash; desktop apps, mobile apps, and physical desk phones all on one number.</p><div class="sol-tags"><span class="sol-tag">Softphone</span><span class="sol-tag">Mobile app</span></div></div><div class="sol-card"><div class="sol-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3>Analytics &amp; Reporting</h3><p>Real-time call data, agent performance metrics, and customer experience analytics to drive smarter decisions.</p><div class="sol-tags"><span class="sol-tag">Call analytics</span><span class="sol-tag">Dashboards</span></div></div><div class="sol-cta" style="grid-column:span 2"><h3>Platform-Agnostic. Always Best Fit.</h3><p>We recommend and manage the right UCaaS or CCaaS platform for your specific needs &mdash; not whoever pays us the most. Microsoft Teams, RingCentral, Zoom Phone, 8x8, Five9, and more.</p><a href="contact.html" class="btn-outline" style="font-size:12.5px;padding:10px 18px">Get a recommendation &rarr;</a></div></div>
+    <div class="sol-grid reveal"><div class="sol-card"><div class="sol-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>UCaaS &mdash; Unified Communications</h3><p>Voice, video, messaging, and file sharing in a single cloud platform &mdash; replacing your phone system, conferencing, and team chat.</p><div class="sol-tags"><span class="sol-tag">Voice</span><span class="sol-tag">Video</span><span class="sol-tag">Messaging</span></div></div><div class="sol-card"><div class="sol-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>VoIP Phone Systems</h3><p>Enterprise-grade business phone service over your internet connection &mdash; lower cost, more features, fully managed.</p><div class="sol-tags"><span class="sol-tag">VoIP</span><span class="sol-tag">SIP Trunking</span><span class="sol-tag">Auto-attendant</span></div></div><div class="sol-card"><div class="sol-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Contact Center (CCaaS)</h3><p>Cloud contact center with omnichannel routing &mdash; voice, email, chat, SMS &mdash; plus IVR and AI-powered agent assistance.</p><div class="sol-tags"><span class="sol-tag">Omnichannel</span><span class="sol-tag">IVR</span><span class="sol-tag">AI assist</span></div></div><div class="sol-card"><div class="sol-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div><h3>Voice AI &amp; Automation</h3><p>AI-powered virtual agents handle routine calls and route intelligently &mdash; freeing your team for high-value interactions.</p><div class="sol-tags"><span class="sol-tag">Voice AI</span><span class="sol-tag">Virtual agents</span></div></div><div class="sol-card"><div class="sol-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><h3>Mobile &amp; Softphone</h3><p>Extend your business phone to any device &mdash; desktop apps, mobile apps, and physical desk phones all on one number.</p><div class="sol-tags"><span class="sol-tag">Softphone</span><span class="sol-tag">Mobile app</span></div></div><div class="sol-card"><div class="sol-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3>Analytics &amp; Reporting</h3><p>Real-time call data, agent performance metrics, and customer experience analytics to drive smarter decisions.</p><div class="sol-tags"><span class="sol-tag">Call analytics</span><span class="sol-tag">Dashboards</span></div></div><div class="sol-cta" style="grid-column:span 2"><h3>Platform-Agnostic. Always Best Fit.</h3><p>We recommend and manage the right UCaaS or CCaaS platform for your specific needs &mdash; not whoever pays us the most. Microsoft Teams, RingCentral, Zoom Phone, 8x8, Five9, and more.</p><a href="contact.html" class="btn-outline" style="font-size:12.5px;padding:10px 18px">Get a recommendation &rarr;</a></div></div>
   </div>
 </section><section style="background:var(--navy3);padding:5rem 2.5rem;text-align:center;border-bottom:1px solid var(--bdd);position:relative;overflow:hidden">
   <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(74,144,217,.07) 0%,transparent 65%);pointer-events:none"></div>
