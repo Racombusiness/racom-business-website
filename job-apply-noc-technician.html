@@ -524,45 +524,52 @@ footer li a:hover{color:#fff;padding-left:4px}
 }
 
 
-/* FONT CONSISTENCY - Dropdowns match homepage on ALL pages */
-.mega, .mc, .mc h5, .mc a, .mc li, .mc p, .mfeat, .mfeat h5, .mfeat p,
-.mega-col, .mega-col h5, .mega-col a, nav, nav a, nav *, .nav-menu, .topbar {
-  font-family: 'Inter', 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+.nav-menu,.nav-link,.nav-trigger,.nl,.nt,nav button,nav a,.mega,.mc,.mc h5,.mc a,.mega-col h5,.mfeat,.mfeat h5,.mfeat p,.mfeat-link,.topbar,.topbar-left,.topbar-right,.topbar a,.topbar-link,.topbar-cta,.pbar,.pa,.pa-l,.ind-tabs,.ind-tab,button,.btn,.btn-blue,.btn-ghost,.btn-outline,.btn-nav,.mobile-bottom-nav,.mobile-bottom-nav a,footer,footer a,footer h4,footer li,.flinks a{font-family:"Inter","SF Pro Display","Segoe UI","Helvetica Neue",Arial,sans-serif !important}
+
+
+nav,nav *,.nav-menu,.nav-link,.nav-trigger,.nl,.nt,nav button,nav a,.mega,.mc,.mc h5,.mc a,.mega-col h5,.mfeat,.mfeat h5,.mfeat p,.topbar,.topbar a,.pbar,.pa,.ind-tabs,.ind-tab,button,.btn,.btn-blue,footer,footer a{font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',Arial,sans-serif !important}
+
+
+
+.mega,.mc,.mc h5,.mc a,.mc li,.mc p,.mfeat,.mfeat h5,.mfeat p,
+.mega-col,.mega-col h5,.mega-col a{
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',Arial,sans-serif !important;
+  font-weight:400 !important;
+  font-size:14px !important;
+}
+.mc h5,.mfeat h5,.mega-col h5{
+  font-size:12px !important;
+  font-weight:600 !important;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
 }
 
-/* Ensure dropdown text is SMALL and GRAY on ALL pages */
-.mega a, .mc a, .mfeat a, .mega-col a {
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  color: rgba(255, 255, 255, 0.65) !important;
-  text-transform: none !important;
+
+
+nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc *,.mfeat,.mfeat *,.mega-col,.mega-col *{
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',Arial,sans-serif !important;
+}
+/* Navigation links - homepage style */
+.nl,.nt{
+  font-size:14px !important;
+  font-weight:400 !important;
+  color:rgba(255,255,255,0.8) !important;
+}
+/* Dropdown menus - match homepage */
+.mega,.mc a,.mfeat,.mega-col a{
+  font-size:14px !important;
+  font-weight:400 !important;
+  color:rgba(255,255,255,0.65) !important;
+}
+/* Dropdown headers - small, uppercase */
+.mc h5,.mfeat h5,.mega-col h5{
+  font-size:11px !important;
+  font-weight:600 !important;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  color:rgba(255,255,255,0.4) !important;
 }
 
-/* Dropdown headers small and uppercase */
-.mc h5, .mfeat h5, .mega-col h5 {
-  font-size: 11px !important;
-  font-weight: 600 !important;
-  color: rgba(255, 255, 255, 0.4) !important;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-/* Make sure body navigation text matches */
-.topbar, .topbar a {
-  font-size: 13px !important;
-  font-weight: 400 !important;
-  color: rgba(255, 255, 255, 0.8) !important;
-}
-
-</style>
-<style>
-.container{max-width:800px;margin:2rem auto 4rem;padding:0 2rem}
-.form-card{background:var(--navy3);padding:2.5rem;border-radius:12px;margin-top:2rem}
-.form-group{margin-bottom:1.5rem}
-label{display:block;font-weight:600;margin-bottom:0.5rem;font-size:14px;color:#fff}
-input,textarea,select{width:100%;padding:12px 16px;background:var(--navy2);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#fff;font-size:15px;font-family:inherit}
-textarea{min-height:120px}
-.submit-btn{background:var(--blue);color:#fff;padding:14px 32px;border:none;border-radius:8px;font-size:16px;font-weight:600;width:100%;cursor:pointer}
 
 /* FONT CONSISTENCY - Dropdowns match homepage on ALL pages */
 .mega, .mc, .mc h5, .mc a, .mc li, .mc p, .mfeat, .mfeat h5, .mfeat p,
@@ -925,6 +932,7 @@ textarea{min-height:120px}
 /* ═══ END ONE TRUE MOBILE CSS ═══ */
 
 </style>
+
   <meta property="og:image" content="https://www.racombusiness.com/og-image.jpg">
   <meta property="og:url" content="https://www.racombusiness.com/job-apply-noc-technician.html">
   <meta property="og:site_name" content="Racom Business">
@@ -2012,11 +2020,7 @@ function dismissCookie(){
     </div>
   </div>
 </section>
-<style>
-.pt-item{flex:0 0 auto;padding:6px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(74,144,217,0.15);border-radius:5px;font-size:11.5px;font-weight:600;color:rgba(255,255,255,0.6);white-space:nowrap;cursor:default;transition:all .2s}
-.pt-item:hover{background:rgba(74,144,217,.1);border-color:rgba(74,144,217,.3);color:#fff}
-@keyframes ptscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-</style>
+
 <!-- END PARTNER NETWORK -->
 
 <button class="mobile-menu-btn" onclick="document.querySelector('.nav-menu').classList.toggle('active')" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -2162,10 +2166,7 @@ function dismissCookie(){
     <span>Contact</span>
   </a>
 </nav>
-<style>
 
-
-</style>
 <script>
 // Highlight active bottom nav tab
 (function(){
