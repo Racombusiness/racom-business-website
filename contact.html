@@ -821,6 +821,7 @@ footer li a:hover{color:#fff;padding-left:4px}
     border-bottom:1px solid rgba(74,144,217,.18)!important;
     z-index:500!important;
     overflow:visible!important;
+    isolation:auto!important;
   }
   .nav-logo-wrap{
     flex-shrink:0!important;
@@ -1591,6 +1592,11 @@ document.querySelectorAll('.cf-submit').forEach(btn => {
   var overlay = document.createElement('div');
   overlay.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:9998;display:none';
   document.body.appendChild(overlay);
+
+  // Move menu to body to escape nav stacking context
+  if(menu.parentElement !== document.body){
+    document.body.appendChild(menu);
+  }
 
   function open(){
     menu.style.left='0';

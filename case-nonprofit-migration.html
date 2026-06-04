@@ -165,6 +165,11 @@
   overlay.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:9998;display:none';
   document.body.appendChild(overlay);
 
+  // Move menu to body to escape nav stacking context
+  if(menu.parentElement !== document.body){
+    document.body.appendChild(menu);
+  }
+
   function open(){
     menu.style.left='0';
     overlay.style.display='block';
