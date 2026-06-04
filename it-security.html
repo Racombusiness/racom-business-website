@@ -1260,75 +1260,245 @@ document.querySelectorAll('.nav-link').forEach(a=>{
   if(a.getAttribute('href')==='it-security.html') a.classList.add('active');
 });
 </script>
-<section style="background:var(--navy2);padding:5rem 2.5rem 4rem;position:relative;overflow:hidden;border-bottom:1px solid var(--bdd)">
-  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 50%,rgba(74,144,217,.08) 0%,transparent 60%),linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:auto,65px 65px,65px 65px;pointer-events:none"></div>
-  <div style="max-width:820px;margin:0 auto;position:relative;z-index:1">
-    <div class="eyebrow" style="justify-content:flex-start;margin-bottom:.65rem">IT Support &amp; Security</div>
-    <h1 style="font-family:var(--ffc);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:.97;color:#fff;margin-bottom:1.25rem">Managed IT &amp;<br><span style="color:var(--blue3)">Layered Security</span><br>For Your Business</h1>
-    <p style="font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:2rem;max-width:640px">24/7 remote monitoring, helpdesk, onsite support, endpoint protection, MDR, and compliance management &mdash; Racom becomes your full IT department or augments your existing team.</p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap">
-      <a href="contact.html" class="btn-blue">Get a Free Assessment</a>
-      <a href="tel:8662201422" class="btn-ghost">Call (866) 220-1422</a>
-      
+
+<!-- HERO — THREAT FRAMING -->
+<section style="background:var(--navy);padding:5.5rem 2.5rem 4rem;position:relative;overflow:hidden;border-bottom:1px solid var(--bdd)">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 50%,rgba(168,85,247,.06) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 20% 80%,rgba(74,144,217,.05) 0%,transparent 50%);pointer-events:none"></div>
+  <!-- Grid background -->
+  <div style="position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:65px 65px;pointer-events:none;opacity:.5"></div>
+  <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 420px;gap:5rem;align-items:center">
+    <div>
+      <div class="eyebrow" style="justify-content:flex-start;margin-bottom:.75rem">IT Support &amp; Cybersecurity</div>
+      <h1 style="font-family:var(--ffc);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:.97;color:#fff;margin-bottom:1.25rem">Stop Ransomware,<br><span style="color:#A78BFA">Compliance Failures,</span><br><span style="color:var(--blue3)">And Downtime.</span></h1>
+      <p style="font-size:16px;color:var(--muted);line-height:1.8;margin-bottom:.75rem;max-width:580px">The average ransomware attack costs a small business <strong style="color:#fff">$1.24M</strong> in downtime, recovery, and liability. Most attacks succeed not because technology failed — but because nobody was watching.</p>
+      <p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:2rem;max-width:580px">Racom deploys enterprise-grade cybersecurity for businesses of all sizes — 24/7 SOC monitoring, endpoint protection, Zero Trust architecture, and compliance documentation — all managed by certified security engineers.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="contact.html" class="btn-blue">Get Your Free Security Risk Audit</a>
+        <a href="tel:8662201422" class="btn-ghost">Call (866) 220-1422</a>
+      </div>
     </div>
-  </div>
-</section><section style="background:var(--navy2);padding:5.5rem 2.5rem;border-bottom:1px solid var(--bdd)">
-  <div style="max-width:1200px;margin:0 auto">
-    <div class="eyebrow reveal">IT Support &amp; Security</div>
-    <h2 class="h2 reveal">Complete Protection, <span class="acc">Fully Managed</span></h2>
-    <p class="section-desc reveal">From helpdesk to SOC &mdash; Racom&rsquo;s security and IT team proactively monitors, manages, and defends your technology.</p>
-    <div class="sol-grid reveal"><div class="sol-card"><div class="sol-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>Remote Monitoring &amp; RMM</h3><p>24/7 proactive monitoring of all endpoints, servers, and network devices &mdash; issues resolved before they impact your business.</p><div class="sol-tags"><span class="sol-tag">RMM</span><span class="sol-tag">24/7 NOC</span><span class="sol-tag">Proactive</span></div></div><div class="sol-card"><div class="sol-icon"><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M12 12h.01"/></svg></div><h3>Helpdesk &amp; Support</h3><p>US-based helpdesk with fast response times &mdash; phone, email, and chat for your team&rsquo;s day-to-day IT issues.</p><div class="sol-tags"><span class="sol-tag">Helpdesk</span><span class="sol-tag">US-based</span><span class="sol-tag">Fast response</span></div></div><div class="sol-card"><div class="sol-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h3>Onsite Support</h3><p>When remote isn&rsquo;t enough, our field technicians come to you &mdash; Chicago area and nationwide.</p><div class="sol-tags"><span class="sol-tag">Onsite</span><span class="sol-tag">Chicago</span><span class="sol-tag">Nationwide</span></div></div><div class="sol-card"><div class="sol-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3>AI Ticket Triage</h3><p>AI routes and prioritizes support tickets automatically &mdash; the right technician gets the right ticket faster.</p><div class="sol-tags"><span class="sol-tag">AI Triage</span><span class="sol-tag">Auto-routing</span></div></div><div class="sol-card"><div class="sol-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Endpoint Protection (EDR)</h3><p>Next-gen endpoint detection and response stopping ransomware, malware, and zero-day attacks in real time.</p><div class="sol-tags"><span class="sol-tag">EDR</span><span class="sol-tag">Ransomware</span><span class="sol-tag">Zero-day</span></div></div><div class="sol-card"><div class="sol-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><h3>Email Security</h3><p>Advanced filtering blocking phishing, BEC attacks, malicious attachments, and spam before they reach your users.</p><div class="sol-tags"><span class="sol-tag">Anti-phishing</span><span class="sol-tag">BEC protection</span></div></div><div class="sol-card"><div class="sol-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>MFA &amp; Zero Trust</h3><p>MFA deployment and management across all your apps &mdash; stops 99% of account compromise attacks instantly.</p><div class="sol-tags"><span class="sol-tag">MFA</span><span class="sol-tag">SSO</span><span class="sol-tag">Zero Trust</span></div></div><div class="sol-card"><div class="sol-icon"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>MDR &mdash; 24/7 SOC</h3><p>Our security operations center monitors your environment around the clock &mdash; investigating and responding to threats for you.</p><div class="sol-tags"><span class="sol-tag">MDR</span><span class="sol-tag">SIEM</span><span class="sol-tag">24/7 SOC</span></div></div></div>
-  </div>
-</section><section style="background:var(--navy3);padding:5rem 2.5rem;text-align:center;border-bottom:1px solid var(--bdd);position:relative;overflow:hidden">
-  <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(74,144,217,.07) 0%,transparent 65%);pointer-events:none"></div>
-  <div style="max-width:600px;margin:0 auto;position:relative">
-    <div style="width:40px;height:2px;background:var(--blue);margin:0 auto 1.75rem;border-radius:2px"></div>
-    <h2 style="font-family:var(--ffc);font-size:clamp(1.9rem,4vw,3rem);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;color:#fff;margin-bottom:1rem;line-height:1.05">Don't Wait for a Breach to Act</h2>
-    <p style="font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:2rem">Get a free security assessment &mdash; we&rsquo;ll identify gaps in your current defenses and show you exactly what needs to be fixed.</p>
-    <a href="contact.html" class="btn-blue">Get a Free Assessment</a>
+    <!-- Risk stats panel -->
+    <div style="background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.2);border-radius:12px;padding:2rem">
+      <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#A78BFA;margin-bottom:1.5rem">2025 Cybersecurity Reality</div>
+      <div style="display:flex;flex-direction:column;gap:1.25rem">
+        <div style="display:flex;align-items:flex-start;gap:1rem;padding-bottom:1.25rem;border-bottom:1px solid rgba(255,255,255,.07)">
+          <div style="font-family:var(--ffc);font-size:1.75rem;font-weight:900;color:#f87171;line-height:1;flex-shrink:0">$1.24M</div>
+          <div><div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:.25rem">Average SMB Breach Cost</div><div style="font-size:11.5px;color:var(--muted2);line-height:1.5">Including downtime, recovery, legal liability, and reputation damage</div></div>
+        </div>        <div style="display:flex;align-items:flex-start;gap:1rem;padding-bottom:1.25rem;border-bottom:1px solid rgba(255,255,255,.07)">
+          <div style="font-family:var(--ffc);font-size:1.75rem;font-weight:900;color:#fbbf24;line-height:1;flex-shrink:0">300+</div>
+          <div><div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:.25rem">Days Until Detection</div><div style="font-size:11.5px;color:var(--muted2);line-height:1.5">Average time attackers sit undetected in a network before acting</div></div>
+        </div>        <div style="display:flex;align-items:flex-start;gap:1rem;padding-bottom:1.25rem;border-bottom:1px solid rgba(255,255,255,.07)">
+          <div style="font-family:var(--ffc);font-size:1.75rem;font-weight:900;color:#A78BFA;line-height:1;flex-shrink:0">91%</div>
+          <div><div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:.25rem">Attacks Start With Email</div><div style="font-size:11.5px;color:var(--muted2);line-height:1.5">Of ransomware and breach attempts begin with a phishing email</div></div>
+        </div>        <div style="display:flex;align-items:flex-start;gap:1rem;padding-bottom:1.25rem;border-bottom:1px solid rgba(255,255,255,.07)">
+          <div style="font-family:var(--ffc);font-size:1.75rem;font-weight:900;color:#f87171;line-height:1;flex-shrink:0">60%</div>
+          <div><div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:.25rem">SMBs Close After Breach</div><div style="font-size:11.5px;color:var(--muted2);line-height:1.5">Of small businesses that suffer a major breach close within 6 months</div></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
-<div class="partners-bar">
+
+<!-- RACOM DEFENSE FRAMEWORK -->
+<section style="background:var(--navy3);padding:6rem 2.5rem;border-bottom:1px solid var(--bdd)">
   <div style="max-width:1200px;margin:0 auto">
-    <div class="p-label">Technology partner network</div>
-    <div class="p-row">
-      <div class="p-pill">Microsoft</div><div class="p-pill">HPE</div>
-      <div class="p-pill">Cisco</div><div class="p-pill">Meraki</div>
-      <div class="p-pill">Acronis</div><div class="p-pill">Veeam</div>
-      <div class="p-pill">Barracuda</div><div class="p-pill">AWS</div>
-      <div class="p-pill">Azure</div><div class="p-pill">Fortinet</div>
-      <div class="p-pill">SentinelOne</div><div class="p-pill">Dell</div>
+    <div style="text-align:center;margin-bottom:4rem">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:.75rem">Our Security Framework</div>
+      <h2 class="h2" style="text-align:center">The Racom Defense Model:<br><span class="acc">Four Layers. Zero Gaps.</span></h2>
+      <p style="font-size:15px;color:var(--muted);max-width:600px;margin:1rem auto 0;line-height:1.8">We don't sell individual security tools. We deploy a complete, layered defense system aligned to NIST CSF — so every attack surface is covered.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+      <div style="background:var(--navy2);border:1px solid var(--bdd);border-top:3px solid #4A90D9;border-radius:10px;padding:2rem;transition:all .2s" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='#4A90D9'" onmouseout="this.style.transform='none';this.style.borderColor='var(--bdd)'">
+        <div style="font-size:2rem;margin-bottom:1rem">🛡️</div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#4A90D9;margin-bottom:.5rem">Layer 1 · Prevent</div>
+        <h3 style="font-size:16px;font-weight:700;color:#fff;margin-bottom:.75rem">Keep Threats Out</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:1.25rem">Stop attacks before they enter. Email security, DNS filtering, firewall policy, patch management, and MFA enforce Zero Trust from the perimeter in.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px"><span style='font-size:10.5px;padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:var(--muted2)'>Email Security</span><span style='font-size:10.5px;padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:var(--muted2)'>DNS Filtering</span><span style='font-size:10.5px;padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:var(--muted2)'>MFA / Zero Trust</span><span style='font-size:10.5px;padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:var(--muted2)'>Patch Management</span><span style='font-size:10.5px;padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:var(--muted2)'>Firewall Policy</span></div>
+      </div>      <div style="background:var(--navy2);border:1px solid var(--bdd);border-top:3px solid #A78BFA;border-radius:10px;padding:2rem;transition:all .2s" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='#A78BFA'" onmouseout="this.style.transform='none';this.style.borderColor='var(--bdd)'">
+        <div style="font-size:2rem;margin-bottom:1rem">🔍</div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#A78BFA;margin-bottom:.5rem">Layer 2 · Detect</div>
+        <h3 style="font-size:16px;font-weight:700;color:#fff;margin-bottom:.75rem">See Everything</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:1.25rem">EDR on every endpoint generates real-time behavioral telemetry. Our 24/7 SOC analysts review every alert — no automated-only response.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px"><span style='font-size:10.5px;padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:var(--muted2)'>CrowdStrike EDR</span><span style='font-size:10.5px;padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:var(--muted2)'>SentinelOne</span><span style='font-size:10.5px;padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:var(--muted2)'>SIEM</span><span style='font-size:10.5px;padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:var(--muted2)'>24/7 SOC</span><span style='font-size:10.5px;padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:var(--muted2)'>Threat Hunting</span></div>
+      </div>      <div style="background:var(--navy2);border:1px solid var(--bdd);border-top:3px solid #f59e0b;border-radius:10px;padding:2rem;transition:all .2s" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='#f59e0b'" onmouseout="this.style.transform='none';this.style.borderColor='var(--bdd)'">
+        <div style="font-size:2rem;margin-bottom:1rem">⚡</div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f59e0b;margin-bottom:.5rem">Layer 3 · Respond</div>
+        <h3 style="font-size:16px;font-weight:700;color:#fff;margin-bottom:.75rem">Contain Fast</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:1.25rem">When a threat is confirmed, our SOC isolates, contains, and remediates within minutes — not hours. Pre-approved playbooks mean no waiting for approvals.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px"><span style='font-size:10.5px;padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:var(--muted2)'>Incident Response</span><span style='font-size:10.5px;padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:var(--muted2)'>Auto-Isolation</span><span style='font-size:10.5px;padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:var(--muted2)'>Forensics</span><span style='font-size:10.5px;padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:var(--muted2)'>Breach Notification</span><span style='font-size:10.5px;padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:var(--muted2)'>IR Playbooks</span></div>
+      </div>      <div style="background:var(--navy2);border:1px solid var(--bdd);border-top:3px solid #34D399;border-radius:10px;padding:2rem;transition:all .2s" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='#34D399'" onmouseout="this.style.transform='none';this.style.borderColor='var(--bdd)'">
+        <div style="font-size:2rem;margin-bottom:1rem">♻️</div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#34D399;margin-bottom:.5rem">Layer 4 · Recover</div>
+        <h3 style="font-size:16px;font-weight:700;color:#fff;margin-bottom:.75rem">Back Online Fast</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:1.25rem">Tested, encrypted, ransomware-resistant backups ensure business continuity. RTO/RPO defined and tested quarterly — not just documented.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px"><span style='font-size:10.5px;padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:var(--muted2)'>Immutable Backup</span><span style='font-size:10.5px;padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:var(--muted2)'>DR Planning</span><span style='font-size:10.5px;padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:var(--muted2)'>RTO/RPO SLAs</span><span style='font-size:10.5px;padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:var(--muted2)'>Continuity Testing</span><span style='font-size:10.5px;padding:3px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;color:var(--muted2)'>Cloud DR</span></div>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<script>
-const obs = new IntersectionObserver(e=>{
-  e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')});
-},{threshold:.1});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+<!-- SECURITY CAPABILITIES -->
+<section style="background:var(--navy2);padding:6rem 2.5rem;border-bottom:1px solid var(--bdd)">
+  <div style="max-width:1200px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:3.5rem">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:.75rem">Capabilities</div>
+      <h2 class="h2" style="text-align:center">Full-Spectrum Security,<br><span class="acc">Managed End-to-End</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.35)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
+        <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem">
+          <div style="width:40px;height:40px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">💻</div>
+          <h3 style="font-size:14.5px;font-weight:700;color:#fff">Endpoint Detection &amp; Response (EDR)</h3>
+        </div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7">Behavioral monitoring on every device — detects and stops threats that antivirus misses, including fileless attacks and living-off-the-land techniques.</p>
+      </div>      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.35)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
+        <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem">
+          <div style="width:40px;height:40px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">📧</div>
+          <h3 style="font-size:14.5px;font-weight:700;color:#fff">Email Security &amp; Anti-Phishing</h3>
+        </div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7">AI-powered email filtering, link protection, and impersonation detection. 91% of attacks start with email — we stop them before they reach inboxes.</p>
+      </div>      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.35)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
+        <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem">
+          <div style="width:40px;height:40px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">🔐</div>
+          <h3 style="font-size:14.5px;font-weight:700;color:#fff">Identity &amp; Access Management</h3>
+        </div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7">MFA, Conditional Access, and Zero Trust policies via Microsoft Entra ID — so compromised passwords can't compromise your business.</p>
+      </div>      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.35)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
+        <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem">
+          <div style="width:40px;height:40px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">🌐</div>
+          <h3 style="font-size:14.5px;font-weight:700;color:#fff">Network Security &amp; Segmentation</h3>
+        </div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7">Next-gen firewall, IDS/IPS, network segmentation, and SD-WAN security policies that contain lateral movement if a breach occurs.</p>
+      </div>      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.35)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
+        <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem">
+          <div style="width:40px;height:40px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">☁️</div>
+          <h3 style="font-size:14.5px;font-weight:700;color:#fff">Cloud Security Posture</h3>
+        </div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7">Security configuration monitoring for Microsoft 365, Azure, and AWS — plus CSPM to catch misconfigurations before attackers do.</p>
+      </div>      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.35)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
+        <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem">
+          <div style="width:40px;height:40px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">📋</div>
+          <h3 style="font-size:14.5px;font-weight:700;color:#fff">Compliance &amp; Documentation</h3>
+        </div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7">HIPAA, SOC 2, CMMC, SEC, CJIS, and PCI-DSS compliance frameworks built into your security architecture — not added as an afterthought.</p>
+      </div>      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.35)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
+        <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem">
+          <div style="width:40px;height:40px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">🔍</div>
+          <h3 style="font-size:14.5px;font-weight:700;color:#fff">Vulnerability Management</h3>
+        </div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7">Continuous scanning and prioritized patching across all endpoints, servers, and network devices. Average patch lag reduced to under 24 hours.</p>
+      </div>      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.35)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
+        <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem">
+          <div style="width:40px;height:40px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">🚨</div>
+          <h3 style="font-size:14.5px;font-weight:700;color:#fff">Managed Detection &amp; Response (MDR)</h3>
+        </div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7">24/7 SOC staffed by human analysts — not just automated rules. Real investigation, real context, real response when it counts.</p>
+      </div>      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.35)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
+        <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem">
+          <div style="width:40px;height:40px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">💾</div>
+          <h3 style="font-size:14.5px;font-weight:700;color:#fff">Backup &amp; Ransomware Recovery</h3>
+        </div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7">Immutable, encrypted, air-gapped backups tested quarterly. Defined RTO/RPO means you know exactly how fast you'll recover — before an attack, not after.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-document.querySelectorAll('.ind-tab').forEach(tab=>{
-  tab.addEventListener('click',()=>{
-    document.querySelectorAll('.ind-tab').forEach(t=>t.classList.remove('active'));
-    document.querySelectorAll('.ind-panel').forEach(p=>p.classList.remove('active'));
-    tab.classList.add('active');
-    const id = tab.dataset.panel;
-    if(id) document.getElementById(id)?.classList.add('active');
-  });
-});
-</script>
-  <!-- Service Worker Registration -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-          .catch(() => {/* Silent fail */});
-      });
-    }
-  </script>
+<!-- IT SUPPORT CAPABILITIES -->
+<section style="background:var(--navy);padding:6rem 2.5rem;border-bottom:1px solid var(--bdd)">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start">
+    <div>
+      <div class="eyebrow" style="justify-content:flex-start;margin-bottom:.75rem">Managed IT Support</div>
+      <h2 style="font-family:var(--ffc);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;text-transform:uppercase;color:#fff;margin-bottom:1rem">Your Complete IT<br><span style="color:var(--blue3)">Department.</span><br>Or An Extension Of It.</h2>
+      <p style="font-size:14.5px;color:var(--muted);line-height:1.8;margin-bottom:2rem">Racom works as your full IT department for businesses without internal IT — or as a co-managed partner for companies with existing teams who need specialized support, deeper coverage, or after-hours protection.</p>
+      <div style="display:flex;flex-direction:column;gap:1.25rem">
+        <div style="display:flex;gap:1rem;align-items:flex-start">
+          <div style="width:36px;height:36px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0">📞</div>
+          <div><div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.3rem">US-Based Helpdesk</div><p style="font-size:13px;color:var(--muted);line-height:1.65">Direct line to engineers who know your environment. Critical issues get a 15-minute response, not a ticket number.</p></div>
+        </div>        <div style="display:flex;gap:1rem;align-items:flex-start">
+          <div style="width:36px;height:36px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0">🖥️</div>
+          <div><div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.3rem">24/7 RMM &amp; Monitoring</div><p style="font-size:13px;color:var(--muted);line-height:1.65">Remote monitoring and management across every endpoint, server, and network device — issues caught before they become outages.</p></div>
+        </div>        <div style="display:flex;gap:1rem;align-items:flex-start">
+          <div style="width:36px;height:36px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0">🔧</div>
+          <div><div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.3rem">Onsite &amp; Remote Support</div><p style="font-size:13px;color:var(--muted);line-height:1.65">Whatever the issue needs — remote resolution or boots on the ground. Available nationwide.</p></div>
+        </div>        <div style="display:flex;gap:1rem;align-items:flex-start">
+          <div style="width:36px;height:36px;border-radius:8px;background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0">📊</div>
+          <div><div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.3rem">vCIO &amp; Strategic Planning</div><p style="font-size:13px;color:var(--muted);line-height:1.65">Quarterly technology reviews, roadmapping, and budget planning aligned to your business goals — not just your current ticket queue.</p></div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem;display:flex;gap:1.25rem;align-items:flex-start">
+        <div style="font-family:var(--ffc);font-size:2.5rem;font-weight:900;color:var(--blue3);line-height:1;flex-shrink:0">15m</div>
+        <div><div style="font-size:13.5px;font-weight:700;color:#fff;margin-bottom:.3rem">Critical Issue Response SLA</div><div style="font-size:12.5px;color:var(--muted);line-height:1.6">For P1 incidents — not a callback window, an active engineer on the issue</div></div>
+      </div>      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem;display:flex;gap:1.25rem;align-items:flex-start">
+        <div style="font-family:var(--ffc);font-size:2.5rem;font-weight:900;color:#34D399;line-height:1;flex-shrink:0">98.5%</div>
+        <div><div style="font-size:13.5px;font-weight:700;color:#fff;margin-bottom:.3rem">First-Call Resolution Rate</div><div style="font-size:12.5px;color:var(--muted);line-height:1.6">Issues resolved on first contact without escalation or repeat calls</div></div>
+      </div>      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem;display:flex;gap:1.25rem;align-items:flex-start">
+        <div style="font-family:var(--ffc);font-size:2.5rem;font-weight:900;color:#A78BFA;line-height:1;flex-shrink:0">24/7</div>
+        <div><div style="font-size:13.5px;font-weight:700;color:#fff;margin-bottom:.3rem">SOC &amp; Monitoring Coverage</div><div style="font-size:12.5px;color:var(--muted);line-height:1.6">Human analysts reviewing alerts around the clock, every day of the year</div></div>
+      </div>      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem;display:flex;gap:1.25rem;align-items:flex-start">
+        <div style="font-family:var(--ffc);font-size:2.5rem;font-weight:900;color:#fbbf24;line-height:1;flex-shrink:0">Zero</div>
+        <div><div style="font-size:13.5px;font-weight:700;color:#fff;margin-bottom:.3rem">Offshore Support</div><div style="font-size:12.5px;color:var(--muted);line-height:1.6">100% US-based engineers — no ticket queues, no language barriers, no delays</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  
+<!-- COMPLIANCE & CERTIFICATIONS -->
+<section style="background:var(--navy3);padding:5rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd)">
+  <div style="max-width:1200px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:3rem">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:.75rem">Compliance</div>
+      <h2 class="h2" style="text-align:center">We Speak Every<br><span class="acc">Compliance Framework</span></h2>
+      <p style="font-size:15px;color:var(--muted);max-width:580px;margin:1rem auto 0;line-height:1.8">Our security deployments are designed to satisfy compliance requirements from day one — not retrofitted to pass an audit.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:3rem">
+      <div style="background:var(--navy2);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.35)'" onmouseout="this.style.borderColor='var(--bdd)'">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin-bottom:.75rem">Healthcare</div>
+        <h3 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.5rem">HIPAA Compliance</h3>
+        <p style="font-size:12.5px;color:var(--muted);line-height:1.65">ePHI encryption, audit controls, BAA management, and network segmentation for healthcare organizations.</p>
+      </div>      <div style="background:var(--navy2);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.35)'" onmouseout="this.style.borderColor='var(--bdd)'">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#34D399;margin-bottom:.75rem">Financial Services</div>
+        <h3 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.5rem">SEC / FINRA / SOC 2</h3>
+        <p style="font-size:12.5px;color:var(--muted);line-height:1.65">Cybersecurity policies, access controls, and documentation for investment advisors, brokers, and financial firms.</p>
+      </div>      <div style="background:var(--navy2);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.35)'" onmouseout="this.style.borderColor='var(--bdd)'">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#A78BFA;margin-bottom:.75rem">Government</div>
+        <h3 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.5rem">CJIS / CMMC</h3>
+        <p style="font-size:12.5px;color:var(--muted);line-height:1.65">Criminal justice information controls and CMMC Level 2/3 readiness for government agencies and defense contractors.</p>
+      </div>      <div style="background:var(--navy2);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.35)'" onmouseout="this.style.borderColor='var(--bdd)'">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fbbf24;margin-bottom:.75rem">Retail &amp; Payment</div>
+        <h3 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.5rem">PCI-DSS</h3>
+        <p style="font-size:12.5px;color:var(--muted);line-height:1.65">Cardholder data environment segmentation, vulnerability management, and audit trail documentation.</p>
+      </div>      <div style="background:var(--navy2);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.35)'" onmouseout="this.style.borderColor='var(--bdd)'">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:.75rem">General Business</div>
+        <h3 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.5rem">NIST CSF / CIS Controls</h3>
+        <p style="font-size:12.5px;color:var(--muted);line-height:1.65">Framework-aligned security program design using NIST Cybersecurity Framework and CIS Controls v8.</p>
+      </div>      <div style="background:var(--navy2);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.35)'" onmouseout="this.style.borderColor='var(--bdd)'">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin-bottom:.75rem">Cloud &amp; SaaS</div>
+        <h3 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.5rem">ISO 27001 Alignment</h3>
+        <p style="font-size:12.5px;color:var(--muted);line-height:1.65">Information security management system design aligned to ISO 27001 for cloud-heavy environments.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--navy2);padding:6rem 2.5rem;text-align:center;border-bottom:1px solid var(--bdd)">
+  <div style="max-width:760px;margin:0 auto">
+    <div class="eyebrow" style="justify-content:center;margin-bottom:1rem">Free Security Audit</div>
+    <h2 style="font-family:var(--ffc);font-size:clamp(2rem,4vw,3rem);font-weight:900;text-transform:uppercase;color:#fff;margin-bottom:1rem">Find Out Where Your<br><span style="color:#A78BFA">Security Gaps Are</span></h2>
+    <p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:.75rem">Our free security risk audit reviews your current environment against 47 control points — identifying gaps in endpoint protection, identity management, backup, and compliance posture.</p>
+    <p style="font-size:14px;color:var(--muted2);margin-bottom:2.5rem">No tools to install. No commitment. Results in 30 minutes with a certified security engineer.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="contact.html" class="btn-blue" style="padding:15px 36px;font-size:14px">Schedule Your Security Audit</a>
+      <a href="contact.html" style="display:inline-flex;align-items:center;padding:15px 28px;border:1px solid rgba(255,255,255,.2);border-radius:5px;font-size:13px;font-weight:700;color:rgba(255,255,255,.8);transition:all .2s" onmouseover="this.style.borderColor='rgba(255,255,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.2)'">Talk to a Security Engineer</a>
+    </div>
+    <div style="display:flex;gap:2rem;justify-content:center;margin-top:2rem;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted2)"><span style="color:#34D399">✓</span>No obligation</div>      <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted2)"><span style="color:#34D399">✓</span>US-based engineers only</div>      <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted2)"><span style="color:#34D399">✓</span>Results same day</div>      <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted2)"><span style="color:#34D399">✓</span>Works for any industry</div>
+    </div>
+  </div>
+</section>
 <!-- TECHNOLOGY PARTNER NETWORK -->
 <section style="background:var(--navy2);border-top:1px solid var(--bdd);padding:1.5rem 0;overflow:hidden">
   <div style="max-width:1200px;margin:0 auto;padding:0 2.5rem">
