@@ -591,9 +591,8 @@ footer li a:hover{color:#fff;padding-left:4px}
     justify-content:space-between!important;
     background:rgba(6,14,28,.98)!important;
     border-bottom:1px solid rgba(74,144,217,.18)!important;
-    z-index:500!important;
+    z-index:9999!important;
     overflow:visible!important;
-    isolation:auto!important;
   }
   .nav-logo-wrap{
     flex-shrink:0!important;
@@ -1487,17 +1486,10 @@ footer li a:hover{color:#fff;padding-left:4px}
   var menu = document.querySelector('.nav-menu');
   if(!btn||!menu) return;
 
-  // Only run on mobile
-  if(window.innerWidth > 768) return;
-
+  // Overlay appended to body - z-index 500 so it's below nav (z-index 9999 on mobile)
   var overlay = document.createElement('div');
-  overlay.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:9998;display:none';
+  overlay.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:500;display:none';
   document.body.appendChild(overlay);
-
-  // Move menu to body to escape nav stacking context (mobile only)
-  if(menu.parentElement !== document.body){
-    document.body.appendChild(menu);
-  }
 
   function open(){
     menu.style.left='0';
