@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <link rel="canonical" href="https://www.racombusiness.com/store.html">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-  <title>Business Technology Store | Racom Business</title>
-  <meta name="description" content="Shop 2,400+ business technology products. Authorized HP, Dell, Cisco, Microsoft reseller.">
+  <title>Technology Store — Hardware, Software &amp; More | Racom Business</title>
+  <meta name="description" content="Shop business laptops, desktops, servers, networking gear, software, and more. Racom Business is an authorized reseller of HP, Dell, Cisco, Microsoft, and hundreds of top technology brands.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#060E1C">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -925,6 +925,929 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
 /* ═══ END PREMIUM MOBILE CSS ═══ */
 
 
+
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ff:'Barlow',sans-serif;
+  --ffc:'Barlow Condensed',sans-serif;
+  --navy:#060E1C;
+  --navy2:#0A1628;
+  --navy3:#0D1E35;
+  --navy4:#112444;
+  --blue:#4A90D9;
+  --blue2:#3578C4;
+  --blue3:#6AAEE8;
+  --teal:#00BCD4;
+  --muted:rgba(255,255,255,0.55);
+  --muted2:rgba(255,255,255,0.35);
+  --bdd:rgba(255,255,255,0.07);
+  --bdd2:rgba(255,255,255,0.12);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;background:var(--navy);color:#fff;line-height:1.55;overflow-x:hidden}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--navy)}
+::-webkit-scrollbar-thumb{background:var(--blue2);border-radius:2px}
+a{text-decoration:none;color:inherit}
+
+/* ── TOPBAR ── */
+.topbar{background:var(--navy3);border-bottom:1px solid var(--bdd);display:flex;align-items:center;justify-content:space-between;padding:7px 2.5rem;font-size:11.5px}
+.tb-left{display:flex;gap:1.5rem;align-items:center;color:var(--muted2)}
+.tb-left a{color:var(--muted2);transition:color .15s}.tb-left a:hover{color:#fff}
+.tb-sep{color:rgba(255,255,255,0.15);font-size:9px}
+.tb-right{display:flex;gap:10px;align-items:center}
+.tb-link{font-size:11.5px;color:var(--muted2);font-weight:500;transition:color .15s}.tb-link:hover{color:#fff}
+.tb-cta{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue3);border:1px solid rgba(74,144,217,.3);padding:4px 12px;border-radius:3px;transition:all .2s}.tb-cta:hover{background:rgba(74,144,217,.12)}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:200;background:rgba(6,14,28,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdd);height:68px;display:flex;align-items:center;padding:0 2.5rem;gap:0}
+.nav-logo{display:flex;align-items:center;margin-right:2rem;flex-shrink:0}
+.nav-logo svg{height:40px;width:auto}
+.nav-menu{display:flex;align-items:stretch;flex:1;justify-content:flex-start}
+.ni{position:relative;display:flex;align-items:center}
+.nl,.nt{font-size:13px;font-weight:600;color:rgba(255,255,255,0.6);padding:0 13px;height:68px;display:flex;align-items:center;gap:5px;transition:all .2s;white-space:nowrap;cursor:pointer;border:none;background:transparent;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;background:rgba(255,255,255,.04)}
+.nl.active{color:#fff;border-bottom:2px solid var(--blue)}
+.narr{border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid rgba(255,255,255,0.35);transition:transform .2s;margin-top:1px;flex-shrink:0}
+.ni:hover .narr{transform:rotate(180deg)}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;padding-left:1rem}
+.nav-phone{font-size:12px;color:rgba(255,255,255,.35);font-weight:600;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;border-radius:4px;font-size:13px;font-weight:700;background:var(--blue);color:#fff;border:none;cursor:pointer;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;letter-spacing:.04em}
+.btn-nav:hover{background:var(--blue2);transform:translateY(-1px)}
+
+/* ── MEGA MENUS ── */
+.mega{display:none;position:absolute;top:68px;left:0;background:var(--navy3);border:1px solid var(--bdd2);border-top:2px solid var(--blue);border-radius:0 0 8px 8px;padding:2rem;box-shadow:0 24px 60px rgba(0,0,0,0.65);z-index:300;min-width:680px;gap:2rem}
+.ni:hover .mega{display:flex}
+.mc{min-width:150px}
+.mc h5,.mega-col h5{font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin:0 0 .55rem;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif}
+.mc ul{list-style:none;display:flex;flex-direction:column;gap:1px}
+.mc a{font-size:12.5px;font-weight:500;color:rgba(255,255,255,.5);padding:6px 10px;border-radius:4px;display:flex;align-items:center;gap:7px;transition:all .15s}
+.mc a:hover{color:#fff;background:rgba(74,144,217,.1);padding-left:14px}
+.mc a::before{content:"›";color:var(--blue3);font-size:13px}
+.mdiv{width:1px;background:var(--bdd);flex-shrink:0}
+.mfeat{background:var(--navy4);border:1px solid var(--bdd);border-radius:6px;padding:1.25rem;min-width:190px}
+.mfeat h5{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin-bottom:.6rem}
+.mfeat p{font-size:12px;color:var(--muted2);line-height:1.6;margin-bottom:.85rem}
+.mfeat-link{font-size:12px;font-weight:700;color:var(--blue3);display:inline-flex;align-items:center;gap:5px;transition:color .15s}
+.mfeat-link:hover{color:#fff}
+
+/* ── STORE HERO ── */
+.store-hero{
+  position:relative;
+  background:var(--navy2);
+  padding:3.5rem 2.5rem 3rem;
+  border-bottom:1px solid var(--bdd);
+  overflow:hidden;
+}
+.store-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(74,144,217,.1) 0%,transparent 60%);
+  pointer-events:none;
+}
+.store-hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.store-breadcrumb{
+  display:flex;align-items:center;gap:8px;
+  font-size:12px;color:var(--muted2);margin-bottom:1.25rem;
+}
+.store-breadcrumb a{color:var(--blue3);transition:color .15s}
+.store-breadcrumb a:hover{color:#fff}
+.store-breadcrumb span{color:rgba(255,255,255,.2)}
+.store-hero-grid{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
+.store-hero h1{
+  font-family:var(--ffc);font-size:clamp(2rem,4vw,3rem);
+  font-weight:900;text-transform:uppercase;letter-spacing:-.025em;
+  color:#fff;line-height:1;margin-bottom:.75rem;
+}
+.store-hero h1 span{color:var(--blue3)}
+.store-hero p{font-size:15px;color:var(--muted);line-height:1.7;max-width:580px}
+.store-trust{
+  display:flex;align-items:center;gap:1.5rem;margin-top:1.5rem;
+  padding-top:1.5rem;border-top:1px solid var(--bdd);
+}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted2)}
+.trust-item svg{width:16px;height:16px;stroke:var(--blue3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.store-hero-cta{text-align:right;flex-shrink:0}
+.store-cta-box{
+  background:var(--navy4);border:1px solid var(--bdd2);
+  border-top:2px solid var(--blue);border-radius:8px;
+  padding:1.5rem;min-width:220px;
+}
+.store-cta-box h4{font-size:13px;font-weight:700;color:#fff;margin-bottom:.5rem}
+.store-cta-box p{font-size:12px;color:var(--muted2);line-height:1.6;margin-bottom:1rem}
+.btn-blue{padding:10px 20px;border-radius:4px;font-size:13px;font-weight:700;background:var(--blue);color:#fff;border:none;cursor:pointer;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;letter-spacing:.04em;display:inline-block;width:100%;text-align:center}
+.btn-blue:hover{background:var(--blue2)}
+
+/* ── CATEGORY NAV ── */
+.cat-nav{
+  background:var(--navy3);
+  border-bottom:1px solid var(--bdd);
+  position:sticky;top:68px;z-index:100;
+}
+.cat-nav-inner{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:stretch;gap:0;
+  overflow-x:auto;
+}
+.cat-nav-inner::-webkit-scrollbar{height:2px}
+.cat-nav-inner::-webkit-scrollbar-thumb{background:var(--blue2)}
+.cat-btn{
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  padding:1rem 1.25rem;font-size:11.5px;font-weight:700;
+  letter-spacing:.05em;text-transform:uppercase;
+  color:rgba(255,255,255,.45);border:none;background:transparent;
+  cursor:pointer;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;white-space:nowrap;
+  border-bottom:2px solid transparent;transition:all .2s;
+}
+.cat-btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.cat-btn:hover{color:rgba(255,255,255,.8);background:rgba(255,255,255,.03)}
+.cat-btn.active{color:var(--blue3);border-bottom-color:var(--blue)}
+.cat-search{
+  margin-left:auto;display:flex;align-items:center;gap:0;
+  padding:.75rem 1.25rem;flex-shrink:0;
+}
+.cat-search-input{
+  background:rgba(255,255,255,.05);border:1px solid var(--bdd2);
+  border-radius:4px 0 0 4px;padding:7px 14px;font-size:13px;
+  color:#fff;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;outline:none;width:220px;
+  transition:border-color .2s;
+}
+.cat-search-input::placeholder{color:rgba(255,255,255,.25)}
+.cat-search-input:focus{border-color:var(--blue)}
+.cat-search-btn{
+  padding:8px 14px;background:var(--blue);border:none;
+  border-radius:0 4px 4px 0;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+}
+.cat-search-btn svg{width:15px;height:15px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round}
+
+/* ── MAIN STORE LAYOUT ── */
+.store-main{max-width:1200px;margin:0 auto;padding:2.5rem;display:grid;grid-template-columns:240px 1fr;gap:2rem}
+
+/* ── SIDEBAR ── */
+.store-sidebar{}
+.sidebar-section{margin-bottom:1.75rem}
+.sidebar-section h4{
+  font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--blue3);margin-bottom:.85rem;padding-bottom:.6rem;
+  border-bottom:1px solid var(--bdd);
+}
+.sidebar-cats{list-style:none;display:flex;flex-direction:column;gap:2px}
+.sidebar-cats li a{
+  font-size:13px;color:rgba(255,255,255,.5);font-weight:500;
+  padding:7px 10px;border-radius:4px;display:flex;align-items:center;
+  justify-content:space-between;transition:all .2s;
+}
+.sidebar-cats li a:hover,.sidebar-cats li a.active{color:#fff;background:rgba(74,144,217,.1)}
+.sidebar-cats li a.active{color:var(--blue3)}
+.cat-count{font-size:10px;color:rgba(255,255,255,.25);font-family:monospace}
+.sidebar-brands{display:flex;flex-direction:column;gap:6px}
+.brand-check{display:flex;align-items:center;gap:9px;font-size:12.5px;color:rgba(255,255,255,.45);cursor:pointer;transition:color .2s}
+.brand-check:hover{color:rgba(255,255,255,.75)}
+.brand-check input{accent-color:var(--blue);width:14px;height:14px}
+.price-range{margin-top:.5rem}
+.price-inputs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:.75rem}
+.price-input{
+  padding:8px 10px;border-radius:4px;font-size:12.5px;
+  border:1px solid var(--bdd2);background:rgba(255,255,255,.04);
+  color:#fff;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;outline:none;width:100%;
+}
+.price-input::placeholder{color:rgba(255,255,255,.22)}
+.price-input:focus{border-color:var(--blue)}
+.btn-sm-blue{
+  padding:8px 16px;border-radius:4px;font-size:12px;font-weight:700;
+  background:var(--blue);color:#fff;border:none;cursor:pointer;
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;
+  letter-spacing:.04em;width:100%;
+}
+.btn-sm-blue:hover{background:var(--blue2)}
+.sidebar-services{display:flex;flex-direction:column;gap:8px}
+.svc-link{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 12px;background:var(--navy3);
+  border:1px solid var(--bdd);border-radius:6px;
+  font-size:12.5px;color:rgba(255,255,255,.5);
+  transition:all .2s;font-weight:500;
+}
+.svc-link:hover{border-color:rgba(74,144,217,.35);color:#fff;background:var(--navy4)}
+.svc-link svg{width:15px;height:15px;stroke:var(--blue3);fill:none;stroke-width:1.75;stroke-linecap:round;flex-shrink:0}
+
+/* ── STORE CONTENT ── */
+.store-content{}
+.store-toolbar{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:1.5rem;padding-bottom:1.25rem;
+  border-bottom:1px solid var(--bdd);
+}
+.store-count{font-size:13px;color:var(--muted2)}
+.store-count strong{color:#fff}
+.store-sort{display:flex;align-items:center;gap:10px}
+.sort-label{font-size:12px;color:var(--muted2)}
+.sort-select{
+  padding:7px 12px;border-radius:4px;font-size:12.5px;
+  border:1px solid var(--bdd2);background:rgba(255,255,255,.04);
+  color:#fff;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;outline:none;cursor:pointer;
+}
+.view-toggle{display:flex;gap:3px}
+.view-btn{
+  width:32px;height:32px;border-radius:4px;
+  background:transparent;border:1px solid var(--bdd);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:all .2s;
+}
+.view-btn.active,.view-btn:hover{background:rgba(74,144,217,.15);border-color:rgba(74,144,217,.35)}
+.view-btn svg{width:14px;height:14px;stroke:rgba(255,255,255,.5);fill:none;stroke-width:1.75}
+.view-btn.active svg{stroke:var(--blue3)}
+
+/* ── FEATURED PROMO BANNER ── */
+.promo-banner{
+  background:linear-gradient(135deg,var(--navy4) 0%,var(--navy3) 100%);
+  border:1px solid var(--bdd2);border-left:3px solid var(--blue);
+  border-radius:8px;padding:1.25rem 1.5rem;margin-bottom:1.75rem;
+  display:flex;align-items:center;justify-content:space-between;gap:2rem;
+}
+.promo-banner-text{display:flex;align-items:center;gap:12px}
+.promo-icon{
+  width:38px;height:38px;border-radius:8px;
+  background:rgba(74,144,217,.15);border:1px solid rgba(74,144,217,.25);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.promo-icon svg{width:18px;height:18px;stroke:var(--blue3);fill:none;stroke-width:1.75;stroke-linecap:round}
+.promo-banner h4{font-size:13.5px;font-weight:700;color:#fff;margin-bottom:2px}
+.promo-banner p{font-size:12px;color:var(--muted2)}
+.promo-badge{
+  background:rgba(74,144,217,.15);border:1px solid rgba(74,144,217,.3);
+  border-radius:4px;padding:4px 12px;font-size:11px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--blue3);
+  white-space:nowrap;flex-shrink:0;
+}
+
+/* ── PRODUCT GRID ── */
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:2rem}
+.product-card{
+  background:var(--navy3);border:1px solid var(--bdd);
+  border-radius:8px;overflow:hidden;transition:all .25s;
+  display:flex;flex-direction:column;cursor:pointer;
+  position:relative;
+}
+.product-card:hover{border-color:rgba(74,144,217,.35);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.product-badge{
+  position:absolute;top:10px;left:10px;z-index:1;
+  font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:3px 9px;border-radius:3px;
+}
+.badge-new{background:rgba(0,188,212,.15);border:1px solid rgba(0,188,212,.35);color:var(--teal)}
+.badge-sale{background:rgba(74,144,217,.15);border:1px solid rgba(74,144,217,.35);color:var(--blue3)}
+.badge-hot{background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.3);color:#34D399}
+.product-img{
+  height:190px;
+  display:flex;align-items:center;justify-content:center;
+  border-bottom:1px solid var(--bdd);position:relative;overflow:hidden;
+  padding:20px;
+}
+.product-img img.real-product-img{
+  max-width:100%;max-height:100%;object-fit:contain;
+  transition:transform .3s ease;
+  position:relative;z-index:1;
+}
+.product-card:hover .real-product-img{transform:scale(1.05)}
+.product-img svg{width:60px;height:60px;stroke:rgba(74,144,217,.3);fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;display:none}
+.product-img-bg{
+  position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%,rgba(74,144,217,.04) 0%,transparent 70%);
+}
+.product-img .brand-tag{
+  position:absolute;bottom:8px;right:10px;
+  font-size:10px;font-weight:700;color:rgba(255,255,255,.25);
+  letter-spacing:.05em;text-transform:uppercase;
+}
+.product-body{padding:1.1rem 1.25rem;flex:1;display:flex;flex-direction:column}
+.product-cat{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue3);margin-bottom:.35rem}
+.product-name{font-size:13.5px;font-weight:700;color:#fff;line-height:1.4;margin-bottom:.5rem}
+.product-sku{font-size:10.5px;color:rgba(255,255,255,.25);font-family:monospace;margin-bottom:.75rem}
+.product-meta{display:flex;align-items:center;gap:8px;margin-top:auto;margin-bottom:.75rem}
+.product-price{font-family:var(--ffc);font-size:1.4rem;font-weight:900;color:#fff;letter-spacing:-.02em;line-height:1}
+.product-price-was{font-size:11px;color:rgba(255,255,255,.28);text-decoration:line-through;margin-left:4px}
+.product-avail{
+  margin-left:auto;font-size:10px;font-weight:700;
+  color:#34D399;display:flex;align-items:center;gap:4px;
+}
+.product-avail::before{content:'';width:5px;height:5px;border-radius:50%;background:#34D399}
+.product-footer{display:flex;gap:8px;border-top:1px solid var(--bdd);padding:.85rem 1.25rem}
+.btn-quote{
+  flex:1;padding:9px;border-radius:4px;font-size:12px;font-weight:700;
+  background:var(--blue);color:#fff;border:none;cursor:pointer;
+  font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;transition:all .2s;text-transform:uppercase;letter-spacing:.04em;
+}
+.btn-quote:hover{background:var(--blue2)}
+.btn-wishlist{
+  width:36px;border-radius:4px;font-size:12px;font-weight:700;
+  background:rgba(255,255,255,.05);color:rgba(255,255,255,.5);
+  border:1px solid var(--bdd);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;
+}
+.btn-wishlist:hover{border-color:rgba(74,144,217,.4);color:var(--blue3)}
+.btn-wishlist svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* ── CHANNEL ONLINE INTEGRATION SECTION ── */
+.co-section{
+  background:var(--navy2);
+  border:1px solid var(--bdd2);border-top:2px solid var(--blue);
+  border-radius:10px;margin-bottom:2rem;overflow:hidden;
+}
+.co-header{
+  background:var(--navy3);padding:1.25rem 1.75rem;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid var(--bdd);
+}
+.co-header-left{display:flex;align-items:center;gap:12px}
+.co-logo-wrap{
+  display:flex;align-items:center;gap:8px;
+  background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);
+  border-radius:6px;padding:6px 12px;
+}
+.co-logo-wrap svg{width:16px;height:16px;stroke:var(--blue3);fill:none;stroke-width:1.75;stroke-linecap:round}
+.co-logo-wrap span{font-size:12px;font-weight:700;color:var(--blue3);letter-spacing:.03em}
+.co-header-title{font-size:14px;font-weight:700;color:#fff}
+.co-header-sub{font-size:11.5px;color:var(--muted2);margin-top:1px}
+.co-status{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:#34D399}
+.co-status::before{content:'';width:6px;height:6px;border-radius:50%;background:#34D399;animation:pp 2s infinite}
+@keyframes pp{0%,100%{opacity:1}50%{opacity:.3}}
+.co-embed-area{
+  min-height:600px;background:var(--navy);position:relative;
+  display:flex;align-items:center;justify-content:center;
+}
+/* Loading state / placeholder before actual ChannelOnline JS loads */
+.co-loading{display:flex;flex-direction:column;align-items:center;gap:1.5rem;text-align:center;padding:3rem}
+.co-spinner{
+  width:48px;height:48px;border-radius:50%;
+  border:3px solid rgba(74,144,217,.15);border-top-color:var(--blue3);
+  animation:spin 1s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.co-loading h4{font-size:16px;font-weight:700;color:#fff}
+.co-loading p{font-size:13px;color:var(--muted2);max-width:400px;line-height:1.7}
+/* The actual ChannelOnline embed container */
+#channelonline-store{width:100%;min-height:600px}
+.co-footer{
+  padding:1rem 1.75rem;background:var(--navy3);
+  border-top:1px solid var(--bdd);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.co-footer-left{font-size:11.5px;color:var(--muted2);display:flex;align-items:center;gap:8px}
+.co-footer-left a{color:var(--blue3);transition:color .15s}
+.co-footer-left a:hover{color:#fff}
+.co-powered{display:flex;align-items:center;gap:6px;font-size:10.5px;color:rgba(255,255,255,.25)}
+.co-powered a{color:rgba(255,255,255,.35);transition:color .15s}
+.co-powered a:hover{color:rgba(255,255,255,.65)}
+
+/* ── VAR ADVANTAGES STRIP ── */
+.var-strip{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:2rem;
+}
+.var-item{
+  background:var(--navy3);border:1px solid var(--bdd);
+  border-radius:8px;padding:1rem 1.1rem;
+  display:flex;align-items:flex-start;gap:10px;
+  transition:border-color .2s;
+}
+.var-item:hover{border-color:rgba(74,144,217,.3)}
+.var-icon{
+  width:34px;height:34px;border-radius:7px;flex-shrink:0;
+  background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);
+  display:flex;align-items:center;justify-content:center;
+}
+.var-icon svg{width:16px;height:16px;stroke:var(--blue3);fill:none;stroke-width:1.75;stroke-linecap:round}
+.var-item h5{font-size:12px;font-weight:700;color:#fff;margin-bottom:2px;letter-spacing:-.01em}
+.var-item p{font-size:11px;color:var(--muted2);line-height:1.55}
+
+/* ── BRANDS SECTION ── */
+.brands-section{
+  background:var(--navy3);border:1px solid var(--bdd);
+  border-radius:8px;padding:1.5rem;margin-bottom:2rem;
+}
+.brands-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem}
+.brands-header h4{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue3)}
+.brands-grid{display:flex;flex-wrap:wrap;gap:8px}
+.brand-pill{
+  padding:7px 16px;border-radius:5px;font-size:12px;font-weight:700;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  color:rgba(255,255,255,.4);transition:all .2s;cursor:pointer;
+}
+.brand-pill:hover,.brand-pill.active{background:rgba(74,144,217,.12);border-color:rgba(74,144,217,.3);color:var(--blue3)}
+
+/* ── PAGINATION ── */
+.pagination{display:flex;align-items:center;gap:6px;justify-content:center;margin-top:2rem}
+.page-btn{
+  width:36px;height:36px;border-radius:4px;font-size:13px;font-weight:600;
+  background:var(--navy3);border:1px solid var(--bdd);color:rgba(255,255,255,.5);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;
+}
+.page-btn:hover{border-color:rgba(74,144,217,.35);color:var(--blue3)}
+.page-btn.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.page-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+
+/* ── QUOTE CTA BANNER ── */
+.quote-banner{
+  background:linear-gradient(135deg,var(--navy4) 0%,var(--navy3) 100%);
+  border:1px solid var(--bdd2);border-top:2px solid var(--blue);
+  border-radius:10px;padding:2rem;margin-top:2.5rem;
+  display:flex;align-items:center;gap:2rem;
+}
+.quote-banner-icon{
+  width:52px;height:52px;border-radius:10px;flex-shrink:0;
+  background:rgba(74,144,217,.12);border:1px solid rgba(74,144,217,.25);
+  display:flex;align-items:center;justify-content:center;
+}
+.quote-banner-icon svg{width:24px;height:24px;stroke:var(--blue3);fill:none;stroke-width:1.75;stroke-linecap:round}
+.quote-banner h3{font-family:var(--ffc);font-size:1.4rem;font-weight:900;text-transform:uppercase;letter-spacing:-.01em;color:#fff;margin-bottom:3px}
+.quote-banner p{font-size:13px;color:var(--muted2);line-height:1.6}
+.quote-banner-actions{margin-left:auto;display:flex;gap:10px;flex-shrink:0}
+.btn-blue-sm{padding:10px 20px;border-radius:4px;font-size:13px;font-weight:700;background:var(--blue);color:#fff;border:none;cursor:pointer;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;transition:all .2s}
+.btn-blue-sm:hover{background:var(--blue2)}
+.btn-ghost-sm{padding:10px 18px;border-radius:4px;font-size:13px;font-weight:700;background:transparent;color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.18);cursor:pointer;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;transition:all .2s}
+.btn-ghost-sm:hover{border-color:rgba(255,255,255,.45);color:#fff}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);border-top:2px solid var(--blue2);padding:4rem 2.5rem 2.5rem;position:relative}
+footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(74,144,217,.5),rgba(0,188,212,.3),transparent)}
+.fg{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:4rem;margin-bottom:4rem}
+.ft{font-size:13px;color:rgba(255,255,255,.28);line-height:1.7;margin:.85rem 0 1.25rem;max-width:270px}
+.fc a{display:block;font-size:13.5px;color:var(--blue3);font-weight:700;margin-bottom:4px;transition:color .2s}
+.fc a:hover{color:#fff}
+.fc span{font-size:12px;color:rgba(255,255,255,.22)}
+footer h4{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1rem;padding-bottom:8px;border-bottom:1px solid var(--bdd)}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+footer li a{font-size:13px;color:rgba(255,255,255,.38);font-weight:500;transition:all .2s;display:flex;align-items:center;gap:7px}
+footer li a::before{content:'›';color:var(--blue3);font-size:14px;line-height:1}
+footer li a:hover{color:#fff;padding-left:4px}
+.fbot{max-width:1200px;margin:0 auto;border-top:1px solid var(--bdd);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.fbot p{font-size:12px;color:rgba(255,255,255,.18)}
+.flinks{display:flex;gap:20px}
+.flinks a{font-size:12px;color:rgba(255,255,255,.18);transition:color .2s}
+.flinks a:hover{color:rgba(255,255,255,.55)}
+
+@media(max-width:1100px){.store-main{grid-template-columns:1fr}.store-sidebar{display:none}.product-grid{grid-template-columns:repeat(2,1fr)}.var-strip{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.product-grid{grid-template-columns:1fr}.store-hero-grid{grid-template-columns:1fr}.store-hero-cta{display:none}.var-strip{grid-template-columns:1fr}.fg{grid-template-columns:1fr}.quote-banner{flex-direction:column}.quote-banner-actions{margin-left:0}}
+
+/* ── PARTNER MARQUEE ── */
+/* ── PARTNER MARQUEE v2 ── */
+/* ── PARTNER MARQUEE v2 ── */
+/* ── PARTNER MARQUEE v2 ── */
+.partner-marquee-section {
+  background: var(--navy);
+  padding: 3.5rem 0 4rem;
+  border-top: 1px solid var(--bdd);
+  border-bottom: 1px solid var(--bdd);
+  overflow: hidden;
+  position: relative;
+}
+.marquee-header {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.marquee-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.marquee-header-rule {
+  width: 3px;
+  height: 28px;
+  background: linear-gradient(180deg, var(--blue), var(--teal));
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.marquee-header-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+}
+.marquee-header-count {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--blue3);
+  background: rgba(74,144,217,.1);
+  border: 1px solid rgba(74,144,217,.2);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.marquee-header-link {
+  font-size: 12px;
+  color: var(--blue3);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color .2s;
+}
+.marquee-header-link:hover { color: #fff; }
+.mwrap {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.mwrap:last-child { margin-bottom: 0; }
+/* Fade edges */
+.mwrap::before, .mwrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 140px;
+  z-index: 2;
+  pointer-events: none;
+}
+.mwrap::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--navy) 0%, transparent 100%);
+}
+.mwrap::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--navy) 0%, transparent 100%);
+}
+.mtrack {
+  display: flex;
+  gap: 8px;
+  width: max-content;
+  padding: 4px 0;
+}
+.mfwd { animation: mfwd 40s linear infinite; }
+.mrev { animation: mrev 45s linear infinite; }
+@keyframes mfwd {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes mrev {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.mwrap:hover .mfwd,
+.mwrap:hover .mrev { animation-play-state: paused; }
+/* Brand pill — polished professional style */
+.bi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  height: 40px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all .25s;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+.bi::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(74,144,217,.05) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity .25s;
+}
+.bi:hover {
+  background: rgba(74,144,217,.1);
+  border-color: rgba(74,144,217,.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(74,144,217,.15);
+}
+.bi:hover::before { opacity: 1; }
+.bi span {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,.38);
+  letter-spacing: .03em;
+  font-family: 'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;
+  position: relative;
+  z-index: 1;
+  transition: color .25s;
+}
+.bi:hover span { color: var(--blue3); }
+
+
+
+/* ========================================
+   MOBILE-FIRST APP-LIKE ENHANCEMENTS
+   Add this CSS to make the site feel like a native app
+   ======================================== */
+
+/* Mobile Navigation Enhancements */
+@media (max-width: 768px) {
+  
+  /* Hide desktop navigation on mobile */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 85%;
+    max-width: 320px;
+    height: 100vh;
+    background: linear-gradient(135deg, #060E1C 0%, #0D1E35 100%);
+    z-index: 9999;
+    transition: left 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    overflow-y: auto;
+    box-shadow: 2px 0 20px rgba(0,0,0,0.5);
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  /* Mobile Menu Button */
+  .mobile-menu-btn {
+    display: block !important;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    background: linear-gradient(135deg, #4A90D9, #2B5F8A);
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(74, 144, 217, 0.4);
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-menu-btn:active {
+    transform: scale(0.95);
+  }
+  
+  .mobile-menu-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    margin: 5px auto;
+    transition: 0.3s;
+    border-radius: 2px;
+  }
+  
+  /* Bottom Navigation Bar (Like Mobile Apps) */
+  .mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(6, 14, 28, 0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .mobile-bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 12px;
+  }
+  
+  .mobile-bottom-nav a.active,
+  .mobile-bottom-nav a:active {
+    color: #4A90D9;
+    background: rgba(74, 144, 217, 0.1);
+  }
+  
+  .mobile-bottom-nav svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Card-based Layout for Mobile */
+  .service-card,
+  .feature-card,
+  .content-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    margin-bottom: 16px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+  }
+  
+  .service-card:active,
+  .feature-card:active {
+    transform: scale(0.98) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  /* Mobile Typography */
+  h1 {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+  }
+  
+  h2 {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+  }
+  
+  h3 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+  
+  p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Touch-Optimized Buttons */
+  button,
+  .btn,
+  .cta-button,
+  a[href^="tel"],
+  a[href^="mailto"] {
+    min-height: 48px !important;
+    padding: 12px 24px !important;
+    border-radius: 12px !important;
+    font-size: 16px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+  }
+  
+  button:active,
+  .btn:active,
+  .cta-button:active {
+    transform: scale(0.96) !important;
+  }
+  
+  /* Mobile Spacing */
+  section {
+    padding: 24px 20px !important;
+  }
+  
+  /* Pull-to-Refresh Indicator */
+  .pull-to-refresh {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-60px);
+    background: rgba(74, 144, 217, 0.95);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(74, 144, 217, 0.4);
+    transition: transform 0.3s ease;
+    z-index: 10000;
+  }
+  
+  .pull-to-refresh.active {
+    transform: translateX(-50%) translateY(20px);
+  }
+  
+  /* Smooth Scrolling */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Hide Scrollbar but keep functionality */
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* App-like Header */
+  header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 999 !important;
+    background: rgba(6, 14, 28, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  /* Safe Area Insets for iPhone */
+  @supports(padding: max(0px)) {
+    body {
+      padding-left: max(0px, env(safe-area-inset-left));
+      padding-right: max(0px, env(safe-area-inset-right));
+    }
+    
+    .mobile-bottom-nav {
+      padding-bottom: max(8px, env(safe-area-inset-bottom));
+    }
+  }
+  
+  /* Footer padding for bottom nav */
+  footer {
+    padding-bottom: 80px !important;
+  }
+}
+
+/* Tablet Optimization (iPad) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+  
+  .service-card {
+    padding: 24px !important;
+  }
+  
+  h1 {
+    font-size: 48px !important;
+  }
+  
+  h2 {
+    font-size: 36px !important;
+  }
+}
+
+/* Loading Animation */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #4A90D9;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Haptic Feedback Simulation */
+@keyframes tap-feedback {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.96); }
+  100% { transform: scale(1); }
+}
+
+.tap-feedback:active {
+  animation: tap-feedback 0.2s ease;
+}
+
+
+/* FONT CONSISTENCY - Dropdowns match homepage on ALL pages */
+.mega, .mc, .mc h5, .mc a, .mc li, .mc p, .mfeat, .mfeat h5, .mfeat p,
+.mega-col, .mega-col h5, .mega-col a, nav, nav a, nav *, .nav-menu, .topbar {
+  font-family: 'Inter', 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* Ensure dropdown text is SMALL and GRAY on ALL pages */
+.mega a, .mc a, .mfeat a, .mega-col a {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  text-transform: none !important;
+}
+
+/* Dropdown headers small and uppercase */
+.mc h5, .mfeat h5, .mega-col h5 {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: rgba(255, 255, 255, 0.4) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Make sure body navigation text matches */
+.topbar, .topbar a {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+
   </style>
 </head>
 <body>
@@ -1092,133 +2015,45 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
   </button>
 </nav>
 
-<section style="background:var(--navy);padding:4rem 2.5rem 3rem;border-bottom:1px solid var(--bdd);position:relative;overflow:hidden">
-  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(74,144,217,.05) 0%,transparent 60%);pointer-events:none"></div>
-  <div style="max-width:1200px;margin:0 auto;position:relative;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap">
-    <div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:.75rem">
-        <a href="index.html" style="font-size:12px;color:var(--muted2)">Home</a>
-        <span style="color:var(--muted2)">›</span>
-        <span style="font-size:12px;color:var(--blue3)">Hardware Store</span>
-      </div>
-      <h1 style="font-family:var(--ffc);font-size:clamp(2rem,4vw,3rem);font-weight:900;text-transform:uppercase;color:#fff;line-height:1.05;margin-bottom:.5rem">Business Technology Store</h1>
-      <p style="font-size:15px;color:var(--muted);max-width:550px">2,400+ products from HP, Dell, Cisco, Microsoft, Lenovo &amp; more — business pricing with expert support.</p>
+
+<!-- STORE HERO -->
+<section class="store-hero">
+  <div class="store-hero-inner">
+    <div class="store-breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span>Technology Store</span>
     </div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap">
-      <a href="contact.html" class="btn-blue">Request a Quote</a>
-      <a href="tel:8662201422" class="btn-ghost">(866) 220-1422</a>
-    </div>
-  </div>
-</section>
-
-<section style="background:var(--navy2);padding:3rem 2.5rem">
-  <div style="max-width:1200px;margin:0 auto">
-
-    <!-- ChannelOnline Embed Slot -->
-    <div id="channelonline-store">
-      <!-- PASTE YOUR CHANNELONLINE EMBED SCRIPT HERE
-           Log in → app.channelon.com → Settings → Storefront → Embed Code
-           Example: <script src="https://app.channelon.com/storefront/YOURCODE/embed.js"></script>
-      -->
-    </div>
-
-    <!-- Product catalog layout (shows until ChannelOnline embed is active) -->
-    <div id="store-catalog" style="display:grid;grid-template-columns:200px 1fr;gap:2rem;align-items:start">
-
-      <!-- Category sidebar -->
-      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;overflow:hidden;position:sticky;top:80px">
-        <div style="padding:.85rem 1.25rem;border-bottom:1px solid var(--bdd);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2)">Categories</div>
-        <div>
-          <a href="contact.html" style="display:flex;align-items:center;gap:.65rem;padding:.65rem 1.25rem;font-size:13px;color:rgba(255,255,255,.65);border-bottom:1px solid rgba(255,255,255,.04);transition:all .15s" onmouseover="this.style.background='rgba(74,144,217,.08)';this.style.color='#fff'" onmouseout="this.style.background='none';this.style.color='rgba(255,255,255,.65)'"><span style="font-size:1rem">💻</span>Laptops &amp; Notebooks</a>
-          <a href="contact.html" style="display:flex;align-items:center;gap:.65rem;padding:.65rem 1.25rem;font-size:13px;color:rgba(255,255,255,.65);border-bottom:1px solid rgba(255,255,255,.04);transition:all .15s" onmouseover="this.style.background='rgba(74,144,217,.08)';this.style.color='#fff'" onmouseout="this.style.background='none';this.style.color='rgba(255,255,255,.65)'"><span style="font-size:1rem">🖥️</span>Desktops &amp; Workstations</a>
-          <a href="contact.html" style="display:flex;align-items:center;gap:.65rem;padding:.65rem 1.25rem;font-size:13px;color:rgba(255,255,255,.65);border-bottom:1px solid rgba(255,255,255,.04);transition:all .15s" onmouseover="this.style.background='rgba(74,144,217,.08)';this.style.color='#fff'" onmouseout="this.style.background='none';this.style.color='rgba(255,255,255,.65)'"><span style="font-size:1rem">🖨️</span>Printers &amp; MFPs</a>
-          <a href="contact.html" style="display:flex;align-items:center;gap:.65rem;padding:.65rem 1.25rem;font-size:13px;color:rgba(255,255,255,.65);border-bottom:1px solid rgba(255,255,255,.04);transition:all .15s" onmouseover="this.style.background='rgba(74,144,217,.08)';this.style.color='#fff'" onmouseout="this.style.background='none';this.style.color='rgba(255,255,255,.65)'"><span style="font-size:1rem">🌐</span>Networking</a>
-          <a href="contact.html" style="display:flex;align-items:center;gap:.65rem;padding:.65rem 1.25rem;font-size:13px;color:rgba(255,255,255,.65);border-bottom:1px solid rgba(255,255,255,.04);transition:all .15s" onmouseover="this.style.background='rgba(74,144,217,.08)';this.style.color='#fff'" onmouseout="this.style.background='none';this.style.color='rgba(255,255,255,.65)'"><span style="font-size:1rem">📺</span>Monitors &amp; Displays</a>
-          <a href="contact.html" style="display:flex;align-items:center;gap:.65rem;padding:.65rem 1.25rem;font-size:13px;color:rgba(255,255,255,.65);border-bottom:1px solid rgba(255,255,255,.04);transition:all .15s" onmouseover="this.style.background='rgba(74,144,217,.08)';this.style.color='#fff'" onmouseout="this.style.background='none';this.style.color='rgba(255,255,255,.65)'"><span style="font-size:1rem">🗄️</span>Servers &amp; Storage</a>
-          <a href="contact.html" style="display:flex;align-items:center;gap:.65rem;padding:.65rem 1.25rem;font-size:13px;color:rgba(255,255,255,.65);border-bottom:1px solid rgba(255,255,255,.04);transition:all .15s" onmouseover="this.style.background='rgba(74,144,217,.08)';this.style.color='#fff'" onmouseout="this.style.background='none';this.style.color='rgba(255,255,255,.65)'"><span style="font-size:1rem">🔒</span>Security Appliances</a>
-          <a href="contact.html" style="display:flex;align-items:center;gap:.65rem;padding:.65rem 1.25rem;font-size:13px;color:rgba(255,255,255,.65);border-bottom:1px solid rgba(255,255,255,.04);transition:all .15s" onmouseover="this.style.background='rgba(74,144,217,.08)';this.style.color='#fff'" onmouseout="this.style.background='none';this.style.color='rgba(255,255,255,.65)'"><span style="font-size:1rem">📦</span>Software &amp; Licensing</a>
-          <a href="contact.html" style="display:flex;align-items:center;gap:.65rem;padding:.65rem 1.25rem;font-size:13px;color:rgba(255,255,255,.65);border-bottom:1px solid rgba(255,255,255,.04);transition:all .15s" onmouseover="this.style.background='rgba(74,144,217,.08)';this.style.color='#fff'" onmouseout="this.style.background='none';this.style.color='rgba(255,255,255,.65)'"><span style="font-size:1rem">🔌</span>Cables &amp; Accessories</a>
-        </div>
-      </div>
-
-      <!-- Product grid -->
+    <div class="store-hero-grid">
       <div>
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--bdd)">
-          <div style="font-size:14px;color:var(--muted)"><strong style="color:#fff">2,400+</strong> products available</div>
-          <a href="contact.html" style="font-size:12px;font-weight:700;color:var(--blue3);text-transform:uppercase;letter-spacing:.05em;border:1px solid rgba(74,144,217,.3);padding:6px 14px;border-radius:4px;transition:all .2s" onmouseover="this.style.background='rgba(74,144,217,.08)'" onmouseout="this.style.background='none'">Request Full Catalog →</a>
-        </div>
-
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
-          <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.25rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
-            <div style="font-size:1.75rem;margin-bottom:.75rem">💻</div>
-            <div style="font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue3);margin-bottom:.25rem">HP</div>
-            <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:.3rem;line-height:1.35">EliteBook 840 G11</div>
-            <div style="font-size:11.5px;color:var(--muted);margin-bottom:.85rem;line-height:1.5">Core Ultra 5 · 16GB · 512GB SSD</div>
-            <a href="contact.html" style="font-size:11.5px;font-weight:700;color:var(--blue3);text-transform:uppercase;letter-spacing:.04em;transition:color .15s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--blue3)'">Get Pricing →</a>
+        <h1>Technology <span>Store</span></h1>
+        <p>Shop thousands of business technology products from the world&rsquo;s top brands &mdash; laptops, desktops, servers, networking gear, software licenses, and more. Authorized reseller pricing on HP, Dell, Cisco, Microsoft, Lenovo, and hundreds more.</p>
+        <div class="store-trust">
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Authorized reseller
           </div>
-          <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.25rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
-            <div style="font-size:1.75rem;margin-bottom:.75rem">💻</div>
-            <div style="font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#34D399;margin-bottom:.25rem">Dell</div>
-            <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:.3rem;line-height:1.35">Latitude 5550</div>
-            <div style="font-size:11.5px;color:var(--muted);margin-bottom:.85rem;line-height:1.5">Core i7 · 16GB · 256GB SSD</div>
-            <a href="contact.html" style="font-size:11.5px;font-weight:700;color:var(--blue3);text-transform:uppercase;letter-spacing:.04em;transition:color .15s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--blue3)'">Get Pricing →</a>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            Fast nationwide shipping
           </div>
-          <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.25rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
-            <div style="font-size:1.75rem;margin-bottom:.75rem">🖥️</div>
-            <div style="font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#A78BFA;margin-bottom:.25rem">Lenovo</div>
-            <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:.3rem;line-height:1.35">ThinkCentre M70q Gen 5</div>
-            <div style="font-size:11.5px;color:var(--muted);margin-bottom:.85rem;line-height:1.5">Core i5 · 16GB · 512GB · Tiny</div>
-            <a href="contact.html" style="font-size:11.5px;font-weight:700;color:var(--blue3);text-transform:uppercase;letter-spacing:.04em;transition:color .15s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--blue3)'">Get Pricing →</a>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Same-day quoting
           </div>
-          <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.25rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
-            <div style="font-size:1.75rem;margin-bottom:.75rem">🌐</div>
-            <div style="font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue3);margin-bottom:.25rem">Cisco</div>
-            <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:.3rem;line-height:1.35">Catalyst 9200L-24P</div>
-            <div style="font-size:11.5px;color:var(--muted);margin-bottom:.85rem;line-height:1.5">24-port PoE+ Managed Switch</div>
-            <a href="contact.html" style="font-size:11.5px;font-weight:700;color:var(--blue3);text-transform:uppercase;letter-spacing:.04em;transition:color .15s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--blue3)'">Get Pricing →</a>
-          </div>
-          <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.25rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
-            <div style="font-size:1.75rem;margin-bottom:.75rem">🗄️</div>
-            <div style="font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#34D399;margin-bottom:.25rem">HPE</div>
-            <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:.3rem;line-height:1.35">ProLiant DL380 Gen11</div>
-            <div style="font-size:11.5px;color:var(--muted);margin-bottom:.85rem;line-height:1.5">Dual Xeon · 64GB · Rack 2U</div>
-            <a href="contact.html" style="font-size:11.5px;font-weight:700;color:var(--blue3);text-transform:uppercase;letter-spacing:.04em;transition:color .15s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--blue3)'">Get Pricing →</a>
-          </div>
-          <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.25rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
-            <div style="font-size:1.75rem;margin-bottom:.75rem">🖨️</div>
-            <div style="font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#A78BFA;margin-bottom:.25rem">HP</div>
-            <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:.3rem;line-height:1.35">LaserJet MFP M479fdw</div>
-            <div style="font-size:11.5px;color:var(--muted);margin-bottom:.85rem;line-height:1.5">Color Laser · Scan/Copy · WiFi</div>
-            <a href="contact.html" style="font-size:11.5px;font-weight:700;color:var(--blue3);text-transform:uppercase;letter-spacing:.04em;transition:color .15s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--blue3)'">Get Pricing →</a>
-          </div>
-          <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.25rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
-            <div style="font-size:1.75rem;margin-bottom:.75rem">📺</div>
-            <div style="font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue3);margin-bottom:.25rem">Dell</div>
-            <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:.3rem;line-height:1.35">UltraSharp U2723DE</div>
-            <div style="font-size:11.5px;color:var(--muted);margin-bottom:.85rem;line-height:1.5">27" 4K USB-C · 90W PD</div>
-            <a href="contact.html" style="font-size:11.5px;font-weight:700;color:var(--blue3);text-transform:uppercase;letter-spacing:.04em;transition:color .15s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--blue3)'">Get Pricing →</a>
-          </div>
-          <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.25rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
-            <div style="font-size:1.75rem;margin-bottom:.75rem">🔒</div>
-            <div style="font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#34D399;margin-bottom:.25rem">Fortinet</div>
-            <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:.3rem;line-height:1.35">FortiGate 60F</div>
-            <div style="font-size:11.5px;color:var(--muted);margin-bottom:.85rem;line-height:1.5">NGFW · 10 GbE · SD-WAN Ready</div>
-            <a href="contact.html" style="font-size:11.5px;font-weight:700;color:var(--blue3);text-transform:uppercase;letter-spacing:.04em;transition:color .15s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--blue3)'">Get Pricing →</a>
-          </div>
-          <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.25rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
-            <div style="font-size:1.75rem;margin-bottom:.75rem">💾</div>
-            <div style="font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#A78BFA;margin-bottom:.25rem">Synology</div>
-            <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:.3rem;line-height:1.35">DS923+</div>
-            <div style="font-size:11.5px;color:var(--muted);margin-bottom:.85rem;line-height:1.5">4-Bay NAS · AMD Ryzen R1600</div>
-            <a href="contact.html" style="font-size:11.5px;font-weight:700;color:var(--blue3);text-transform:uppercase;letter-spacing:.04em;transition:color .15s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--blue3)'">Get Pricing →</a>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            Dedicated account rep
           </div>
         </div>
-
-        <div style="text-align:center;margin-top:2rem;padding:2rem;background:var(--navy4);border:1px solid var(--bdd);border-radius:8px">
-          <p style="font-size:14px;color:var(--muted);margin-bottom:1.25rem">Full live catalog with real-time pricing available. Contact us or request access to our ChannelOnline portal.</p>
-          <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-            <a href="contact.html" class="btn-blue" style="font-size:13px;padding:11px 24px">Request a Quote</a>
-            <a href="contact.html" style="display:inline-flex;align-items:center;padding:11px 20px;border:1px solid rgba(255,255,255,.2);border-radius:5px;font-size:13px;font-weight:700;color:rgba(255,255,255,.8);transition:all .2s" onmouseover="this.style.borderColor='rgba(255,255,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.2)'">Talk to a Specialist</a>
+      </div>
+      <div class="store-hero-cta">
+        <div class="store-cta-box">
+          <h4>Need a Custom Quote?</h4>
+          <p>Get competitive pricing on bulk orders, custom configurations, and hard-to-source items.</p>
+          <a href="contact.html" class="btn-blue">Request a Quote</a>
+          <div style="margin-top:.85rem;padding-top:.85rem;border-top:1px solid rgba(255,255,255,0.07);font-size:12px;color:rgba(255,255,255,.3);text-align:center">
+            Or call <a href="tel:8662201422" style="color:var(--blue3);font-weight:600">(866) 220-1422</a>
           </div>
         </div>
       </div>
@@ -1226,14 +2061,502 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
   </div>
 </section>
 
-<section style="background:var(--navy);padding:3rem 2.5rem;border-top:1px solid var(--bdd)">
-  <div style="max-width:1200px;margin:0 auto;text-align:center">
-    <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);margin-bottom:1.5rem">Authorized Reseller</div>
-    <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center"><span style="padding:6px 16px;background:var(--navy3);border:1px solid var(--bdd);border-radius:4px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55)">HP</span><span style="padding:6px 16px;background:var(--navy3);border:1px solid var(--bdd);border-radius:4px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55)">HPE</span><span style="padding:6px 16px;background:var(--navy3);border:1px solid var(--bdd);border-radius:4px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55)">Dell</span><span style="padding:6px 16px;background:var(--navy3);border:1px solid var(--bdd);border-radius:4px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55)">Cisco</span><span style="padding:6px 16px;background:var(--navy3);border:1px solid var(--bdd);border-radius:4px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55)">Meraki</span><span style="padding:6px 16px;background:var(--navy3);border:1px solid var(--bdd);border-radius:4px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55)">Lenovo</span><span style="padding:6px 16px;background:var(--navy3);border:1px solid var(--bdd);border-radius:4px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55)">Microsoft</span><span style="padding:6px 16px;background:var(--navy3);border:1px solid var(--bdd);border-radius:4px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55)">Apple</span><span style="padding:6px 16px;background:var(--navy3);border:1px solid var(--bdd);border-radius:4px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55)">Fortinet</span><span style="padding:6px 16px;background:var(--navy3);border:1px solid var(--bdd);border-radius:4px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55)">Barracuda</span><span style="padding:6px 16px;background:var(--navy3);border:1px solid var(--bdd);border-radius:4px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55)">Veeam</span><span style="padding:6px 16px;background:var(--navy3);border:1px solid var(--bdd);border-radius:4px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55)">Acronis</span><span style="padding:6px 16px;background:var(--navy3);border:1px solid var(--bdd);border-radius:4px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55)">SentinelOne</span><span style="padding:6px 16px;background:var(--navy3);border:1px solid var(--bdd);border-radius:4px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55)">Ubiquiti</span><span style="padding:6px 16px;background:var(--navy3);border:1px solid var(--bdd);border-radius:4px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55)">Aruba</span><span style="padding:6px 16px;background:var(--navy3);border:1px solid var(--bdd);border-radius:4px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55)">APC</span><span style="padding:6px 16px;background:var(--navy3);border:1px solid var(--bdd);border-radius:4px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55)">Poly</span><span style="padding:6px 16px;background:var(--navy3);border:1px solid var(--bdd);border-radius:4px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55)">Jabra</span><span style="padding:6px 16px;background:var(--navy3);border:1px solid var(--bdd);border-radius:4px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55)">Vertiv</span><span style="padding:6px 16px;background:var(--navy3);border:1px solid var(--bdd);border-radius:4px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55)">Samsung</span>
+<!-- CATEGORY NAV BAR -->
+<div class="cat-nav">
+  <div class="cat-nav-inner">
+    <button class="cat-btn active" onclick="setCategory(this,'all')">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      All Products
+    </button>
+    <button class="cat-btn" onclick="setCategory(this,'laptops')">
+      <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      Laptops
+    </button>
+    <button class="cat-btn" onclick="setCategory(this,'desktops')">
+      <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="12" rx="1"/><path d="M8 20h8M12 16v4"/></svg>
+      Desktops
+    </button>
+    <button class="cat-btn" onclick="setCategory(this,'servers')">
+      <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+      Servers
+    </button>
+    <button class="cat-btn" onclick="setCategory(this,'networking')">
+      <svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
+      Networking
+    </button>
+    <button class="cat-btn" onclick="setCategory(this,'monitors')">
+      <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      Monitors
+    </button>
+    <button class="cat-btn" onclick="setCategory(this,'printers')">
+      <svg viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Printers
+    </button>
+    <button class="cat-btn" onclick="setCategory(this,'software')">
+      <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      Software
+    </button>
+    <button class="cat-btn" onclick="setCategory(this,'accessories')">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      Accessories
+    </button>
+    <div class="cat-search">
+      <input class="cat-search-input" type="text" placeholder="Search products..." id="productSearch">
+      <button class="cat-search-btn">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN STORE LAYOUT -->
+<div class="store-main">
+
+  <!-- SIDEBAR -->
+  <aside class="store-sidebar">
+    <div class="sidebar-section">
+      <h4>Categories</h4>
+      <ul class="sidebar-cats">
+        <li><a href="#" class="active">All Products <span class="cat-count">2,400+</span></a></li>
+        <li><a href="#">Laptops &amp; Notebooks <span class="cat-count">380</span></a></li>
+        <li><a href="#">Desktops &amp; Workstations <span class="cat-count">215</span></a></li>
+        <li><a href="#">Servers &amp; Storage <span class="cat-count">190</span></a></li>
+        <li><a href="#">Networking &amp; Wireless <span class="cat-count">440</span></a></li>
+        <li><a href="#">Monitors &amp; Displays <span class="cat-count">160</span></a></li>
+        <li><a href="#">Printers &amp; MFPs <span class="cat-count">95</span></a></li>
+        <li><a href="#">Software &amp; Licenses <span class="cat-count">520</span></a></li>
+        <li><a href="#">Accessories <span class="cat-count">400</span></a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <h4>Brand</h4>
+      <div class="sidebar-brands">
+        <label class="brand-check"><input type="checkbox" checked> HP / HPE</label>
+        <label class="brand-check"><input type="checkbox" checked> Dell / Dell EMC</label>
+        <label class="brand-check"><input type="checkbox"> Lenovo</label>
+        <label class="brand-check"><input type="checkbox"> Cisco / Meraki</label>
+        <label class="brand-check"><input type="checkbox"> Microsoft</label>
+        <label class="brand-check"><input type="checkbox"> Fortinet</label>
+        <label class="brand-check"><input type="checkbox"> Apple</label>
+        <label class="brand-check"><input type="checkbox"> Ubiquiti</label>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <h4>Price Range</h4>
+      <div class="price-range">
+        <div class="price-inputs">
+          <input class="price-input" type="text" placeholder="Min $">
+          <input class="price-input" type="text" placeholder="Max $">
+        </div>
+        <button class="btn-sm-blue">Apply Filter</button>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <h4>Quick Services</h4>
+      <div class="sidebar-services">
+        <a href="contact.html" class="svc-link">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Request a Quote
+        </a>
+        <a href="contact.html" class="svc-link">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07"/></svg>
+          Talk to a Specialist
+        </a>
+        <a href="contact.html" class="svc-link">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+          Bulk Order Pricing
+        </a>
+        <a href="contact.html" class="svc-link">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Config &amp; Deploy Services
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- STORE CONTENT -->
+  <div class="store-content">
+
+    <!-- VAR ADVANTAGE STRIP -->
+    <div class="var-strip">
+      <div class="var-item">
+        <div class="var-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div>
+          <h5>Authorized Reseller</h5>
+          <p>Factory-direct pricing on 500+ brands</p>
+        </div>
+      </div>
+      <div class="var-item">
+        <div class="var-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div>
+          <h5>Pre-Configured</h5>
+          <p>Imaged to your specs before shipping</p>
+        </div>
+      </div>
+      <div class="var-item">
+        <div class="var-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div>
+          <h5>Same-Day Quotes</h5>
+          <p>Competitive pricing within hours</p>
+        </div>
+      </div>
+      <div class="var-item">
+        <div class="var-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+        <div>
+          <h5>Onsite Deployment</h5>
+          <p>Install &amp; configure at your location</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROMO BANNER -->
+    <div class="promo-banner">
+      <div class="promo-banner-text">
+        <div class="promo-icon"><svg viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
+        <div>
+          <h4>Authorized HP &amp; Dell Reseller &mdash; Volume Pricing Available</h4>
+          <p>Contact us for fleet pricing on 10+ units. Free configuration and imaging included on orders of 5+ devices.</p>
+        </div>
+      </div>
+      <a href="contact.html" class="promo-badge">Get Volume Pricing</a>
+    </div>
+
+    <!-- CHANNEL ONLINE INTEGRATION -->
+    <div class="co-section">
+      <div class="co-header">
+        <div class="co-header-left">
+          <div class="co-logo-wrap">
+            <svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+            <span>ChannelOnline</span>
+          </div>
+          <div>
+            <div class="co-header-title">Live Product Catalog &amp; Ordering</div>
+            <div class="co-header-sub">Real-time pricing &amp; availability from top distributors &mdash; powered by ChannelOnline by Syndigo</div>
+          </div>
+        </div>
+        <div class="co-status">Live catalog</div>
+      </div>
+
+      <!-- ChannelOnline Embed Area -->
+      <!-- 
+        ══════════════════════════════════════════════════════════════
+        CHANNELONLINE INTEGRATION INSTRUCTIONS
+        ══════════════════════════════════════════════════════════════
+        
+        ChannelOnline provides a JavaScript-based storefront embed 
+        for VARs/MSPs. To activate:
+
+        1. Log in to your ChannelOnline account at:
+           https://app.channelon.com
+
+        2. Navigate to: Settings → eCommerce → Storefront
+        
+        3. Copy your unique embed code. It will look like:
+           <script src="https://app.channelon.com/storefront/[YOUR_ID]/embed.js"></script>
+           
+        4. Paste that script tag inside the #channelonline-store div below,
+           replacing the loading placeholder.
+
+        5. Optionally configure:
+           - catalog_id: Your default catalog
+           - theme: dark (matches this site)
+           - show_cart: true
+           - currency: USD
+        
+        For integration support: support@channelon.com | (800) 555-0199
+        Documentation: https://docs.channelon.com/storefront-embed
+        ══════════════════════════════════════════════════════════════
+      -->
+      <div class="co-embed-area">
+        <div id="channelonline-store">
+          <!-- ChannelOnline embed script loads here -->
+          <!-- Loading state shown until your ChannelOnline script is pasted above -->
+          <div class="co-loading">
+            <div class="co-spinner"></div>
+            <h4>Loading Product Catalog</h4>
+            <p>Your ChannelOnline storefront is connecting to live distributor inventory. This will display your full catalog with real-time pricing and availability once your embed code is configured.</p>
+            <a href="contact.html" class="btn-blue" style="margin-top:.5rem;width:auto;padding:11px 24px">Request a Quote Instead</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="co-footer">
+        <div class="co-footer-left">
+          Real-time pricing from
+          <a href="#">Ingram Micro</a> &middot;
+          <a href="#">TD Synnex</a> &middot;
+          <a href="#">D&amp;H Distributing</a> &middot;
+          <a href="#">Carahsoft</a>
+        </div>
+        <div class="co-powered">
+          Powered by <a href="https://syndigo.com/channelonline" target="_blank" rel="noopener">ChannelOnline</a> by Syndigo
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURED PRODUCTS (shown while ChannelOnline loads / as static fallback) -->
+    <div style="margin-bottom:1.5rem">
+      <div class="store-toolbar">
+        <div class="store-count">Showing <strong>2,400+</strong> products</div>
+        <div class="store-sort">
+          <span class="sort-label">Sort by:</span>
+          <select class="sort-select">
+            <option>Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Newest First</option>
+            <option>Best Sellers</option>
+          </select>
+          <div class="view-toggle">
+            <button class="view-btn active">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+            </button>
+            <button class="view-btn">
+              <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- BRANDS QUICK FILTER -->
+      <div class="brands-section">
+        <div class="brands-header">
+          <h4>Filter by Brand</h4>
+          <a href="#" style="font-size:11px;color:var(--blue3)">View all brands</a>
+        </div>
+        <div class="brands-grid">
+          <div class="brand-pill active">HP / HPE</div>
+          <div class="brand-pill active">Dell</div>
+          <div class="brand-pill">Lenovo</div>
+          <div class="brand-pill">Cisco</div>
+          <div class="brand-pill">Meraki</div>
+          <div class="brand-pill">Microsoft</div>
+          <div class="brand-pill">Fortinet</div>
+          <div class="brand-pill">Ubiquiti</div>
+          <div class="brand-pill">Apple</div>
+          <div class="brand-pill">Samsung</div>
+          <div class="brand-pill">Epson</div>
+          <div class="brand-pill">Xerox</div>
+        </div>
+      </div>
+
+      <!-- PRODUCT GRID - Featured/Sample Products -->
+              <div class="product-grid">
+
+        <!-- HP -->
+        <div class="product-card">
+          <span class="product-badge badge-hot">Best Seller</span>
+          <div class="product-img" style="background:#f8f9fa">
+            <div class="product-img-bg"></div>
+            <img class="real-product-img"
+              src="https://ssl-product-images.www8-hp.com/digmedialib/prodimg/knowledgebase/c08903294/c08903294.png"
+              alt="HP EliteBook 840 G11 Business Laptop"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='';this.style.display='none';this.parentElement.querySelector('.img-fallback').style.display='flex'">
+            <div class="img-fallback" style="display:none;flex-direction:column;align-items:center;gap:6px;color:rgba(74,144,217,.5)">
+              <svg viewBox="0 0 24 24" width="52" height="52" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              <span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">HP</span>
+            </div>
+            <span class="brand-tag">HP</span>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">Laptops & Notebooks</div>
+            <div class="product-name">HP EliteBook 840 G11 Business Laptop</div>
+            <div class="product-specs">Intel Core Ultra 7 · 16GB DDR5 · 512GB SSD · 14" WUXGA</div>
+            <div class="product-footer">
+              <div class="product-price">From $1,249</div>
+              <a href="contact.html" class="product-btn">Get Quote</a>
+            </div>
+          </div>
+        </div>
+        <!-- Dell -->
+        <div class="product-card">
+          <span class="product-badge badge-new">Enterprise</span>
+          <div class="product-img" style="background:#f8f9fa">
+            <div class="product-img-bg"></div>
+            <img class="real-product-img"
+              src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/servers/poweredge-servers/poweredge-r750/media-gallery/server-poweredge-r750-gallery-1.psd?fmt=png-alpha&wid=400"
+              alt="Dell PowerEdge R750 Server"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='';this.style.display='none';this.parentElement.querySelector('.img-fallback').style.display='flex'">
+            <div class="img-fallback" style="display:none;flex-direction:column;align-items:center;gap:6px;color:rgba(74,144,217,.5)">
+              <svg viewBox="0 0 24 24" width="52" height="52" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              <span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">Dell</span>
+            </div>
+            <span class="brand-tag">Dell</span>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">Servers & Storage</div>
+            <div class="product-name">Dell PowerEdge R750 Server</div>
+            <div class="product-specs">Dual Intel Xeon Scalable · Up to 3TB RAM · 2U Rack · iDRAC9</div>
+            <div class="product-footer">
+              <div class="product-price">From $4,299</div>
+              <a href="contact.html" class="product-btn">Get Quote</a>
+            </div>
+          </div>
+        </div>
+        <!-- Lenovo -->
+        <div class="product-card">
+          <span class="product-badge badge-hot">Popular</span>
+          <div class="product-img" style="background:#f8f9fa">
+            <div class="product-img-bg"></div>
+            <img class="real-product-img"
+              src="https://p3-ofp.static.pub/fes/cms/2024/09/05/hm2szaig5wecxfovtnygq85r4omd1j710218.png"
+              alt="Lenovo ThinkPad X1 Carbon Gen 12"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='';this.style.display='none';this.parentElement.querySelector('.img-fallback').style.display='flex'">
+            <div class="img-fallback" style="display:none;flex-direction:column;align-items:center;gap:6px;color:rgba(74,144,217,.5)">
+              <svg viewBox="0 0 24 24" width="52" height="52" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              <span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">Lenovo</span>
+            </div>
+            <span class="brand-tag">Lenovo</span>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">Laptops & Notebooks</div>
+            <div class="product-name">Lenovo ThinkPad X1 Carbon Gen 12</div>
+            <div class="product-specs">Intel Core Ultra 7 · 32GB LPDDR5X · 1TB SSD · 14" 2.8K OLED</div>
+            <div class="product-footer">
+              <div class="product-price">From $1,549</div>
+              <a href="contact.html" class="product-btn">Get Quote</a>
+            </div>
+          </div>
+        </div>
+        <!-- Cisco -->
+        <div class="product-card">
+          <span class="product-badge badge-new">New Arrival</span>
+          <div class="product-img" style="background:#f8f9fa">
+            <div class="product-img-bg"></div>
+            <img class="real-product-img"
+              src="https://meraki.cisco.com/wp-content/uploads/2020/03/ms390.png"
+              alt="Cisco Meraki MS390 Switch"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='';this.style.display='none';this.parentElement.querySelector('.img-fallback').style.display='flex'">
+            <div class="img-fallback" style="display:none;flex-direction:column;align-items:center;gap:6px;color:rgba(74,144,217,.5)">
+              <svg viewBox="0 0 24 24" width="52" height="52" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              <span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">Cisco</span>
+            </div>
+            <span class="brand-tag">Cisco</span>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">Networking & Wireless</div>
+            <div class="product-name">Cisco Meraki MS390 Switch</div>
+            <div class="product-specs">48-Port · PoE+ · Cloud-Managed · Stackable · 10GbE Uplinks</div>
+            <div class="product-footer">
+              <div class="product-price">From $3,995</div>
+              <a href="contact.html" class="product-btn">Get Quote</a>
+            </div>
+          </div>
+        </div>
+        <!-- Fortinet -->
+        <div class="product-card">
+          <span class="product-badge badge-new">In Stock</span>
+          <div class="product-img" style="background:#1a1a2e">
+            <div class="product-img-bg"></div>
+            <img class="real-product-img"
+              src="https://www.fortinet.com/content/dam/fortinet/images/product-illustration/fortigate/fortigate-100f-xl.png"
+              alt="Fortinet FortiGate 100F NGFW"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='';this.style.display='none';this.parentElement.querySelector('.img-fallback').style.display='flex'">
+            <div class="img-fallback" style="display:none;flex-direction:column;align-items:center;gap:6px;color:rgba(74,144,217,.5)">
+              <svg viewBox="0 0 24 24" width="52" height="52" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              <span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">Fortinet</span>
+            </div>
+            <span class="brand-tag">Fortinet</span>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">Network Security</div>
+            <div class="product-name">Fortinet FortiGate 100F NGFW</div>
+            <div class="product-specs">20 Gbps Firewall · SSL Inspection · Built-in SD-WAN · HA</div>
+            <div class="product-footer">
+              <div class="product-price">From $2,199</div>
+              <a href="contact.html" class="product-btn">Get Quote</a>
+            </div>
+          </div>
+        </div>
+        <!-- HPE -->
+        <div class="product-card">
+          <span class="product-badge badge-hot">Top Pick</span>
+          <div class="product-img" style="background:#f8f9fa">
+            <div class="product-img-bg"></div>
+            <img class="real-product-img"
+              src="https://h20195.www2.hp.com/v2/getmedia/d4de5f56-5e52-4888-b8ba-9e85f0a6038c/dl380gen11front-hpe-right-facing-1200-1200.png"
+              alt="HPE ProLiant DL380 Gen11"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='';this.style.display='none';this.parentElement.querySelector('.img-fallback').style.display='flex'">
+            <div class="img-fallback" style="display:none;flex-direction:column;align-items:center;gap:6px;color:rgba(74,144,217,.5)">
+              <svg viewBox="0 0 24 24" width="52" height="52" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              <span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">HPE</span>
+            </div>
+            <span class="brand-tag">HPE</span>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">Servers & Storage</div>
+            <div class="product-name">HPE ProLiant DL380 Gen11</div>
+            <div class="product-specs">Intel Xeon Scalable · 2U Rack · HPE iLO 6 · Up to 8TB</div>
+            <div class="product-footer">
+              <div class="product-price">From $5,899</div>
+              <a href="contact.html" class="product-btn">Get Quote</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- PAGINATION -->
+      <div class="pagination">
+        <button class="page-btn"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn">4</button>
+        <button class="page-btn">5</button>
+        <span style="color:rgba(255,255,255,.3);font-size:13px;padding:0 4px">&hellip;</span>
+        <button class="page-btn">48</button>
+        <button class="page-btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+      </div>
+
+    </div>
+
+    <!-- QUOTE CTA BANNER -->
+    <div class="quote-banner">
+      <div class="quote-banner-icon">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <div>
+        <h3>Can&rsquo;t Find What You Need?</h3>
+        <p>We source from 200+ vendors and distributors. If it&rsquo;s available anywhere in the channel, we can get it &mdash; often at better pricing than you&rsquo;ll find direct.</p>
+      </div>
+      <div class="quote-banner-actions">
+        <a href="contact.html" class="btn-blue-sm">Request a Custom Quote</a>
+        <a href="tel:8662201422" class="btn-ghost-sm">Call (866) 220-1422</a>
+      </div>
+    </div>
+
+  </div><!-- /store-content -->
+</div><!-- /store-main -->
+
+<!-- FOOTER -->
+
+<!-- TECHNOLOGY PARTNER NETWORK -->
+<section style="background:var(--navy2);border-top:1px solid var(--bdd);padding:1.5rem 0;overflow:hidden">
+  <div style="max-width:1200px;margin:0 auto;padding:0 2.5rem">
+    <div style="font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);text-align:center;margin-bottom:.85rem">Technology Partner Network</div>
+  </div>
+  <div style="overflow:hidden">
+    <div class="pt-track" style="display:flex;gap:10px;width:max-content;animation:ptscroll 32s linear infinite">
+      <div class="pt-item">Microsoft</div><div class="pt-item">HPE</div><div class="pt-item">Cisco</div><div class="pt-item">Meraki</div><div class="pt-item">Acronis</div><div class="pt-item">Veeam</div><div class="pt-item">Barracuda</div><div class="pt-item">AWS</div><div class="pt-item">Azure</div><div class="pt-item">Fortinet</div><div class="pt-item">SentinelOne</div><div class="pt-item">Dell</div><div class="pt-item">Okta</div><div class="pt-item">Zscaler</div><div class="pt-item">CrowdStrike</div><div class="pt-item">Palo Alto</div><div class="pt-item">Splunk</div><div class="pt-item">SolarWinds</div><div class="pt-item">Sophos</div><div class="pt-item">Redstor</div><div class="pt-item">Wasabi</div><div class="pt-item">Egnyte</div><div class="pt-item">Bitdefender</div><div class="pt-item">RingCentral</div><div class="pt-item">Five9</div><div class="pt-item">Dialpad</div><div class="pt-item">Zoom</div><div class="pt-item">Genesys</div>
+      <div class="pt-item">Microsoft</div><div class="pt-item">HPE</div><div class="pt-item">Cisco</div><div class="pt-item">Meraki</div><div class="pt-item">Acronis</div><div class="pt-item">Veeam</div><div class="pt-item">Barracuda</div><div class="pt-item">AWS</div><div class="pt-item">Azure</div><div class="pt-item">Fortinet</div><div class="pt-item">SentinelOne</div><div class="pt-item">Dell</div><div class="pt-item">Okta</div><div class="pt-item">Zscaler</div><div class="pt-item">CrowdStrike</div><div class="pt-item">Palo Alto</div><div class="pt-item">Splunk</div><div class="pt-item">SolarWinds</div><div class="pt-item">Sophos</div><div class="pt-item">Redstor</div><div class="pt-item">Wasabi</div><div class="pt-item">Egnyte</div><div class="pt-item">Bitdefender</div><div class="pt-item">RingCentral</div><div class="pt-item">Five9</div><div class="pt-item">Dialpad</div><div class="pt-item">Zoom</div><div class="pt-item">Genesys</div>
     </div>
   </div>
 </section>
-<section style="background:var(--navy2);border-top:1px solid var(--bdd);padding:1.5rem 0;overflow:hidden"><div style="max-width:1200px;margin:0 auto;padding:0 2.5rem"><div style="font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);text-align:center;margin-bottom:.85rem">Technology Partner Network</div></div><div style="overflow:hidden"><div class="pt-track" style="display:flex;gap:10px;width:max-content;animation:ptscroll 32s linear infinite"><div class="pt-item">Microsoft</div><div class="pt-item">HPE</div><div class="pt-item">Cisco</div><div class="pt-item">Dell</div><div class="pt-item">Meraki</div><div class="pt-item">Fortinet</div><div class="pt-item">Barracuda</div><div class="pt-item">Lenovo</div><div class="pt-item">Veeam</div><div class="pt-item">SentinelOne</div><div class="pt-item">Acronis</div><div class="pt-item">Okta</div><div class="pt-item">Microsoft</div><div class="pt-item">HPE</div><div class="pt-item">Cisco</div><div class="pt-item">Dell</div><div class="pt-item">Meraki</div><div class="pt-item">Fortinet</div></div></div></section>
+<style>
+.pt-item{flex:0 0 auto;padding:6px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(74,144,217,0.15);border-radius:5px;font-size:11.5px;font-weight:600;color:rgba(255,255,255,0.6);white-space:nowrap;cursor:default;transition:all .2s}
+.pt-item:hover{background:rgba(74,144,217,.1);border-color:rgba(74,144,217,.3);color:#fff}
+@keyframes ptscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+</style>
 <style>
 .pt-item{flex:0 0 auto;padding:6px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(74,144,217,0.15);border-radius:5px;font-size:11.5px;font-weight:600;color:rgba(255,255,255,0.6);white-space:nowrap;cursor:default;transition:all .2s}
 .pt-item:hover{background:rgba(74,144,217,.1);border-color:rgba(74,144,217,.3);color:#fff}
@@ -1316,6 +2639,21 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
     <div class="flinks"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms of Service</a></div>
   </div>
 </footer>
-<script>(function(){var btn=document.querySelector('.mobile-menu-btn');var menu=document.querySelector('.nav-menu');if(!btn||!menu)return;var overlay=document.createElement('div');overlay.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:500;display:none';document.body.appendChild(overlay);function open(){menu.style.left='0';overlay.style.display='block';document.body.style.overflow='hidden';btn.setAttribute('aria-expanded','true');}function close(){menu.style.left='-100%';overlay.style.display='none';document.body.style.overflow='';btn.setAttribute('aria-expanded','false');}btn.addEventListener('click',function(e){e.stopPropagation();btn.getAttribute('aria-expanded')==='true'?close():open();});overlay.addEventListener('click',close);menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});menu.querySelectorAll('.nt').forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var m=this.closest('.ni');m=m&&m.querySelector('.mega');if(m){m.classList.toggle('mobile-open');}});});})();</script>
+<script>
+(function(){
+  var btn=document.querySelector('.mobile-menu-btn');
+  var menu=document.querySelector('.nav-menu');
+  if(!btn||!menu)return;
+  var overlay=document.createElement('div');
+  overlay.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:500;display:none';
+  document.body.appendChild(overlay);
+  function open(){menu.style.left='0';overlay.style.display='block';document.body.style.overflow='hidden';btn.setAttribute('aria-expanded','true');}
+  function close(){menu.style.left='-100%';overlay.style.display='none';document.body.style.overflow='';btn.setAttribute('aria-expanded','false');}
+  btn.addEventListener('click',function(e){e.stopPropagation();btn.getAttribute('aria-expanded')==='true'?close():open();});
+  overlay.addEventListener('click',close);
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+  menu.querySelectorAll('.nt').forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var m=this.closest('.ni');m=m&&m.querySelector('.mega');if(m){m.classList.toggle('mobile-open');}});});
+})();
+</script>
 </body>
 </html>
