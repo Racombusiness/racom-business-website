@@ -814,24 +814,18 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
   document.body.appendChild(overlay);
 
   function open(){
-    menu.style.left='0';
+    menu.classList.add('nav-open');
     overlay.style.display='block';
     document.body.style.overflow='hidden';
     btn.setAttribute('aria-expanded','true');
-    var s=btn.querySelectorAll('span');
-    if(s[0])s[0].style.cssText='transform:rotate(45deg) translate(5px,5px);transition:.25s';
-    if(s[1])s[1].style.cssText='opacity:0;transition:.25s';
-    if(s[2])s[2].style.cssText='transform:rotate(-45deg) translate(5px,-5px);transition:.25s';
+    btn.classList.add('is-open');
   }
   function close(){
-    menu.style.left='-100%';
+    menu.classList.remove('nav-open');
     overlay.style.display='none';
     document.body.style.overflow='';
     btn.setAttribute('aria-expanded','false');
-    var s=btn.querySelectorAll('span');
-    if(s[0])s[0].style.cssText='transition:.25s';
-    if(s[1])s[1].style.cssText='transition:.25s';
-    if(s[2])s[2].style.cssText='transition:.25s';
+    btn.classList.remove('is-open');
   }
 
   btn.addEventListener('click',function(e){
