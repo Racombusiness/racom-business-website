@@ -934,6 +934,75 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
   .fg{grid-template-columns:1fr 1fr!important}
   [style*="gap:5rem"],[style*="gap:4rem"]{gap:2.5rem!important}
 }
+
+  /* ── SERVICE ICON BAR — smaller icons on mobile ── */
+  .pa{flex:0 0 auto!important;width:72px!important;min-width:64px!important;max-width:80px!important;padding:.6rem .25rem!important;text-align:center!important}
+  .pa-c{width:32px!important;height:32px!important;min-width:32px!important;min-height:32px!important}
+  .pa-c svg{width:16px!important;height:16px!important}
+  .pa-l{font-size:7px!important;line-height:1.3!important;margin-top:4px!important}
+  .pbar-inner{padding:0 .5rem!important}
+
+  /* ── EMAIL & LONG TEXT — prevent overflow ── */
+  a[href^="mailto"]{
+    word-break:break-all!important;
+    overflow-wrap:break-word!important;
+    font-size:12px!important;
+  }
+  .fc a{word-break:break-all!important;overflow-wrap:break-word!important;font-size:12px!important}
+  .tb-left a[href^="mailto"]{display:none!important}
+
+  /* ── PREVENT ALL HORIZONTAL OVERFLOW ── */
+  html{overflow-x:hidden!important}
+  body{overflow-x:hidden!important;width:100%!important}
+  section{overflow-x:hidden!important;width:100%!important}
+  
+  /* Store page specific - sidebar stacks below on mobile */
+  #store-catalog{grid-template-columns:1fr!important;gap:1.5rem!important}
+  #store-catalog > div:first-child{position:static!important}
+  
+  /* Product grid on store — 2 col on mobile */
+  .product-grid{grid-template-columns:1fr 1fr!important;gap:10px!important}
+  .product-card{padding:1rem!important}
+  
+  /* Store toolbar */
+  .store-toolbar{flex-direction:column!important;gap:.5rem!important;align-items:flex-start!important}
+  
+  /* Brands grid — wrap properly */
+  .brands-grid{gap:6px!important}
+  .brand-pill{font-size:10px!important;padding:5px 8px!important}
+
+  /* ── CONTACT PAGE ── */
+  .contact-grid,.cf-grid{grid-template-columns:1fr!important}
+  
+  /* ── INLINE STYLE OVERRIDES for common overflow patterns ── */
+  [style*="min-width:680px"]{min-width:0!important;width:100%!important}
+  [style*="min-width:580px"]{min-width:0!important;width:100%!important}
+  [style*="min-width:540px"]{min-width:0!important;width:100%!important}
+  [style*="min-width:520px"]{min-width:0!important;width:100%!important}
+  [style*="min-width:440px"]{min-width:0!important;width:100%!important}
+  [style*="min-width:400px"]{min-width:0!important;width:100%!important}
+  [style*="width:800px"]{width:100%!important;max-width:100%!important}
+  [style*="width:700px"]{width:100%!important;max-width:100%!important}
+  [style*="white-space:nowrap"]:not(.pt-item):not(.ind-tab):not(.brand-pill):not(.mbn-link){white-space:normal!important}
+  
+  /* ── TABLES ── */
+  table{display:block!important;overflow-x:auto!important;width:100%!important}
+  
+  /* ── HERO PANEL (desktop only visual) ── */
+  .hero-panel,.hp-inner{display:none!important}
+
+  /* ── CO EMBED AREA (store channelonline) ── */
+  .co-embed-area,.co-section{width:100%!important;overflow-x:hidden!important}
+  .co-header{flex-direction:column!important;gap:.75rem!important}
+  .co-header-left{flex-direction:column!important;align-items:flex-start!important}
+  .co-footer{flex-direction:column!important;gap:.5rem!important;text-align:center!important}
+  .store-hero-inner{flex-direction:column!important;gap:1.5rem!important}
+  .var-grid{grid-template-columns:1fr 1fr!important;gap:10px!important}
+  .var-item{padding:1rem!important}
+  .promo-banner{flex-direction:column!important;gap:1rem!important;padding:1.5rem!important}
+  .store-layout{grid-template-columns:1fr!important;gap:1rem!important}
+  .cat-sidebar{display:none!important}
+
 /* ═══ END PREMIUM MOBILE CSS ═══ */
 
 </style>
