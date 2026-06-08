@@ -129,13 +129,13 @@ nav{position:sticky;top:0;z-index:200;background:rgba(6,14,28,0.97);backdrop-fil
 /* ─── PRACTICE BAR ─── */
 .pbar{background:var(--navy3);border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd)}
 .pbar-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(7,1fr)}
-.pa{display:flex;flex-direction:column;align-items:center;padding:1.35rem .6rem;border-right:1px solid var(--bdd);gap:9px;text-decoration:none;transition:background .2s;cursor:pointer}
+.pa{display:flex;flex-direction:column;align-items:center;padding:1.6rem 1rem;border-right:1px solid var(--bdd);gap:10px;text-decoration:none;transition:background .2s;cursor:pointer}
 .pa:last-child{border-right:none}
 .pa:hover{background:rgba(74,144,217,.08)}
 .pa:hover .pa-c{border-color:var(--blue);background:rgba(74,144,217,.12)}
-.pa-c{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;transition:all .2s}
-.pa-c svg{width:19px;height:19px;stroke:#fff;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.pa-l{font-size:9.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.5);text-align:center;line-height:1.3}
+.pa-c{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;transition:all .2s}
+.pa-c svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.pa-l{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.55);text-align:center;line-height:1.3}
 
 /* ─── STATS BAR ─── */
 .stats{background:var(--navy3);padding:3.5rem 2.5rem;border-bottom:1px solid var(--bdd)}
@@ -165,7 +165,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(6,14,28,0.97);backdrop-fil
 .h2{font-family:var(--ffc);font-size:clamp(1.9rem,3.5vw,3rem);font-weight:900;text-transform:uppercase;letter-spacing:-.025em;color:#fff;line-height:1.03;margin-bottom:.75rem}
 .h2 .acc{color:var(--blue3)}
 .sec-desc{font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:3rem;max-width:640px}
-.sol-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--bdd2);border-radius:10px;overflow:hidden}
+.sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;border:none;border-radius:0;overflow:visible}
 .sc{background:var(--navy3);padding:2rem 1.6rem;border-right:1px solid var(--bdd);border-bottom:1px solid var(--bdd);position:relative;transition:all .25s;cursor:default;overflow:hidden}
 .sc::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--teal));transform:scaleX(0);transform-origin:left;transition:transform .35s}
 .sc:hover{background:var(--navy4)}
@@ -936,13 +936,6 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
   [style*="gap:5rem"],[style*="gap:4rem"]{gap:2.5rem!important}
 }
 
-  /* ── SERVICE ICON BAR — smaller icons on mobile ── */
-  .pa{flex:0 0 auto!important;width:72px!important;min-width:64px!important;max-width:80px!important;padding:.6rem .25rem!important;text-align:center!important}
-  .pa-c{width:32px!important;height:32px!important;min-width:32px!important;min-height:32px!important}
-  .pa-c svg{width:16px!important;height:16px!important}
-  .pa-l{font-size:7px!important;line-height:1.3!important;margin-top:4px!important}
-  .pbar-inner{padding:0 .5rem!important}
-
   /* ── EMAIL & LONG TEXT — prevent overflow ── */
   a[href^="mailto"]{
     word-break:break-all!important;
@@ -1003,6 +996,28 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
   .promo-banner{flex-direction:column!important;gap:1rem!important;padding:1.5rem!important}
   .store-layout{grid-template-columns:1fr!important;gap:1rem!important}
   .cat-sidebar{display:none!important}
+
+
+  /* ── SERVICE CARDS (.sc) ── */
+  .sol-grid{grid-template-columns:1fr 1fr!important;gap:0!important}
+  .sc{padding:1.25rem 1rem!important}
+  .si{width:36px!important;height:36px!important;margin-bottom:.75rem!important}
+  .si svg{width:18px!important;height:18px!important}
+  .sc h3{font-size:13px!important}
+  .sc p{font-size:12px!important}
+  .sc-cta{padding:1.25rem 1rem!important}
+  /* Sol cards (.sol-card variant) */
+  .sol-card{padding:1.25rem 1rem!important}
+  .sol-icon svg{width:20px!important;height:20px!important;max-width:20px!important}
+  .sol-icon{width:40px!important;height:40px!important;max-width:40px!important}
+
+  /* ── PA BAR on mobile ── */
+  .pbar-inner,.pb-inner{display:flex!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch!important;scrollbar-width:none!important;flex-wrap:nowrap!important}
+  .pbar-inner::-webkit-scrollbar{display:none!important}
+  .pa{flex:0 0 auto!important;width:80px!important;min-width:72px!important;max-width:90px!important;padding:.85rem .35rem!important}
+  .pa-c{width:40px!important;height:40px!important;min-width:40px!important;min-height:40px!important}
+  .pa-c svg{width:18px!important;height:18px!important}
+  .pa-l{font-size:8px!important}
 
 /* ═══ END PREMIUM MOBILE CSS ═══ */
 
