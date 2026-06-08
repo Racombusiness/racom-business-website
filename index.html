@@ -80,9 +80,9 @@
   --navy3:#0D1E35;
   --navy4:#112444;
   --navy5:#162D50;
-  --blue:#4A90D9;
-  --blue2:#3578C4;
-  --blue3:#6AAEE8;
+  --blue:#2D7DD2;
+  --blue2:#1E6BB8;
+  --blue3:#4A90D9;
   --blue4:#A8D4F7;
   --teal:#00BCD4;
   --teal2:#00A8BE;
@@ -92,6 +92,16 @@
   --muted3:rgba(255,255,255,0.15);
   --bdd:rgba(255,255,255,0.07);
   --bdd2:rgba(255,255,255,0.12);
+  /* Light section colors */
+  --light:#F8FAFC;
+  --light2:#EFF4FA;
+  --light3:#E3EDF7;
+  --dark-text:#0D1B2E;
+  --dark-text2:#2C3E55;
+  --dark-muted:#5A6E82;
+  --dark-border:#D1DDE8;
+  --dark-border2:#B8CCD8;
+  --card-border:#DDE8F2;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;background:var(--navy);color:#fff;line-height:1.55;overflow-x:hidden}
@@ -1078,6 +1088,77 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
 
 /* ═══ END PREMIUM MOBILE CSS ═══ */
 
+
+/* ── VIDEO HERO ── */
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden}
+.hero-video-wrap{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-video-wrap video{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-video-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(6,14,28,.92) 0%,rgba(6,14,28,.78) 50%,rgba(6,14,28,.55) 100%)}
+.hero-content-wrap{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:5rem 2.5rem;width:100%}
+
+/* ── LIGHT SECTIONS ── */
+.sec-light{background:var(--light)!important;color:var(--dark-text)!important}
+.sec-light h2,.sec-light h3,.sec-light h4{color:var(--dark-text)!important}
+.sec-light p,.sec-light li{color:var(--dark-text2)!important}
+.sec-light .eyebrow{color:var(--blue)!important}
+.sec-light .eyebrow::before{background:var(--blue)!important}
+.sec-light .acc{color:var(--blue)!important}
+.sec-light .h2{color:var(--dark-text)!important}
+
+/* Light section cards */
+.sec-light .sc,.sec-light .sol-card{background:#fff!important;border:1px solid var(--card-border)!important;box-shadow:0 2px 12px rgba(45,125,210,.06)!important}
+.sec-light .sc:hover,.sec-light .sol-card:hover{border-color:var(--blue3)!important;box-shadow:0 8px 32px rgba(45,125,210,.12)!important}
+.sec-light .sc h3,.sec-light .sol-card h3{color:var(--dark-text)!important}
+.sec-light .sc p,.sec-light .sol-card p{color:var(--dark-muted)!important}
+.sec-light .si{background:rgba(45,125,210,.08)!important;border-color:rgba(45,125,210,.15)!important}
+.sec-light .sol-icon{background:rgba(45,125,210,.08)!important;border-color:rgba(45,125,210,.15)!important}
+.sec-light .st,.sec-light .sol-tag{color:var(--blue)!important;background:rgba(45,125,210,.06)!important;border-color:rgba(45,125,210,.15)!important}
+.sec-light .sec-desc{color:var(--dark-muted)!important}
+.sec-light footer li a,.sec-light .fbot p{color:var(--dark-muted)!important}
+
+/* Light pa bar */
+.pbar-light{background:#fff;border-bottom:1px solid var(--dark-border)}
+.pbar-light .pa{border-right-color:var(--dark-border)!important}
+.pbar-light .pa-c{background:rgba(45,125,210,.06)!important;border-color:rgba(45,125,210,.18)!important}
+.pbar-light .pa-c svg{stroke:var(--blue)!important}
+.pbar-light .pa-l{color:var(--dark-text2)!important;opacity:.8}
+.pbar-light .pa:hover{background:rgba(45,125,210,.04)!important}
+
+
+/* ── LIGHT SECTION OVERRIDES ── */
+.sec-light{background:var(--light)!important}
+.sec-light .h2,.sec-light h1,.sec-light h2,.sec-light h3{color:var(--dark-text)!important}
+.sec-light .sec-desc,.sec-light p:not([style]){color:var(--dark-muted)!important}
+.sec-light .eyebrow{color:var(--blue2)!important}
+.sec-light .eyebrow::before{background:var(--blue2)!important}
+.sec-light .acc{color:var(--blue2)!important}
+
+/* Light section stat cards */
+.sec-light .stat{background:#fff!important;border-color:var(--card-border)!important}
+.sec-light .stat-num{color:var(--dark-text)!important}
+.sec-light .stat-label{color:var(--dark-muted)!important}
+
+/* Light process/step cards */
+.sec-light .proc-card{background:#fff!important;border-color:var(--card-border)!important}
+.sec-light .proc-card h3{color:var(--dark-text)!important}
+.sec-light .proc-card p{color:var(--dark-muted)!important}
+.sec-light .proc-num{color:var(--blue)!important;opacity:.15}
+
+/* HOW IT WORKS light */
+.sec-light [style*="background:var(--navy3)"]{background:#fff!important}
+.sec-light [style*="background:var(--navy2)"]{background:var(--light2)!important}
+.sec-light [style*="color:var(--muted)"]{color:var(--dark-muted)!important}
+.sec-light [style*="color:#fff"]{color:var(--dark-text)!important}
+.sec-light [style*="color:rgba(255,255,255,.8)"]{color:var(--dark-text2)!important}
+.sec-light [style*="color:rgba(255,255,255,.7)"]{color:var(--dark-text2)!important}
+.sec-light [style*="color:rgba(255,255,255,.6)"]{color:var(--dark-muted)!important}
+.sec-light [style*="color:rgba(255,255,255,.5)"]{color:var(--dark-muted)!important}
+.sec-light [style*="border:1px solid var(--bdd)"]{border-color:var(--dark-border)!important}
+
+/* How it works step circles */
+.sec-light [style*="background:linear-gradient(135deg,var(--navy3)"],
+.sec-light [style*="background:linear-gradient(135deg,var(--navy4)"]{background:var(--light2)!important}
+
 </style>
 
   <!-- Google Analytics GA4 — replace G-XXXXXXXXXX with your real ID -->
@@ -1317,104 +1398,46 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
 
 <!-- HERO -->
 <section class="hero">
-  <!-- Animated network SVG background -->
-  <svg class="hero-svg-bg" viewBox="0 0 1440 660" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-    <defs>
-      <radialGradient id="nodeglow" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="#4A90D9" stop-opacity="0.8"/>
-        <stop offset="100%" stop-color="#4A90D9" stop-opacity="0"/>
-      </radialGradient>
-    </defs>
-    <!-- Network connection lines -->
-    <g stroke="#4A90D9" stroke-opacity="0.18" stroke-width="1">
-      <line x1="900" y1="80" x2="1100" y2="200"/>
-      <line x1="1100" y1="200" x2="1300" y2="150"/>
-      <line x1="1100" y1="200" x2="1050" y2="380"/>
-      <line x1="1300" y1="150" x2="1400" y2="320"/>
-      <line x1="1050" y1="380" x2="1300" y2="150"/>
-      <line x1="1050" y1="380" x2="1200" y2="480"/>
-      <line x1="1200" y1="480" x2="1380" y2="520"/>
-      <line x1="1380" y1="520" x2="1400" y2="320"/>
-      <line x1="900" y1="80" x2="1050" y2="380"/>
-      <line x1="1050" y1="380" x2="850" y2="500"/>
-      <line x1="850" y1="500" x2="750" y2="600"/>
-      <line x1="1050" y1="380" x2="1300" y2="500"/>
-      <line x1="1300" y1="500" x2="1380" y2="520"/>
-      <line x1="1100" y1="200" x2="1300" y2="500"/>
-    </g>
-    <!-- Data flow animated lines -->
-    <g stroke="#00BCD4" stroke-opacity="0.25" stroke-width="1" stroke-dasharray="4,8">
-      <line x1="900" y1="80" x2="1100" y2="200">
-        <animate attributeName="stroke-dashoffset" from="0" to="-24" dur="1.5s" repeatCount="indefinite"/>
-      </line>
-      <line x1="1100" y1="200" x2="1050" y2="380">
-        <animate attributeName="stroke-dashoffset" from="0" to="-24" dur="2s" repeatCount="indefinite"/>
-      </line>
-      <line x1="1050" y1="380" x2="1200" y2="480">
-        <animate attributeName="stroke-dashoffset" from="0" to="-24" dur="1.8s" repeatCount="indefinite"/>
-      </line>
-    </g>
-    <!-- Network nodes -->
-    <g>
-      <circle cx="900" cy="80" r="5" fill="#4A90D9" opacity="0.7"/>
-      <circle cx="900" cy="80" r="12" fill="none" stroke="#4A90D9" stroke-width="1" opacity="0.3"/>
-      <circle cx="1100" cy="200" r="7" fill="#4A90D9" opacity="0.8"/>
-      <circle cx="1100" cy="200" r="16" fill="none" stroke="#4A90D9" stroke-width="1" opacity="0.25">
-        <animate attributeName="r" values="16;22;16" dur="3s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.25;0.05;0.25" dur="3s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="1300" cy="150" r="4" fill="#00BCD4" opacity="0.7"/>
-      <circle cx="1050" cy="380" r="9" fill="#4A90D9" opacity="0.9"/>
-      <circle cx="1050" cy="380" r="20" fill="none" stroke="#4A90D9" stroke-width="1" opacity="0.2">
-        <animate attributeName="r" values="20;28;20" dur="4s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.2;0.04;0.2" dur="4s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="1200" cy="480" r="5" fill="#00BCD4" opacity="0.6"/>
-      <circle cx="1380" cy="520" r="4" fill="#4A90D9" opacity="0.5"/>
-      <circle cx="1400" cy="320" r="3" fill="#4A90D9" opacity="0.4"/>
-      <circle cx="850" cy="500" r="4" fill="#4A90D9" opacity="0.35"/>
-      <circle cx="1300" cy="500" r="5" fill="#00BCD4" opacity="0.5"/>
-    </g>
-    <!-- Hexagon grid (subtle) -->
-    <g stroke="#4A90D9" stroke-opacity="0.04" stroke-width="1" fill="none">
-      <polygon points="1150,50 1200,78 1200,136 1150,164 1100,136 1100,78"/>
-      <polygon points="1250,50 1300,78 1300,136 1250,164 1200,136 1200,78"/>
-      <polygon points="1350,50 1400,78 1400,136 1350,164 1300,136 1300,78"/>
-      <polygon points="1150,164 1200,192 1200,250 1150,278 1100,250 1100,192"/>
-      <polygon points="1350,164 1400,192 1400,250 1350,278 1300,250 1300,192"/>
-    </g>
-  </svg>
-  <div class="hero-overlay"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-glow2"></div>
-  <div class="hero-inner">
-    <div>
-      <div class="hero-badge"><div class="hpulse"></div>Trusted by 3,000+ Businesses &nbsp;·&nbsp; US-Based Support &nbsp;·&nbsp; One Partner</div>
-      <h1>Stop IT Downtime,<br><span class="c1">Security Risks,</span><br><span class="c2">&amp; Wasted Spend.</span></h1>
-      <p class="hero-desc">Racom manages your entire technology stack — IT, cybersecurity, cloud, and telecom — so your business runs faster, safer, and at a lower cost. <strong>We don't just support your IT. We run it.</strong></p>
-      <div class="hero-btns">
-        <a href="contact.html" class="btn-blue" style="padding:15px 32px;font-size:14px">Get Your Free IT Risk Assessment</a>
-        <a href="contact.html" class="btn-ghost" style="padding:15px 28px;font-size:14px">Speak With an Engineer</a>
+  <!-- Background Video -->
+  <div class="hero-video-wrap">
+    <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1400&q=80">
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-server-room-with-a-lot-of-hardware-23282-large.mp4" type="video/mp4">
+      <source src="https://assets.mixkit.co/videos/23282/23282-720.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+  </div>
+
+  <div class="hero-content-wrap">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="hero-badge"><div class="hpulse"></div>Trusted by 3,000+ Businesses &nbsp;·&nbsp; US-Based Support &nbsp;·&nbsp; One Partner</div>
+        <h1>Stop IT Downtime,<br><span class="c1">Security Risks,</span><br><span class="c2">&amp; Wasted Spend.</span></h1>
+        <p class="hero-desc">Racom manages your entire technology stack — IT, cybersecurity, cloud, and telecom — so your business runs faster, safer, and at a lower cost. <strong>We don't just support your IT. We run it.</strong></p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn-blue" style="padding:15px 32px;font-size:14px">Get Your Free IT Risk Assessment</a>
+          <a href="contact.html" class="btn-ghost" style="padding:15px 28px;font-size:14px">Speak With an Engineer</a>
+        </div>
+        <div class="hero-proof">
+          <div class="hstat"><strong>40%</strong><span>Avg Cost Reduction</span></div>
+          <div class="hstat"><strong>99.97%</strong><span>Uptime Achieved</span></div>
+          <div class="hstat"><strong>15 min</strong><span>Critical Response</span></div>
+          <div class="hstat"><strong>3,000+</strong><span>Businesses Served</span></div>
+        </div>
       </div>
-      <div class="hero-proof">
-        <div class="hstat"><strong>40%</strong><span>Avg Cost Reduction</span></div>
-        <div class="hstat"><strong>99.97%</strong><span>Uptime Achieved</span></div>
-        <div class="hstat"><strong>15 min</strong><span>Critical Response</span></div>
-        <div class="hstat"><strong>3,000+</strong><span>Businesses Served</span></div>
+      <div class="hero-panel" aria-hidden="true">
+        <div class="hp-inner">
+          <div class="hp-label">Your Complete Tech Stack</div>
+          <div class="hp-items">
+            <div class="hp-item"><span class="hp-dot" style="background:#4A90D9"></span>Connectivity<span class="hp-sub">Internet · Circuits · SD-WAN</span></div>
+            <div class="hp-item"><span class="hp-dot" style="background:#00BCD4"></span>Communications<span class="hp-sub">UCaaS · VoIP · CCaaS</span></div>
+            <div class="hp-item"><span class="hp-dot" style="background:#A78BFA"></span>IT Support<span class="hp-sub">Remote · Onsite · 24/7</span></div>
+            <div class="hp-item"><span class="hp-dot" style="background:#F59E0B"></span>Security<span class="hp-sub">EDR · MFA · MDR</span></div>
+            <div class="hp-item"><span class="hp-dot" style="background:#34D399"></span>Cloud<span class="hp-sub">O365 · Azure · AWS</span></div>
+            <div class="hp-item"><span class="hp-dot" style="background:#4A90D9"></span>AI Automation<span class="hp-sub">Triage · Voice AI</span></div>
+            <div class="hp-item"><span class="hp-dot" style="background:#6AAEE8"></span>Hardware<span class="hp-sub">Sourcing · Deploy</span></div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="hero-panel">
-      <div class="panel-hdr">
-        <div class="phdr-dot"></div>
-        <span class="phdr-title">Your complete tech stack</span>
-      </div>
-      <div class="prow"><div class="pdot" style="background:#3B9EE8"></div><span class="pname">Connectivity</span><span class="psub">Internet &middot; Circuits &middot; SD-WAN</span></div>
-      <div class="prow"><div class="pdot" style="background:#00BCD4"></div><span class="pname">Communications</span><span class="psub">UCaaS &middot; VoIP &middot; CCaaS</span></div>
-      <div class="prow"><div class="pdot" style="background:#A78BFA"></div><span class="pname">IT Support</span><span class="psub">Remote &middot; Onsite &middot; 24/7</span></div>
-      <div class="prow"><div class="pdot" style="background:#60A5FA"></div><span class="pname">Security</span><span class="psub">EDR &middot; MFA &middot; MDR</span></div>
-      <div class="prow"><div class="pdot" style="background:#34D399"></div><span class="pname">Cloud</span><span class="psub">O365 &middot; Azure &middot; AWS</span></div>
-      <div class="prow"><div class="pdot" style="background:#4A90D9"></div><span class="pname">AI Automation</span><span class="psub">Triage &middot; Voice AI</span></div>
-      <div class="prow"><div class="pdot" style="background:#94A3B8"></div><span class="pname">Hardware</span><span class="psub">Sourcing &middot; Deploy</span></div>
     </div>
   </div>
 </section>
@@ -1431,6 +1454,17 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
     <a href="hardware.html" class="pa"><div class="pa-c"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div><span class="pa-l">Hardware</span></a>
   </div>
 </div>
+
+
+<!-- TECH PARTNER LOGOS — Light section -->
+<section style="background:var(--light);border-top:1px solid var(--dark-border);border-bottom:1px solid var(--dark-border);padding:3rem 2.5rem">
+  <div style="max-width:1200px;margin:0 auto">
+    <p style="text-align:center;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dark-muted);margin-bottom:2rem">Trusted Technology Partners &amp; Carriers</p>
+    <div style="display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;align-items:center;opacity:.7">
+<div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Microsoft</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Cisco</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">HPE</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Dell</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">AWS</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Azure</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">CrowdStrike</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Fortinet</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">SentinelOne</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Veeam</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Barracuda</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">RingCentral</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Okta</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Zscaler</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Meraki</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Five9</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- STATS BAR -->
 <div class="stats">
@@ -1556,7 +1590,7 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
 
 
 <!-- HOW IT WORKS — RACOM METHOD -->
-<section style="background:var(--navy2);padding:6rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd)">
+<section style="background:var(--light);padding:6rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd)" class="sec-light">
   <div style="max-width:1200px;margin:0 auto">
     <div style="text-align:center;margin-bottom:4rem">
       <div class="eyebrow" style="justify-content:center;margin-bottom:.75rem">Our Approach</div>
@@ -1600,7 +1634,7 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
   </div>
 </section>
 <!-- SOLUTIONS -->
-<section id="solutions" class="solutions">
+<section id="solutions" class="solutions sec-light" style="padding:5rem 2.5rem;background:var(--light)!important">
   <div class="sol-inner">
     <div class="eyebrow reveal">Practice Areas</div>
     <h2 class="h2 reveal">Everything Your Business <span class="acc">Runs On</span></h2>
@@ -2095,60 +2129,1058 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
 </section>
 
 
-<!-- OUTCOMES — WHAT CLIENTS GET -->
-<section style="background:var(--navy3);padding:5rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd)">
-  <div style="max-width:1200px;margin:0 auto">
-    <div style="text-align:center;margin-bottom:3rem">
-      <div class="eyebrow" style="justify-content:center;margin-bottom:.75rem">What You Gain</div>
-      <h2 class="h2" style="text-align:center">Business Outcomes,<br><span class="acc">Not IT Jargon</span></h2>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
 
-      <div style="background:var(--navy2);border:1px solid var(--bdd);border-radius:10px;padding:2rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
-        <div style="font-size:2rem;margin-bottom:.75rem">⚡</div>
-        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Near-Zero Downtime</h3>
-        <p style="font-size:13px;color:var(--muted);line-height:1.75">Proactive monitoring catches and resolves issues before your team notices them. No more surprise outages.</p>
-        <div style="margin-top:1rem;font-family:var(--ffc);font-size:1.6rem;font-weight:900;color:var(--blue3)">99.97%</div>
-        <div style="font-size:11px;color:var(--muted2)">Average uptime achieved</div>
+
+<!-- TESTIMONIALS -->
+<section style="background:var(--navy3);padding:6rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd);position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 40% 60% at 20% 50%,rgba(74,144,217,.06) 0%,transparent 60%);pointer-events:none"></div>
+  <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1">
+    <div class="eyebrow reveal" style="justify-content:center;margin-bottom:.75rem">Client Success</div>
+    <h2 class="h2 reveal" style="text-align:center;margin-bottom:3rem">Trusted By Businesses <span class="acc">Across Every Industry</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px" class="reveal">
+      <!-- Testimonial 1 -->
+      <div style="background:var(--navy2);border:1px solid var(--bdd2);border-radius:10px;padding:2rem;position:relative">
+        <div style="font-size:2.5rem;color:rgba(74,144,217,.3);font-family:Georgia,serif;line-height:1;margin-bottom:.75rem">&ldquo;</div>
+        <p style="font-size:13.5px;color:var(--muted);line-height:1.8;margin-bottom:1.5rem;font-style:italic">Racom replaced 4 different vendors for us. We now have one number to call for everything &mdash; internet, phones, IT support, and security. Our monthly costs dropped and our uptime went up.</p>
+        <div style="display:flex;align-items:center;gap:12px;padding-top:1.25rem;border-top:1px solid var(--bdd)">
+          <div style="width:40px;height:40px;border-radius:50%;background:rgba(74,144,217,.15);border:1px solid rgba(74,144,217,.3);display:flex;align-items:center;justify-content:center;font-family:var(--ffc);font-size:1rem;font-weight:900;color:var(--blue3)">JM</div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:#fff">James M.</div>
+            <div style="font-size:11px;color:var(--muted2)">VP of Operations, Healthcare Group</div>
+          </div>
+        </div>
       </div>
-      <div style="background:var(--navy2);border:1px solid var(--bdd);border-radius:10px;padding:2rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
-        <div style="font-size:2rem;margin-bottom:.75rem">🛡️</div>
-        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Stronger Security Posture</h3>
-        <p style="font-size:13px;color:var(--muted);line-height:1.75">Layered defense: EDR, email security, MFA, 24/7 SOC, and compliance-ready documentation built in.</p>
-        <div style="margin-top:1rem;font-family:var(--ffc);font-size:1.6rem;font-weight:900;color:var(--blue3)">18 mo</div>
-        <div style="font-size:11px;color:var(--muted2)">Avg since last incident</div>
+      <!-- Testimonial 2 -->
+      <div style="background:var(--navy2);border:1px solid var(--bdd2);border-radius:10px;padding:2rem;position:relative;transform:translateY(-8px)">
+        <div style="font-size:2.5rem;color:rgba(74,144,217,.3);font-family:Georgia,serif;line-height:1;margin-bottom:.75rem">&ldquo;</div>
+        <p style="font-size:13.5px;color:var(--muted);line-height:1.8;margin-bottom:1.5rem;font-style:italic">The SD-WAN deployment Racom did across our 8 locations was seamless. We went from constant connectivity issues to zero outages. Their team actually picks up the phone.</p>
+        <div style="display:flex;align-items:center;gap:12px;padding-top:1.25rem;border-top:1px solid var(--bdd)">
+          <div style="width:40px;height:40px;border-radius:50%;background:rgba(0,188,212,.15);border:1px solid rgba(0,188,212,.3);display:flex;align-items:center;justify-content:center;font-family:var(--ffc);font-size:1rem;font-weight:900;color:var(--teal)">SR</div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:#fff">Sarah R.</div>
+            <div style="font-size:11px;color:var(--muted2)">Director of IT, Manufacturing Company</div>
+          </div>
+        </div>
       </div>
-      <div style="background:var(--navy2);border:1px solid var(--bdd);border-radius:10px;padding:2rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
-        <div style="font-size:2rem;margin-bottom:.75rem">💰</div>
-        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Lower Monthly Costs</h3>
-        <p style="font-size:13px;color:var(--muted);line-height:1.75">Telecom audits, vendor consolidation, and right-sizing cloud spend typically recover 30–40% of IT costs.</p>
-        <div style="margin-top:1rem;font-family:var(--ffc);font-size:1.6rem;font-weight:900;color:var(--blue3)">40%</div>
-        <div style="font-size:11px;color:var(--muted2)">Average cost reduction</div>
-      </div>
-      <div style="background:var(--navy2);border:1px solid var(--bdd);border-radius:10px;padding:2rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
-        <div style="font-size:2rem;margin-bottom:.75rem">⏱️</div>
-        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Faster Issue Resolution</h3>
-        <p style="font-size:13px;color:var(--muted);line-height:1.75">US-based engineers who know your environment answer in minutes, not days. 15-minute critical SLA.</p>
-        <div style="margin-top:1rem;font-family:var(--ffc);font-size:1.6rem;font-weight:900;color:var(--blue3)">15 min</div>
-        <div style="font-size:11px;color:var(--muted2)">Critical response SLA</div>
-      </div>
-      <div style="background:var(--navy2);border:1px solid var(--bdd);border-radius:10px;padding:2rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
-        <div style="font-size:2rem;margin-bottom:.75rem">📋</div>
-        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Compliance Readiness</h3>
-        <p style="font-size:13px;color:var(--muted);line-height:1.75">HIPAA, SOC 2, CMMC, SEC, and CJIS documentation built as part of your environment — not bolted on.</p>
-        <div style="margin-top:1rem;font-family:var(--ffc);font-size:1.6rem;font-weight:900;color:var(--blue3)">First try</div>
-        <div style="font-size:11px;color:var(--muted2)">Avg compliance audit pass</div>
-      </div>
-      <div style="background:var(--navy2);border:1px solid var(--bdd);border-radius:10px;padding:2rem;transition:all .2s" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
-        <div style="font-size:2rem;margin-bottom:.75rem">🤝</div>
-        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">One Accountable Partner</h3>
-        <p style="font-size:13px;color:var(--muted);line-height:1.75">One account manager. One invoice. One team that owns your entire technology stack end to end.</p>
-        <div style="margin-top:1rem;font-family:var(--ffc);font-size:1.6rem;font-weight:900;color:var(--blue3)">200+</div>
-        <div style="font-size:11px;color:var(--muted2)">Carriers, one contract</div>
+      <!-- Testimonial 3 -->
+      <div style="background:var(--navy2);border:1px solid var(--bdd2);border-radius:10px;padding:2rem;position:relative">
+        <div style="font-size:2.5rem;color:rgba(74,144,217,.3);font-family:Georgia,serif;line-height:1;margin-bottom:.75rem">&ldquo;</div>
+        <p style="font-size:13.5px;color:var(--muted);line-height:1.8;margin-bottom:1.5rem;font-style:italic">We moved our entire phone system to UCaaS through Racom. The migration was smooth, costs went down 30%, and the Voice AI features have transformed how we handle inbound calls.</p>
+        <div style="display:flex;align-items:center;gap:12px;padding-top:1.25rem;border-top:1px solid var(--bdd)">
+          <div style="width:40px;height:40px;border-radius:50%;background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.25);display:flex;align-items:center;justify-content:center;font-family:var(--ffc);font-size:1rem;font-weight:900;color:#34D399">DK</div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:#fff">David K.</div>
+            <div style="font-size:11px;color:var(--muted2)">CEO, Professional Services Firm</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- WHY + FORM -->
+
+
+
+
+
+<!-- PARTNERS -->
+
+
+
+<footer>
+  <div class="fg">
+    <div>
+      <a href="index.html" class="nav-logo-wrap" style="margin-bottom:0.85rem;margin-right:0;display:inline-flex">
+  <img loading="lazy" src="logo-racom.svg" alt="Racom Business" height="64" width="auto" style="height:64px; width:auto;">
+</a>
+      <p class="ft">Integrated Technology &amp; Communications Partner.<br>Serving businesses across the US and internationally.</p>
+      <div class="fc">
+        <a href="tel:8662201422">(866) 220-1422</a>
+        <a href="mailto:racomsalessupport@racombusiness.com">racomsalessupport@racombusiness.com</a>
+        <span>Serving Businesses Nationwide &amp; Internationally</span>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:1.25rem">
+        <a href="https://www.linkedin.com/company/racom-business" target="_blank" rel="noopener" title="LinkedIn" style="width:34px;height:34px;border-radius:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5)"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://twitter.com/racombusiness" target="_blank" rel="noopener" title="X" style="width:34px;height:34px;border-radius:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5)"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.facebook.com/racombusiness" target="_blank" rel="noopener" title="Facebook" style="width:34px;height:34px;border-radius:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5)"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Solutions</h4>
+      <ul>
+        <li><a href="connectivity.html">Connectivity</a></li>
+        <li><a href="communications.html">Communications</a></li>
+        <li><a href="it-security.html">IT Support</a></li>
+        <li><a href="it-security.html">Security / MDR</a></li>
+        <li><a href="cloud-ai.html">Cloud</a></li>
+        <li><a href="cloud-ai.html">AI Automation</a></li>
+        <li><a href="hardware.html">Hardware</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html#partners">Partner Program</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Hardware Store</h4>
+      <ul>
+        <li><a href="hardware.html">Laptops</a></li>
+        <li><a href="hardware.html">Desktops</a></li>
+        <li><a href="hardware.html">Networking</a></li>
+        <li><a href="hardware.html">Monitors</a></li>
+        <li><a href="hardware.html">Printers &amp; MFPs</a></li>
+        <li><a href="hardware.html">Servers</a></li>
+      </ul>
+    </div>
+  </div>
+  
+    <!-- Newsletter -->
+    <div style="background:rgba(74,144,217,.08);border:1px solid rgba(74,144,217,.2);border-radius:8px;padding:1.5rem;margin-top:2rem;grid-column:span 4">
+      <div style="max-width:600px;margin:0 auto;display:flex;align-items:center;gap:2rem;flex-wrap:wrap">
+        <div style="flex:1;min-width:200px">
+          <div style="font-size:13.5px;font-weight:700;color:#fff;margin-bottom:3px">Stay Ahead of the Technology Curve</div>
+          <div style="font-size:12px;color:var(--muted2)">Monthly insights on IT, security, cloud, and telecom — no spam, ever.</div>
+        </div>
+        <div style="display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap">
+          <input type="email" placeholder="Your work email" 
+            style="padding:9px 14px;border-radius:4px;font-size:13px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;outline:none;width:220px"
+            onfocus="this.style.borderColor='var(--blue)'" onblur="this.style.borderColor='rgba(255,255,255,.12)'">
+          <button onclick="handleNewsletter(this)" 
+            style="padding:9px 20px;border-radius:4px;font-size:13px;font-weight:700;background:var(--blue);color:#fff;border:none;cursor:pointer;font-family:'Inter','SF Pro Display','Segoe UI','Helvetica Neue',sans-serif;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;transition:all .2s"
+            onmouseover="this.style.background='var(--blue2)'" onmouseout="this.style.background='var(--blue)'">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </div>
+  <div class="fbot">
+    <p>&copy; 2025 Racom Business &middot; All Rights Reserved</p>
+    <div class="flinks"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms of Service</a></div>
+  </div>
+</footer>
+
+<script>
+// Reveal on scroll
+const obs = new IntersectionObserver(e=>{
+  e.forEach(el=>{if(el.isIntersecting)el.target.classList.add("visible")});
+},{threshold:.1});
+document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+
+// Industry tabs
+document.querySelectorAll(".ind-tab").forEach(tab=>{
+  tab.addEventListener("click",()=>{
+    document.querySelectorAll(".ind-tab").forEach(t=>t.classList.remove("active"));
+    document.querySelectorAll(".ind-panel").forEach(p=>p.classList.remove("active"));
+    tab.classList.add("active");
+    const id=tab.dataset.panel;
+    if(id)document.getElementById(id)?.classList.add("active");
+  });
+});
+</script>
+
+<script>
+// Netlify Forms submission
+document.querySelectorAll('.cf-submit').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const form = btn.closest('.cform, .why-inner, [class*="form"]');
+    if (!form) { window.location = '/contact.html'; return; }
+    
+    const data = new FormData();
+    data.append('form-name', 'contact');
+    form.querySelectorAll('input, select, textarea').forEach(el => {
+      if (el.placeholder) data.append(el.type || el.tagName.toLowerCase(), el.value);
+    });
+    
+    fetch('/', { method: 'POST', body: data })
+      .then(() => {
+        btn.textContent = '✓ Message Sent! We'll be in touch within 1 business day.';
+        btn.style.background = '#16a34a';
+        btn.disabled = true;
+      })
+      .catch(() => { window.location = '/contact.html'; });
+  });
+});
+
+
+function handleNewsletter(btn){
+  const input = btn.previousElementSibling;
+  if(!input.value || !input.value.includes('@')){
+    input.style.borderColor='#f87171';
+    input.placeholder='Please enter a valid email';
+    return;
+  }
+  btn.textContent = '✓ Subscribed!';
+  btn.style.background = '#16a34a';
+  btn.disabled = true;
+  input.disabled = true;
+  // TODO: Wire to your email platform (Mailchimp, Klaviyo, etc.)
+  // fetch('/api/subscribe', {method:'POST', body: JSON.stringify({email: input.value})})
+}
+
+// Cookie consent
+function acceptCookie(){
+  localStorage.setItem('cookieConsent','accepted');
+  document.getElementById('cookieBanner').classList.add('hidden');
+}
+function dismissCookie(){
+  localStorage.setItem('cookieConsent','declined');
+  document.getElementById('cookieBanner').classList.add('hidden');
+}
+(function(){
+  if(localStorage.getItem('cookieConsent'))
+    document.getElementById('cookieBanner').classList.add('hidden');
+})();
+</script>
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .catch(() => {/* Silent fail */});
+      });
+    }
+  </script>
+
+  
+<!-- TECHNOLOGY PARTNER NETWORK -->
+<section style="background:var(--navy2);border-top:1px solid var(--bdd);padding:1.5rem 0;overflow:hidden">
+  <div style="max-width:1200px;margin:0 auto;padding:0 2.5rem">
+    <div style="font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);text-align:center;margin-bottom:.85rem">Technology Partner Network</div>
+  </div>
+  <div style="overflow:hidden">
+    <div class="pt-track" style="display:flex;gap:10px;width:max-content;animation:ptscroll 32s linear infinite">
+      <div class="pt-item">Microsoft</div><div class="pt-item">HPE</div><div class="pt-item">Cisco</div><div class="pt-item">Meraki</div><div class="pt-item">Acronis</div><div class="pt-item">Veeam</div><div class="pt-item">Barracuda</div><div class="pt-item">AWS</div><div class="pt-item">Azure</div><div class="pt-item">Fortinet</div><div class="pt-item">SentinelOne</div><div class="pt-item">Dell</div><div class="pt-item">Okta</div><div class="pt-item">Zscaler</div><div class="pt-item">CrowdStrike</div><div class="pt-item">Palo Alto</div><div class="pt-item">Splunk</div><div class="pt-item">SolarWinds</div><div class="pt-item">Sophos</div><div class="pt-item">Redstor</div><div class="pt-item">Wasabi</div><div class="pt-item">Egnyte</div><div class="pt-item">Bitdefender</div><div class="pt-item">RingCentral</div><div class="pt-item">Five9</div><div class="pt-item">Dialpad</div><div class="pt-item">Zoom</div><div class="pt-item">Genesys</div>
+      <div class="pt-item">Microsoft</div><div class="pt-item">HPE</div><div class="pt-item">Cisco</div><div class="pt-item">Meraki</div><div class="pt-item">Acronis</div><div class="pt-item">Veeam</div><div class="pt-item">Barracuda</div><div class="pt-item">AWS</div><div class="pt-item">Azure</div><div class="pt-item">Fortinet</div><div class="pt-item">SentinelOne</div><div class="pt-item">Dell</div><div class="pt-item">Okta</div><div class="pt-item">Zscaler</div><div class="pt-item">CrowdStrike</div><div class="pt-item">Palo Alto</div><div class="pt-item">Splunk</div><div class="pt-item">SolarWinds</div><div class="pt-item">Sophos</div><div class="pt-item">Redstor</div><div class="pt-item">Wasabi</div><div class="pt-item">Egnyte</div><div class="pt-item">Bitdefender</div><div class="pt-item">RingCentral</div><div class="pt-item">Five9</div><div class="pt-item">Dialpad</div><div class="pt-item">Zoom</div><div class="pt-item">Genesys</div>
+    </div>
+  </div>
+</section>
+<style>
+.pt-item{flex:0 0 auto;padding:6px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(74,144,217,0.15);border-radius:5px;font-size:11.5px;font-weight:600;color:rgba(255,255,255,0.6);white-space:nowrap;cursor:default;transition:all .2s}
+.pt-item:hover{background:rgba(74,144,217,.1);border-color:rgba(74,144,217,.3);color:#fff}
+@keyframes ptscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+</style>
+<!-- END PARTNER NETWORK -->
+
+
+  <!-- Close mobile menu on overlay click -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(e) {
+        const navMenu = document.querySelector('.nav-menu');
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        if (navMenu && navMenu.classList.contains('active') && 
+            !navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+          navMenu.classList.remove('active');
+        }
+      });
+      
+      // Highlight active page in bottom nav
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('.mobile-bottom-nav a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+
+
+
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mobile-bottom-nav" id="mbn">
+  <a href="index.html" class="tap-feedback mbn-link" data-page="home">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    <span>Home</span>
+  </a>
+  <a href="connectivity.html" class="tap-feedback mbn-link" data-page="services">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="22" height="22"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+    <span>Services</span>
+  </a>
+  <a href="about.html" class="tap-feedback mbn-link" data-page="about">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="22" height="22"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    <span>About</span>
+  </a>
+  <a href="contact.html" class="tap-feedback mbn-link" data-page="contact">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    <span>Contact</span>
+  </a>
+</nav>
+<style>
+
+
+</style>
+<script>
+// Highlight active bottom nav tab
+(function(){
+  var links = document.querySelectorAll('.mbn-link');
+  var path = window.location.pathname.split('/').pop() || 'index.html';
+  links.forEach(function(l){
+    var href = l.getAttribute('href');
+    if(href === path || (path === '' && href === 'index.html')){
+      l.classList.add('active');
+    }
+  });
+})();
+</script>
+
+<script>
+// ── MOBILE NAV ──
+(function(){
+  var btn = document.querySelector('.mobile-menu-btn');
+  var menu = document.querySelector('.nav-menu');
+  if(!btn||!menu) return;
+
+  // Overlay appended to body - z-index 500 so it's below nav (z-index 9999 on mobile)
+  var overlay = document.createElement('div');
+  overlay.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:500;display:none';
+  document.body.appendChild(overlay);
+
+  function open(){
+    menu.classList.add('nav-open');
+    overlay.style.display='block';
+    document.body.style.overflow='hidden';
+    btn.setAttribute('aria-expanded','true');
+    btn.classList.add('is-open');
+  }
+  function close(){
+    menu.classList.remove('nav-open');
+    overlay.style.display='none';
+    document.body.style.overflow='';
+    btn.setAttribute('aria-expanded','false');
+    btn.classList.remove('is-open');
+  }
+
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    btn.getAttribute('aria-expanded')==='true'?close():open();
+  });
+  overlay.addEventListener('click',close);
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+
+  // Submenu toggles
+  menu.querySelectorAll('.nt,.nav-trigger').forEach(function(t){
+    t.addEventListener('click',function(e){
+      e.preventDefault();e.stopPropagation();
+      var mega=this.closest('.ni,.nav-item');
+      mega=mega&&mega.querySelector('.mega');
+      if(mega){
+        var open=mega.classList.toggle('mobile-open');
+        var arr=this.querySelector('.narr,.nav-arr');
+        if(arr)arr.style.transform=open?'rotate(180deg)':'';
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html><!-- Deployed Sat May 16 17:48:53 UTC 2026 -->
+<!-- Cache bust: 1779124543087315048 -->
+<!-- Deploy: 1779126052864839927 -->
+<!-- Final deploy: 1779126459141420108 -->
+<!-- FINAL: 1779127470127931459 -->
+<!-- GitHub Final: 1779128547398761364 -->
+<!-- Fresh Netlify Deploy: 1779154339023319259 -->
+<!-- Complete Fix: 1779155121530067689 -->
+<!-- GitHub Final Complete: 1779390203726433002 -->
+
+<!-- PRACTICE BAR -->
+<div class="pbar">
+  <div class="pbar-inner">
+    <a href="connectivity.html" class="pa"><div class="pa-c"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg></div><span class="pa-l">Connectivity</span></a>
+    <a href="communications.html" class="pa"><div class="pa-c"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><span class="pa-l">Communications</span></a>
+    <a href="it-security.html" class="pa"><div class="pa-c"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><span class="pa-l">IT Support</span></a>
+    <a href="it-security.html" class="pa"><div class="pa-c"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span class="pa-l">Security</span></a>
+    <a href="cloud-ai.html" class="pa"><div class="pa-c"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div><span class="pa-l">Cloud</span></a>
+    <a href="cloud-ai.html" class="pa"><div class="pa-c"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div><span class="pa-l">AI Automation</span></a>
+    <a href="hardware.html" class="pa"><div class="pa-c"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div><span class="pa-l">Hardware</span></a>
+  </div>
+</div>
+
+
+<!-- TECH PARTNER LOGOS — Light section -->
+<section style="background:var(--light);border-top:1px solid var(--dark-border);border-bottom:1px solid var(--dark-border);padding:3rem 2.5rem">
+  <div style="max-width:1200px;margin:0 auto">
+    <p style="text-align:center;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dark-muted);margin-bottom:2rem">Trusted Technology Partners &amp; Carriers</p>
+    <div style="display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;align-items:center;opacity:.7">
+<div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Microsoft</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Cisco</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">HPE</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Dell</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">AWS</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Azure</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">CrowdStrike</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Fortinet</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">SentinelOne</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Veeam</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Barracuda</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">RingCentral</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Okta</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Zscaler</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Meraki</span></div><div style="display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid var(--dark-border);border-radius:6px;background:#fff"><span style="font-size:11.5px;font-weight:800;letter-spacing:-.02em;color:var(--dark-text)">Five9</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat reveal">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <div><div class="stat-num">3,000+</div><div class="stat-lbl">Clients Served</div></div>
+    </div>
+    <div class="stat reveal rd1">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg></div>
+      <div><div class="stat-num">200+</div><div class="stat-lbl">Carrier Partners</div></div>
+    </div>
+    <div class="stat reveal rd2">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div><div class="stat-num">7</div><div class="stat-lbl">Practice Areas</div></div>
+    </div>
+    <div class="stat reveal rd3">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div><div class="stat-num">24/7</div><div class="stat-lbl">Always-On Support</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- STATEMENT with mesh graphic -->
+<div class="stmt">
+  <!-- Decorative mesh SVG -->
+  <svg class="stmt-mesh" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="meshgrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#4A90D9" stop-opacity="0.05"/>
+        <stop offset="50%" stop-color="#00BCD4" stop-opacity="0.08"/>
+        <stop offset="100%" stop-color="#4A90D9" stop-opacity="0.05"/>
+      </linearGradient>
+    </defs>
+    <rect width="1440" height="400" fill="url(#meshgrad)"/>
+    <!-- Horizontal lines -->
+    <g stroke="#4A90D9" stroke-opacity="0.06" stroke-width="1">
+      <line x1="0" y1="80" x2="1440" y2="80"/>
+      <line x1="0" y1="160" x2="1440" y2="160"/>
+      <line x1="0" y1="240" x2="1440" y2="240"/>
+      <line x1="0" y1="320" x2="1440" y2="320"/>
+    </g>
+    <!-- Vertical lines -->
+    <g stroke="#4A90D9" stroke-opacity="0.04" stroke-width="1">
+      <line x1="144" y1="0" x2="144" y2="400"/>
+      <line x1="288" y1="0" x2="288" y2="400"/>
+      <line x1="432" y1="0" x2="432" y2="400"/>
+      <line x1="576" y1="0" x2="576" y2="400"/>
+      <line x1="720" y1="0" x2="720" y2="400"/>
+      <line x1="864" y1="0" x2="864" y2="400"/>
+      <line x1="1008" y1="0" x2="1008" y2="400"/>
+      <line x1="1152" y1="0" x2="1152" y2="400"/>
+      <line x1="1296" y1="0" x2="1296" y2="400"/>
+    </g>
+    <!-- Center glow -->
+    <ellipse cx="720" cy="200" rx="400" ry="150" fill="none" stroke="#4A90D9" stroke-opacity="0.06" stroke-width="1"/>
+    <ellipse cx="720" cy="200" rx="250" ry="90" fill="none" stroke="#00BCD4" stroke-opacity="0.06" stroke-width="1"/>
+  </svg>
+  <div class="stmt-inner">
+    <div class="stmt-rule"></div>
+    <h2>Most IT Problems Are<br><em>Preventable.</em><br>Yours Too.</h2>
+    <p>Most businesses deal with 5–8 vendors, 5–8 invoices, and nobody accountable for the whole picture. Racom changes that — we source from 200+ carriers, manage your full stack, and give you one team, one number, and one invoice. That&rsquo;s the advisor model.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:.5rem">
+        <a href="contact.html" class="btn-blue">Get a Free Telecom Cost Analysis</a>
+        <a href="contact.html" style="font-size:13px;font-weight:700;color:var(--blue3);display:inline-flex;align-items:center;gap:6px;padding:10px 0">(866) 220-1422</a>
+      </div>
+  </div>
+</div>
+
+<!-- PAIN POINTS (Xtium-inspired: Today's IT Reality) -->
+<section style="background:var(--navy3);padding:6rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd);position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 100%,rgba(74,144,217,.06) 0%,transparent 60%);pointer-events:none"></div>
+  <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1">
+    <div style="text-align:center;margin-bottom:3.5rem">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:.75rem">The Real Cost of Bad IT</div>
+      <h2 class="h2" style="text-align:center">Problems You Recognize<br><span class="acc">Because You've Lived Them</span></h2>
+      <p style="font-size:15px;color:var(--muted);max-width:620px;margin:1rem auto 0;line-height:1.8">Most businesses only discover their IT problems when they're already expensive. Here's what we see every day — and fix in the first 90 days.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:4rem">
+      <!-- Pain 1: Complexity -->
+      <div style="background:var(--navy2);border:1px solid var(--bdd);border-top:2px solid var(--blue);border-radius:8px;padding:2rem;position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(74,144,217,.06)"></div>
+        <div style="width:48px;height:48px;border-radius:10px;background:rgba(74,144,217,.12);border:1px solid rgba(74,144,217,.25);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue3)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </div>
+        <h3 style="font-size:16px;font-weight:700;color:#fff;margin-bottom:.6rem">Complexity Overload</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.75">Disjointed platforms, cloud sprawl, and multiple vendors create inefficiencies that slow your team down and create budget waste.</p>
+      </div>
+      <!-- Pain 2: Security -->
+      <div style="background:var(--navy2);border:1px solid var(--bdd);border-top:2px solid rgba(167,139,250,.6);border-radius:8px;padding:2rem;position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(167,139,250,.05)"></div>
+        <div style="width:48px;height:48px;border-radius:10px;background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 style="font-size:16px;font-weight:700;color:#fff;margin-bottom:.6rem">Escalating Cyber Threats</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.75">Ransomware, phishing, and compliance mandates are tightening every quarter. Your data, reputation, and operations are at stake 24/7.</p>
+      </div>
+      <!-- Pain 3: Resources -->
+      <div style="background:var(--navy2);border:1px solid var(--bdd);border-top:2px solid rgba(52,211,153,.5);border-radius:8px;padding:2rem;position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(52,211,153,.05)"></div>
+        <div style="width:48px;height:48px;border-radius:10px;background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 style="font-size:16px;font-weight:700;color:#fff;margin-bottom:.6rem">Stretched IT Teams</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.75">Limited staff, shrinking budgets, and rising AI initiatives leave little room for innovation. 77% of organizations struggle to hire and retain skilled IT talent.</p>
+      </div>
+    </div>
+
+    <!-- FORCE MULTIPLIER CTA BAND -->
+    <div style="background:linear-gradient(135deg,var(--navy4) 0%,var(--navy5) 100%);border:1px solid var(--bdd2);border-left:3px solid var(--blue);border-radius:8px;padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap">
+      <div>
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin-bottom:.75rem">The Racom Difference</div>
+        <h3 style="font-family:var(--ffc);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;color:#fff;line-height:1.05;margin-bottom:.65rem">Your IT &amp; Telecom<br>Force Multiplier</h3>
+        <p style="font-size:14px;color:var(--muted);line-height:1.75;max-width:580px">We&rsquo;re not just another MSP or reseller. We take full ownership of your technology challenges &mdash; from the network edge to the cloud &mdash; and solve them with urgency. No band-aid fixes. No endless ticket queues. <strong style="color:#fff">Full-stack support. High-touch service. Deep expertise.</strong></p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;flex-shrink:0">
+        <a href="contact.html" class="btn-blue" style="white-space:nowrap;text-align:center">Get a Free Telecom Cost Analysis</a>
+        <a href="tel:8662201422" style="font-size:13px;color:var(--blue3);font-weight:700;text-align:center;letter-spacing:.02em">(866) 220-1422</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- HOW IT WORKS — RACOM METHOD -->
+<section style="background:var(--light);padding:6rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd)" class="sec-light">
+  <div style="max-width:1200px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:4rem">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:.75rem">Our Approach</div>
+      <h2 class="h2" style="text-align:center">The Racom Method:<br><span class="acc">From Audit to Optimized</span></h2>
+      <p style="font-size:15px;color:var(--muted);max-width:580px;margin:1rem auto 0;line-height:1.8">Instead of reacting to problems after they happen, we eliminate them at the source. Here's how we do it — in a structured, proven sequence.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative">
+      <!-- Connector line -->
+      <div style="position:absolute;top:32px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(74,144,217,.3) 20%,rgba(74,144,217,.3) 80%,transparent);z-index:0"></div>
+
+      <div style="text-align:center;padding:0 1rem;position:relative;z-index:1" class="reveal">
+        <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--navy3),var(--navy4));border:2px solid rgba(74,144,217,.6);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-family:var(--ffc);font-size:1.4rem;font-weight:900;color:var(--blue3)">01</div>
+        <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:.5rem">Assess</div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.65">Full audit of your IT, security, cloud, and telecom environment. No assumptions — just facts.</p>
+      </div>
+      <div style="text-align:center;padding:0 1rem;position:relative;z-index:1" class="reveal">
+        <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--navy3),var(--navy4));border:2px solid rgba(74,144,217,.25);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-family:var(--ffc);font-size:1.4rem;font-weight:900;color:rgba(255,255,255,.5)">02</div>
+        <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:.5rem">Stabilize</div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.65">Fix critical gaps, reduce risk exposure, and build a reliable foundation in the first 30 days.</p>
+      </div>
+      <div style="text-align:center;padding:0 1rem;position:relative;z-index:1" class="reveal">
+        <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--navy3),var(--navy4));border:2px solid rgba(74,144,217,.25);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-family:var(--ffc);font-size:1.4rem;font-weight:900;color:rgba(255,255,255,.5)">03</div>
+        <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:.5rem">Secure</div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.65">Deploy layered cybersecurity: endpoint, network, cloud, identity, and 24/7 SOC monitoring.</p>
+      </div>
+      <div style="text-align:center;padding:0 1rem;position:relative;z-index:1" class="reveal">
+        <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--navy3),var(--navy4));border:2px solid rgba(74,144,217,.25);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-family:var(--ffc);font-size:1.4rem;font-weight:900;color:rgba(255,255,255,.5)">04</div>
+        <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:.5rem">Optimize</div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.65">Eliminate wasted IT and telecom spend. Most clients recover 30–40% of their monthly costs.</p>
+      </div>
+      <div style="text-align:center;padding:0 1rem;position:relative;z-index:1" class="reveal">
+        <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--navy3),var(--navy4));border:2px solid rgba(74,144,217,.25);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-family:var(--ffc);font-size:1.4rem;font-weight:900;color:rgba(255,255,255,.5)">05</div>
+        <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:.5rem">Manage</div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.65">Ongoing proactive monitoring, support, and strategic IT guidance — month after month.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3.5rem">
+      <a href="contact.html" class="btn-blue">Start With a Free Assessment</a>
+      <p style="font-size:12px;color:var(--muted2);margin-top:.75rem">No obligation. Results in 30 minutes.</p>
+    </div>
+  </div>
+</section>
+<!-- SOLUTIONS -->
+<section id="solutions" class="solutions sec-light" style="padding:5rem 2.5rem;background:var(--light)!important">
+  <div class="sol-inner">
+    <div class="eyebrow reveal">Practice Areas</div>
+    <h2 class="h2 reveal">Everything Your Business <span class="acc">Runs On</span></h2>
+    <p class="sec-desc reveal">Seven technology disciplines. One account team. One invoice. Racom is the technology partner that finally makes your stack simple.</p>
+    <div class="sol-grid reveal">
+      <div class="sc"><div class="si"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg></div><h3>Connectivity</h3><p>Carrier-agnostic internet, circuits, and SD-WAN from 200+ providers &mdash; best price and best uptime, guaranteed.</p><div class="sc-tags"><span class="st">Internet</span><span class="st">SD-WAN</span><span class="st">Circuits</span></div></div>
+      <div class="sc"><div class="si"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Communications</h3><p>UCaaS, VoIP, and CCaaS replacing your legacy phone system with modern cloud communications.</p><div class="sc-tags"><span class="st">UCaaS</span><span class="st">VoIP</span><span class="st">CCaaS</span></div></div>
+      <div class="sc"><div class="si"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>IT Support</h3><p>24/7 remote monitoring, helpdesk, and onsite support keeping your team productive.</p><div class="sc-tags"><span class="st">RMM</span><span class="st">Helpdesk</span><span class="st">Onsite</span></div></div>
+      <div class="sc"><div class="si"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Security</h3><p>Layered defense &mdash; endpoint, email, MFA, MDR, and compliance all managed by Racom.</p><div class="sc-tags"><span class="st">EDR</span><span class="st">MFA</span><span class="st">MDR</span></div></div>
+      <div class="sc"><div class="si"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div><h3>Cloud</h3><p>Microsoft 365, Azure, AWS, backups, and disaster recovery &mdash; deployed and managed end-to-end.</p><div class="sc-tags"><span class="st">M365</span><span class="st">Azure</span><span class="st">AWS</span></div></div>
+      <div class="sc"><div class="si"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div><h3>AI Automation</h3><p>Ticket triage AI, Voice AI routing, and automated monitoring that eliminates manual overhead.</p><div class="sc-tags"><span class="st">Voice AI</span><span class="st">Triage</span><span class="st">Auto-monitor</span></div></div>
+      <div class="sc"><div class="si"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div><h3>Hardware</h3><p>Laptops, servers, networking gear &mdash; sourced from every major vendor, configured and deployed.</p><div class="sc-tags"><span class="st">Laptops</span><span class="st">Networking</span><span class="st">Servers</span></div></div>
+      <div class="sc-cta"><h3>Not Sure<br>Where to Start?</h3><p>Get a free technology assessment &mdash; our experts map out exactly what your business needs.</p><a href="contact.html" class="btn-outline" style="font-size:12.5px;padding:10px 18px;margin-top:4px">Get Free Assessment &rarr;</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS PROOF SECTION -->
+<section style="background:var(--navy2);padding:5rem 2.5rem;border-bottom:1px solid var(--bdd)">
+  <div style="max-width:1200px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:3.5rem">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:.75rem">By The Numbers</div>
+      <h2 class="h2" style="text-align:center">Results That <span class="acc">Speak For Themselves</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--bdd2);border-radius:10px;overflow:hidden">
+      <div style="padding:2.5rem 2rem;text-align:center;border-right:1px solid var(--bdd)">
+        <div style="font-family:var(--ffc);font-size:3.5rem;font-weight:900;color:var(--blue3);line-height:1;letter-spacing:-.03em">3,000<span style="font-size:2rem">+</span></div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-top:.6rem;line-height:1.5">Businesses Served<br>Nationwide</div>
+      </div>
+      <div style="padding:2.5rem 2rem;text-align:center;border-right:1px solid var(--bdd);background:rgba(74,144,217,.04)">
+        <div style="font-family:var(--ffc);font-size:3.5rem;font-weight:900;color:var(--blue3);line-height:1;letter-spacing:-.03em">200<span style="font-size:2rem">+</span></div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-top:.6rem;line-height:1.5">Carrier &amp; Vendor<br>Partnerships</div>
+      </div>
+      <div style="padding:2.5rem 2rem;text-align:center;border-right:1px solid var(--bdd)">
+        <div style="font-family:var(--ffc);font-size:3.5rem;font-weight:900;color:var(--blue3);line-height:1;letter-spacing:-.03em">24<span style="font-size:2rem">/7</span></div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-top:.6rem;line-height:1.5">Always-On Monitoring<br>&amp; SOC Coverage</div>
+      </div>
+      <div style="padding:2.5rem 2rem;text-align:center;background:rgba(74,144,217,.04)">
+        <div style="font-family:var(--ffc);font-size:3.5rem;font-weight:900;color:var(--blue3);line-height:1;letter-spacing:-.03em">1</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-top:.6rem;line-height:1.5">Partner. One Invoice.<br>Zero Gaps.</div>
+      </div>
+    </div>
+    <!-- Industry stats from research -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px">
+      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.5rem;display:flex;align-items:flex-start;gap:1rem">
+        <div style="font-family:var(--ffc);font-size:2.5rem;font-weight:900;color:rgba(74,144,217,.4);line-height:1;flex-shrink:0">77%</div>
+        <div>
+          <div style="font-size:12.5px;font-weight:700;color:#fff;margin-bottom:3px">of organizations struggle to hire skilled IT talent</div>
+          <div style="font-size:11px;color:var(--muted2)">Racom extends your team without the hiring headache. &mdash; Global Newswire</div>
+        </div>
+      </div>
+      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.5rem;display:flex;align-items:flex-start;gap:1rem">
+        <div style="font-family:var(--ffc);font-size:2.5rem;font-weight:900;color:rgba(74,144,217,.4);line-height:1;flex-shrink:0">64%</div>
+        <div>
+          <div style="font-size:12.5px;font-weight:700;color:#fff;margin-bottom:3px">consider IT service desk efficiency a critical priority</div>
+          <div style="font-size:11px;color:var(--muted2)">Our AI-powered helpdesk resolves issues faster. &mdash; Investopedia</div>
+        </div>
+      </div>
+      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:8px;padding:1.5rem;display:flex;align-items:flex-start;gap:1rem">
+        <div style="font-family:var(--ffc);font-size:2.5rem;font-weight:900;color:rgba(74,144,217,.4);line-height:1;flex-shrink:0">$1.8T</div>
+        <div>
+          <div style="font-size:12.5px;font-weight:700;color:#fff;margin-bottom:3px">global telecom services market, growing 6.2% annually</div>
+          <div style="font-size:11px;color:var(--muted2)">Your business needs a telecom partner who keeps up. &mdash; Market Research</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS — with circuit board background and animated ring cards -->
+<section class="process">
+  <!-- Circuit board SVG -->
+  <svg class="proc-bg" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <g stroke="#4A90D9" stroke-opacity="0.06" stroke-width="1" fill="none">
+      <!-- Horizontal traces -->
+      <path d="M0,150 L200,150 L200,100 L400,100 L400,150 L600,150"/>
+      <path d="M0,300 L100,300 L100,250 L300,250 L300,350 L500,350 L500,300 L700,300"/>
+      <path d="M800,200 L1000,200 L1000,150 L1200,150 L1200,250 L1440,250"/>
+      <path d="M700,400 L900,400 L900,450 L1100,450 L1100,400 L1300,400 L1300,350 L1440,350"/>
+      <!-- Vias (circuit dots) -->
+      <circle cx="200" cy="150" r="4" fill="#4A90D9" fill-opacity="0.15"/>
+      <circle cx="400" cy="100" r="4" fill="#4A90D9" fill-opacity="0.15"/>
+      <circle cx="1000" cy="200" r="4" fill="#4A90D9" fill-opacity="0.15"/>
+      <circle cx="1100" cy="450" r="4" fill="#4A90D9" fill-opacity="0.15"/>
+      <circle cx="300" cy="250" r="3" fill="#00BCD4" fill-opacity="0.12"/>
+      <circle cx="900" cy="400" r="3" fill="#00BCD4" fill-opacity="0.12"/>
+    </g>
+  </svg>
+  <div class="proc-inner">
+    <div class="eyebrow reveal">How We Work</div>
+    <h2 class="h2 reveal">One Partner to <span class="acc">Assess, Design,<br>Deploy &amp; Manage</span></h2>
+    <p class="sec-desc reveal" style="margin-bottom:0">A proven process from assessment to fully managed technology &mdash; Racom at every step of the way.</p>
+    <div class="proc-grid reveal">
+      <div class="pc">
+        <div class="pc-num">1</div>
+        <div class="pc-img">
+          <div class="pc-rings">
+            <div class="ring ring1"></div><div class="ring ring2"></div>
+            <div class="ring ring3"></div><div class="ring ring4"></div>
+          </div>
+          <div class="pc-icon" style="border:1.5px solid rgba(74,144,217,.4);background:rgba(74,144,217,.12)">
+            <svg viewBox="0 0 24 24" style="stroke:#6AAEE8"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          </div>
+        </div>
+        <div class="pc-body">
+          <div class="pc-step"><span class="pc-step-n">1</span><span class="pc-step-l">| Assess</span></div>
+          <h3>Free Technology Assessment</h3>
+          <p>We review your current environment &mdash; connectivity, security gaps, IT stack &mdash; and deliver a clear, prioritized roadmap at no cost.</p>
+        </div>
+      </div>
+      <div class="pc">
+        <div class="pc-num">2</div>
+        <div class="pc-img">
+          <div class="pc-rings">
+            <div class="ring ring1" style="border-color:rgba(0,188,212,.15)"></div>
+            <div class="ring ring2" style="border-color:rgba(0,188,212,.12)"></div>
+            <div class="ring ring3" style="border-color:rgba(0,188,212,.08)"></div>
+            <div class="ring ring4" style="border-color:rgba(0,188,212,.05)"></div>
+          </div>
+          <div class="pc-icon" style="border:1.5px solid rgba(0,188,212,.4);background:rgba(0,188,212,.1)">
+            <svg viewBox="0 0 24 24" style="stroke:#00BCD4"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+        </div>
+        <div class="pc-body">
+          <div class="pc-step"><span class="pc-step-n">2</span><span class="pc-step-l">| Design</span></div>
+          <h3>Strategic Solution Design</h3>
+          <p>We design a tailored technology stack using best-fit vendors aligned to your performance requirements, budget, and timeline.</p>
+        </div>
+      </div>
+      <div class="pc">
+        <div class="pc-num">3</div>
+        <div class="pc-img">
+          <div class="pc-rings">
+            <div class="ring ring1" style="border-color:rgba(91,174,245,.15)"></div>
+            <div class="ring ring2" style="border-color:rgba(91,174,245,.12)"></div>
+            <div class="ring ring3" style="border-color:rgba(91,174,245,.08)"></div>
+            <div class="ring ring4" style="border-color:rgba(91,174,245,.05)"></div>
+          </div>
+          <div class="pc-icon" style="border:1.5px solid rgba(91,174,245,.4);background:rgba(91,174,245,.1)">
+            <svg viewBox="0 0 24 24" style="stroke:#5BAEF5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+        </div>
+        <div class="pc-body">
+          <div class="pc-step"><span class="pc-step-n">3</span><span class="pc-step-l">| Deploy</span></div>
+          <h3>Expert Implementation</h3>
+          <p>Our certified engineers handle every aspect of deployment &mdash; provisioning circuits, installing hardware, migrating your cloud, and training your team.</p>
+        </div>
+      </div>
+      <div class="pc">
+        <div class="pc-num">4</div>
+        <div class="pc-img">
+          <div class="pc-rings">
+            <div class="ring ring1" style="border-color:rgba(52,211,153,.15)"></div>
+            <div class="ring ring2" style="border-color:rgba(52,211,153,.12)"></div>
+            <div class="ring ring3" style="border-color:rgba(52,211,153,.08)"></div>
+            <div class="ring ring4" style="border-color:rgba(52,211,153,.05)"></div>
+          </div>
+          <div class="pc-icon" style="border:1.5px solid rgba(52,211,153,.4);background:rgba(52,211,153,.08)">
+            <svg viewBox="0 0 24 24" style="stroke:#34D399"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+        </div>
+        <div class="pc-body">
+          <div class="pc-step"><span class="pc-step-n">4</span><span class="pc-step-l">| Manage</span></div>
+          <h3>Always-On Management</h3>
+          <p>24/7 monitoring, AI-powered automation, and a dedicated account team &mdash; so you never have to worry about your technology again.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY GRAPHIC SPLIT -->
+<section class="gsplit" style="background:var(--navy2)">
+  <div class="gsplit-inner" style="max-width:1200px;margin:0 auto">
+    <div class="gsplit-content reveal">
+      <div class="eyebrow">Security &amp; Compliance</div>
+      <h2 class="h2">Layered Defense<br><span class="acc">Built for Today&rsquo;s Threats</span></h2>
+      <p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:1.5rem">A single antivirus isn&rsquo;t enough. Racom deploys a multi-layered security stack &mdash; endpoint protection, email security, MFA, MDR with 24/7 SOC, and compliance management &mdash; so your business stays protected at every layer.</p>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:2rem">
+        <div style="display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--muted)">
+          <div style="width:7px;height:7px;border-radius:50%;background:var(--blue3);flex-shrink:0"></div>
+          <span><strong style="color:#fff">EDR</strong> &mdash; Real-time endpoint detection &amp; response</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--muted)">
+          <div style="width:7px;height:7px;border-radius:50%;background:var(--teal);flex-shrink:0"></div>
+          <span><strong style="color:#fff">Email security</strong> &mdash; Anti-phishing, BEC protection, spam filtering</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--muted)">
+          <div style="width:7px;height:7px;border-radius:50%;background:#A78BFA;flex-shrink:0"></div>
+          <span><strong style="color:#fff">MFA &amp; Zero Trust</strong> &mdash; Stops 99% of account compromises</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--muted)">
+          <div style="width:7px;height:7px;border-radius:50%;background:#34D399;flex-shrink:0"></div>
+          <span><strong style="color:#fff">MDR / 24×7 SOC</strong> &mdash; Our analysts respond to threats for you</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--muted)">
+          <div style="width:7px;height:7px;border-radius:50%;background:#F5A623;flex-shrink:0"></div>
+          <span><strong style="color:#fff">Compliance</strong> &mdash; HIPAA, PCI-DSS, SOC 2, CMMC</span>
+        </div>
+      </div>
+      <a href="it-security.html" class="btn-blue">Learn about security &rarr;</a>
+    </div>
+    <div class="gsplit-graphic reveal">
+      <!-- Security shield SVG illustration -->
+      <div style="background:var(--navy3);border:1px solid var(--bdd2);border-radius:12px;padding:3rem;display:flex;align-items:center;justify-content:center;min-height:380px;position:relative;overflow:hidden">
+        <!-- Background circles -->
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+          <div style="width:320px;height:320px;border-radius:50%;border:1px solid rgba(74,144,217,.1);position:absolute"></div>
+          <div style="width:240px;height:240px;border-radius:50%;border:1px solid rgba(74,144,217,.12);position:absolute"></div>
+          <div style="width:160px;height:160px;border-radius:50%;border:1px solid rgba(74,144,217,.15);position:absolute"></div>
+        </div>
+        <svg viewBox="0 0 300 320" width="240" xmlns="http://www.w3.org/2000/svg" style="position:relative;z-index:1">
+          <defs>
+            <linearGradient id="shieldgrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4A90D9" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#00BCD4" stop-opacity="0.15"/>
+            </linearGradient>
+          </defs>
+          <!-- Shield body -->
+          <path d="M150,20 L40,65 L40,160 C40,230 150,290 150,290 C150,290 260,230 260,160 L260,65 Z" fill="url(#shieldgrad)" stroke="rgba(74,144,217,0.6)" stroke-width="2"/>
+          <!-- Shield inner -->
+          <path d="M150,45 L65,83 L65,160 C65,215 150,265 150,265 C150,265 235,215 235,160 L235,83 Z" fill="rgba(74,144,217,0.06)" stroke="rgba(74,144,217,0.25)" stroke-width="1"/>
+          <!-- Checkmark -->
+          <polyline points="100,155 135,190 200,125" fill="none" stroke="#4A90D9" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Orbit dots -->
+          <circle cx="150" cy="20" r="6" fill="#4A90D9" opacity="0.8"/>
+          <circle cx="40" cy="65" r="5" fill="#00BCD4" opacity="0.7"/>
+          <circle cx="260" cy="65" r="5" fill="#00BCD4" opacity="0.7"/>
+          <circle cx="40" cy="160" r="4" fill="#4A90D9" opacity="0.6"/>
+          <circle cx="260" cy="160" r="4" fill="#4A90D9" opacity="0.6"/>
+          <!-- Labels -->
+          <text x="270" y="100" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.4)">EDR</text>
+          <text x="270" y="140" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.4)">MFA</text>
+          <text x="270" y="180" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.4)">MDR</text>
+          <text x="10" y="100" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.4)">Email</text>
+          <text x="10" y="140" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.4)">Compl.</text>
+        </svg>
+        <!-- Live badge -->
+        <div style="position:absolute;top:16px;right:16px;background:rgba(0,210,100,.1);border:1px solid rgba(0,210,100,.25);border-radius:4px;padding:5px 12px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#00d264;display:flex;align-items:center;gap:6px">
+          <span style="width:6px;height:6px;border-radius:50%;background:#00d264;animation:pp 1.5s infinite"></span>
+          24/7 Protection Active
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOUD GRAPHIC SPLIT (flipped) -->
+<section class="gsplit flip" style="background:var(--navy3)">
+  <div class="gsplit-inner" style="max-width:1200px;margin:0 auto">
+    <div class="gsplit-content reveal">
+      <div class="eyebrow">Cloud &amp; AI</div>
+      <h2 class="h2">Your Full Cloud Stack,<br><span class="acc">Managed End-to-End</span></h2>
+      <p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:1.5rem">Microsoft 365, Azure, AWS, cloud backups, disaster recovery, and AI-powered automation &mdash; deployed, managed, and optimized by Racom so you get the full value of the cloud without the complexity.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:2rem">
+        <div style="background:var(--navy4);border:1px solid var(--bdd);border-radius:7px;padding:1rem">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue3);margin-bottom:4px">Microsoft 365</div>
+          <div style="font-size:12px;color:var(--muted)">Teams, Exchange, SharePoint, OneDrive</div>
+        </div>
+        <div style="background:var(--navy4);border:1px solid var(--bdd);border-radius:7px;padding:1rem">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue3);margin-bottom:4px">Azure &amp; AWS</div>
+          <div style="font-size:12px;color:var(--muted)">IaaS, PaaS, hybrid cloud, migration</div>
+        </div>
+        <div style="background:var(--navy4);border:1px solid var(--bdd);border-radius:7px;padding:1rem">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:4px">Backup &amp; DR</div>
+          <div style="font-size:12px;color:var(--muted)">Automated, encrypted, tested recovery</div>
+        </div>
+        <div style="background:var(--navy4);border:1px solid var(--bdd);border-radius:7px;padding:1rem">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:4px">AI Automation</div>
+          <div style="font-size:12px;color:var(--muted)">Triage AI, Voice AI, auto-monitoring</div>
+        </div>
+      </div>
+      <a href="cloud-ai.html" class="btn-blue">Explore cloud &amp; AI &rarr;</a>
+    </div>
+    <div class="gsplit-graphic reveal">
+      <div style="background:var(--navy2);border:1px solid var(--bdd2);border-radius:12px;padding:2.5rem;min-height:380px;position:relative;overflow:hidden">
+        <!-- Cloud architecture SVG -->
+        <svg viewBox="0 0 340 300" width="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="cloudgrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4A90D9" stop-opacity="0.2"/>
+              <stop offset="100%" stop-color="#00BCD4" stop-opacity="0.1"/>
+            </linearGradient>
+          </defs>
+          <!-- Central cloud -->
+          <ellipse cx="170" cy="100" rx="80" ry="45" fill="url(#cloudgrad)" stroke="rgba(74,144,217,0.5)" stroke-width="1.5"/>
+          <text x="170" y="96" font-family="Arial Black" font-size="11" fill="#6AAEE8" text-anchor="middle">CLOUD</text>
+          <text x="170" y="112" font-family="Arial" font-size="9" fill="rgba(255,255,255,0.4)" text-anchor="middle">Racom Managed</text>
+          <!-- Satellite boxes -->
+          <!-- M365 -->
+          <rect x="10" y="20" width="80" height="40" rx="6" fill="rgba(74,144,217,0.1)" stroke="rgba(74,144,217,0.3)" stroke-width="1"/>
+          <text x="50" y="37" font-family="Arial" font-size="9" fill="#6AAEE8" text-anchor="middle">Microsoft 365</text>
+          <text x="50" y="50" font-family="Arial" font-size="8" fill="rgba(255,255,255,0.35)" text-anchor="middle">Teams · Exchange</text>
+          <line x1="90" y1="40" x2="90" y2="100" stroke="rgba(74,144,217,0.25)" stroke-width="1" stroke-dasharray="3,4"/>
+          <!-- Azure -->
+          <rect x="250" y="20" width="80" height="40" rx="6" fill="rgba(0,188,212,0.1)" stroke="rgba(0,188,212,0.3)" stroke-width="1"/>
+          <text x="290" y="37" font-family="Arial" font-size="9" fill="#00BCD4" text-anchor="middle">Azure / AWS</text>
+          <text x="290" y="50" font-family="Arial" font-size="8" fill="rgba(255,255,255,0.35)" text-anchor="middle">IaaS · PaaS</text>
+          <line x1="250" y1="40" x2="250" y2="100" stroke="rgba(0,188,212,0.25)" stroke-width="1" stroke-dasharray="3,4"/>
+          <!-- Backup -->
+          <rect x="10" y="180" width="80" height="40" rx="6" fill="rgba(52,211,153,0.08)" stroke="rgba(52,211,153,0.25)" stroke-width="1"/>
+          <text x="50" y="197" font-family="Arial" font-size="9" fill="#34D399" text-anchor="middle">Backup &amp; DR</text>
+          <text x="50" y="210" font-family="Arial" font-size="8" fill="rgba(255,255,255,0.35)" text-anchor="middle">Encrypted · Tested</text>
+          <line x1="90" y1="200" x2="90" y2="145" stroke="rgba(52,211,153,0.2)" stroke-width="1" stroke-dasharray="3,4"/>
+          <!-- AI -->
+          <rect x="250" y="180" width="80" height="40" rx="6" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.25)" stroke-width="1"/>
+          <text x="290" y="197" font-family="Arial" font-size="9" fill="#A78BFA" text-anchor="middle">AI Automation</text>
+          <text x="290" y="210" font-family="Arial" font-size="8" fill="rgba(255,255,255,0.35)" text-anchor="middle">Triage · Voice AI</text>
+          <line x1="250" y1="200" x2="250" y2="145" stroke="rgba(167,139,250,0.2)" stroke-width="1" stroke-dasharray="3,4"/>
+          <!-- Devices at bottom -->
+          <rect x="105" y="235" width="130" height="45" rx="6" fill="rgba(74,144,217,0.08)" stroke="rgba(74,144,217,0.2)" stroke-width="1"/>
+          <text x="170" y="255" font-family="Arial" font-size="9" fill="rgba(255,255,255,0.5)" text-anchor="middle">Your Business</text>
+          <text x="170" y="270" font-family="Arial" font-size="8" fill="rgba(255,255,255,0.3)" text-anchor="middle">Endpoints · Users · Sites</text>
+          <line x1="170" y1="235" x2="170" y2="145" stroke="rgba(74,144,217,0.3)" stroke-width="1.5" stroke-dasharray="4,4">
+            <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.5s" repeatCount="indefinite"/>
+          </line>
+          <!-- Status dots on lines -->
+          <circle cx="90" cy="70" r="3" fill="#4A90D9" opacity="0.7">
+            <animate attributeName="cy" values="70;100;70" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="250" cy="70" r="3" fill="#00BCD4" opacity="0.7">
+            <animate attributeName="cy" values="70;100;70" dur="2.5s" repeatCount="indefinite"/>
+          </circle>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industries" class="industries">
+  <div class="ind-inner">
+    <div class="eyebrow reveal">Who We Serve</div>
+    <h2 class="h2 reveal">Trusted Across <span class="acc">Every Industry</span></h2>
+    <p class="sec-desc reveal" style="margin-bottom:0">Tailored technology solutions built for how your specific sector works &mdash; with the compliance, security, and connectivity requirements that matter to you.</p>
+    <div class="ind-layout reveal">
+      <div class="ind-tabs">
+        <button class="ind-tab active" data-panel="hc"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Healthcare<span class="ia">›</span></button>
+        <button class="ind-tab" data-panel="fin"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Financial Services<span class="ia">›</span></button>
+        <button class="ind-tab" data-panel="mfg"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>Manufacturing<span class="ia">›</span></button>
+        <button class="ind-tab" data-panel="pro"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Professional Services<span class="ia">›</span></button>
+        <button class="ind-tab" data-panel="gov"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Government<span class="ia">›</span></button>
+        <button class="ind-tab" data-panel="edu"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/></svg>Education<span class="ia">›</span></button>
+      </div>
+      <div class="ind-panel-wrap">
+        <div class="ind-panel active" id="hc"><div><h3>Healthcare <span class="acc">IT Solutions</span></h3><p>HIPAA-compliant managed IT, endpoint security, and reliable connectivity for hospitals, clinics, and healthcare networks. We protect patient data and keep critical systems running 24/7.</p><a href="contact.html" class="btn-outline">Get a Free Risk Assessment →</a></div><div class="ind-vis"><svg viewBox="0 0 200 180" width="160" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="90" r="70" fill="rgba(74,144,217,0.06)" stroke="rgba(74,144,217,0.2)" stroke-width="1"/><path d="M100,55 L100,125M70,90 L130,90" stroke="#4A90D9" stroke-width="8" stroke-linecap="round"/><circle cx="100" cy="90" r="35" fill="none" stroke="rgba(74,144,217,0.15)" stroke-width="1" stroke-dasharray="4,4"/><text x="100" y="155" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">HIPAA Compliant</text></svg></div></div>
+        <div class="ind-panel" id="fin"><div><h3>Financial Services <span class="acc">Technology</span></h3><p>SOC 2 and PCI-DSS compliant infrastructure, MDR, and secure cloud for banks, credit unions, and financial firms. Your data stays protected and your operations stay compliant.</p><a href="contact.html" class="btn-outline">Get a Free Risk Assessment →</a></div><div class="ind-vis"><svg viewBox="0 0 200 180" width="160" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="50" width="120" height="80" rx="8" fill="rgba(74,144,217,0.08)" stroke="rgba(74,144,217,0.3)" stroke-width="1"/><path d="M40,70 L160,70" stroke="rgba(74,144,217,0.3)" stroke-width="1"/><path d="M100,35 L100,50M40,50 L40,30 L160,30 L160,50" fill="none" stroke="rgba(74,144,217,0.25)" stroke-width="1"/><circle cx="100" cy="30" r="8" fill="rgba(74,144,217,0.15)" stroke="rgba(74,144,217,0.4)" stroke-width="1"/><text x="100" y="100" font-family="Arial Black" font-size="18" fill="#4A90D9" text-anchor="middle">$</text><text x="100" y="155" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">PCI-DSS · SOC 2</text></svg></div></div>
+        <div class="ind-panel" id="mfg"><div><h3>Manufacturing <span class="acc">IT &amp; Connectivity</span></h3><p>Ruggedized networking, reliable connectivity across plant floors, and IoT infrastructure management for manufacturers that can&rsquo;t afford downtime on the production line.</p><a href="contact.html" class="btn-outline">Get a Free Risk Assessment →</a></div><div class="ind-vis"><svg viewBox="0 0 200 180" width="160" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="80" width="140" height="60" rx="4" fill="rgba(74,144,217,0.06)" stroke="rgba(74,144,217,0.2)" stroke-width="1"/><rect x="50" y="60" width="30" height="20" fill="rgba(74,144,217,0.1)" stroke="rgba(74,144,217,0.3)" stroke-width="1"/><rect x="120" y="60" width="30" height="20" fill="rgba(74,144,217,0.1)" stroke="rgba(74,144,217,0.3)" stroke-width="1"/><circle cx="70" cy="110" r="15" fill="rgba(0,188,212,0.1)" stroke="rgba(0,188,212,0.3)" stroke-width="1"/><circle cx="130" cy="110" r="15" fill="rgba(0,188,212,0.1)" stroke="rgba(0,188,212,0.3)" stroke-width="1"/><text x="100" y="155" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">IoT &amp; OT Networks</text></svg></div></div>
+        <div class="ind-panel" id="pro"><div><h3>Professional Services <span class="acc">Technology</span></h3><p>Secure cloud-first IT for law firms, accounting firms, and consulting businesses &mdash; Microsoft 365, UCaaS, and MDR so your team works from anywhere, securely.</p><a href="contact.html" class="btn-outline">Get a Free Risk Assessment →</a></div><div class="ind-vis"><svg viewBox="0 0 200 180" width="160" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="75" r="30" fill="rgba(74,144,217,0.08)" stroke="rgba(74,144,217,0.25)" stroke-width="1.5"/><circle cx="55" cy="120" r="20" fill="rgba(0,188,212,0.08)" stroke="rgba(0,188,212,0.2)" stroke-width="1"/><circle cx="145" cy="120" r="20" fill="rgba(0,188,212,0.08)" stroke="rgba(0,188,212,0.2)" stroke-width="1"/><line x1="100" y1="105" x2="65" y2="115" stroke="rgba(74,144,217,0.2)" stroke-width="1"/><line x1="100" y1="105" x2="135" y2="115" stroke="rgba(74,144,217,0.2)" stroke-width="1"/><text x="100" y="155" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">Secure Remote Work</text></svg></div></div>
+        <div class="ind-panel" id="gov"><div><h3>Government <span class="acc">IT Solutions</span></h3><p>CMMC-ready managed IT, secure connectivity, and compliance management for state and local government agencies &mdash; protecting constituent data and ensuring operational continuity.</p><a href="contact.html" class="btn-outline">Get a Free Risk Assessment →</a></div><div class="ind-vis"><svg viewBox="0 0 200 180" width="160" xmlns="http://www.w3.org/2000/svg"><path d="M100,30 L40,65 L40,140 L160,140 L160,65 Z" fill="rgba(74,144,217,0.07)" stroke="rgba(74,144,217,0.25)" stroke-width="1.5"/><rect x="80" y="100" width="40" height="40" fill="rgba(74,144,217,0.1)" stroke="rgba(74,144,217,0.3)" stroke-width="1"/><line x1="40" y1="65" x2="160" y2="65" stroke="rgba(74,144,217,0.2)" stroke-width="1"/><text x="100" y="155" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">CMMC Compliant</text></svg></div></div>
+        <div class="ind-panel" id="edu"><div><h3>Education <span class="acc">Technology</span></h3><p>Reliable campus networking, cloud learning tools, cybersecurity, and device management for K&ndash;12 schools, universities, and EdTech organizations.</p><a href="contact.html" class="btn-outline">Get a Free Risk Assessment →</a></div><div class="ind-vis"><svg viewBox="0 0 200 180" width="160" xmlns="http://www.w3.org/2000/svg"><path d="M100,35 L30,70 L30,85 L100,50 L170,85 L170,70 Z" fill="rgba(74,144,217,0.1)" stroke="rgba(74,144,217,0.3)" stroke-width="1.5"/><path d="M55,85 L55,135 L145,135 L145,85" fill="rgba(74,144,217,0.05)" stroke="rgba(74,144,217,0.2)" stroke-width="1"/><text x="100" y="155" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">Campus Networks</text></svg></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI SECTION -->
+<section class="ai-section">
+  <!-- Animated AI background -->
+  <svg class="ai-bg" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <g>
+      <!-- Neural network nodes -->
+      <circle cx="100" cy="150" r="4" fill="#4A90D9" opacity="0.3"/>
+      <circle cx="100" cy="300" r="4" fill="#4A90D9" opacity="0.3"/>
+      <circle cx="100" cy="450" r="4" fill="#4A90D9" opacity="0.3"/>
+      <circle cx="250" cy="200" r="5" fill="#4A90D9" opacity="0.35"/>
+      <circle cx="250" cy="350" r="5" fill="#4A90D9" opacity="0.35"/>
+      <circle cx="400" cy="150" r="4" fill="#00BCD4" opacity="0.3"/>
+      <circle cx="400" cy="300" r="6" fill="#00BCD4" opacity="0.4"/>
+      <circle cx="400" cy="450" r="4" fill="#00BCD4" opacity="0.3"/>
+      <!-- Connections -->
+      <g stroke="#4A90D9" stroke-opacity="0.1" stroke-width="1">
+        <line x1="100" y1="150" x2="250" y2="200"/>
+        <line x1="100" y1="150" x2="250" y2="350"/>
+        <line x1="100" y1="300" x2="250" y2="200"/>
+        <line x1="100" y1="300" x2="250" y2="350"/>
+        <line x1="100" y1="450" x2="250" y2="350"/>
+        <line x1="250" y1="200" x2="400" y2="150"/>
+        <line x1="250" y1="200" x2="400" y2="300"/>
+        <line x1="250" y1="350" x2="400" y2="300"/>
+        <line x1="250" y1="350" x2="400" y2="450"/>
+      </g>
+    </g>
+  </svg>
+  <div class="ai-inner">
+    <div>
+      <div class="eyebrow">AI-Powered Operations</div>
+      <h2 class="h2 reveal">Intelligence Built Into<br><span class="acc">Every Layer</span></h2>
+      <p style="font-size:15px;color:var(--muted);line-height:1.8" class="reveal">Racom embeds AI automation across your IT operations &mdash; not as a buzzword, but as a practical force multiplier that cuts ticket volume, speeds resolution, and eliminates manual overhead from your day-to-day.</p>
+      <div class="ai-chips reveal">
+        <span class="ai-chip">Ticket Triage AI</span>
+        <span class="ai-chip">Voice AI Routing</span>
+        <span class="ai-chip">Auto Monitoring</span>
+        <span class="ai-chip">Anomaly Detection</span>
+        <span class="ai-chip">Self-Healing Workflows</span>
+        <span class="ai-chip">Predictive Alerting</span>
+      </div>
+      <a href="cloud-ai.html" class="btn-blue reveal">Explore AI Capabilities</a>
+    </div>
+    <div class="reveal">
+      <div class="console">
+        <div class="con-hdr">
+          <div class="cdot" style="background:#ff5f57"></div>
+          <div class="cdot" style="background:#febc2e"></div>
+          <div class="cdot" style="background:#28c840"></div>
+          <span class="ctitle">racom-ai-ops &mdash; live dashboard</span>
+        </div>
+        <div class="crow"><span class="crow-label">Ticket triage engine</span><span class="cbadge bl">&#9679; LIVE</span></div>
+        <div class="crow"><span class="crow-label">Voice AI call routing</span><span class="cbadge ba">ACTIVE</span></div>
+        <div class="crow"><span class="crow-label">Endpoint monitoring</span><span class="cbadge bl">24/7</span></div>
+        <div class="crow"><span class="crow-label">Anomaly detection</span><span class="cbadge bau">AUTO</span></div>
+        <div class="crow"><span class="crow-label">MDR threat response</span><span class="cbadge bl">&#9679; LIVE</span></div>
+        <div class="crow"><span class="crow-label">Cloud backup verification</span><span class="cbadge bau">AUTO</span></div>
+        <div class="crow"><span class="crow-label">SD-WAN performance</span><span class="cbadge bl">&#9679; LIVE</span></div>
+        <div class="crow"><span class="crow-label">Security patch compliance</span><span class="cbadge bl">98.4%</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CASE STUDIES / RESULTS -->
+<section style="background:var(--navy2);padding:6rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd)">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="eyebrow reveal" style="justify-content:center;margin-bottom:.75rem">Case Studies</div>
+    <h2 class="h2 reveal" style="text-align:center;margin-bottom:.75rem">Real Results for <span class="acc">Real Businesses</span></h2>
+    <p style="font-size:15px;color:var(--muted);text-align:center;max-width:580px;margin:0 auto 3rem;line-height:1.75" class="reveal">Here&rsquo;s what happens when businesses stop managing vendors and start working with one integrated partner.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px" class="reveal">
+      
+      <!-- Case 1 -->
+      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;overflow:hidden;transition:all .25s" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(255,255,255,.07)';this.style.transform='none'">
+        <div style="background:linear-gradient(135deg,var(--navy4),var(--navy5));padding:1.75rem;border-bottom:1px solid var(--bdd)">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue3);margin-bottom:.75rem">Healthcare &bull; Multi-Site Network</div>
+          <div style="font-family:var(--ffc);font-size:3rem;font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1">40%</div>
+          <div style="font-size:12px;color:var(--muted2);margin-top:4px">Reduction in telecom costs</div>
+        </div>
+        <div style="padding:1.5rem">
+          <h4 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.6rem">Healthcare Group — 8 Locations</h4>
+          <p style="font-size:12.5px;color:var(--muted);line-height:1.7;margin-bottom:1rem">Consolidated 4 carriers into one SD-WAN solution with failover, reducing monthly telecom spend by 40% while improving uptime to 99.9%.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:5px">
+            <span style="font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--blue3);background:rgba(74,144,217,.08);border:1px solid rgba(74,144,217,.2);padding:3px 8px;border-radius:3px">SD-WAN</span>
+            <span style="font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--blue3);background:rgba(74,144,217,.08);border:1px solid rgba(74,144,217,.2);padding:3px 8px;border-radius:3px">Connectivity</span>
+            <span style="font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--blue3);background:rgba(74,144,217,.08);border:1px solid rgba(74,144,217,.2);padding:3px 8px;border-radius:3px">HIPAA</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 2 -->
+      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;overflow:hidden;transition:all .25s;transform:translateY(-8px)" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-12px)'" onmouseout="this.style.borderColor='rgba(255,255,255,.07)';this.style.transform='translateY(-8px)'">
+        <div style="background:linear-gradient(135deg,var(--navy4),var(--navy5));padding:1.75rem;border-bottom:1px solid var(--bdd)">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:.75rem">Manufacturing &bull; UCaaS Migration</div>
+          <div style="font-family:var(--ffc);font-size:3rem;font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1">30%</div>
+          <div style="font-size:12px;color:var(--muted2);margin-top:4px">Lower phone system costs</div>
+        </div>
+        <div style="padding:1.5rem">
+          <h4 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.6rem">Manufacturing Co — 350 Employees</h4>
+          <p style="font-size:12.5px;color:var(--muted);line-height:1.7;margin-bottom:1rem">Replaced aging PBX with cloud UCaaS. Voice AI handles 60% of inbound calls automatically. Team productivity up, support costs down.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:5px">
+            <span style="font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--teal);background:rgba(0,188,212,.08);border:1px solid rgba(0,188,212,.2);padding:3px 8px;border-radius:3px">UCaaS</span>
+            <span style="font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--teal);background:rgba(0,188,212,.08);border:1px solid rgba(0,188,212,.2);padding:3px 8px;border-radius:3px">Voice AI</span>
+            <span style="font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--teal);background:rgba(0,188,212,.08);border:1px solid rgba(0,188,212,.2);padding:3px 8px;border-radius:3px">POTS Replace</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 3 -->
+      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;overflow:hidden;transition:all .25s" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(255,255,255,.07)';this.style.transform='none'">
+        <div style="background:linear-gradient(135deg,var(--navy4),var(--navy5));padding:1.75rem;border-bottom:1px solid var(--bdd)">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#34D399;margin-bottom:.75rem">Financial Services &bull; Full Stack</div>
+          <div style="font-family:var(--ffc);font-size:3rem;font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1">Zero</div>
+          <div style="font-size:12px;color:var(--muted2);margin-top:4px">Security incidents in 18 months</div>
+        </div>
+        <div style="padding:1.5rem">
+          <h4 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.6rem">Financial Advisory Firm — 120 Users</h4>
+          <p style="font-size:12.5px;color:var(--muted);line-height:1.7;margin-bottom:1rem">Deployed full MDR stack, MFA, email security, and compliance management. Passed SOC 2 audit first try. Zero breaches in 18 months of monitoring.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:5px">
+            <span style="font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#34D399;background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.2);padding:3px 8px;border-radius:3px">MDR</span>
+            <span style="font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#34D399;background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.2);padding:3px 8px;border-radius:3px">SOC 2</span>
+            <span style="font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#34D399;background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.2);padding:3px 8px;border-radius:3px">MFA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="contact.html" class="btn-outline" style="display:inline-flex;align-items:center;gap:8px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        See How We Can Help Your Business
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
 
 <!-- TESTIMONIALS -->
 <section style="background:var(--navy3);padding:6rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd);position:relative;overflow:hidden">
@@ -2248,139 +3280,11 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
 </section>
 
 
-<!-- VS COMPETITORS — WHY RACOM vs ALTERNATIVES -->
-<section style="background:var(--navy3);padding:6rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd)">
-  <div style="max-width:1200px;margin:0 auto">
-    <div style="text-align:center;margin-bottom:4rem">
-      <div class="eyebrow" style="justify-content:center;margin-bottom:.75rem">Why Racom</div>
-      <h2 class="h2" style="text-align:center">Why Choose Racom<br><span class="acc">Over the Alternatives?</span></h2>
-      <p style="font-size:15px;color:var(--muted);max-width:600px;margin:.75rem auto 0;line-height:1.8">The advisor model is different from buying direct, using a local MSP, or going through a national broker. Here's what that means in practice.</p>
-    </div>
 
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:3rem">
-
-      <!-- vs Going Direct -->
-      <div style="background:var(--navy2);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem">
-        <div style="font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--bdd)">vs. Going Direct</div>
-        <div style="display:flex;flex-direction:column;gap:.85rem">
-          <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--blue3);flex-shrink:0;font-size:13px;margin-top:1px">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">Access to 200+ carriers vs. just one</span></div>
-          <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--blue3);flex-shrink:0;font-size:13px;margin-top:1px">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">Carrier-agnostic — we recommend what fits, not what pays us most</span></div>
-          <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--blue3);flex-shrink:0;font-size:13px;margin-top:1px">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">We manage billing disputes and renewals on your behalf</span></div>
-          <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--blue3);flex-shrink:0;font-size:13px;margin-top:1px">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">No markup — we're compensated by carriers, not you</span></div>
-        </div>
-      </div>
-
-      <!-- vs Local MSP -->
-      <div style="background:var(--navy2);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem">
-        <div style="font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--bdd)">vs. Local MSP</div>
-        <div style="display:flex;flex-direction:column;gap:.85rem">
-          <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--blue3);flex-shrink:0;font-size:13px;margin-top:1px">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">IT + telecom + cloud under one roof — most MSPs don't do telecom</span></div>
-          <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--blue3);flex-shrink:0;font-size:13px;margin-top:1px">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">National carrier relationships and volume pricing</span></div>
-          <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--blue3);flex-shrink:0;font-size:13px;margin-top:1px">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">AI-powered operations — not just break-fix helpdesk</span></div>
-          <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--blue3);flex-shrink:0;font-size:13px;margin-top:1px">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">3,000+ client track record across every vertical</span></div>
-        </div>
-      </div>
-
-      <!-- vs Telarus/Avant/CNSG -->
-      <div style="background:linear-gradient(160deg,rgba(74,144,217,.08),var(--navy2));border:1px solid rgba(74,144,217,.25);border-radius:10px;padding:1.75rem;position:relative;overflow:hidden">
-        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--teal))"></div>
-        <div style="font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue3);margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid rgba(74,144,217,.2)">vs. National Broker</div>
-        <div style="display:flex;flex-direction:column;gap:.85rem">
-          <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--blue3);flex-shrink:0;font-size:13px;margin-top:1px">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">We manage your environment, not just source it</span></div>
-          <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--blue3);flex-shrink:0;font-size:13px;margin-top:1px">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">Dedicated account manager who knows your environment</span></div>
-          <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--blue3);flex-shrink:0;font-size:13px;margin-top:1px">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">IT, security, and cloud — not just telecom sourcing</span></div>
-          <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--blue3);flex-shrink:0;font-size:13px;margin-top:1px">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">Post-sale support included — we stay when the deal is done</span></div>
-        </div>
-      </div>
-
-      <!-- vs In-House IT -->
-      <div style="background:var(--navy2);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem">
-        <div style="font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--bdd)">vs. In-House IT Only</div>
-        <div style="display:flex;flex-direction:column;gap:.85rem">
-          <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--blue3);flex-shrink:0;font-size:13px;margin-top:1px">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">Full-stack expertise without a $500K IT payroll</span></div>
-          <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--blue3);flex-shrink:0;font-size:13px;margin-top:1px">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">24/7 coverage that no single hire can provide</span></div>
-          <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--blue3);flex-shrink:0;font-size:13px;margin-top:1px">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">No vacation gaps, turnover risk, or knowledge loss</span></div>
-          <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--blue3);flex-shrink:0;font-size:13px;margin-top:1px">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">Co-managed option — augment your team, not replace it</span></div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Bottom CTA band -->
-    <div style="background:linear-gradient(135deg,rgba(74,144,217,.1),rgba(0,188,212,.06));border:1px solid rgba(74,144,217,.2);border-radius:10px;padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap">
-      <div>
-        <h3 style="font-family:var(--ffc);font-size:1.6rem;font-weight:900;text-transform:uppercase;color:#fff;margin-bottom:.4rem">See How Much You Could Save</h3>
-        <p style="font-size:14px;color:var(--muted)">Free telecom cost analysis — we audit your current spend and show you exactly where the savings are.</p>
-      </div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <a href="contact.html" class="btn-blue" style="white-space:nowrap">Get Free Cost Analysis</a>
-        <a href="contact.html" style="display:inline-flex;align-items:center;padding:12px 20px;border:1px solid rgba(255,255,255,.2);border-radius:5px;font-size:13px;font-weight:700;color:rgba(255,255,255,.8);white-space:nowrap;transition:all .2s" onmouseover="this.style.borderColor='rgba(255,255,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.2)'">Compare Carrier Pricing →</a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- PARTNERS -->
 
-<!-- WHY RACOM vs ALTERNATIVES -->
-<section style="background:var(--navy3);padding:6rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd)">
-  <div style="max-width:1200px;margin:0 auto">
-    <div style="text-align:center;margin-bottom:3.5rem">
-      <div class="eyebrow" style="justify-content:center;margin-bottom:.75rem">Why Racom</div>
-      <h2 class="h2" style="text-align:center">Why Choose Racom <span class="acc">Over the Alternatives?</span></h2>
-      <p style="font-size:15px;color:var(--muted);max-width:600px;margin:.75rem auto 0;line-height:1.8">The technology advisor model is fundamentally different from buying direct, using a local MSP, or going through a national broker.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:2.5rem">
-      <div style="background:var(--navy2);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem">
-        <div style="font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--bdd)">vs. Going Direct to Carriers</div>
-        <div style="display:flex;flex-direction:column;gap:.85rem">
-          <div style="display:flex;gap:8px"><span style="color:var(--blue3);flex-shrink:0">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">Access to 200+ carriers vs. just one</span></div>
-          <div style="display:flex;gap:8px"><span style="color:var(--blue3);flex-shrink:0">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">Carrier-agnostic advice — no upsell agenda</span></div>
-          <div style="display:flex;gap:8px"><span style="color:var(--blue3);flex-shrink:0">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">We handle billing disputes &amp; renewals</span></div>
-          <div style="display:flex;gap:8px"><span style="color:var(--blue3);flex-shrink:0">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">Compensated by carriers — no markup to you</span></div>
-        </div>
-      </div>
-      <div style="background:var(--navy2);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem">
-        <div style="font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--bdd)">vs. Local MSP</div>
-        <div style="display:flex;flex-direction:column;gap:.85rem">
-          <div style="display:flex;gap:8px"><span style="color:var(--blue3);flex-shrink:0">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">IT + telecom + cloud under one roof</span></div>
-          <div style="display:flex;gap:8px"><span style="color:var(--blue3);flex-shrink:0">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">National carrier relationships &amp; volume pricing</span></div>
-          <div style="display:flex;gap:8px"><span style="color:var(--blue3);flex-shrink:0">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">AI-powered ops — not just break-fix helpdesk</span></div>
-          <div style="display:flex;gap:8px"><span style="color:var(--blue3);flex-shrink:0">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">3,000+ client track record, every vertical</span></div>
-        </div>
-      </div>
-      <div style="background:linear-gradient(160deg,rgba(74,144,217,.1),var(--navy2));border:1px solid rgba(74,144,217,.3);border-radius:10px;padding:1.75rem;position:relative;overflow:hidden">
-        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--teal))"></div>
-        <div style="font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue3);margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid rgba(74,144,217,.2)">vs. National Broker</div>
-        <div style="display:flex;flex-direction:column;gap:.85rem">
-          <div style="display:flex;gap:8px"><span style="color:var(--blue3);flex-shrink:0">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">We manage your environment, not just source it</span></div>
-          <div style="display:flex;gap:8px"><span style="color:var(--blue3);flex-shrink:0">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">Dedicated AM who knows your environment</span></div>
-          <div style="display:flex;gap:8px"><span style="color:var(--blue3);flex-shrink:0">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">IT, security &amp; cloud — not just telecom sourcing</span></div>
-          <div style="display:flex;gap:8px"><span style="color:var(--blue3);flex-shrink:0">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">Post-sale support — we stay when the deal is done</span></div>
-        </div>
-      </div>
-      <div style="background:var(--navy2);border:1px solid var(--bdd);border-radius:10px;padding:1.75rem">
-        <div style="font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--bdd)">vs. In-House IT Only</div>
-        <div style="display:flex;flex-direction:column;gap:.85rem">
-          <div style="display:flex;gap:8px"><span style="color:var(--blue3);flex-shrink:0">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">Full-stack expertise, no $500K IT payroll</span></div>
-          <div style="display:flex;gap:8px"><span style="color:var(--blue3);flex-shrink:0">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">24/7 coverage no single hire can provide</span></div>
-          <div style="display:flex;gap:8px"><span style="color:var(--blue3);flex-shrink:0">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">No vacation gaps, turnover, or knowledge loss</span></div>
-          <div style="display:flex;gap:8px"><span style="color:var(--blue3);flex-shrink:0">✓</span><span style="font-size:12.5px;color:rgba(255,255,255,.75);line-height:1.6">Co-managed option — augment, not replace</span></div>
-        </div>
-      </div>
-    </div>
-    <div style="background:linear-gradient(135deg,rgba(74,144,217,.1),rgba(0,188,212,.05));border:1px solid rgba(74,144,217,.2);border-radius:10px;padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap">
-      <div>
-        <h3 style="font-family:var(--ffc);font-size:1.7rem;font-weight:900;text-transform:uppercase;color:#fff;margin-bottom:.4rem">See How Much You Could Save</h3>
-        <p style="font-size:14px;color:var(--muted)">Free telecom cost analysis — we audit your current spend and show you exactly where the savings are.</p>
-      </div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <a href="contact.html" class="btn-blue" style="white-space:nowrap">Get Free Cost Analysis</a>
-        <a href="contact.html" style="display:inline-flex;align-items:center;padding:12px 20px;border:1px solid rgba(255,255,255,.2);border-radius:5px;font-size:13px;font-weight:700;color:rgba(255,255,255,.8);white-space:nowrap;transition:all .2s" onmouseover="this.style.borderColor='rgba(255,255,255,.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,.2)'">Compare Carrier Pricing →</a>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <footer>
   <div class="fg">
