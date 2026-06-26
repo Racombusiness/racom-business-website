@@ -228,7 +228,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(6,14,28,0.97);backdrop-fil
 .solutions{background:var(--navy2);padding:6rem 2.5rem;border-top:1px solid var(--bdd)}
 .sol-inner{max-width:1300px;margin:0 auto}
 .eyebrow{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);display:flex;align-items:center;gap:10px;margin-bottom:.75rem}
-.eyebrow::before{content:"";width:18px;height:2px;background:var(--blue3);border-radius:2px}
+.eyebrow::before{content:none}
 .h2{font-family:var(--ffc);font-size:clamp(1.9rem,3.5vw,3rem);font-weight:900;text-transform:uppercase;letter-spacing:-.025em;color:#fff;line-height:1.03;margin-bottom:.75rem}
 .h2 .acc{color:var(--blue3)}
 .sec-desc{font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:3rem;max-width:640px}
@@ -1412,7 +1412,7 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
         <div class="hero-proof">
           <div class="hstat"><strong>40%</strong><span>Avg Cost Reduction</span></div>
           <div class="hstat"><strong>99.97%</strong><span>Uptime Achieved</span></div>
-          <div class="hstat"><strong>15 min</strong><span>Critical Response</span></div>
+          <div class="hstat"><strong style="white-space:nowrap">15 min</strong><span>Critical Response</span></div>
         </div>
       </div>
       <div class="hero-panel" aria-hidden="true">
@@ -1581,7 +1581,7 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
         <circle cx="1120" cy="100" r="40" fill="#FFFFFF" stroke="#E3ECF7" stroke-width="2"></circle>
         <circle cx="1120" cy="100" r="18" fill="#2D8FE0"></circle>
         <path d="M1111,100 l6,6 l12,-14" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
-        <foreignobject x="780" y="0" width="540" height="50">
+        <foreignobject x="850" y="0" width="540" height="50">
           <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Inter,sans-serif;text-align:center">
             <div style="font-size:22px;font-weight:800;color:#FFFFFF;line-height:1.25;white-space:nowrap">Precision Automation &amp; Hardware</div>
           </div>
@@ -1594,18 +1594,98 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
 .stmt-split{display:grid;grid-template-columns:0.85fr 1.4fr;gap:2.5rem;align-items:center;max-width:1600px;width:100%;margin:0 auto;position:relative;z-index:1}
 .stmt-text{text-align:left}
 .stmt-text h2{margin-bottom:1.25rem}
-.stmt-graphic{padding:1rem 0}
-@media(max-width:900px){
-  .stmt-split{grid-template-columns:1fr;gap:2rem}
-  .stmt-text{text-align:center}
-  .circ-wrap{overflow-x:auto}
-  .circ-wrap svg{min-width:900px}
-}
-@media(max-width:680px){
-  .circ-wrap svg{min-width:1000px}
-}
 </style>
 
+<!-- HOW WE WORK — 5-step process -->
+<section style="background:var(--navy);padding:6rem 2.5rem;border-bottom:1px solid var(--bdd)">
+  <div style="max-width:1400px;margin:0 auto">
+    <div class="eyebrow" style="justify-content:flex-start;margin-bottom:.75rem">How We Work</div>
+    <h2 style="font-family:var(--ffc);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;text-transform:uppercase;color:#fff;line-height:1.1;margin-bottom:1rem;max-width:780px">One Partner To <span class="acc">Assess, Design, Deploy, Manage &amp; Optimize</span></h2>
+    <p style="font-size:14.5px;color:var(--muted);line-height:1.8;max-width:680px;margin-bottom:3rem">A proven process from first audit to fully managed, continuously improving technology — Racom at every step of the way.</p>
+
+    <div class="how-we-work-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px">
+      <!-- Step 1: Assess -->
+      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;overflow:hidden;transition:all .25s" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
+        <div style="padding:2rem 1.25rem 1.5rem;text-align:center;position:relative">
+          <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(74,144,217,.08),transparent 70%)"></div>
+          <div style="width:56px;height:56px;border-radius:50%;background:rgba(74,144,217,.12);border:1.5px solid rgba(74,144,217,.3);display:flex;align-items:center;justify-content:center;margin:0 auto;position:relative;z-index:1">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--blue3)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+          </div>
+        </div>
+        <div style="padding:0 1.5rem 1.5rem">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--blue3);text-transform:uppercase;margin-bottom:.5rem">1 | Assess</div>
+          <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Free Technology Assessment</h3>
+          <p style="font-size:12.5px;color:var(--muted);line-height:1.65;margin:0">We review your current environment — connectivity, security gaps, IT stack — and deliver a clear, prioritized roadmap at no cost.</p>
+        </div>
+      </div>
+      <!-- Step 2: Design -->
+      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;overflow:hidden;transition:all .25s" onmouseover="this.style.borderColor='rgba(0,188,212,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
+        <div style="padding:2rem 1.25rem 1.5rem;text-align:center;position:relative">
+          <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(0,188,212,.08),transparent 70%)"></div>
+          <div style="width:56px;height:56px;border-radius:50%;background:rgba(0,188,212,.1);border:1.5px solid rgba(0,188,212,.3);display:flex;align-items:center;justify-content:center;margin:0 auto;position:relative;z-index:1">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#22D3EE" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+          </div>
+        </div>
+        <div style="padding:0 1.5rem 1.5rem">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;color:#22D3EE;text-transform:uppercase;margin-bottom:.5rem">2 | Design</div>
+          <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Strategic Solution Design</h3>
+          <p style="font-size:12.5px;color:var(--muted);line-height:1.65;margin:0">We design a tailored technology stack using best-fit vendors aligned to your performance requirements, budget, and timeline.</p>
+        </div>
+      </div>
+      <!-- Step 3: Deploy -->
+      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;overflow:hidden;transition:all .25s" onmouseover="this.style.borderColor='rgba(91,174,245,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
+        <div style="padding:2rem 1.25rem 1.5rem;text-align:center;position:relative">
+          <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(91,174,245,.08),transparent 70%)"></div>
+          <div style="width:56px;height:56px;border-radius:50%;background:rgba(91,174,245,.1);border:1.5px solid rgba(91,174,245,.3);display:flex;align-items:center;justify-content:center;margin:0 auto;position:relative;z-index:1">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#5BAEF5" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+        </div>
+        <div style="padding:0 1.5rem 1.5rem">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;color:#5BAEF5;text-transform:uppercase;margin-bottom:.5rem">3 | Deploy</div>
+          <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Expert Implementation</h3>
+          <p style="font-size:12.5px;color:var(--muted);line-height:1.65;margin:0">Our certified engineers handle every aspect of deployment — provisioning circuits, installing hardware, migrating your cloud, and training your team.</p>
+        </div>
+      </div>
+      <!-- Step 4: Manage -->
+      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;overflow:hidden;transition:all .25s" onmouseover="this.style.borderColor='rgba(52,211,153,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
+        <div style="padding:2rem 1.25rem 1.5rem;text-align:center;position:relative">
+          <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(52,211,153,.08),transparent 70%)"></div>
+          <div style="width:56px;height:56px;border-radius:50%;background:rgba(52,211,153,.1);border:1.5px solid rgba(52,211,153,.3);display:flex;align-items:center;justify-content:center;margin:0 auto;position:relative;z-index:1">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#34D399" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+          </div>
+        </div>
+        <div style="padding:0 1.5rem 1.5rem">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;color:#34D399;text-transform:uppercase;margin-bottom:.5rem">4 | Manage</div>
+          <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Always-On Management</h3>
+          <p style="font-size:12.5px;color:var(--muted);line-height:1.65;margin:0">24/7 monitoring, AI-powered automation, and a dedicated account team — so you never have to worry about your technology again.</p>
+        </div>
+      </div>
+      <!-- Step 5: Optimize -->
+      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;overflow:hidden;transition:all .25s" onmouseover="this.style.borderColor='rgba(245,158,11,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
+        <div style="padding:2rem 1.25rem 1.5rem;text-align:center;position:relative">
+          <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(245,158,11,.08),transparent 70%)"></div>
+          <div style="width:56px;height:56px;border-radius:50%;background:rgba(245,158,11,.1);border:1.5px solid rgba(245,158,11,.3);display:flex;align-items:center;justify-content:center;margin:0 auto;position:relative;z-index:1">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#F59E0B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+          </div>
+        </div>
+        <div style="padding:0 1.5rem 1.5rem">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;color:#F59E0B;text-transform:uppercase;margin-bottom:.5rem">5 | Optimize</div>
+          <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Continuous Improvement</h3>
+          <p style="font-size:12.5px;color:var(--muted);line-height:1.65;margin:0">Quarterly business reviews, performance tuning, and proactive recommendations keep your stack ahead of your business as it grows.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@media(max-width:1100px){
+  .how-we-work-grid{grid-template-columns:repeat(3,1fr)!important}
+}
+@media(max-width:680px){
+  .how-we-work-grid{grid-template-columns:1fr!important}
+}
+</style>
 
 <!-- STATS PROOF SECTION -->
 <section style="background:var(--navy2);padding:6rem 3.5rem;border-bottom:1px solid var(--bdd)">
@@ -1635,119 +1715,66 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
   </div>
 </section>
 
-<!-- PAIN POINTS (Xtium-inspired: Today's IT Reality) -->
-<section style="background:var(--navy3);padding:6rem 2.5rem;border-top:1px solid var(--bdd);border-bottom:1px solid var(--bdd);position:relative;overflow:hidden">
-  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 100%,rgba(74,144,217,.06) 0%,transparent 60%);pointer-events:none"></div>
-  <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1">
-    <div style="text-align:center;margin-bottom:3.5rem">
-      <div class="eyebrow" style="justify-content:center;margin-bottom:.75rem">The Real Cost of Bad IT</div>
-      <h2 class="h2" style="text-align:center">Problems You Recognize<br><span class="acc">Because You've Lived Them</span></h2>
-      <p style="font-size:15px;color:var(--muted);max-width:620px;margin:1rem auto 0;line-height:1.8">Most businesses only discover their IT problems when they're already expensive. Here's what we see every day and fix in the first 90 days.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:4rem">
-      <!-- Pain 1: Complexity -->
-      <div style="background:var(--navy2);border:1px solid var(--bdd);border-top:2px solid var(--blue);border-radius:8px;padding:2rem;position:relative;overflow:hidden">
-        <div style="position:absolute;bottom:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(74,144,217,.06)"></div>
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:1rem">
-          <div style="width:48px;height:48px;border-radius:10px;background:rgba(74,144,217,.12);border:1px solid rgba(74,144,217,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue3)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
-          </div>
-          <h3 style="font-size:16px;font-weight:700;color:#fff;margin:0">Complexity Overload</h3>
-        </div>
-        <p style="font-size:14.5px;color:var(--muted);line-height:1.75">Disjointed platforms, cloud sprawl, and multiple vendors create inefficiencies that slow your team down and create budget waste.</p>
-      </div>
-      <!-- Pain 2: Security -->
-      <div style="background:var(--navy2);border:1px solid var(--bdd);border-top:2px solid rgba(167,139,250,.6);border-radius:8px;padding:2rem;position:relative;overflow:hidden">
-        <div style="position:absolute;bottom:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(167,139,250,.05)"></div>
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:1rem">
-          <div style="width:48px;height:48px;border-radius:10px;background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-          </div>
-          <h3 style="font-size:16px;font-weight:700;color:#fff;margin:0">Escalating Cyber Threats</h3>
-        </div>
-        <p style="font-size:14.5px;color:var(--muted);line-height:1.75">Ransomware, phishing, and compliance mandates are tightening every quarter. Your data, reputation, and operations are at stake 24/7.</p>
-      </div>
-      <!-- Pain 3: Resources -->
-      <div style="background:var(--navy2);border:1px solid var(--bdd);border-top:2px solid rgba(52,211,153,.5);border-radius:8px;padding:2rem;position:relative;overflow:hidden">
-        <div style="position:absolute;bottom:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(52,211,153,.05)"></div>
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:1rem">
-          <div style="width:48px;height:48px;border-radius:10px;background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-          </div>
-          <h3 style="font-size:16px;font-weight:700;color:#fff;margin:0">Stretched IT Teams</h3>
-        </div>
-        <p style="font-size:14.5px;color:var(--muted);line-height:1.75">Limited staff, shrinking budgets, and rising AI initiatives leave little room for innovation. 77% of organizations struggle to hire and retain skilled IT talent.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- SOLUTIONS -->
 <section style="background:var(--navy);padding:5rem 2.5rem;border-bottom:1px solid var(--bdd)">
-  <div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:300px 1fr;gap:4rem;align-items:center">
+  <div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:420px 1fr;gap:3.5rem;align-items:center">
     <!-- Left: headline -->
-    <div class="reveal">
+    <div class="reveal" style="max-width:420px">
       <div class="eyebrow" style="justify-content:flex-start;margin-bottom:.75rem">Our Solutions</div>
-      <h2 style="font-family:var(--ffc);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:900;text-transform:uppercase;color:#fff;line-height:1.08;margin-bottom:1.25rem">Comprehensive IT Solutions<br><span class="acc">Built Around Your Success</span></h2>
+      <h2 style="font-family:var(--ffc);font-size:clamp(1.7rem,2.6vw,2.2rem);font-weight:900;text-transform:uppercase;color:#fff;line-height:1.15;margin-bottom:1.25rem;white-space:normal">Comprehensive IT Solutions<br><span class="acc">Built Around Your Success</span></h2>
       <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:2rem">Racom delivers end-to-end managed IT, cybersecurity, cloud, and telecom solutions to keep your business secure, efficient, and ahead of the curve.</p>
       <a href="contact.html" class="btn-blue" style="font-size:13px;padding:12px 24px">Explore All Services →</a>
     </div>
     <!-- Right: service cards grid -->
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px" class="reveal">
-      <a href="it-security.html" style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.5rem;text-decoration:none;transition:all .25s;display:flex;flex-direction:column;gap:.75rem;position:relative;overflow:hidden" onmouseover="this.style.borderColor=&#39;rgba(74,144,217,.5)&#39;;this.style.transform=&#39;translateY(-4px)&#39;;this.style.background=&#39;var(--navy4)&#39;" onmouseout="this.style.borderColor=&#39;var(--bdd)&#39;;this.style.transform=&#39;none&#39;;this.style.background=&#39;var(--navy3)&#39;">
-        <div style="width:42px;height:42px;border-radius:8px;background:rgba(74,144,217,.12);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--blue3)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg>
+      <a href="it-security.html" style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;text-decoration:none;transition:all .25s;display:block;position:relative;overflow:hidden;min-height:260px" onmouseover="this.style.borderColor=&#39;rgba(74,144,217,.5)&#39;;this.style.transform=&#39;translateY(-4px)&#39;" onmouseout="this.style.borderColor=&#39;var(--bdd)&#39;;this.style.transform=&#39;none&#39;">
+        <img src="images/managed-it.jpg" alt="Managed IT Services" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,26,48,0) 35%,rgba(11,26,48,.65) 65%,rgba(11,26,48,.96) 100%);z-index:1"></div>
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:1.5rem;z-index:2">
+          <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Managed IT Services</div>
+          <p style="font-size:12px;color:rgba(255,255,255,.75);line-height:1.6;margin:0 0 .75rem">Proactive monitoring and support to keep your business running smoothly.</p>
+          <div style="font-size:11.5px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.05em">Learn More →</div>
         </div>
-        <div>
-          <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.35rem">Managed IT Services</div>
-          <p style="font-size:12px;color:var(--muted);line-height:1.6;margin:0">Proactive monitoring and support to keep your business running smoothly.</p>
+      </a>      <a href="https://racombusiness.github.io/racom-business-website/svc-backup.html" style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;text-decoration:none;transition:all .25s;display:block;position:relative;overflow:hidden;min-height:260px" onmouseover="this.style.borderColor=&#39;rgba(74,144,217,.5)&#39;;this.style.transform=&#39;translateY(-4px)&#39;" onmouseout="this.style.borderColor=&#39;var(--bdd)&#39;;this.style.transform=&#39;none&#39;">
+        <img src="images/cybersecurity.jpg" alt="Cybersecurity Solutions" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,26,48,0) 35%,rgba(11,26,48,.65) 65%,rgba(11,26,48,.96) 100%);z-index:1"></div>
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:1.5rem;z-index:2">
+          <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Cybersecurity Solutions</div>
+          <p style="font-size:12px;color:rgba(255,255,255,.75);line-height:1.6;margin:0 0 .75rem">Advanced protection to safeguard your systems, data, and reputation.</p>
+          <div style="font-size:11.5px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.05em">Learn More →</div>
         </div>
-        <div style="font-size:11.5px;font-weight:700;color:var(--blue3);text-transform:uppercase;letter-spacing:.05em;margin-top:auto">Learn More →</div>
-      </a>      <a href="https://racombusiness.github.io/racom-business-website/svc-backup.html" style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.5rem;text-decoration:none;transition:all .25s;display:flex;flex-direction:column;gap:.75rem;position:relative;overflow:hidden" onmouseover="this.style.borderColor=&#39;rgba(74,144,217,.5)&#39;;this.style.transform=&#39;translateY(-4px)&#39;;this.style.background=&#39;var(--navy4)&#39;" onmouseout="this.style.borderColor=&#39;var(--bdd)&#39;;this.style.transform=&#39;none&#39;;this.style.background=&#39;var(--navy3)&#39;">
-        <div style="width:42px;height:42px;border-radius:8px;background:rgba(74,144,217,.12);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--blue3)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      </a>      <a href="https://racombusiness.github.io/racom-business-website/svc-m365.html" style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;text-decoration:none;transition:all .25s;display:block;position:relative;overflow:hidden;min-height:260px" onmouseover="this.style.borderColor=&#39;rgba(74,144,217,.5)&#39;;this.style.transform=&#39;translateY(-4px)&#39;" onmouseout="this.style.borderColor=&#39;var(--bdd)&#39;;this.style.transform=&#39;none&#39;">
+        <img src="images/cloud.jpg" alt="Cloud Solutions" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,26,48,0) 35%,rgba(11,26,48,.65) 65%,rgba(11,26,48,.96) 100%);z-index:1"></div>
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:1.5rem;z-index:2">
+          <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Cloud Solutions</div>
+          <p style="font-size:12px;color:rgba(255,255,255,.75);line-height:1.6;margin:0 0 .75rem">Scalable, secure cloud solutions designed for performance.</p>
+          <div style="font-size:11.5px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.05em">Learn More →</div>
         </div>
-        <div>
-          <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.35rem">Cybersecurity Solutions</div>
-          <p style="font-size:12px;color:var(--muted);line-height:1.6;margin:0">Advanced protection to safeguard your systems, data, and reputation.</p>
+      </a>      <a href="connectivity.html" style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;text-decoration:none;transition:all .25s;display:block;position:relative;overflow:hidden;min-height:260px" onmouseover="this.style.borderColor=&#39;rgba(74,144,217,.5)&#39;;this.style.transform=&#39;translateY(-4px)&#39;" onmouseout="this.style.borderColor=&#39;var(--bdd)&#39;;this.style.transform=&#39;none&#39;">
+        <img src="images/telecom.jpg" alt="Telecom Optimization" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,26,48,0) 35%,rgba(11,26,48,.65) 65%,rgba(11,26,48,.96) 100%);z-index:1"></div>
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:1.5rem;z-index:2">
+          <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Telecom Optimization</div>
+          <p style="font-size:12px;color:rgba(255,255,255,.75);line-height:1.6;margin:0 0 .75rem">Reduce costs and improve connectivity with our telecom expertise.</p>
+          <div style="font-size:11.5px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.05em">Learn More →</div>
         </div>
-        <div style="font-size:11.5px;font-weight:700;color:var(--blue3);text-transform:uppercase;letter-spacing:.05em;margin-top:auto">Learn More →</div>
-      </a>      <a href="https://racombusiness.github.io/racom-business-website/svc-m365.html" style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.5rem;text-decoration:none;transition:all .25s;display:flex;flex-direction:column;gap:.75rem;position:relative;overflow:hidden" onmouseover="this.style.borderColor=&#39;rgba(74,144,217,.5)&#39;;this.style.transform=&#39;translateY(-4px)&#39;;this.style.background=&#39;var(--navy4)&#39;" onmouseout="this.style.borderColor=&#39;var(--bdd)&#39;;this.style.transform=&#39;none&#39;;this.style.background=&#39;var(--navy3)&#39;">
-        <div style="width:42px;height:42px;border-radius:8px;background:rgba(74,144,217,.12);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--blue3)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+      </a>      <a href="it-security.html" style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;text-decoration:none;transition:all .25s;display:block;position:relative;overflow:hidden;min-height:260px" onmouseover="this.style.borderColor=&#39;rgba(74,144,217,.5)&#39;;this.style.transform=&#39;translateY(-4px)&#39;" onmouseout="this.style.borderColor=&#39;var(--bdd)&#39;;this.style.transform=&#39;none&#39;">
+        <img src="images/it-strategy.jpg" alt="IT Strategy &amp; Consulting" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,26,48,0) 35%,rgba(11,26,48,.65) 65%,rgba(11,26,48,.96) 100%);z-index:1"></div>
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:1.5rem;z-index:2">
+          <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">IT Strategy &amp; Consulting</div>
+          <p style="font-size:12px;color:rgba(255,255,255,.75);line-height:1.6;margin:0 0 .75rem">Strategic guidance to align your IT with business goals.</p>
+          <div style="font-size:11.5px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.05em">Learn More →</div>
         </div>
-        <div>
-          <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.35rem">Cloud Solutions</div>
-          <p style="font-size:12px;color:var(--muted);line-height:1.6;margin:0">Scalable, secure cloud solutions designed for performance.</p>
+      </a>      <a href="hardware.html" style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;text-decoration:none;transition:all .25s;display:block;position:relative;overflow:hidden;min-height:260px" onmouseover="this.style.borderColor=&#39;rgba(74,144,217,.5)&#39;;this.style.transform=&#39;translateY(-4px)&#39;" onmouseout="this.style.borderColor=&#39;var(--bdd)&#39;;this.style.transform=&#39;none&#39;">
+        <img src="images/hardware.jpg" alt="Hardware &amp; Procurement" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,26,48,0) 35%,rgba(11,26,48,.65) 65%,rgba(11,26,48,.96) 100%);z-index:1"></div>
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:1.5rem;z-index:2">
+          <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Hardware &amp; Procurement</div>
+          <p style="font-size:12px;color:rgba(255,255,255,.75);line-height:1.6;margin:0 0 .75rem">Source, configure, and deploy the right equipment for your environment.</p>
+          <div style="font-size:11.5px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.05em">Learn More →</div>
         </div>
-        <div style="font-size:11.5px;font-weight:700;color:var(--blue3);text-transform:uppercase;letter-spacing:.05em;margin-top:auto">Learn More →</div>
-      </a>      <a href="connectivity.html" style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.5rem;text-decoration:none;transition:all .25s;display:flex;flex-direction:column;gap:.75rem;position:relative;overflow:hidden" onmouseover="this.style.borderColor=&#39;rgba(74,144,217,.5)&#39;;this.style.transform=&#39;translateY(-4px)&#39;;this.style.background=&#39;var(--navy4)&#39;" onmouseout="this.style.borderColor=&#39;var(--bdd)&#39;;this.style.transform=&#39;none&#39;;this.style.background=&#39;var(--navy3)&#39;">
-        <div style="width:42px;height:42px;border-radius:8px;background:rgba(74,144,217,.12);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--blue3)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"></path></svg>
-        </div>
-        <div>
-          <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.35rem">Telecom Optimization</div>
-          <p style="font-size:12px;color:var(--muted);line-height:1.6;margin:0">Reduce costs and improve connectivity with our telecom expertise.</p>
-        </div>
-        <div style="font-size:11.5px;font-weight:700;color:var(--blue3);text-transform:uppercase;letter-spacing:.05em;margin-top:auto">Learn More →</div>
-      </a>      <a href="it-security.html" style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.5rem;text-decoration:none;transition:all .25s;display:flex;flex-direction:column;gap:.75rem;position:relative;overflow:hidden" onmouseover="this.style.borderColor=&#39;rgba(74,144,217,.5)&#39;;this.style.transform=&#39;translateY(-4px)&#39;;this.style.background=&#39;var(--navy4)&#39;" onmouseout="this.style.borderColor=&#39;var(--bdd)&#39;;this.style.transform=&#39;none&#39;;this.style.background=&#39;var(--navy3)&#39;">
-        <div style="width:42px;height:42px;border-radius:8px;background:rgba(74,144,217,.12);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--blue3)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-        </div>
-        <div>
-          <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.35rem">IT Strategy &amp; Consulting</div>
-          <p style="font-size:12px;color:var(--muted);line-height:1.6;margin:0">Strategic guidance to align your IT with business goals.</p>
-        </div>
-        <div style="font-size:11.5px;font-weight:700;color:var(--blue3);text-transform:uppercase;letter-spacing:.05em;margin-top:auto">Learn More →</div>
-      </a>      <a href="hardware.html" style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.5rem;text-decoration:none;transition:all .25s;display:flex;flex-direction:column;gap:.75rem;position:relative;overflow:hidden" onmouseover="this.style.borderColor=&#39;rgba(74,144,217,.5)&#39;;this.style.transform=&#39;translateY(-4px)&#39;;this.style.background=&#39;var(--navy4)&#39;" onmouseout="this.style.borderColor=&#39;var(--bdd)&#39;;this.style.transform=&#39;none&#39;;this.style.background=&#39;var(--navy3)&#39;">
-        <div style="width:42px;height:42px;border-radius:8px;background:rgba(74,144,217,.12);border:1px solid rgba(74,144,217,.2);display:flex;align-items:center;justify-content:center">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--blue3)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"></rect><rect x="2" y="14" width="20" height="8" rx="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
-        </div>
-        <div>
-          <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:.35rem">Hardware &amp; Procurement</div>
-          <p style="font-size:12px;color:var(--muted);line-height:1.6;margin:0">Source, configure, and deploy the right equipment for your environment.</p>
-        </div>
-        <div style="font-size:11.5px;font-weight:700;color:var(--blue3);text-transform:uppercase;letter-spacing:.05em;margin-top:auto">Learn More →</div>
       </a>
     </div>
   </div>
@@ -1767,13 +1794,12 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
   <div class="rev-scroll-wrap" style="overflow:hidden;width:100%;position:relative">
     <div style="position:absolute;top:0;left:0;width:120px;height:100%;background:linear-gradient(to right,var(--navy2),transparent);z-index:2;pointer-events:none"></div>
     <div style="position:absolute;top:0;right:0;width:120px;height:100%;background:linear-gradient(to left,var(--navy2),transparent);z-index:2;pointer-events:none"></div>
-    <div class="rev-scroll-track" id="revScrollTrack" style="display:flex;gap:20px;width:max-content;animation:revScroll 55s linear infinite">
+    <div class="rev-scroll-track" id="revScrollTrack" style="display:flex;gap:20px;width:max-content;animation:revScroll 70s ease-in-out infinite">
 
       <div class="rsc" style="flex:0 0 360px;background:var(--navy3);border:1px solid var(--bdd);border-radius:12px;padding:1.75rem;display:flex;flex-direction:column;gap:0">
         <div style="color:#F59E0B;font-size:11px;letter-spacing:2px;margin-bottom:.75rem">★★★★★</div>
         <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.8;font-style:italic;flex:1;margin:0 0 1.1rem">"We had six vendors — internet, phones, IT support, the whole thing — and none of them ever talked to each other. Racom put it all under one roof. Our telecom bill dropped 38% in the first three months. Honestly should have done this years ago."</p>
         <div style="display:flex;align-items:center;gap:10px;padding-top:.85rem;border-top:1px solid var(--bdd)">
-          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--navy4));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:.9rem;flex-shrink:0">R</div>
           <div><div style="font-size:12.5px;font-weight:700;color:#fff">Rachel M.</div><div style="font-size:10.5px;color:var(--muted2)">IT Director · Regional Healthcare, 12 Locations</div></div>
         </div>
       </div>
@@ -1782,7 +1808,6 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
         <div style="color:#F59E0B;font-size:11px;letter-spacing:2px;margin-bottom:.75rem">★★★★★</div>
         <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.8;font-style:italic;flex:1;margin:0 0 1.1rem">"We got hit with ransomware right after an acquisition. Racom had EDR on every endpoint and SOC monitoring live within three weeks. We never lost a file. The speed and professionalism were something else."</p>
         <div style="display:flex;align-items:center;gap:10px;padding-top:.85rem;border-top:1px solid var(--bdd)">
-          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--blue2));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:.9rem;flex-shrink:0">D</div>
           <div><div style="font-size:12.5px;font-weight:700;color:#fff">Daniel W.</div><div style="font-size:10.5px;color:var(--muted2)">CFO · Commercial Real Estate Firm, 85 Employees</div></div>
         </div>
       </div>
@@ -1791,7 +1816,6 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
         <div style="color:#F59E0B;font-size:11px;letter-spacing:2px;margin-bottom:.75rem">★★★★★</div>
         <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.8;font-style:italic;flex:1;margin:0 0 1.1rem">"Our old MSP's idea of urgency was a 48-hour ticket. Our attorneys bill by the hour. Racom actually picks up the phone. 14 months in and I've never had to follow up on a ticket twice."</p>
         <div style="display:flex;align-items:center;gap:10px;padding-top:.85rem;border-top:1px solid var(--bdd)">
-          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#A78BFA,var(--navy4));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:.9rem;flex-shrink:0">T</div>
           <div><div style="font-size:12.5px;font-weight:700;color:#fff">Theresa K.</div><div style="font-size:10.5px;color:var(--muted2)">Operations Manager · Regional Law Firm, 60 Attorneys</div></div>
         </div>
       </div>
@@ -1800,7 +1824,6 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
         <div style="color:#F59E0B;font-size:11px;letter-spacing:2px;margin-bottom:.75rem">★★★★★</div>
         <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.8;font-style:italic;flex:1;margin:0 0 1.1rem">"Their free assessment found open RDP ports, unpatched servers, and a VoIP bill that was 40% overpriced — things our previous IT company never flagged. We fixed all three before signing anything. Rare level of transparency."</p>
         <div style="display:flex;align-items:center;gap:10px;padding-top:.85rem;border-top:1px solid var(--bdd)">
-          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#34D399,var(--navy5));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:.9rem;flex-shrink:0">M</div>
           <div><div style="font-size:12.5px;font-weight:700;color:#fff">Marcus O.</div><div style="font-size:10.5px;color:var(--muted2)">VP of Operations · Logistics Company, 3 Warehouses</div></div>
         </div>
       </div>
@@ -1809,7 +1832,6 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
         <div style="color:#F59E0B;font-size:11px;letter-spacing:2px;margin-bottom:.75rem">★★★★★</div>
         <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.8;font-style:italic;flex:1;margin:0 0 1.1rem">"We migrated 220 users across four offices to RingCentral through Racom. Not a single dropped call during the cutover. I was skeptical but the project management was genuinely tight."</p>
         <div style="display:flex;align-items:center;gap:10px;padding-top:.85rem;border-top:1px solid var(--bdd)">
-          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--blue2));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:.9rem;flex-shrink:0">J</div>
           <div><div style="font-size:12.5px;font-weight:700;color:#fff">Jennifer L.</div><div style="font-size:10.5px;color:var(--muted2)">Director of IT · Staffing Firm, 4 Offices</div></div>
         </div>
       </div>
@@ -1818,7 +1840,6 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
         <div style="color:#F59E0B;font-size:11px;letter-spacing:2px;margin-bottom:.75rem">★★★★★</div>
         <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.8;font-style:italic;flex:1;margin:0 0 1.1rem">"I'm a small business owner — just 12 people. I thought Racom would be too enterprise for us. They weren't. They right-sized everything, didn't oversell us, and I finally feel like I have a real IT department."</p>
         <div style="display:flex;align-items:center;gap:10px;padding-top:.85rem;border-top:1px solid var(--bdd)">
-          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#F59E0B,var(--navy4));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:.9rem;flex-shrink:0">S</div>
           <div><div style="font-size:12.5px;font-weight:700;color:#fff">Sandra T.</div><div style="font-size:10.5px;color:var(--muted2)">Owner · Boutique Financial Advisory, 12 Staff</div></div>
         </div>
       </div>
@@ -1827,7 +1848,6 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
         <div style="color:#F59E0B;font-size:11px;letter-spacing:2px;margin-bottom:.75rem">★★★★★</div>
         <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.8;font-style:italic;flex:1;margin:0 0 1.1rem">"Our HIPAA and SOC 2 requirements are intense. Racom handled all of it without hand-holding. They came in already knowing the regulatory landscape, not learning it on our dime."</p>
         <div style="display:flex;align-items:center;gap:10px;padding-top:.85rem;border-top:1px solid var(--bdd)">
-          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#60A5FA,var(--navy5));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:.9rem;flex-shrink:0">K</div>
           <div><div style="font-size:12.5px;font-weight:700;color:#fff">Kevin R.</div><div style="font-size:10.5px;color:var(--muted2)">COO · Multi-Site Medical Group, 8 Clinics</div></div>
         </div>
       </div>
@@ -1836,7 +1856,6 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
         <div style="color:#F59E0B;font-size:11px;letter-spacing:2px;margin-bottom:.75rem">★★★★★</div>
         <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.8;font-style:italic;flex:1;margin:0 0 1.1rem">"We were paying three companies for internet, phone, and managed IT separately. Racom consolidated it and we're saving $2,400 a month. That's not a made-up number — I can show you the invoices."</p>
         <div style="display:flex;align-items:center;gap:10px;padding-top:.85rem;border-top:1px solid var(--bdd)">
-          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--teal2),var(--navy4));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:.9rem;flex-shrink:0">A</div>
           <div><div style="font-size:12.5px;font-weight:700;color:#fff">Angela B.</div><div style="font-size:10.5px;color:var(--muted2)">Controller · Manufacturing Company, 180 Employees</div></div>
         </div>
       </div>
@@ -1845,7 +1864,6 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
         <div style="color:#F59E0B;font-size:11px;letter-spacing:2px;margin-bottom:.75rem">★★★★★</div>
         <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.8;font-style:italic;flex:1;margin:0 0 1.1rem">"Outage at 11pm on a Friday. I called expecting voicemail. Someone picked up, had remote access in 8 minutes, back online by midnight. That's when I knew we made the right call switching over."</p>
         <div style="display:flex;align-items:center;gap:10px;padding-top:.85rem;border-top:1px solid var(--bdd)">
-          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#A78BFA,var(--blue2));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:.9rem;flex-shrink:0">B</div>
           <div><div style="font-size:12.5px;font-weight:700;color:#fff">Brian C.</div><div style="font-size:10.5px;color:var(--muted2)">IT Manager · Commercial Insurance Firm, 55 Staff</div></div>
         </div>
       </div>
@@ -1854,7 +1872,6 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
         <div style="color:#F59E0B;font-size:11px;letter-spacing:2px;margin-bottom:.75rem">★★★★★</div>
         <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.8;font-style:italic;flex:1;margin:0 0 1.1rem">"We've tried three MSPs in six years. The others started strong and got complacent. Racom has been consistent — same quality at month one as month eighteen. The account manager actually knows our environment."</p>
         <div style="display:flex;align-items:center;gap:10px;padding-top:.85rem;border-top:1px solid var(--bdd)">
-          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#34D399,var(--blue));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:.9rem;flex-shrink:0">N</div>
           <div><div style="font-size:12.5px;font-weight:700;color:#fff">Nicole F.</div><div style="font-size:10.5px;color:var(--muted2)">VP Technology · Regional Retail Chain, 24 Locations</div></div>
         </div>
       </div>
@@ -1863,7 +1880,6 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
         <div style="color:#F59E0B;font-size:11px;letter-spacing:2px;margin-bottom:.75rem">★★★★★</div>
         <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.8;font-style:italic;flex:1;margin:0 0 1.1rem">"I wasn't sure about switching IT providers mid-year, but Racom made the transition completely painless. Zero downtime, zero data issues, and our team barely noticed the change — which is exactly what you want."</p>
         <div style="display:flex;align-items:center;gap:10px;padding-top:.85rem;border-top:1px solid var(--bdd)">
-          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--blue3),var(--navy4));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:.9rem;flex-shrink:0">P</div>
           <div><div style="font-size:12.5px;font-weight:700;color:#fff">Patrick H.</div><div style="font-size:10.5px;color:var(--muted2)">COO · Regional Distribution Co., 200+ Employees</div></div>
         </div>
       </div>
@@ -1872,7 +1888,6 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
         <div style="color:#F59E0B;font-size:11px;letter-spacing:2px;margin-bottom:.75rem">★★★★★</div>
         <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.8;font-style:italic;flex:1;margin:0 0 1.1rem">"Our internet was constantly going down during business hours. Previous provider kept blaming it on 'congestion.' Racom switched us to a dedicated line, and we haven't had an outage since. Problem was obvious to them immediately."</p>
         <div style="display:flex;align-items:center;gap:10px;padding-top:.85rem;border-top:1px solid var(--bdd)">
-          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#F59E0B,var(--blue2));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:.9rem;flex-shrink:0">C</div>
           <div><div style="font-size:12.5px;font-weight:700;color:#fff">Christine V.</div><div style="font-size:10.5px;color:var(--muted2)">Office Manager · Architecture Firm, 45 Staff</div></div>
         </div>
       </div>
@@ -1881,7 +1896,6 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
         <div style="color:#F59E0B;font-size:11px;letter-spacing:2px;margin-bottom:.75rem">★★★★★</div>
         <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.8;font-style:italic;flex:1;margin:0 0 1.1rem">"We hired Racom because we needed someone who understood both telecom and IT — not two separate vendors pointing fingers at each other. That's exactly what they delivered. One call, one answer."</p>
         <div style="display:flex;align-items:center;gap:10px;padding-top:.85rem;border-top:1px solid var(--bdd)">
-          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--navy5));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:.9rem;flex-shrink:0">G</div>
           <div><div style="font-size:12.5px;font-weight:700;color:#fff">Greg T.</div><div style="font-size:10.5px;color:var(--muted2)">CTO · SaaS Startup, 70 Employees</div></div>
         </div>
       </div>
@@ -1890,7 +1904,6 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
         <div style="color:#F59E0B;font-size:11px;letter-spacing:2px;margin-bottom:.75rem">★★★★★</div>
         <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.8;font-style:italic;flex:1;margin:0 0 1.1rem">"We expanded from two locations to five in 18 months. Racom scaled with us every step — new circuits, new VoIP seats, new endpoints. Never felt like we were outgrowing them."</p>
         <div style="display:flex;align-items:center;gap:10px;padding-top:.85rem;border-top:1px solid var(--bdd)">
-          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#60A5FA,var(--blue));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:.9rem;flex-shrink:0">L</div>
           <div><div style="font-size:12.5px;font-weight:700;color:#fff">Laura M.</div><div style="font-size:10.5px;color:var(--muted2)">President · Franchise Group, 5 Locations</div></div>
         </div>
       </div>
@@ -1899,7 +1912,6 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
         <div style="color:#F59E0B;font-size:11px;letter-spacing:2px;margin-bottom:.75rem">★★★★★</div>
         <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.8;font-style:italic;flex:1;margin:0 0 1.1rem">"The quarterly business reviews Racom runs with us are something I didn't know I needed. They come in with data on our environment and flag things before they become problems. That's a different level of service."</p>
         <div style="display:flex;align-items:center;gap:10px;padding-top:.85rem;border-top:1px solid var(--bdd)">
-          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#A78BFA,var(--teal));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:.9rem;flex-shrink:0">E</div>
           <div><div style="font-size:12.5px;font-weight:700;color:#fff">Evan S.</div><div style="font-size:10.5px;color:var(--muted2)">CFO · Professional Services Firm, 110 Employees</div></div>
         </div>
       </div>
@@ -1909,7 +1921,6 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
         <div style="color:#F59E0B;font-size:11px;letter-spacing:2px;margin-bottom:.75rem">★★★★★</div>
         <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.8;font-style:italic;flex:1;margin:0 0 1.1rem">"We had six vendors — internet, phones, IT support, the whole thing — and none of them ever talked to each other. Racom put it all under one roof. Our telecom bill dropped 38% in the first three months. Honestly should have done this years ago."</p>
         <div style="display:flex;align-items:center;gap:10px;padding-top:.85rem;border-top:1px solid var(--bdd)">
-          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--navy4));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:.9rem;flex-shrink:0">R</div>
           <div><div style="font-size:12.5px;font-weight:700;color:#fff">Rachel M.</div><div style="font-size:10.5px;color:var(--muted2)">IT Director · Regional Healthcare, 12 Locations</div></div>
         </div>
       </div>
@@ -1917,7 +1928,6 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
         <div style="color:#F59E0B;font-size:11px;letter-spacing:2px;margin-bottom:.75rem">★★★★★</div>
         <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.8;font-style:italic;flex:1;margin:0 0 1.1rem">"We got hit with ransomware right after an acquisition. Racom had EDR on every endpoint and SOC monitoring live within three weeks. We never lost a file. The speed and professionalism were something else."</p>
         <div style="display:flex;align-items:center;gap:10px;padding-top:.85rem;border-top:1px solid var(--bdd)">
-          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--blue2));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:.9rem;flex-shrink:0">D</div>
           <div><div style="font-size:12.5px;font-weight:700;color:#fff">Daniel W.</div><div style="font-size:10.5px;color:var(--muted2)">CFO · Commercial Real Estate Firm, 85 Employees</div></div>
         </div>
       </div>
@@ -1925,7 +1935,6 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
         <div style="color:#F59E0B;font-size:11px;letter-spacing:2px;margin-bottom:.75rem">★★★★★</div>
         <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.8;font-style:italic;flex:1;margin:0 0 1.1rem">"Our old MSP's idea of urgency was a 48-hour ticket. Our attorneys bill by the hour. Racom actually picks up the phone. 14 months in and I've never had to follow up on a ticket twice."</p>
         <div style="display:flex;align-items:center;gap:10px;padding-top:.85rem;border-top:1px solid var(--bdd)">
-          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#A78BFA,var(--navy4));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:.9rem;flex-shrink:0">T</div>
           <div><div style="font-size:12.5px;font-weight:700;color:#fff">Theresa K.</div><div style="font-size:10.5px;color:var(--muted2)">Operations Manager · Regional Law Firm, 60 Attorneys</div></div>
         </div>
       </div>
@@ -1933,7 +1942,6 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
         <div style="color:#F59E0B;font-size:11px;letter-spacing:2px;margin-bottom:.75rem">★★★★★</div>
         <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.8;font-style:italic;flex:1;margin:0 0 1.1rem">"Their free assessment found open RDP ports, unpatched servers, and a VoIP bill that was 40% overpriced. We fixed all three before signing anything. Rare level of transparency."</p>
         <div style="display:flex;align-items:center;gap:10px;padding-top:.85rem;border-top:1px solid var(--bdd)">
-          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#34D399,var(--navy5));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:.9rem;flex-shrink:0">M</div>
           <div><div style="font-size:12.5px;font-weight:700;color:#fff">Marcus O.</div><div style="font-size:10.5px;color:var(--muted2)">VP of Operations · Logistics Company, 3 Warehouses</div></div>
         </div>
       </div>
@@ -1941,7 +1949,6 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
         <div style="color:#F59E0B;font-size:11px;letter-spacing:2px;margin-bottom:.75rem">★★★★★</div>
         <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.8;font-style:italic;flex:1;margin:0 0 1.1rem">"We migrated 220 users across four offices to RingCentral. Not a single dropped call during the cutover. I was skeptical but the project management was genuinely tight."</p>
         <div style="display:flex;align-items:center;gap:10px;padding-top:.85rem;border-top:1px solid var(--bdd)">
-          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--blue2));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:.9rem;flex-shrink:0">J</div>
           <div><div style="font-size:12.5px;font-weight:700;color:#fff">Jennifer L.</div><div style="font-size:10.5px;color:var(--muted2)">Director of IT · Staffing Firm, 4 Offices</div></div>
         </div>
       </div>
