@@ -169,6 +169,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(6,14,28,0.97);backdrop-fil
 .hpulse{width:6px;height:6px;border-radius:50%;background:var(--blue3);animation:pp 2s infinite}
 @keyframes pp{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
 .hero h1{font-family:var(--ffc);font-size:clamp(2.8rem,5.5vw,5.2rem);font-weight:900;line-height:.93;letter-spacing:-.025em;color:#fff;text-transform:uppercase;margin-bottom:1.5rem}
+.hero h1 .h1-line1{white-space:nowrap}
 .hero h1 .c1{color:var(--blue3)}
 .hero h1 .c2{
   color:transparent;
@@ -896,6 +897,7 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
   }
   .hero-panel{display:none!important}
   .hero h1{font-size:clamp(1.9rem,8vw,2.6rem)!important;line-height:1.05!important}
+  .hero h1 .h1-line1{white-space:normal!important}
   .hero-desc{font-size:15px!important;line-height:1.75!important}
   .hero-btns{
     flex-direction:column!important;gap:10px!important;
@@ -1383,7 +1385,7 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
   </div>
 
   <div class="nav-right">
-    <a href="check-providers.html" class="btn-blue" style="padding:9px 18px;font-size:11.5px">Check Providers In Your Area</a>
+    <a href="check-providers.html" class="btn-blue" style="padding:9px 18px;font-size:11.5px">Check Internet Providers In Your Area</a>
   </div>
 
   <button class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
@@ -1408,7 +1410,7 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
     <div class="hero-inner">
       <div class="hero-copy">
         <div class="hero-badge"><div class="hpulse"></div>US-Based Support &nbsp;·&nbsp; 200+ Carriers &nbsp;·&nbsp; One Partner</div>
-        <h1>Stop IT Downtime,<br><span class="c1">Security Risks,</span><br><span class="c2">&amp; Wasted Spending.</span></h1>
+        <h1><span class="h1-line1">Stop IT Downtime,</span><br><span class="c1">Security Risks,</span><br><span class="c2">&amp; Wasted Spending.</span></h1>
         <p class="hero-desc">Racom manages your entire technology stack: IT, cybersecurity, cloud, and telecom, so your business runs faster, safer, and at a lower cost. <strong>We don't just support your IT. We run it.</strong></p>
         <div class="hero-btns">
           <a href="contact.html" class="btn-blue" style="padding:15px 32px;font-size:14px">Get Your Free IT Risk Assessment</a>
