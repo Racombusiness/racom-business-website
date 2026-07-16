@@ -1399,9 +1399,8 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
 <section class="hero">
   <!-- Background Video -->
   <div class="hero-video-wrap">
-    <video autoplay="" muted="" loop="" playsinline="" poster="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1400&amp;q=80">
-      <source src="https://assets.mixkit.co/videos/preview/mixkit-server-room-with-a-lot-of-hardware-23282-large.mp4" type="video/mp4">
-      <source src="https://assets.mixkit.co/videos/23282/23282-720.mp4" type="video/mp4">
+    <video autoplay="" muted="" loop="" playsinline="" preload="auto" poster="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1400&amp;q=80">
+      <source src="videos/hero.mp4" type="video/mp4">
     </video>
     <div class="hero-video-overlay"></div>
   </div>
@@ -1602,94 +1601,83 @@ nav,nav *,.topbar,.topbar *,.nav-menu,.nav-menu *,.nl,.nt,.mega,.mega *,.mc,.mc 
 .stmt-text h2{margin-bottom:1.25rem}
 </style>
 
-<!-- HOW WE WORK — 5-step process -->
+<!-- HOW WE WORK — photo card style -->
 <section style="background:var(--navy);padding:6rem 2.5rem;border-bottom:1px solid var(--bdd)">
-  <div style="max-width:1400px;margin:0 auto">
+  <div style="max-width:1300px;margin:0 auto">
     <div class="eyebrow" style="justify-content:flex-start;margin-bottom:.75rem">How We Work</div>
-    <h2 style="font-family:var(--ffc);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:1rem;max-width:780px">One Partner To <span class="acc">Assess, Design, Deploy, Manage &amp; Optimize</span></h2>
-    <p style="font-size:14.5px;color:var(--muted);line-height:1.8;max-width:680px;margin-bottom:3rem">A proven process from first audit to fully managed, continuously improving technology — Racom at every step of the way.</p>
+    <h2 style="font-family:var(--ffc);font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:#fff;line-height:1.05;margin-bottom:.75rem">From Start to Finish.<br><span class="acc">We've Got You Covered.</span></h2>
+    <p style="font-size:15px;color:var(--muted);line-height:1.8;max-width:620px;margin-bottom:3.5rem">A seamless, end-to-end process that delivers secure, reliable, and optimized technology solutions for your business.</p>
 
-    <div class="how-we-work-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px">
-      <!-- Step 1: Assess -->
-      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;overflow:hidden;transition:all .25s" onmouseover="this.style.borderColor='rgba(74,144,217,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
-        <div style="padding:2rem 1.25rem 1.5rem;text-align:center;position:relative">
-          <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(74,144,217,.08),transparent 70%)"></div>
-          <div style="width:56px;height:56px;border-radius:50%;background:rgba(74,144,217,.12);border:1.5px solid rgba(74,144,217,.3);display:flex;align-items:center;justify-content:center;margin:0 auto;position:relative;z-index:1">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--blue3)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+    <div class="hww-grid">
+
+      <!-- Card 1: Assess & Design -->
+      <div class="hww-card" style="position:relative">
+        <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:14px;overflow:hidden;height:100%;display:flex;flex-direction:column;transition:transform .25s" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='none'">
+          <div style="position:relative;height:240px;overflow:hidden;flex-shrink:0">
+            <img src="images/hww-assess.jpg" alt="Consultants assessing a client's technology environment" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          </div>
+          <div style="padding:1.75rem 1.75rem 2rem;flex:1;display:flex;flex-direction:column">
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:1rem">
+              <div style="width:48px;height:48px;border-radius:50%;background:rgba(74,144,217,.15);border:1.5px solid rgba(74,144,217,.35);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--blue3)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              </div>
+              <h3 style="font-size:19px;font-weight:700;color:#fff;line-height:1.2">Assess &amp; <span class="acc">Design</span></h3>
+            </div>
+            <p style="font-size:13.5px;color:var(--muted);line-height:1.75;margin:0">We start by understanding your business, goals, and challenges. Our experts assess your environment and design a tailored technology roadmap built for performance, security, and scalability.</p>
           </div>
         </div>
-        <div style="padding:0 1.5rem 1.5rem">
-          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--blue3);text-transform:uppercase;margin-bottom:.5rem">1 | Assess</div>
-          <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Free Technology Assessment</h3>
-          <p style="font-size:12.5px;color:var(--muted);line-height:1.65;margin:0">We review your current environment — connectivity, security gaps, IT stack — and deliver a clear, prioritized roadmap at no cost.</p>
+        <div class="hww-arrow" style="position:absolute;top:50%;right:-24px;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:var(--navy2);border:1px solid var(--bdd);display:flex;align-items:center;justify-content:center;z-index:5">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </div>
       </div>
-      <!-- Step 2: Design -->
-      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;overflow:hidden;transition:all .25s" onmouseover="this.style.borderColor='rgba(0,188,212,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
-        <div style="padding:2rem 1.25rem 1.5rem;text-align:center;position:relative">
-          <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(0,188,212,.08),transparent 70%)"></div>
-          <div style="width:56px;height:56px;border-radius:50%;background:rgba(0,188,212,.1);border:1.5px solid rgba(0,188,212,.3);display:flex;align-items:center;justify-content:center;margin:0 auto;position:relative;z-index:1">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#22D3EE" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+
+      <!-- Card 2: Deploy & Manage -->
+      <div class="hww-card" style="position:relative">
+        <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:14px;overflow:hidden;height:100%;display:flex;flex-direction:column;transition:transform .25s" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='none'">
+          <div style="position:relative;height:240px;overflow:hidden;flex-shrink:0">
+            <img src="images/hww-deploy.jpg" alt="Engineer deploying equipment in a server room" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          </div>
+          <div style="padding:1.75rem 1.75rem 2rem;flex:1;display:flex;flex-direction:column">
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:1rem">
+              <div style="width:48px;height:48px;border-radius:50%;background:rgba(74,144,217,.15);border:1.5px solid rgba(74,144,217,.35);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--blue3)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+              </div>
+              <h3 style="font-size:19px;font-weight:700;color:#fff;line-height:1.2">Deploy &amp; <span class="acc">Manage</span></h3>
+            </div>
+            <p style="font-size:13.5px;color:var(--muted);line-height:1.75;margin:0">We implement your solution with precision and manage it around the clock. Our team ensures your systems run smoothly, securely, and efficiently so you can focus on what you do best.</p>
           </div>
         </div>
-        <div style="padding:0 1.5rem 1.5rem">
-          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;color:#22D3EE;text-transform:uppercase;margin-bottom:.5rem">2 | Design</div>
-          <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Strategic Solution Design</h3>
-          <p style="font-size:12.5px;color:var(--muted);line-height:1.65;margin:0">We design a tailored technology stack using best-fit vendors aligned to your performance requirements, budget, and timeline.</p>
+        <div class="hww-arrow" style="position:absolute;top:50%;right:-24px;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:var(--navy2);border:1px solid var(--bdd);display:flex;align-items:center;justify-content:center;z-index:5">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </div>
       </div>
-      <!-- Step 3: Deploy -->
-      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;overflow:hidden;transition:all .25s" onmouseover="this.style.borderColor='rgba(91,174,245,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
-        <div style="padding:2rem 1.25rem 1.5rem;text-align:center;position:relative">
-          <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(91,174,245,.08),transparent 70%)"></div>
-          <div style="width:56px;height:56px;border-radius:50%;background:rgba(91,174,245,.1);border:1.5px solid rgba(91,174,245,.3);display:flex;align-items:center;justify-content:center;margin:0 auto;position:relative;z-index:1">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#5BAEF5" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+
+      <!-- Card 3: Optimize & Evolve -->
+      <div class="hww-card" style="position:relative">
+        <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:14px;overflow:hidden;height:100%;display:flex;flex-direction:column;transition:transform .25s" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='none'">
+          <div style="position:relative;height:240px;overflow:hidden;flex-shrink:0">
+            <img src="images/hww-optimize.jpg" alt="Technician monitoring systems across multiple screens" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          </div>
+          <div style="padding:1.75rem 1.75rem 2rem;flex:1;display:flex;flex-direction:column">
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:1rem">
+              <div style="width:48px;height:48px;border-radius:50%;background:rgba(74,144,217,.15);border:1.5px solid rgba(74,144,217,.35);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--blue3)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              </div>
+              <h3 style="font-size:19px;font-weight:700;color:#fff;line-height:1.2">Optimize &amp; <span class="acc">Evolve</span></h3>
+            </div>
+            <p style="font-size:13.5px;color:var(--muted);line-height:1.75;margin:0">We continuously monitor, fine-tune, and improve your technology. With proactive support and strategic guidance, we help your business stay ahead of change and ready for the future.</p>
           </div>
         </div>
-        <div style="padding:0 1.5rem 1.5rem">
-          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;color:#5BAEF5;text-transform:uppercase;margin-bottom:.5rem">3 | Deploy</div>
-          <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Expert Implementation</h3>
-          <p style="font-size:12.5px;color:var(--muted);line-height:1.65;margin:0">Our certified engineers handle every aspect of deployment — provisioning circuits, installing hardware, migrating your cloud, and training your team.</p>
-        </div>
       </div>
-      <!-- Step 4: Manage -->
-      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;overflow:hidden;transition:all .25s" onmouseover="this.style.borderColor='rgba(52,211,153,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
-        <div style="padding:2rem 1.25rem 1.5rem;text-align:center;position:relative">
-          <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(52,211,153,.08),transparent 70%)"></div>
-          <div style="width:56px;height:56px;border-radius:50%;background:rgba(52,211,153,.1);border:1.5px solid rgba(52,211,153,.3);display:flex;align-items:center;justify-content:center;margin:0 auto;position:relative;z-index:1">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#34D399" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-          </div>
-        </div>
-        <div style="padding:0 1.5rem 1.5rem">
-          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;color:#34D399;text-transform:uppercase;margin-bottom:.5rem">4 | Manage</div>
-          <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Always-On Management</h3>
-          <p style="font-size:12.5px;color:var(--muted);line-height:1.65;margin:0">24/7 monitoring, AI-powered automation, and a dedicated account team — so you never have to worry about your technology again.</p>
-        </div>
-      </div>
-      <!-- Step 5: Optimize -->
-      <div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;overflow:hidden;transition:all .25s" onmouseover="this.style.borderColor='rgba(245,158,11,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--bdd)';this.style.transform='none'">
-        <div style="padding:2rem 1.25rem 1.5rem;text-align:center;position:relative">
-          <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(245,158,11,.08),transparent 70%)"></div>
-          <div style="width:56px;height:56px;border-radius:50%;background:rgba(245,158,11,.1);border:1.5px solid rgba(245,158,11,.3);display:flex;align-items:center;justify-content:center;margin:0 auto;position:relative;z-index:1">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#F59E0B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
-          </div>
-        </div>
-        <div style="padding:0 1.5rem 1.5rem">
-          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;color:#F59E0B;text-transform:uppercase;margin-bottom:.5rem">5 | Optimize</div>
-          <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">Continuous Improvement</h3>
-          <p style="font-size:12.5px;color:var(--muted);line-height:1.65;margin:0">Quarterly business reviews, performance tuning, and proactive recommendations keep your stack ahead of your business as it grows.</p>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
-
 <style>
-@media(max-width:1100px){
-  .how-we-work-grid{grid-template-columns:repeat(3,1fr)!important}
-}
-@media(max-width:680px){
-  .how-we-work-grid{grid-template-columns:1fr!important}
+.hww-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;align-items:stretch}
+@media(max-width:900px){
+  .hww-grid{grid-template-columns:1fr!important}
+  .hww-arrow{display:none!important}
 }
 </style>
 
