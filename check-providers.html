@@ -1233,9 +1233,9 @@ document.querySelectorAll('.nav-link').forEach(a=>{
         <label style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2);text-align:left">Business Address</label>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <input id="addrInput" class="cfi" type="text" placeholder="Street address, city, state, or ZIP" style="flex:1;min-width:240px;font-size:14.5px;padding:14px 16px">
-          <button type="submit" class="btn-blue" style="padding:14px 28px;font-size:13px;white-space:nowrap">Check Availability →</button>
+          <button type="submit" id="lookupBtn" class="btn-blue" style="padding:14px 28px;font-size:13px;white-space:nowrap">Check Availability →</button>
         </div>
-        <p style="font-size:11.5px;color:var(--muted2);text-align:left;margin-top:2px">Results are illustrative estimates based on regional carrier coverage. Racom will confirm exact availability and pricing at your address.</p>
+        <p style="font-size:11.5px;color:var(--muted2);text-align:left;margin-top:2px">Provider data sourced from FCC Broadband Data Collection records via Broadband Map. Racom confirms exact availability and pricing at your address.</p>
       </form>
     </div>
   </div>
@@ -1247,7 +1247,7 @@ document.querySelectorAll('.nav-link').forEach(a=>{
     <div style="margin-bottom:2rem">
       <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue3);margin-bottom:.5rem">Results for</div>
       <h2 style="font-family:var(--ffc);font-size:clamp(1.5rem,3vw,2rem);font-weight:900;color:#fff;text-transform:uppercase" id="resultsAddress">—</h2>
-      <p style="font-size:13.5px;color:var(--muted);margin-top:.5rem">We found <strong id="resultsCount" style="color:#fff">0</strong> providers serving this area. Estimates shown — actual speeds and pricing confirmed by a Racom advisor.</p>
+      <p style="font-size:13.5px;color:var(--muted);margin-top:.5rem">We found <strong id="resultsCount" style="color:#fff">0</strong> providers reporting coverage at this location, per FCC data. A Racom advisor will confirm exact availability, install timelines, and the best available pricing.</p>
     </div>
 
     <div id="providerList" style="display:flex;flex-direction:column;gap:14px"></div>
@@ -1280,7 +1280,7 @@ document.querySelectorAll('.nav-link').forEach(a=>{
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#22D3EE" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
         </div>
         <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.5rem">2. Compare Options</h3>
-        <p style="font-size:13px;color:var(--muted);line-height:1.65">See estimated speeds, technology types, and starting price ranges side by side.</p>
+        <p style="font-size:13px;color:var(--muted);line-height:1.65">See reported providers, technology types (fiber, cable, etc.), and maximum speeds side by side.</p>
       </div>
       <div style="text-align:center">
         <div style="width:54px;height:54px;border-radius:50%;background:rgba(52,211,153,.1);border:1.5px solid rgba(52,211,153,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem">
@@ -1295,69 +1295,72 @@ document.querySelectorAll('.nav-link').forEach(a=>{
 
 <script>
 (function(){
-  // Sample provider pools by category — illustrative only, not live carrier data
-  var fiberProviders = ["AT&T Fiber","Frontier Fiber","Brightspeed Fiber","Ziply Fiber","Metronet"];
-  var cableProviders = ["Spectrum Business","Xfinity Business","Cox Business","Optimum Business"];
-  var fixedWirelessProviders = ["T-Mobile Business Internet","Starry Business","Rise Broadband"];
-  var dedicatedProviders = ["Lumen Dedicated Internet","Comcast Business DIA","Zayo Fiber Circuit"];
+  var WORKER_URL = "https://racom-provider-lookup.dawn-fog-cd79.workers.dev";
 
-  function pick(arr, n){
-    var copy = arr.slice();
-    var out = [];
-    while(out.length < n && copy.length){
-      out.push(copy.splice(Math.floor(Math.random()*copy.length),1)[0]);
+  var TECH_COLORS = {
+    "Fiber": "#15C5D9",
+    "Cable": "#F2B33D",
+    "DSL": "#A78BFA",
+    "Fixed Wireless": "#34D399",
+    "Satellite": "#5BAEF5",
+    "Copper": "#9CA3AF"
+  };
+
+  function badgeColor(tech){
+    return TECH_COLORS[tech] || "#5BAEF5";
+  }
+
+  function setLoading(isLoading){
+    var btn = document.getElementById('lookupBtn');
+    if(!btn) return;
+    if(isLoading){
+      btn.disabled = true;
+      btn.textContent = "Checking…";
+    } else {
+      btn.disabled = false;
+      btn.textContent = "Check Availability →";
     }
-    return out;
   }
 
-  function randSpeed(min,max){ return Math.floor(Math.random()*(max-min)+min); }
-  function randPrice(min,max){ return Math.floor(Math.random()*(max-min)+min); }
-
-  function buildResults(){
-    var results = [];
-    pick(fiberProviders, 2).forEach(function(name){
-      results.push({name:name, type:"Fiber", speed: randSpeed(300,2000)+" Mbps", price: randPrice(85,180), badge:"#15C5D9"});
-    });
-    pick(cableProviders, 2).forEach(function(name){
-      results.push({name:name, type:"Cable", speed: randSpeed(100,600)+" Mbps", price: randPrice(60,140), badge:"#F2B33D"});
-    });
-    pick(fixedWirelessProviders, 1).forEach(function(name){
-      results.push({name:name, type:"Fixed Wireless", speed: randSpeed(50,200)+" Mbps", price: randPrice(55,110), badge:"#34D399"});
-    });
-    pick(dedicatedProviders, 1).forEach(function(name){
-      results.push({name:name, type:"Dedicated Circuit", speed: randSpeed(100,1000)+" Mbps", price: randPrice(250,900), badge:"#A78BFA"});
-    });
-    return results;
+  function showError(message){
+    var list = document.getElementById('providerList');
+    document.getElementById('resultsAddress').textContent = "—";
+    document.getElementById('resultsCount').textContent = "0";
+    list.innerHTML = '<div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.5rem;text-align:center;color:var(--muted)">' + message + '</div>';
+    document.getElementById('resultsSection').style.display = 'block';
+    document.getElementById('resultsSection').scrollIntoView({behavior:'smooth', block:'start'});
   }
 
-  function renderResults(addr){
-    var results = buildResults();
-    document.getElementById('resultsAddress').textContent = addr;
-    document.getElementById('resultsCount').textContent = results.length;
+  function renderResults(data){
+    document.getElementById('resultsAddress').textContent = data.address;
+    document.getElementById('resultsCount').textContent = data.providers.length;
     var list = document.getElementById('providerList');
     list.innerHTML = '';
-    results.forEach(function(r){
+
+    if(!data.providers.length){
+      list.innerHTML = '<div style="background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.5rem;text-align:center;color:var(--muted)">No providers found in FCC records for this exact location. This can happen in newly built or rural areas — a Racom advisor can manually check with carriers directly.</div>';
+    }
+
+    data.providers.forEach(function(p){
       var row = document.createElement('div');
       row.style.cssText = "background:var(--navy3);border:1px solid var(--bdd);border-radius:10px;padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap";
+      var speedText = p.max_download_mbps ? (p.max_download_mbps + " Mbps") : "—";
       row.innerHTML =
         '<div style="display:flex;align-items:center;gap:14px;flex:1;min-width:220px">' +
-          '<div style="width:10px;height:10px;border-radius:50%;background:'+r.badge+';flex-shrink:0"></div>' +
+          '<div style="width:10px;height:10px;border-radius:50%;background:'+badgeColor(p.technology)+';flex-shrink:0"></div>' +
           '<div>' +
-            '<div style="font-size:14.5px;font-weight:700;color:#fff">'+r.name+'</div>' +
-            '<div style="font-size:11.5px;color:var(--muted2);margin-top:2px">'+r.type+'</div>' +
+            '<div style="font-size:14.5px;font-weight:700;color:#fff">'+(p.name || "Unknown Provider")+'</div>' +
+            '<div style="font-size:11.5px;color:var(--muted2);margin-top:2px">'+(p.technology || "—")+'</div>' +
           '</div>' +
         '</div>' +
         '<div style="text-align:right;min-width:110px">' +
-          '<div style="font-size:15px;font-weight:700;color:var(--blue3)">'+r.speed+'</div>' +
-          '<div style="font-size:11px;color:var(--muted2)">download speed</div>' +
-        '</div>' +
-        '<div style="text-align:right;min-width:100px">' +
-          '<div style="font-size:15px;font-weight:700;color:#fff">$'+r.price+'<span style="font-size:11px;color:var(--muted2)">/mo*</span></div>' +
-          '<div style="font-size:11px;color:var(--muted2)">starting at</div>' +
+          '<div style="font-size:15px;font-weight:700;color:var(--blue3)">'+speedText+'</div>' +
+          '<div style="font-size:11px;color:var(--muted2)">max download (FCC-reported)</div>' +
         '</div>' +
         '<a href="contact.html" class="btn-blue" style="padding:9px 18px;font-size:11.5px;white-space:nowrap">Get Pricing →</a>';
       list.appendChild(row);
     });
+
     document.getElementById('resultsSection').style.display = 'block';
     document.getElementById('resultsSection').scrollIntoView({behavior:'smooth', block:'start'});
   }
@@ -1368,7 +1371,24 @@ document.querySelectorAll('.nav-link').forEach(a=>{
       e.preventDefault();
       var val = document.getElementById('addrInput').value.trim();
       if(!val){ return; }
-      renderResults(val);
+
+      setLoading(true);
+
+      fetch(WORKER_URL + "?address=" + encodeURIComponent(val))
+        .then(function(res){
+          if(!res.ok){
+            return res.json().then(function(err){ throw new Error(err.error || "Lookup failed"); });
+          }
+          return res.json();
+        })
+        .then(function(data){
+          setLoading(false);
+          renderResults(data);
+        })
+        .catch(function(err){
+          setLoading(false);
+          showError("We couldn't look up that address (" + err.message + "). Please check the address and try again, or contact us directly for help.");
+        });
     });
   }
 })();
